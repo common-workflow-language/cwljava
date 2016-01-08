@@ -17,7 +17,7 @@ Use the schema salad project to convert to an avro-ish schema document
 Generate the Java classes for the schema
 We cannot use these classes directly since CWL documents are not json or avro binaries, use cwl-tool to convert to json and then gson to convert from json due to some incompatibilities between CWL avro and normal avro.
 
-Note that this was done using a draft version of draft-3 and needs to be updated
+Note that this was done using a draft version of draft-3 and needs to be updated.
 
 ### To regenerate:
 
@@ -26,4 +26,4 @@ Note that this was done using a draft version of draft-3 and needs to be updated
 3. Copy them to the appropriate directory in dockstore-client (you will need to refactor and insert package names)
 
 
-Since this is kinda involved, a travis-CI build is provided which demos the process at https://travis-ci.org/common-workflow-language/cwljava
+Since this is kinda involved, a travis-CI build will eventually be provided which demos the process at https://travis-ci.org/common-workflow-language/cwljava
