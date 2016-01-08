@@ -5,7 +5,7 @@ jdk:
 # sudo: true
 
 install:
-  - pip2.7 install --user cwl-runner
+        #  - pip2.7 install --user cwl-runner
   - git clone https://github.com/common-workflow-language/schema_salad.git
   - git --git-dir schema_salad/.git   checkout 8573af0d63ce43f228b99849aa32615e938166da
   - chmod a+x schema_salad/setup.py
@@ -17,5 +17,6 @@ install:
   - rm -Rf cwl
   - sed -i '1i package cwl;' cwl
   - mv cwl-temp cwl
+  - pip2.7 install --user cwl-runner
 
 script: mvn -B clean install
