@@ -24,4 +24,4 @@ install:
 #  - mv cwl-temp cwl
   - pip2.7 install --user cwl-runner
 
-script: mvn -B clean install
+script: cd WIP/alternative/ && mvn -B clean install
