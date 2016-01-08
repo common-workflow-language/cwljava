@@ -3,7 +3,6 @@ jdk:
   - oraclejdk8
 
 install:
-  - docker version
   - pip2.7 install --user cwl-runner
   - git clone https://github.com/common-workflow-language/schema_salad.git
   - chmod a+x schema_salad/setup.py
