@@ -7,7 +7,7 @@ jdk:
 #  - "2.7.6"
 # sudo: true
 
-#install:
+install:
 #        #  - pip2.7 install --user cwl-runner
 #  - git clone https://github.com/common-workflow-language/schema_salad.git
 #    # - (cd schema_salad && git checkout 8573af0d63ce43f228b99849aa32615e938166da)
