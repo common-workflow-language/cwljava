@@ -7,7 +7,7 @@ jdk:
 install:
         #  - pip2.7 install --user cwl-runner
   - git clone https://github.com/common-workflow-language/schema_salad.git
-  - git --git-dir schema_salad/.git   checkout 8573af0d63ce43f228b99849aa32615e938166da
+  - git --git-dir schema_salad/.git --work-tree schema_salad  checkout 8573af0d63ce43f228b99849aa32615e938166da 
   - chmod a+x schema_salad/setup.py
   - ./schema_salad/setup.py install --user
   - wget https://raw.githubusercontent.com/common-workflow-language/common-workflow-language/791f4ef1dea83aed7827b679e179c634db7c0095/draft-3/cwl-avro.yml
