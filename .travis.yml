@@ -3,7 +3,7 @@ jdk:
   - oraclejdk8
 
 install:
-   - pip2.7 install --user cwl-runner
+   - pip2.7 install --user cwl-runner cwltool==1.0.20151211155311 schema-salad=1.4.20160108200836
    - git clone https://github.com/common-workflow-language/common-workflow-language 
    - python -mschema_salad --print-avro common-workflow-language/draft-3/CommonWorkflowLanguage.yml  > cwl.avsc
    - sed '/draft-3/d' cwl.avsc > cwl.edited.avsc
