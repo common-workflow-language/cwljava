@@ -21,7 +21,7 @@ install:
    - sed '/draft-3/d' cwl.avsc > cwl.edited.avsc
    - wget https://repo1.maven.org/maven2/org/apache/avro/avro-tools/1.7.7/avro-tools-1.7.7.jar
    - java -jar avro-tools-1.7.7.jar compile schema cwl.edited.avsc cwl-temp
-   - sed -i '1i package cwl;' cwl-temp
+   - sed -i '1i package cwl;' cwl-temp/*
    - rm -Rf WIP/alternative/src/main/java/cwl
    - cp -R cwl-temp WIP/alternative/src/main/java/cwl  
 
