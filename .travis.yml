@@ -24,5 +24,6 @@ install:
    - sed -i '1i package cwl;' cwl-temp/*
    - rm -Rf WIP/alternative/src/main/java/cwl
    - cp -R cwl-temp WIP/alternative/src/main/java/cwl  
+   - git diff 
 
 script: cd WIP/alternative/ && mvn -B clean install
