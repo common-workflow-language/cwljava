@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/common-workflow-language/cwljava.svg)](https://travis-ci.org/common-workflow-language/cwljava)
+
 CWL Java SDK
 ============
 
