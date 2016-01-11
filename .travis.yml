@@ -12,7 +12,7 @@ install:
    - sed -i '1i package cwl;' cwl-temp/*
    - rm -Rf WIP/alternative/src/main/java/cwl
    - cp -R cwl-temp WIP/alternative/src/main/java/cwl  
-   - # the output below should show that the generated API matches the checked-in API for convenience"
+   - echo "the output below should show that the generated API more-or-less matches the checked-in API for convenience"
    - git diff 
 
 script: cd WIP/alternative/ && mvn -B clean install
