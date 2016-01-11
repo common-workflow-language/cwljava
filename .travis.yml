@@ -2,20 +2,8 @@ language: java
 jdk: 
   - oraclejdk8
 
-#language: python
-#python:
-#  - "2.7.6"
-# sudo: true
-
 install:
    - pip2.7 install --user cwl-runner
-#  - git clone https://github.com/common-workflow-language/schema_salad.git
-#    # - (cd schema_salad && git checkout 8573af0d63ce43f228b99849aa32615e938166da)
-#  - (cd schema_salad && git checkout v1.4)
-#  - export PYTHONPATH=/home/travis/.local/lib/python2.7/site-packages/
-#  - chmod a+x schema_salad/setup.py
-#  - /home/travis/virtualenv/python2.7.6/bin/python schema_salad/setup.py install
-#  - wget https://raw.githubusercontent.com/common-workflow-language/common-workflow-language/791f4ef1dea83aed7827b679e179c634db7c0095/draft-3/cwl-avro.yml
    - git clone https://github.com/common-workflow-language/common-workflow-language 
    - python -mschema_salad --print-avro common-workflow-language/draft-3/CommonWorkflowLanguage.yml  > cwl.avsc
    - sed '/draft-3/d' cwl.avsc > cwl.edited.avsc
@@ -24,6 +12,7 @@ install:
    - sed -i '1i package cwl;' cwl-temp/*
    - rm -Rf WIP/alternative/src/main/java/cwl
    - cp -R cwl-temp WIP/alternative/src/main/java/cwl  
+   - # the output below should show that the generated API matches the checked-in API for convenience"
    - git diff 
 
 script: cd WIP/alternative/ && mvn -B clean install

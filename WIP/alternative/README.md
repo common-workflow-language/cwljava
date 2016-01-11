@@ -27,4 +27,4 @@ Note that this was done using a draft version of draft-3 and needs to be updated
 3. Copy them to the appropriate directory in dockstore-client (you will need to refactor to insert package names)
 
 
-Since this is kinda involved, a travis-CI build will eventually be provided which demos the process at https://travis-ci.org/common-workflow-language/cwljava
+Since this is kinda involved, a travis-CI build is provided which demos the process at https://travis-ci.org/common-workflow-language/cwljava 
