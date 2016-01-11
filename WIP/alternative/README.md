@@ -21,9 +21,10 @@ Note that this was done using a draft version of draft-3 and needs to be updated
 
 ### To regenerate:
 
-1. Get schema salad from the common-workflow-language organization and run `python -mschema_salad --print-avro ~/common-workflow-language/draft-3/cwl-avro.yml`
-2. Get the avro tools jar and CWL avsc and call `java -jar avro-tools-1.7.7.jar compile schema cwl.avsc cwl`
-3. Copy them to the appropriate directory in dockstore-client (you will need to refactor and insert package names)
+1. Get schema salad from the common-workflow-language organization and run `python -mschema_salad --print-avro ~/common-workflow-language/draft-3/CommonWorkflowLanguage.yml > cwl.avsc`
+2. Edit the allowed symbols for CWL versions. The draft3 specification generates symbols like "draft-3.dev1" which the avro parser will reject with the error "Exception in thread \"main\" org.apache.avro.SchemaParseException: Illegal character in: draft-3.dev1". You can safety delete all the symbols which are designated "draft" versions. 
+3. Get the avro tools jar and CWL avsc and call `java -jar avro-tools-1.7.7.jar compile schema cwl.avsc cwl`
+3. Copy them to the appropriate directory in dockstore-client (you will need to refactor to insert package names)
 
 
 Since this is kinda involved, a travis-CI build will eventually be provided which demos the process at https://travis-ci.org/common-workflow-language/cwljava

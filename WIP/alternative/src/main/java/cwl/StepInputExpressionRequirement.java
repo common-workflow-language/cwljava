@@ -5,12 +5,11 @@ package cwl;
  * DO NOT EDIT DIRECTLY
  */
 @SuppressWarnings("all")
-/** Indicates that the workflow platform must support multiple inbound data links
-listed in the `source` field of [WorkflowStepInput](#WorkflowStepInput).
- */
+/** Indicate that the workflow platform must support the `valueFrom` field
+of [WorkflowStepInput](#WorkflowStepInput). */
 @org.apache.avro.specific.AvroGenerated
-public class MultipleInputFeatureRequirement extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MultipleInputFeatureRequirement\",\"doc\":\"Indicates that the workflow platform must support multiple inbound data links\\nlisted in the `source` field of [WorkflowStepInput](#WorkflowStepInput).\\n\",\"fields\":[{\"name\":\"class\",\"type\":\"string\",\"doc\":\"The specific requirement type.\",\"jsonldPredicate\":{\"_type\":\"@vocab\",\"_id\":\"@type\"},\"inherited_from\":\"https://w3id.org/cwl/cwl#ProcessRequirement\"}],\"extends\":\"https://w3id.org/cwl/cwl#ProcessRequirement\"}");
+public class StepInputExpressionRequirement extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"StepInputExpressionRequirement\",\"doc\":\"Indicate that the workflow platform must support the `valueFrom` field\\nof [WorkflowStepInput](#WorkflowStepInput).\",\"fields\":[{\"name\":\"class\",\"type\":\"string\",\"doc\":\"The specific requirement type.\",\"jsonldPredicate\":{\"_type\":\"@vocab\",\"_id\":\"@type\"},\"inherited_from\":\"https://w3id.org/cwl/cwl#ProcessRequirement\"}],\"extends\":\"https://w3id.org/cwl/cwl#ProcessRequirement\"}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   /** The specific requirement type. */
   @Deprecated public java.lang.CharSequence class$;
@@ -20,12 +19,12 @@ public class MultipleInputFeatureRequirement extends org.apache.avro.specific.Sp
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>. 
    */
-  public MultipleInputFeatureRequirement() {}
+  public StepInputExpressionRequirement() {}
 
   /**
    * All-args constructor.
    */
-  public MultipleInputFeatureRequirement(java.lang.CharSequence class$) {
+  public StepInputExpressionRequirement(java.lang.CharSequence class$) {
     this.class$ = class$;
   }
 
@@ -61,36 +60,36 @@ public class MultipleInputFeatureRequirement extends org.apache.avro.specific.Sp
     this.class$ = value;
   }
 
-  /** Creates a new MultipleInputFeatureRequirement RecordBuilder */
-  public static MultipleInputFeatureRequirement.Builder newBuilder() {
-    return new MultipleInputFeatureRequirement.Builder();
+  /** Creates a new StepInputExpressionRequirement RecordBuilder */
+  public static StepInputExpressionRequirement.Builder newBuilder() {
+    return new StepInputExpressionRequirement.Builder();
   }
   
-  /** Creates a new MultipleInputFeatureRequirement RecordBuilder by copying an existing Builder */
-  public static MultipleInputFeatureRequirement.Builder newBuilder(MultipleInputFeatureRequirement.Builder other) {
-    return new MultipleInputFeatureRequirement.Builder(other);
+  /** Creates a new StepInputExpressionRequirement RecordBuilder by copying an existing Builder */
+  public static StepInputExpressionRequirement.Builder newBuilder(StepInputExpressionRequirement.Builder other) {
+    return new StepInputExpressionRequirement.Builder(other);
   }
   
-  /** Creates a new MultipleInputFeatureRequirement RecordBuilder by copying an existing MultipleInputFeatureRequirement instance */
-  public static MultipleInputFeatureRequirement.Builder newBuilder(MultipleInputFeatureRequirement other) {
-    return new MultipleInputFeatureRequirement.Builder(other);
+  /** Creates a new StepInputExpressionRequirement RecordBuilder by copying an existing StepInputExpressionRequirement instance */
+  public static StepInputExpressionRequirement.Builder newBuilder(StepInputExpressionRequirement other) {
+    return new StepInputExpressionRequirement.Builder(other);
   }
   
   /**
-   * RecordBuilder for MultipleInputFeatureRequirement instances.
+   * RecordBuilder for StepInputExpressionRequirement instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<MultipleInputFeatureRequirement>
-    implements org.apache.avro.data.RecordBuilder<MultipleInputFeatureRequirement> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<StepInputExpressionRequirement>
+    implements org.apache.avro.data.RecordBuilder<StepInputExpressionRequirement> {
 
     private java.lang.CharSequence class$;
 
     /** Creates a new Builder */
     private Builder() {
-      super(MultipleInputFeatureRequirement.SCHEMA$);
+      super(StepInputExpressionRequirement.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(MultipleInputFeatureRequirement.Builder other) {
+    private Builder(StepInputExpressionRequirement.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.class$)) {
         this.class$ = data().deepCopy(fields()[0].schema(), other.class$);
@@ -98,9 +97,9 @@ public class MultipleInputFeatureRequirement extends org.apache.avro.specific.Sp
       }
     }
     
-    /** Creates a Builder by copying an existing MultipleInputFeatureRequirement instance */
-    private Builder(MultipleInputFeatureRequirement other) {
-            super(MultipleInputFeatureRequirement.SCHEMA$);
+    /** Creates a Builder by copying an existing StepInputExpressionRequirement instance */
+    private Builder(StepInputExpressionRequirement other) {
+            super(StepInputExpressionRequirement.SCHEMA$);
       if (isValidValue(fields()[0], other.class$)) {
         this.class$ = data().deepCopy(fields()[0].schema(), other.class$);
         fieldSetFlags()[0] = true;
@@ -113,7 +112,7 @@ public class MultipleInputFeatureRequirement extends org.apache.avro.specific.Sp
     }
     
     /** Sets the value of the 'class$' field */
-    public MultipleInputFeatureRequirement.Builder setClass$(java.lang.CharSequence value) {
+    public StepInputExpressionRequirement.Builder setClass$(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.class$ = value;
       fieldSetFlags()[0] = true;
@@ -126,16 +125,16 @@ public class MultipleInputFeatureRequirement extends org.apache.avro.specific.Sp
     }
     
     /** Clears the value of the 'class$' field */
-    public MultipleInputFeatureRequirement.Builder clearClass$() {
+    public StepInputExpressionRequirement.Builder clearClass$() {
       class$ = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
     @Override
-    public MultipleInputFeatureRequirement build() {
+    public StepInputExpressionRequirement build() {
       try {
-        MultipleInputFeatureRequirement record = new MultipleInputFeatureRequirement();
+        StepInputExpressionRequirement record = new StepInputExpressionRequirement();
         record.class$ = fieldSetFlags()[0] ? this.class$ : (java.lang.CharSequence) defaultValue(fields()[0]);
         return record;
       } catch (Exception e) {
