@@ -18,11 +18,11 @@ install:
 #  - wget https://raw.githubusercontent.com/common-workflow-language/common-workflow-language/791f4ef1dea83aed7827b679e179c634db7c0095/draft-3/cwl-avro.yml
    - git clone https://github.com/common-workflow-language/common-workflow-language 
    - python -mschema_salad --print-avro common-workflow-language/draft-3/CommonWorkflowLanguage.yml  > cwl.avsc
-   - sed '/draft-3.dev/d' cwl.avsc > cwl.edited.avsc
+   - sed '/draft-3/d' cwl.avsc > cwl.edited.avsc
    - wget https://repo1.maven.org/maven2/org/apache/avro/avro-tools/1.7.7/avro-tools-1.7.7.jar
    - java -jar avro-tools-1.7.7.jar compile schema cwl.edited.avsc cwl-temp
-   - rm -Rf cwl
    - sed -i '1i package cwl;' cwl-temp
-   - mv cwl-temp cwl
+   - rm -Rf WIP/alternative/src/main/java/cwl
+   - cp -R cwl-temp WIP/alternative/src/main/java/cwl  
 
 script: cd WIP/alternative/ && mvn -B clean install
