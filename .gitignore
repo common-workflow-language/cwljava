@@ -1,0 +1,20 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.iml
+.idea
+*.class
+*.swp
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+/target/
+dependency-reduced-pom.xml
+core/target/
+tools/target/
+

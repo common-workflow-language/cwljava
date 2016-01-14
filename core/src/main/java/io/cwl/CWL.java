@@ -175,7 +175,7 @@ public class CWL {
         final String elementClass = jsonElement.getAsJsonObject().get("class").getAsString();
         Class<SpecificRecordBase> anyClass;
         try {
-            anyClass = (Class<SpecificRecordBase>) Class.forName("cwl." + elementClass);
+            anyClass = (Class<SpecificRecordBase>) Class.forName("io.cwl.avro." + elementClass);
         } catch (ClassNotFoundException e) {
             //TODO: this should be a log
             e.printStackTrace();
