@@ -15,8 +15,8 @@ install:
    - java -jar avro-tools-1.7.7.jar compile schema cwl.edited.avsc cwl-temp
    # create packages for the classes
    - sed -i '1i package io.cwl.avro;' cwl-temp/*
-   - rm -Rf core/src/main/java/cwl/avro
-   - cp -R cwl-temp core/src/main/java/cwl/avro    
+   - rm -Rf core/src/main/java/io/cwl/avro
+   - cp -R cwl-temp core/src/main/java/io/cwl/avro    
    - echo "the output below should show that the generated API more-or-less matches the checked-in API for convenience"
    - git diff 
 
