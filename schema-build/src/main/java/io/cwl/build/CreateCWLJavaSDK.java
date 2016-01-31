@@ -59,7 +59,7 @@ import java.io.*;
 
 public class CreateCWLJavaSDK {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
 
   // *************** Initialize the required variables ***************
 
@@ -92,7 +92,7 @@ public class CreateCWLJavaSDK {
     *  subsequent SDK creation.
     *
     */
-    try {
+    //try {
     
       yamlParser = new YAMLParser(args);
 
@@ -160,7 +160,7 @@ public class CreateCWLJavaSDK {
       sdkBuilder = new CWLSDKBuilder( objects );
       sdkBuilder.generateSDK();
 
-    } catch( Exception e ) { System.out.println("parser: " + e);  }
+    //} catch( Exception e ) { System.out.println("parser: " + e);  }
 
   }
 

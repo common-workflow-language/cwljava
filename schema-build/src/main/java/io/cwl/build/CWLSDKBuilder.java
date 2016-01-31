@@ -207,7 +207,7 @@ public class CWLSDKBuilder {
   public void writeClasses() throws Exception {
 
     for(String name: objects.keySet()){
-
+      System.out.println("Class: " + name);
       if( !(config_skip.contains(name)) ) {
 
         // Write the start of class file
@@ -264,6 +264,8 @@ public class CWLSDKBuilder {
 
         // To close the current class
         closeClass( name );
+      } else {
+        System.out.println("Skipping: " + name);
       }
 
     }
