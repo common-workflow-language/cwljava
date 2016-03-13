@@ -1,0 +1,7 @@
+#!/bin/bash
+
+BASE=$(cd $(dirname $0) && pwd)
+
+JAR=$(ls $BASE/target/cwl-tools-*-jar-with-dependencies.jar )
+
+java -cp $JAR io.cwl.CWLRunner $*
