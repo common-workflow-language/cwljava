@@ -8,6 +8,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>schema-build</module>
         <module>tools</module>
         <module>core</module>     
     </modules>
