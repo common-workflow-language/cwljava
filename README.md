@@ -28,6 +28,7 @@ To generate the SDK just proceed to the "sdk-and-javadoc-generation" folder and 
 ./step2-compile-sdk-files-for-jar.sh	
 ./step3-compile-util-files-for-jar.sh	
 ./step4-generate-jar-files.sh
+
 ./step5-generate-javadoc.sh
 
 The first one ("step0-download-draft-3-yaml-files.sh") is optional as the CWL specification YAML files are already provided in the "cwl-yaml-specs" directory.
@@ -35,4 +36,5 @@ The first one ("step0-download-draft-3-yaml-files.sh") is optional as the CWL sp
 All comments and recommendations are welcome.
 
 Thank you,
+
 Paul
