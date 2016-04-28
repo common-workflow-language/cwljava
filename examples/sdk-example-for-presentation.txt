@@ -1,0 +1,67 @@
+
+import java.util.*;
+
+public class sdktest {
+	
+	public static void main( String [] args ) throws Exception {
+
+		CWLReader cwlr = new CWLReader("wc-tool.cwl");
+		cwlr.processFile();
+		CommandLineTool CommandLineTool_Instance = cwlr.getCommandLineToolInstance();
+		// CommandLineTool clt = new CommandLineTool();
+
+		// 	CommandInputParameter [] cip = new CommandInputParameter[1];
+		// 	cip[0] = new CommandInputParameter();
+		// 	cip[0].setid("file1");
+		// 	cip[0].settype("File");
+
+		// 	CommandOutputParameter [] cop = new CommandOutputParameter[1];
+		// 	cop[0] = new CommandOutputParameter();
+		// 	cop[0].setid("output");
+		// 	cop[0].settype("File");
+
+		// 		CommandOutputBinding cob = new CommandOutputBinding();
+		// 		cob.setglob( new String( "output" ) );
+
+		// 	cop[0].setoutputBinding( cob );
+
+
+		// clt.setinputs( cip );
+		// clt.setoutputs( cop );
+
+	 //  clt.setbaseCommand( "wc" );
+	  
+	 //  clt.setstdin( "inputs.file1.path" );
+	 //  clt.setstdout( "output" );
+
+	  // Ref: wc-job.json
+	  // Map<String,String> json = new HashMap<String,String>();
+	  // json.put("file1.class", "File");
+ 	  // json.put("file1.path" , "whale.txt");
+
+ 	  JSONReader jr = new JSONReader("wc-job.json");
+ 	  jr.processFile();
+
+ 	  //write engine file
+
+ 	  // Expected: wc file1.class.path > output
+ 	  //process( clt, json );
+
+ 	  // org.commonwl.lang.*;
+
+ 	  //Process p = Runtime.getRuntime().exec("ps -ef");
+ 	  //SystemCommandExecution sce = new SystemCommandExecution("ls -l");
+ 	  SystemCommandExecution sce = new SystemCommandExecution();
+ 	  sce.newExecutionCommand();
+ 	  //sce.extendExecutionCommand( clt.getbaseCommand() );
+ 	  sce.extendExecutionCommand( CommandLineTool_Instance.\ );
+ 	  String stdinPath = (String) CommandLineTool_Instance.getstdin();
+ 	  stdinPath = stdinPath.replace( "inputs.", "" );
+ 	  sce.extendExecutionCommand( jr.getValue( stdinPath ) );
+ 	  //sce.extendExecutionCommand( json.get( "file1.path" ) );
+ 	  sce.executeCommand();
+ 	  System.out.println( sce.getStandardOutput() );
+		   	
+	}
+
+}
