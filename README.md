@@ -12,6 +12,7 @@ Example Using The SDK
 To run an example just proceed to tot he examples directory and run the following two commands:
 
 ./compile-demo.sh 
+
 ./run-demo.sh wc-tool.cwl wc-job.json
 
 You should see the following result:
