@@ -1,3 +1,4 @@
+ 
 
 /*****************************************************************************************************
 *
@@ -57,6 +58,22 @@ public class SystemCommandExecution {
   */  
 	private String StandardOutput;
 
+	/*****************************************************************************************************
+	  *
+	  *   The Integer used for storing the return status code.  
+	  */ 
+	private Integer statusCode;
+	
+	
+	
+	public Integer getStatusCode() {
+		return statusCode;
+	}
+
+	public void setStatusCode(Integer statusCode) {
+		this.statusCode = statusCode;
+	}
+
 	public SystemCommandExecution() {
     this.StandardInput = new String("");
     this.StandardError = new String("");
@@ -89,6 +106,9 @@ public class SystemCommandExecution {
     try {
          
       java.lang.Process process = Runtime.getRuntime().exec( StandardInput );
+      
+   
+      
       InputErrorOutput[0] = StandardInput;
        
       BufferedReader standardInputStream = new BufferedReader(new
@@ -116,7 +136,8 @@ public class SystemCommandExecution {
         }
       }
       InputErrorOutput[1] = StandardError;
-       
+      
+      this.statusCode=process.exitValue();
     }
     catch (IOException exception) {
         exception.printStackTrace();
