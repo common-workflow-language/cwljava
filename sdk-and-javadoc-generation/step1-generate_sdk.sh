@@ -15,4 +15,4 @@ mkdir org/commonwl/lang
 
 echo "Running the SDK creation process..."
 echo ""
-java CreateCWLJavaSDK cwl-yaml-specs/CommandLineTool.yml cwl-yaml-specs/Process.yml cwl-yaml-specs/Workflow.yml cwl-yaml-specs/metaschema.yml
+java CreateCWLJavaSDK cwl-yaml-specs/CommandLineTool.yml cwl-yaml-specs/Process.yml cwl-yaml-specs/Workflow.yml cwl-yaml-specs/metaschema_base.yml cwl-yaml-specs/metaschema.yml

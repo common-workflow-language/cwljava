@@ -31,91 +31,93 @@
 
 package org.commonwl.lang;
 
-/*****************************************************************************************************
-*
-*   Define a file that must be placed in the designated output directory prior to executing the command line tool.  May be the result of executing an expression, such as building a configuration file from a template.
-*/
-public class FileDef {
+public class SoftwarePackage {
 
   /*****************************************************************************************************
   *
-  *  The name of the file to create in the output directory.
+  *  Must be one or more IRIs identifying resources for installing or enabling the software.  Implementations may provide resolvers which map well-known software spec IRIs to some configuration action. For example, an IRI `https://packages.debian.org/jessie/bowtie` could be resolved with `apt-get install bowtie`.  An IRI `https://anaconda.org/bioconda/bowtie` could be resolved with `conda install -c bioconda bowtie`. Tools may also provide IRIs to index entries such as [RRID](http://www.identifiers.org/rrid/), such as `http://identifiers.org/rrid/RRID:SCR_005476`
   */
-  Object filename = null;
+  String specs = null;
 
   /*****************************************************************************************************
   *
-  *   If the value is a string literal or an expression which evaluates to a string, a new file must be created with the string as the file contents.  If the value is an expression that evaluates to a File object, this indicates the referenced file should be added to the designated output directory prior to executing the tool.  Files added in this way may be read-only, and may be provided by bind mounts or file system links to avoid unnecessary copying of the input file.  
+  *  The common name of the software to be configured.
   */
-  Object fileContent = null;
-
-
-  public FileDef() { super(); }
+  String package_value = null;
 
   /*****************************************************************************************************
   *
-  *  This method sets the value of filename.
+  *  The (optional) version of the software to configured.
+  */
+  String version = null;
+
+
+  public SoftwarePackage() { super(); }
+
+  /*****************************************************************************************************
   *
-  *  @param   value will update filename, which is a String type.
+  *  This method sets the value of specs.
+  *
+  *  @param   value will update specs, which is a String type.
   *
   */
-  public void setfilename( String value ) {
-    filename = value;
+  public void setspecs( String value ) {
+    specs = value;
   }
 
   /*****************************************************************************************************
   *
-  *  This method sets the value of filename.
+  *  This method returns the value of specs.
   *
-  *  @param   value will update filename, which is a Expression type.
+  *  @return   This method will return the value of specs, which is a String type.
   *
   */
-  public void setfilename( Expression value ) {
-    filename = value;
+  public String getspecs() {
+    return specs;
   }
 
   /*****************************************************************************************************
   *
-  *  This method returns the value of filename.
+  *  This method sets the value of package_value.
   *
-  *  @return   This method will return the value of filename, which is a Object type.
+  *  @param   value will update package_value, which is a String type.
   *
   */
-  public Object getfilename() {
-    return filename;
+  public void setpackage( String value ) {
+    package_value = value;
   }
 
   /*****************************************************************************************************
   *
-  *  This method sets the value of fileContent.
+  *  This method returns the value of package_value.
   *
-  *  @param   value will update fileContent, which is a String type.
+  *  @return   This method will return the value of package_value, which is a String type.
   *
   */
-  public void setfileContent( String value ) {
-    fileContent = value;
+  public String getpackage() {
+    return package_value;
   }
 
   /*****************************************************************************************************
   *
-  *  This method sets the value of fileContent.
+  *  This method sets the value of version.
   *
-  *  @param   value will update fileContent, which is a Expression type.
+  *  @param   value will update version, which is a String type.
   *
   */
-  public void setfileContent( Expression value ) {
-    fileContent = value;
+  public void setversion( String value ) {
+    version = value;
   }
 
   /*****************************************************************************************************
   *
-  *  This method returns the value of fileContent.
+  *  This method returns the value of version.
   *
-  *  @return   This method will return the value of fileContent, which is a Object type.
+  *  @return   This method will return the value of version, which is a String type.
   *
   */
-  public Object getfileContent() {
-    return fileContent;
+  public String getversion() {
+    return version;
   }
 
 }

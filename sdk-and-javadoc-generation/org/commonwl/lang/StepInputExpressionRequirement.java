@@ -33,13 +33,13 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   Indicate that the workflow platform must support the `valueFrom` field of [WorkflowStepInput](#WorkflowStepInput).
+*  Indicate that the workflow platform must support the `valueFrom` field of [WorkflowStepInput](#WorkflowStepInput).
 */
 public class StepInputExpressionRequirement implements ProcessRequirement {
 
   /*****************************************************************************************************
   *
-  *  The specific requirement type.
+  *  Always 'StepInputExpressionRequirement'
   */
   String class_value = null;
 

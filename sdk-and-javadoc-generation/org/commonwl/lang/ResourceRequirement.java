@@ -33,7 +33,7 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   Specify basic hardware resource requirements.
+*  Specify basic hardware resource requirements.
 */
 public class ResourceRequirement implements ProcessRequirement {
 
@@ -85,10 +85,9 @@ public class ResourceRequirement implements ProcessRequirement {
   */
   Object outdirMax = null;
 
-
   /*****************************************************************************************************
   *
-  *  The specific requirement type.
+  *  Always 'ResourceRequirement'
   */
   String class_value = null;
 

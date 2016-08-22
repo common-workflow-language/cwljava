@@ -35,8 +35,8 @@ package org.commonwl.lang;
  *
  *  Version symbols for published CWL document versions.
  */
-public enum CWLVersions {
+public enum CWLVersion {
 
-  draft3_dev1, draft3_dev2, draft3_dev3, draft3_dev4, draft3_dev5, draft3
+  draft2, draft3_dev1, draft3_dev2, draft3_dev3, draft3_dev4, draft3_dev5, draft3, draft4_dev1, draft4_dev2, draft4_dev3, v1_0_dev4, v1_0
 
 }

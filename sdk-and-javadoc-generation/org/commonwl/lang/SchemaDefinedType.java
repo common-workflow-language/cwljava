@@ -33,26 +33,26 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   Abstract base for schema-defined types.
+*  Abstract base for schema-defined types.
 */
 public interface SchemaDefinedType extends DocType {
 
   /*****************************************************************************************************
   *
-  *   If true, indicates that the type is a valid at the document root.  At least one type in a schema must be tagged with `documentRoot: true`.  
+  *  If true, indicates that the type is a valid at the document root.  At least one type in a schema must be tagged with `documentRoot: true`.
   */
   Boolean documentRoot = null;
 
   /*****************************************************************************************************
   *
-  *   Annotate this type with linked data context.
+  *  Annotate this type with linked data context.
   */
   Object jsonldPredicate = null;
 
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for this type should appear in a subsection under `docParent`.
+  *  Hint to indicate that during documentation generation, documentation for this type should appear in a subsection under `docParent`.
   */
   String docParent = null;
 
@@ -64,13 +64,13 @@ public interface SchemaDefinedType extends DocType {
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for this type should appear after the `docAfter` section at the same level.
+  *  Hint to indicate that during documentation generation, documentation for this type should appear after the `docAfter` section at the same level.
   */
   String docAfter = null;
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for `docChild` should appear in a subsection under this type.
+  *  Hint to indicate that during documentation generation, documentation for `docChild` should appear in a subsection under this type.
   */
   Object docChild = null;
 

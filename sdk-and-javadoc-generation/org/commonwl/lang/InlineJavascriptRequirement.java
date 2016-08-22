@@ -33,20 +33,19 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   Indicates that the workflow platform must support inline Javascript expressions. If this requirement is not present, the workflow platform must not perform expression interpolatation.
+*  Indicates that the workflow platform must support inline Javascript expressions. If this requirement is not present, the workflow platform must not perform expression interpolatation.
 */
 public class InlineJavascriptRequirement implements ProcessRequirement {
 
   /*****************************************************************************************************
   *
-  *   Additional code fragments that will also be inserted before executing the expression code.  Allows for function definitions that may be called from CWL expressions.  
+  *  Additional code fragments that will also be inserted before executing the expression code.  Allows for function definitions that may be called from CWL expressions.
   */
-  String [] expressionLib = null;
-
+  String expressionLib = null;
 
   /*****************************************************************************************************
   *
-  *  The specific requirement type.
+  *  Always 'InlineJavascriptRequirement'
   */
   String class_value = null;
 
@@ -57,10 +56,10 @@ public class InlineJavascriptRequirement implements ProcessRequirement {
   *
   *  This method sets the value of expressionLib.
   *
-  *  @param   value will update expressionLib, which is a String array.
+  *  @param   value will update expressionLib, which is a String type.
   *
   */
-  public void setexpressionLib( String [] value ) {
+  public void setexpressionLib( String value ) {
     expressionLib = value;
   }
 
@@ -68,10 +67,10 @@ public class InlineJavascriptRequirement implements ProcessRequirement {
   *
   *  This method returns the value of expressionLib.
   *
-  *  @return   This method will return the value of expressionLib, which is a String array.
+  *  @return   This method will return the value of expressionLib, which is a String type.
   *
   */
-  public String [] getexpressionLib() {
+  public String getexpressionLib() {
     return expressionLib;
   }
 

@@ -1094,7 +1094,10 @@ public class CWLSDKBuilder {
       return primitiveTypeTrimmed.toLowerCase().trim().replace( "record_symbol", "Object");
     } else if( primitiveTypeTrimmed.toLowerCase().trim().equals("file_class") ) {
       return primitiveTypeTrimmed.toLowerCase().trim().replace( "file_class", "File");
-    } else {
+    } else if( primitiveTypeTrimmed.toLowerCase().trim().equals("directory_class") ) {
+      return primitiveTypeTrimmed.toLowerCase().trim().replace( "directory_class", "Directory");
+    }
+     else {
       return primitiveType.trim();
     }
 
@@ -1116,6 +1119,8 @@ public class CWLSDKBuilder {
       return new String( "abstract_value" );
     } else if( field.equals("extends") ) {
       return new String( "extends_value" );
+    } else if( field.equals("package") ) {
+      return new String( "package_value" );
     } else {
       return field;
     }

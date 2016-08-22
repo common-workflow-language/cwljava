@@ -33,46 +33,89 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   Define a list of files that must be created by the workflow platform in the designated output directory prior to executing the command line tool.  See `FileDef` for details.
+*  Define a list of files and subdirectories that must be created by the workflow platform in the designated output directory prior to executing the command line tool.
 */
-public class CreateFileRequirement implements ProcessRequirement {
+public class InitialWorkDirRequirement implements ProcessRequirement {
 
   /*****************************************************************************************************
   *
-  *  The list of files.
+  *  The list of files or subdirectories that must be placed in the designated output directory prior to executing the command line tool. May be an expression.  If so, the expression return value must validate as `{type: array, items: [File, Directory]}`.
   */
-  FileDef [] fileDef = null;
-
+  Object listing = null;
 
   /*****************************************************************************************************
   *
-  *  The specific requirement type.
+  *  InitialWorkDirRequirement
   */
   String class_value = null;
 
 
-  public CreateFileRequirement() { super(); }
+  public InitialWorkDirRequirement() { super(); }
 
   /*****************************************************************************************************
   *
-  *  This method sets the value of fileDef.
+  *  This method sets the value of listing.
   *
-  *  @param   value will update fileDef, which is a FileDef array.
+  *  @param   value will update listing, which is a Dirent array.
   *
   */
-  public void setfileDef( FileDef [] value ) {
-    fileDef = value;
+  public void setlisting( Dirent [] value ) {
+    listing = value;
   }
 
   /*****************************************************************************************************
   *
-  *  This method returns the value of fileDef.
+  *  This method sets the value of listing.
   *
-  *  @return   This method will return the value of fileDef, which is a FileDef array.
+  *  @param   value will update listing, which is a File array.
   *
   */
-  public FileDef [] getfileDef() {
-    return fileDef;
+  public void setlisting( File [] value ) {
+    listing = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of listing.
+  *
+  *  @param   value will update listing, which is a Directory array.
+  *
+  */
+  public void setlisting( Directory [] value ) {
+    listing = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of listing.
+  *
+  *  @param   value will update listing, which is a Expression array.
+  *
+  */
+  public void setlisting( Expression [] value ) {
+    listing = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of listing.
+  *
+  *  @param   value will update listing, which is a String array.
+  *
+  */
+  public void setlisting( String [] value ) {
+    listing = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method returns the value of listing.
+  *
+  *  @return   This method will return the value of listing, which is a Object type.
+  *
+  */
+  public Object getlisting() {
+    return listing;
   }
 
   /*****************************************************************************************************

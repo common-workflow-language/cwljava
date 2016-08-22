@@ -38,34 +38,9 @@ public class OutputEnumSchema extends EnumSchema implements OutputSchema {
 
   /*****************************************************************************************************
   *
-  *  Must be `enum`
+  *  A short, human-readable label of this object.
   */
-  Enum type = null;
-
-  /*****************************************************************************************************
-  *
-  *  Defines the set of valid symbols.
-  */
-  String [] symbols = null;
-
-
-  /*****************************************************************************************************
-  *
-  *   Only valid when `type: File` or is an array of `items: File`.  A value of `true` indicates that the file is read or written sequentially without seeking.  An implementation may use this flag to indicate whether it is valid to stream file contents using a named pipe.  Default: `false`.  
-  */
-  Boolean streamable = null;
-
-  /*****************************************************************************************************
-  *
-  *   Only valid when `type: File` or is an array of `items: File`.  For input parameters, this must be one or more URIs of a concept nodes that represents file formats which are allowed as input to this parameter, preferrably defined within an ontology.  If no ontology is available, file formats may be tested by exact match.  For output parameters, this is the file format that will be assigned to the output parameter. 
-  */
-  Object format = null;
-
-  /*****************************************************************************************************
-  *
-  *   Only valid when `type: File` or is an array of `items: File`.  Describes files that must be included alongside the primary file(s).  If the value is an expression, the value of `self` in the expression must be the primary input or output File to which this binding applies.  If the value is a string, it specifies that the following pattern should be applied to the primary file:  1. If string begins with one or more caret `^` characters, for each caret, remove the last file extension from the path (the last period `.` and all following characters).  If there are no file extensions, the path is unchanged. 2. Append the remainder of the string to the end of the file path. 
-  */
-  Object secondaryFiles = null;
+  String label = null;
 
 
   public OutputEnumSchema() { super(); }
@@ -94,167 +69,24 @@ public class OutputEnumSchema extends EnumSchema implements OutputSchema {
 
   /*****************************************************************************************************
   *
-  *  This method sets the value of type.
+  *  This method sets the value of label.
   *
-  *  @param   value will update type, which is a Enum type.
+  *  @param   value will update label, which is a String type.
   *
   */
-  public void settype( Enum value ) {
-    type = value;
+  public void setlabel( String value ) {
+    label = value;
   }
 
   /*****************************************************************************************************
   *
-  *  This method returns the value of type.
+  *  This method returns the value of label.
   *
-  *  @return   This method will return the value of type, which is a Enum type.
-  *
-  */
-  public Enum gettype() {
-    return type;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of symbols.
-  *
-  *  @param   value will update symbols, which is a String array.
+  *  @return   This method will return the value of label, which is a String type.
   *
   */
-  public void setsymbols( String [] value ) {
-    symbols = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of symbols.
-  *
-  *  @return   This method will return the value of symbols, which is a String array.
-  *
-  */
-  public String [] getsymbols() {
-    return symbols;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of streamable.
-  *
-  *  @param   value will update streamable, which is a Boolean type.
-  *
-  */
-  public void setstreamable( Boolean value ) {
-    streamable = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of streamable.
-  *
-  *  @return   This method will return the value of streamable, which is a Boolean type.
-  *
-  */
-  public Boolean getstreamable() {
-    return streamable;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of format.
-  *
-  *  @param   value will update format, which is a Expression array.
-  *
-  */
-  public void setformat( Expression [] value ) {
-    format = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of format.
-  *
-  *  @param   value will update format, which is a String type.
-  *
-  */
-  public void setformat( String value ) {
-    format = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of format.
-  *
-  *  @param   value will update format, which is a String array.
-  *
-  */
-  public void setformat( String [] value ) {
-    format = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of format.
-  *
-  *  @return   This method will return the value of format, which is a Object type.
-  *
-  */
-  public Object getformat() {
-    return format;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of secondaryFiles.
-  *
-  *  @param   value will update secondaryFiles, which is a Expression array.
-  *
-  */
-  public void setsecondaryFiles( Expression [] value ) {
-    secondaryFiles = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of secondaryFiles.
-  *
-  *  @param   value will update secondaryFiles, which is a String type.
-  *
-  */
-  public void setsecondaryFiles( String value ) {
-    secondaryFiles = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of secondaryFiles.
-  *
-  *  @param   value will update secondaryFiles, which is a String array.
-  *
-  */
-  public void setsecondaryFiles( String [] value ) {
-    secondaryFiles = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of secondaryFiles.
-  *
-  *  @param   value will update secondaryFiles, which is a Expression type.
-  *
-  */
-  public void setsecondaryFiles( Expression value ) {
-    secondaryFiles = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of secondaryFiles.
-  *
-  *  @return   This method will return the value of secondaryFiles, which is a Object type.
-  *
-  */
-  public Object getsecondaryFiles() {
-    return secondaryFiles;
+  public String getlabel() {
+    return label;
   }
 
 }

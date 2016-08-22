@@ -35,39 +35,39 @@ public interface Process {
 
   /*****************************************************************************************************
   *
-  *   Defines the parameters representing the output of the process.  May be used to generate and/or validate the output object.
+  *  Defines the parameters representing the output of the process.  May be used to generate and/or validate the output object.
   */
   OutputParameter [] outputs = null;
 
   /*****************************************************************************************************
   *
-  *   Declares requirements that apply to either the runtime environment or the workflow engine that must be met in order to execute this process.  If an implementation cannot satisfy all requirements, or a requirement is listed which is not recognized by the implementation, it is a fatal error and the implementation must not attempt to run the process, unless overridden at user option.
+  *  Declares requirements that apply to either the runtime environment or the workflow engine that must be met in order to execute this process.  If an implementation cannot satisfy all requirements, or a requirement is listed which is not recognized by the implementation, it is a fatal error and the implementation must not attempt to run the process, unless overridden at user option.
   */
   Object requirements = null;
 
   /*****************************************************************************************************
   *
-  *  CWL document version
+  *  CWL document version. Always required at the document root. Not required for a Process embedded inside another Process.
   */
-  String cwlVersion = null;
+  CWLVersion cwlVersion = null;
 
   /*****************************************************************************************************
   *
-  *   Defines the input parameters of the process.  The process is ready to run when all required input parameters are associated with concrete values.  Input parameters include a schema for each parameter which is used to validate the input object.  It may also be used to build a user interface for constructing the input object.
+  *  Defines the input parameters of the process.  The process is ready to run when all required input parameters are associated with concrete values.  Input parameters include a schema for each parameter which is used to validate the input object.  It may also be used to build a user interface for constructing the input object.
   */
   InputParameter [] inputs = null;
 
   /*****************************************************************************************************
   *
-  *   Declares hints applying to either the runtime environment or the workflow engine that may be helpful in executing this process.  It is not an error if an implementation cannot satisfy all hints, however the implementation may report a warning.
+  *  Declares hints applying to either the runtime environment or the workflow engine that may be helpful in executing this process.  It is not an error if an implementation cannot satisfy all hints, however the implementation may report a warning.
   */
-  Any [] hints = null;
+  Any hints = null;
 
   /*****************************************************************************************************
   *
   *  A long, human-readable description of this process object.
   */
-  String description = null;
+  String doc = null;
 
   /*****************************************************************************************************
   *
@@ -103,100 +103,109 @@ public interface Process {
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a DockerRequirement array.
+  *  @param   value will update requirements, which is a StepInputExpressionRequirement type.
   *
   */
-  public void setrequirements( DockerRequirement [] value );
+  public void setrequirements( StepInputExpressionRequirement value );
 
   /*****************************************************************************************************
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a MultipleInputFeatureRequirement array.
+  *  @param   value will update requirements, which is a MultipleInputFeatureRequirement type.
   *
   */
-  public void setrequirements( MultipleInputFeatureRequirement [] value );
+  public void setrequirements( MultipleInputFeatureRequirement value );
 
   /*****************************************************************************************************
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a SubworkflowFeatureRequirement array.
+  *  @param   value will update requirements, which is a SoftwareRequirement type.
   *
   */
-  public void setrequirements( SubworkflowFeatureRequirement [] value );
+  public void setrequirements( SoftwareRequirement value );
 
   /*****************************************************************************************************
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a CreateFileRequirement array.
+  *  @param   value will update requirements, which is a SchemaDefRequirement type.
   *
   */
-  public void setrequirements( CreateFileRequirement [] value );
+  public void setrequirements( SchemaDefRequirement value );
 
   /*****************************************************************************************************
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a ScatterFeatureRequirement array.
+  *  @param   value will update requirements, which is a InitialWorkDirRequirement type.
   *
   */
-  public void setrequirements( ScatterFeatureRequirement [] value );
+  public void setrequirements( InitialWorkDirRequirement value );
 
   /*****************************************************************************************************
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a EnvVarRequirement array.
+  *  @param   value will update requirements, which is a EnvVarRequirement type.
   *
   */
-  public void setrequirements( EnvVarRequirement [] value );
+  public void setrequirements( EnvVarRequirement value );
 
   /*****************************************************************************************************
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a SchemaDefRequirement array.
+  *  @param   value will update requirements, which is a DockerRequirement type.
   *
   */
-  public void setrequirements( SchemaDefRequirement [] value );
+  public void setrequirements( DockerRequirement value );
 
   /*****************************************************************************************************
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a ResourceRequirement array.
+  *  @param   value will update requirements, which is a ResourceRequirement type.
   *
   */
-  public void setrequirements( ResourceRequirement [] value );
+  public void setrequirements( ResourceRequirement value );
 
   /*****************************************************************************************************
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a StepInputExpressionRequirement array.
+  *  @param   value will update requirements, which is a InlineJavascriptRequirement type.
   *
   */
-  public void setrequirements( StepInputExpressionRequirement [] value );
+  public void setrequirements( InlineJavascriptRequirement value );
 
   /*****************************************************************************************************
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a ShellCommandRequirement array.
+  *  @param   value will update requirements, which is a ShellCommandRequirement type.
   *
   */
-  public void setrequirements( ShellCommandRequirement [] value );
+  public void setrequirements( ShellCommandRequirement value );
 
   /*****************************************************************************************************
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a InlineJavascriptRequirement array.
+  *  @param   value will update requirements, which is a ScatterFeatureRequirement type.
   *
   */
-  public void setrequirements( InlineJavascriptRequirement [] value );
+  public void setrequirements( ScatterFeatureRequirement value );
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of requirements.
+  *
+  *  @param   value will update requirements, which is a SubworkflowFeatureRequirement type.
+  *
+  */
+  public void setrequirements( SubworkflowFeatureRequirement value );
 
   /*****************************************************************************************************
   *
@@ -210,19 +219,19 @@ public interface Process {
   *
   *  This method sets the value of cwlVersion.
   *
-  *  @param   value will update cwlVersion, which is a String type.
+  *  @param   value will update cwlVersion, which is a CWLVersion type.
   *
   */
-  public void setcwlVersion( String value );
+  public void setcwlVersion( CWLVersion value );
 
   /*****************************************************************************************************
   *
   *  This method returns the value of cwlVersion.
   *
-  *  @return   This method will return the value of cwlVersion, which is a String type.
+  *  @return   This method will return the value of cwlVersion, which is a CWLVersion type.
   *
   */
-  public String getcwlVersion();
+  public CWLVersion getcwlVersion();
   /*****************************************************************************************************
   *
   *  This method sets the value of inputs.
@@ -244,36 +253,36 @@ public interface Process {
   *
   *  This method sets the value of hints.
   *
-  *  @param   value will update hints, which is a Any array.
+  *  @param   value will update hints, which is a Any type.
   *
   */
-  public void sethints( Any [] value );
+  public void sethints( Any value );
 
   /*****************************************************************************************************
   *
   *  This method returns the value of hints.
   *
-  *  @return   This method will return the value of hints, which is a Any array.
+  *  @return   This method will return the value of hints, which is a Any type.
   *
   */
-  public Any [] gethints();
+  public Any gethints();
   /*****************************************************************************************************
   *
-  *  This method sets the value of description.
+  *  This method sets the value of doc.
   *
-  *  @param   value will update description, which is a String type.
+  *  @param   value will update doc, which is a String type.
   *
   */
-  public void setdescription( String value );
+  public void setdoc( String value );
 
   /*****************************************************************************************************
   *
-  *  This method returns the value of description.
+  *  This method returns the value of doc.
   *
-  *  @return   This method will return the value of description, which is a String type.
+  *  @return   This method will return the value of doc, which is a String type.
   *
   */
-  public String getdescription();
+  public String getdoc();
   /*****************************************************************************************************
   *
   *  This method sets the value of id.

@@ -35,13 +35,13 @@ public class CommandLineBinding implements InputBinding {
 
   /*****************************************************************************************************
   *
-  *   If true (default), then the prefix and value must be added as separate command line arguments; if false, prefix and value must be concatenated into a single command line argument.
+  *  If true (default), then the prefix and value must be added as separate command line arguments; if false, prefix and value must be concatenated into a single command line argument.
   */
   Boolean separate = null;
 
   /*****************************************************************************************************
   *
-  *   Join the array elements into a single string with the elements separated by by `itemSeparator`.
+  *  Join the array elements into a single string with the elements separated by by `itemSeparator`.
   */
   String itemSeparator = null;
 
@@ -53,7 +53,7 @@ public class CommandLineBinding implements InputBinding {
 
   /*****************************************************************************************************
   *
-  *   If `ShellCommandRequirement` is in the requirements for the current command, this controls whether the value is quoted on the command line (default is true). Use `shellQuote: false` to inject metacharacters for operations such as pipes. 
+  *  If `ShellCommandRequirement` is in the requirements for the current command, this controls whether the value is quoted on the command line (default is true). Use `shellQuote: false` to inject metacharacters for operations such as pipes.
   */
   Boolean shellQuote = null;
 
@@ -65,14 +65,14 @@ public class CommandLineBinding implements InputBinding {
 
   /*****************************************************************************************************
   *
-  *   If `valueFrom` is a constant string value, use this as the value and apply the binding rules above.  If `valueFrom` is an expression, evaluate the expression to yield the actual value to use to build the command line and apply the binding rules above.  If the inputBinding is associated with an input parameter, the value of `self` in the expression will be the value of the input parameter.  When a binding is part of the `CommandLineTool.arguments` field, the `valueFrom` field is required.
+  *  If `valueFrom` is a constant string value, use this as the value and apply the binding rules above. If `valueFrom` is an expression, evaluate the expression to yield the actual value to use to build the command line and apply the binding rules above.  If the inputBinding is associated with an input parameter, the value of `self` in the expression will be the value of the input parameter. When a binding is part of the `CommandLineTool.arguments` field, the `valueFrom` field is required.
   */
   Object valueFrom = null;
 
 
   /*****************************************************************************************************
   *
-  *   Only valid when `type: File` or is an array of `items: File`.  Read up to the first 64 KiB of text from the file and place it in the contents field of the file object for use by expressions.  
+  *  Only valid when `type: File` or is an array of `items: File`. Read up to the first 64 KiB of text from the file and place it in the contents field of the file object for use by expressions.
   */
   Boolean loadContents = null;
 

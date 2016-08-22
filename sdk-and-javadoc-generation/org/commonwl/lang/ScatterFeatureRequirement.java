@@ -33,13 +33,13 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   Indicates that the workflow platform must support the `scatter` and `scatterMethod` fields of [WorkflowStep](#WorkflowStep).
+*  Indicates that the workflow platform must support the `scatter` and `scatterMethod` fields of [WorkflowStep](#WorkflowStep).
 */
 public class ScatterFeatureRequirement implements ProcessRequirement {
 
   /*****************************************************************************************************
   *
-  *  The specific requirement type.
+  *  Always 'ScatterFeatureRequirement'
   */
   String class_value = null;
 

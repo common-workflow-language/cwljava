@@ -33,13 +33,32 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   Describe an output parameter of a workflow.  The parameter must be connected to one or more parameters defined in the workflow that will provide the value of the output parameter.
+*  Describe an output parameter of a workflow.  The parameter must be connected to one or more parameters defined in the workflow that will provide the value of the output parameter.
 */
-public class WorkflowOutputParameter extends OutputParameter implements Sink {
+public class WorkflowOutputParameter extends OutputParameter {
 
   /*****************************************************************************************************
   *
-  *   Describes how to handle the outputs of a process.  
+  *  The method to use to merge multiple sources into a single array. If not specified, the default method is merge_nested.
+  */
+  LinkMergeMethod linkMerge = null;
+
+  /*****************************************************************************************************
+  *
+  *  Specifies one or more workflow parameters that supply the value of to the output parameter.
+  */
+  Object outputSource = null;
+
+  /*****************************************************************************************************
+  *
+  *  Specify valid types of data that may be assigned to this parameter.
+  */
+  Object type = null;
+
+
+  /*****************************************************************************************************
+  *
+  *  Describes how to handle the outputs of a process.
   */
   CommandOutputBinding outputBinding = null;
 
@@ -52,56 +71,213 @@ public class WorkflowOutputParameter extends OutputParameter implements Sink {
 
   /*****************************************************************************************************
   *
-  *  A long, human-readable description of this parameter object.
-  */
-  String description = null;
-
-  /*****************************************************************************************************
-  *
-  *  A short, human-readable label of this parameter object.
-  */
-  String label = null;
-
-  /*****************************************************************************************************
-  *
-  *   Specify valid types of data that may be assigned to this parameter. 
-  */
-  Object type = null;
-
-
-  /*****************************************************************************************************
-  *
-  *   Only valid when `type: File` or is an array of `items: File`.  A value of `true` indicates that the file is read or written sequentially without seeking.  An implementation may use this flag to indicate whether it is valid to stream file contents using a named pipe.  Default: `false`.  
+  *  Only valid when `type: File` or is an array of `items: File`. A value of `true` indicates that the file is read or written sequentially without seeking.  An implementation may use this flag to indicate whether it is valid to stream file contents using a named pipe.  Default: `false`.
   */
   Boolean streamable = null;
 
   /*****************************************************************************************************
   *
-  *   Only valid when `type: File` or is an array of `items: File`.  For input parameters, this must be one or more URIs of a concept nodes that represents file formats which are allowed as input to this parameter, preferrably defined within an ontology.  If no ontology is available, file formats may be tested by exact match.  For output parameters, this is the file format that will be assigned to the output parameter. 
+  *  Only valid when `type: File` or is an array of `items: File`. For input parameters, this must be one or more IRIs of concept nodes that represents file formats which are allowed as input to this parameter, preferrably defined within an ontology.  If no ontology is available, file formats may be tested by exact match. For output parameters, this is the file format that will be assigned to the output parameter.
   */
   Object format = null;
 
   /*****************************************************************************************************
   *
-  *   Only valid when `type: File` or is an array of `items: File`.  Describes files that must be included alongside the primary file(s).  If the value is an expression, the value of `self` in the expression must be the primary input or output File to which this binding applies.  If the value is a string, it specifies that the following pattern should be applied to the primary file:  1. If string begins with one or more caret `^` characters, for each caret, remove the last file extension from the path (the last period `.` and all following characters).  If there are no file extensions, the path is unchanged. 2. Append the remainder of the string to the end of the file path. 
+  *  A documentation string for this type, or an array of strings which should be concatenated.
+  */
+  Object doc = null;
+
+  /*****************************************************************************************************
+  *
+  *  Only valid when `type: File` or is an array of `items: File`. Describes files that must be included alongside the primary file(s). If the value is an expression, the value of `self` in the expression must be the primary input or output File to which this binding applies. If the value is a string, it specifies that the following pattern should be applied to the primary file: 1. If string begins with one or more caret `^` characters, for each caret, remove the last file extension from the path (the last period `.` and all following characters).  If there are no file extensions, the path is unchanged. 2. Append the remainder of the string to the end of the file path.
   */
   Object secondaryFiles = null;
 
 
   /*****************************************************************************************************
   *
-  *   The method to use to merge multiple inbound links into a single array. If not specified, the default method is merge_nested.  
+  *  A short, human-readable label of this object.
   */
-  LinkMergeMethod linkMerge = null;
-
-  /*****************************************************************************************************
-  *
-  *   Specifies one or more workflow parameters that will provide input to the underlying process parameter.
-  */
-  Object source = null;
+  String label = null;
 
 
   public WorkflowOutputParameter() { super(); }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of linkMerge.
+  *
+  *  @param   value will update linkMerge, which is a LinkMergeMethod type.
+  *
+  */
+  public void setlinkMerge( LinkMergeMethod value ) {
+    linkMerge = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method returns the value of linkMerge.
+  *
+  *  @return   This method will return the value of linkMerge, which is a LinkMergeMethod type.
+  *
+  */
+  public LinkMergeMethod getlinkMerge() {
+    return linkMerge;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of outputSource.
+  *
+  *  @param   value will update outputSource, which is a String type.
+  *
+  */
+  public void setoutputSource( String value ) {
+    outputSource = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of outputSource.
+  *
+  *  @param   value will update outputSource, which is a String array.
+  *
+  */
+  public void setoutputSource( String [] value ) {
+    outputSource = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method returns the value of outputSource.
+  *
+  *  @return   This method will return the value of outputSource, which is a Object type.
+  *
+  */
+  public Object getoutputSource() {
+    return outputSource;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of type.
+  *
+  *  @param   value will update type, which is a OutputRecordSchema array.
+  *
+  */
+  public void settype( OutputRecordSchema [] value ) {
+    type = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of type.
+  *
+  *  @param   value will update type, which is a OutputEnumSchema array.
+  *
+  */
+  public void settype( OutputEnumSchema [] value ) {
+    type = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of type.
+  *
+  *  @param   value will update type, which is a String array.
+  *
+  */
+  public void settype( String [] value ) {
+    type = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of type.
+  *
+  *  @param   value will update type, which is a OutputRecordSchema type.
+  *
+  */
+  public void settype( OutputRecordSchema value ) {
+    type = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of type.
+  *
+  *  @param   value will update type, which is a OutputEnumSchema type.
+  *
+  */
+  public void settype( OutputEnumSchema value ) {
+    type = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of type.
+  *
+  *  @param   value will update type, which is a CWLType array.
+  *
+  */
+  public void settype( CWLType [] value ) {
+    type = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of type.
+  *
+  *  @param   value will update type, which is a OutputArraySchema type.
+  *
+  */
+  public void settype( OutputArraySchema value ) {
+    type = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of type.
+  *
+  *  @param   value will update type, which is a OutputArraySchema array.
+  *
+  */
+  public void settype( OutputArraySchema [] value ) {
+    type = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of type.
+  *
+  *  @param   value will update type, which is a CWLType type.
+  *
+  */
+  public void settype( CWLType value ) {
+    type = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of type.
+  *
+  *  @param   value will update type, which is a String type.
+  *
+  */
+  public void settype( String value ) {
+    type = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method returns the value of type.
+  *
+  *  @return   This method will return the value of type, which is a Object type.
+  *
+  */
+  public Object gettype() {
+    return type;
+  }
 
   /*****************************************************************************************************
   *
@@ -145,171 +321,6 @@ public class WorkflowOutputParameter extends OutputParameter implements Sink {
   */
   public String getid() {
     return id;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of description.
-  *
-  *  @param   value will update description, which is a String type.
-  *
-  */
-  public void setdescription( String value ) {
-    description = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of description.
-  *
-  *  @return   This method will return the value of description, which is a String type.
-  *
-  */
-  public String getdescription() {
-    return description;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of label.
-  *
-  *  @param   value will update label, which is a String type.
-  *
-  */
-  public void setlabel( String value ) {
-    label = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of label.
-  *
-  *  @return   This method will return the value of label, which is a String type.
-  *
-  */
-  public String getlabel() {
-    return label;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of type.
-  *
-  *  @param   value will update type, which is a RecordSchema type.
-  *
-  */
-  public void settype( RecordSchema value ) {
-    type = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of type.
-  *
-  *  @param   value will update type, which is a EnumSchema type.
-  *
-  */
-  public void settype( EnumSchema value ) {
-    type = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of type.
-  *
-  *  @param   value will update type, which is a ArraySchema type.
-  *
-  */
-  public void settype( ArraySchema value ) {
-    type = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of type.
-  *
-  *  @param   value will update type, which is a String array.
-  *
-  */
-  public void settype( String [] value ) {
-    type = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of type.
-  *
-  *  @param   value will update type, which is a CWLType array.
-  *
-  */
-  public void settype( CWLType [] value ) {
-    type = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of type.
-  *
-  *  @param   value will update type, which is a RecordSchema array.
-  *
-  */
-  public void settype( RecordSchema [] value ) {
-    type = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of type.
-  *
-  *  @param   value will update type, which is a ArraySchema array.
-  *
-  */
-  public void settype( ArraySchema [] value ) {
-    type = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of type.
-  *
-  *  @param   value will update type, which is a CWLType type.
-  *
-  */
-  public void settype( CWLType value ) {
-    type = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of type.
-  *
-  *  @param   value will update type, which is a String type.
-  *
-  */
-  public void settype( String value ) {
-    type = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of type.
-  *
-  *  @param   value will update type, which is a EnumSchema array.
-  *
-  */
-  public void settype( EnumSchema [] value ) {
-    type = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of type.
-  *
-  *  @return   This method will return the value of type, which is a Object type.
-  *
-  */
-  public Object gettype() {
-    return type;
   }
 
   /*****************************************************************************************************
@@ -380,6 +391,39 @@ public class WorkflowOutputParameter extends OutputParameter implements Sink {
 
   /*****************************************************************************************************
   *
+  *  This method sets the value of doc.
+  *
+  *  @param   value will update doc, which is a String type.
+  *
+  */
+  public void setdoc( String value ) {
+    doc = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of doc.
+  *
+  *  @param   value will update doc, which is a String array.
+  *
+  */
+  public void setdoc( String [] value ) {
+    doc = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method returns the value of doc.
+  *
+  *  @return   This method will return the value of doc, which is a Object type.
+  *
+  */
+  public Object getdoc() {
+    return doc;
+  }
+
+  /*****************************************************************************************************
+  *
   *  This method sets the value of secondaryFiles.
   *
   *  @param   value will update secondaryFiles, which is a Expression array.
@@ -435,57 +479,24 @@ public class WorkflowOutputParameter extends OutputParameter implements Sink {
 
   /*****************************************************************************************************
   *
-  *  This method sets the value of linkMerge.
+  *  This method sets the value of label.
   *
-  *  @param   value will update linkMerge, which is a LinkMergeMethod type.
+  *  @param   value will update label, which is a String type.
   *
   */
-  public void setlinkMerge( LinkMergeMethod value ) {
-    linkMerge = value;
+  public void setlabel( String value ) {
+    label = value;
   }
 
   /*****************************************************************************************************
   *
-  *  This method returns the value of linkMerge.
+  *  This method returns the value of label.
   *
-  *  @return   This method will return the value of linkMerge, which is a LinkMergeMethod type.
-  *
-  */
-  public LinkMergeMethod getlinkMerge() {
-    return linkMerge;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of source.
-  *
-  *  @param   value will update source, which is a String type.
+  *  @return   This method will return the value of label, which is a String type.
   *
   */
-  public void setsource( String value ) {
-    source = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of source.
-  *
-  *  @param   value will update source, which is a String array.
-  *
-  */
-  public void setsource( String [] value ) {
-    source = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of source.
-  *
-  *  @return   This method will return the value of source, which is a Object type.
-  *
-  */
-  public Object getsource() {
-    return source;
+  public String getlabel() {
+    return label;
   }
 
 }

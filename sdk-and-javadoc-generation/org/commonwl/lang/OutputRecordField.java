@@ -38,19 +38,19 @@ public class OutputRecordField extends RecordField {
 
   /*****************************************************************************************************
   *
-  *   The name of the field 
+  *  The name of the field
   */
   String name = null;
 
   /*****************************************************************************************************
   *
-  *   A documentation string for this field
+  *  A documentation string for this field
   */
   String doc = null;
 
   /*****************************************************************************************************
   *
-  *   The field type  
+  *  The field type
   */
   Object type = null;
 
@@ -174,7 +174,7 @@ public class OutputRecordField extends RecordField {
   *  @param   value will update type, which is a PrimitiveType array.
   *
   */
-  public void settype( PrimitiveType [] value ) {
+  public void settype( CWLType [] value ) {
     type = value;
   }
 
@@ -196,7 +196,7 @@ public class OutputRecordField extends RecordField {
   *  @param   value will update type, which is a PrimitiveType type.
   *
   */
-  public void settype( PrimitiveType value ) {
+  public void settype( CWLType value ) {
     type = value;
   }
 

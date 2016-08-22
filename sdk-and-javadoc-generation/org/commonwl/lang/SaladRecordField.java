@@ -39,26 +39,26 @@ public class SaladRecordField extends RecordField {
 
   /*****************************************************************************************************
   *
-  *   Annotate this type with linked data context.
+  *  Annotate this type with linked data context.
   */
   Object jsonldPredicate = null;
 
 
   /*****************************************************************************************************
   *
-  *   The name of the field 
+  *  The name of the field
   */
   String name = null;
 
   /*****************************************************************************************************
   *
-  *   A documentation string for this field
+  *  A documentation string for this field
   */
   String doc = null;
 
   /*****************************************************************************************************
   *
-  *   The field type  
+  *  The field type
   */
   Object type = null;
 

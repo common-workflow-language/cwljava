@@ -33,90 +33,96 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   This defines the schema of the CWL Command Line Tool Description document.
+*  This defines the schema of the CWL Command Line Tool Description document.
 */
 public class CommandLineTool implements Process {
 
   /*****************************************************************************************************
   *
-  *   A path to a file whose contents must be piped into the command's standard input stream.
+  *  A path to a file whose contents must be piped into the command's standard input stream.
   */
   Object stdin = null;
 
   /*****************************************************************************************************
   *
-  *   Capture the command's standard output stream to a file written to the designated output directory.  If `stdout` is a string, it specifies the file name to use.  If `stdout` is an expression, the expression is evaluated and must return a string with the file name to use to capture stdout.  If the return value is not a string, or the resulting path contains illegal characters (such as the path separator `/`) it is an error.
+  *  Capture the command's standard output stream to a file written to the designated output directory. If `stdout` is a string, it specifies the file name to use. If `stdout` is an expression, the expression is evaluated and must return a string with the file name to use to capture stdout.  If the return value is not a string, or the resulting path contains illegal characters (such as the path separator `/`) it is an error.
   */
   Object stdout = null;
 
   /*****************************************************************************************************
   *
-  *   Exit codes that indicate the process completed successfully. 
+  *  Exit codes that indicate the process completed successfully.
   */
-  Integer [] successCodes = null;
+  Integer successCodes = null;
 
   /*****************************************************************************************************
   *
-  *   Exit codes that indicate the process failed due to a possibly temporary condition, where excuting the process with the same runtime environment and inputs may produce different results. 
+  *  Exit codes that indicate the process failed due to a possibly temporary condition, where executing the process with the same runtime environment and inputs may produce different results.
   */
-  Integer [] temporaryFailCodes = null;
+  Integer temporaryFailCodes = null;
 
   /*****************************************************************************************************
   *
-  *   Specifies the program to execute.  If the value is an array, the first element is the program to execute, and subsequent elements are placed at the beginning of the command line in prior to any command line bindings.  If the program includes a path separator character it must be an absolute path, otherwise it is an error.  If the program does not include a path separator, search the `$PATH` variable in the runtime environment of the workflow runner find the absolute path of the executable.
+  *  Specifies the program to execute.  If an array, the first element of the array is the command to execute, and subsequent elements are mandatory command line arguments.  The elements in `baseCommand` must appear before any command line bindings from `inputBinding` or `arguments`. If `baseCommand` is not provided or is an empty array, the first element of the command line produced after processing `inputBinding` or `arguments` must be used as the program to execute. If the program includes a path separator character it must be an absolute path, otherwise it is an error.  If the program does not include a path separator, search the `$PATH` variable in the runtime environment of the workflow runner find the absolute path of the executable.
   */
   Object baseCommand = null;
 
   /*****************************************************************************************************
   *
-  *   Command line bindings which are not directly associated with input parameters.
+  *  Command line bindings which are not directly associated with input parameters.
   */
   Object arguments = null;
+
+  /*****************************************************************************************************
+  *
+  *  Capture the command's standard error stream to a file written to the designated output directory. If `stderr` is a string, it specifies the file name to use. If `stderr` is an expression, the expression is evaluated and must return a string with the file name to use to capture stderr.  If the return value is not a string, or the resulting path contains illegal characters (such as the path separator `/`) it is an error.
+  */
+  Object stderr = null;
 
   String class_value = null;
 
   /*****************************************************************************************************
   *
-  *   Exit codes that indicate the process failed due to a permanent logic error, where excuting the process with the same runtime environment and same inputs is expected to always fail.  
+  *  Exit codes that indicate the process failed due to a permanent logic error, where executing the process with the same runtime environment and same inputs is expected to always fail.
   */
-  Integer [] permanentFailCodes = null;
+  Integer permanentFailCodes = null;
 
 
   /*****************************************************************************************************
   *
-  *   Defines the parameters representing the output of the process.  May be used to generate and/or validate the output object.
+  *  Defines the parameters representing the output of the process.  May be used to generate and/or validate the output object.
   */
   CommandOutputParameter [] outputs = null;
 
   /*****************************************************************************************************
   *
-  *   Declares requirements that apply to either the runtime environment or the workflow engine that must be met in order to execute this process.  If an implementation cannot satisfy all requirements, or a requirement is listed which is not recognized by the implementation, it is a fatal error and the implementation must not attempt to run the process, unless overridden at user option.
+  *  Declares requirements that apply to either the runtime environment or the workflow engine that must be met in order to execute this process.  If an implementation cannot satisfy all requirements, or a requirement is listed which is not recognized by the implementation, it is a fatal error and the implementation must not attempt to run the process, unless overridden at user option.
   */
   Object requirements = null;
 
   /*****************************************************************************************************
   *
-  *  CWL document version
+  *  CWL document version. Always required at the document root. Not required for a Process embedded inside another Process.
   */
-  String cwlVersion = null;
+  CWLVersion cwlVersion = null;
 
   /*****************************************************************************************************
   *
-  *   Defines the input parameters of the process.  The process is ready to run when all required input parameters are associated with concrete values.  Input parameters include a schema for each parameter which is used to validate the input object.  It may also be used to build a user interface for constructing the input object.
+  *  Defines the input parameters of the process.  The process is ready to run when all required input parameters are associated with concrete values.  Input parameters include a schema for each parameter which is used to validate the input object.  It may also be used to build a user interface for constructing the input object.
   */
   CommandInputParameter [] inputs = null;
 
   /*****************************************************************************************************
   *
-  *   Declares hints applying to either the runtime environment or the workflow engine that may be helpful in executing this process.  It is not an error if an implementation cannot satisfy all hints, however the implementation may report a warning.
+  *  Declares hints applying to either the runtime environment or the workflow engine that may be helpful in executing this process.  It is not an error if an implementation cannot satisfy all hints, however the implementation may report a warning.
   */
-  Any [] hints = null;
+  Any hints = null;
 
   /*****************************************************************************************************
   *
   *  A long, human-readable description of this process object.
   */
-  String description = null;
+  String doc = null;
 
   /*****************************************************************************************************
   *
@@ -203,10 +209,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of successCodes.
   *
-  *  @param   value will update successCodes, which is a Integer array.
+  *  @param   value will update successCodes, which is a Integer type.
   *
   */
-  public void setsuccessCodes( Integer [] value ) {
+  public void setsuccessCodes( Integer value ) {
     successCodes = value;
   }
 
@@ -214,10 +220,10 @@ public class CommandLineTool implements Process {
   *
   *  This method returns the value of successCodes.
   *
-  *  @return   This method will return the value of successCodes, which is a Integer array.
+  *  @return   This method will return the value of successCodes, which is a Integer type.
   *
   */
-  public Integer [] getsuccessCodes() {
+  public Integer getsuccessCodes() {
     return successCodes;
   }
 
@@ -225,10 +231,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of temporaryFailCodes.
   *
-  *  @param   value will update temporaryFailCodes, which is a Integer array.
+  *  @param   value will update temporaryFailCodes, which is a Integer type.
   *
   */
-  public void settemporaryFailCodes( Integer [] value ) {
+  public void settemporaryFailCodes( Integer value ) {
     temporaryFailCodes = value;
   }
 
@@ -236,10 +242,10 @@ public class CommandLineTool implements Process {
   *
   *  This method returns the value of temporaryFailCodes.
   *
-  *  @return   This method will return the value of temporaryFailCodes, which is a Integer array.
+  *  @return   This method will return the value of temporaryFailCodes, which is a Integer type.
   *
   */
-  public Integer [] gettemporaryFailCodes() {
+  public Integer gettemporaryFailCodes() {
     return temporaryFailCodes;
   }
 
@@ -280,6 +286,17 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of arguments.
   *
+  *  @param   value will update arguments, which is a Expression array.
+  *
+  */
+  public void setarguments( Expression [] value ) {
+    arguments = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of arguments.
+  *
   *  @param   value will update arguments, which is a CommandLineBinding array.
   *
   */
@@ -311,6 +328,39 @@ public class CommandLineTool implements Process {
 
   /*****************************************************************************************************
   *
+  *  This method sets the value of stderr.
+  *
+  *  @param   value will update stderr, which is a String type.
+  *
+  */
+  public void setstderr( String value ) {
+    stderr = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of stderr.
+  *
+  *  @param   value will update stderr, which is a Expression type.
+  *
+  */
+  public void setstderr( Expression value ) {
+    stderr = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method returns the value of stderr.
+  *
+  *  @return   This method will return the value of stderr, which is a Object type.
+  *
+  */
+  public Object getstderr() {
+    return stderr;
+  }
+
+  /*****************************************************************************************************
+  *
   *  This method sets the value of class_value.
   *
   *  @param   value will update class_value, which is a String type.
@@ -335,10 +385,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of permanentFailCodes.
   *
-  *  @param   value will update permanentFailCodes, which is a Integer array.
+  *  @param   value will update permanentFailCodes, which is a Integer type.
   *
   */
-  public void setpermanentFailCodes( Integer [] value ) {
+  public void setpermanentFailCodes( Integer value ) {
     permanentFailCodes = value;
   }
 
@@ -346,10 +396,10 @@ public class CommandLineTool implements Process {
   *
   *  This method returns the value of permanentFailCodes.
   *
-  *  @return   This method will return the value of permanentFailCodes, which is a Integer array.
+  *  @return   This method will return the value of permanentFailCodes, which is a Integer type.
   *
   */
-  public Integer [] getpermanentFailCodes() {
+  public Integer getpermanentFailCodes() {
     return permanentFailCodes;
   }
 
@@ -390,10 +440,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a DockerRequirement array.
+  *  @param   value will update requirements, which is a StepInputExpressionRequirement type.
   *
   */
-  public void setrequirements( DockerRequirement [] value ) {
+  public void setrequirements( StepInputExpressionRequirement value ) {
     requirements = value;
   }
 
@@ -401,10 +451,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a MultipleInputFeatureRequirement array.
+  *  @param   value will update requirements, which is a MultipleInputFeatureRequirement type.
   *
   */
-  public void setrequirements( MultipleInputFeatureRequirement [] value ) {
+  public void setrequirements( MultipleInputFeatureRequirement value ) {
     requirements = value;
   }
 
@@ -412,10 +462,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a SubworkflowFeatureRequirement array.
+  *  @param   value will update requirements, which is a SoftwareRequirement type.
   *
   */
-  public void setrequirements( SubworkflowFeatureRequirement [] value ) {
+  public void setrequirements( SoftwareRequirement value ) {
     requirements = value;
   }
 
@@ -423,10 +473,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a CreateFileRequirement array.
+  *  @param   value will update requirements, which is a SchemaDefRequirement type.
   *
   */
-  public void setrequirements( CreateFileRequirement [] value ) {
+  public void setrequirements( SchemaDefRequirement value ) {
     requirements = value;
   }
 
@@ -434,10 +484,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a ScatterFeatureRequirement array.
+  *  @param   value will update requirements, which is a InitialWorkDirRequirement type.
   *
   */
-  public void setrequirements( ScatterFeatureRequirement [] value ) {
+  public void setrequirements( InitialWorkDirRequirement value ) {
     requirements = value;
   }
 
@@ -445,10 +495,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a EnvVarRequirement array.
+  *  @param   value will update requirements, which is a EnvVarRequirement type.
   *
   */
-  public void setrequirements( EnvVarRequirement [] value ) {
+  public void setrequirements( EnvVarRequirement value ) {
     requirements = value;
   }
 
@@ -456,10 +506,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a SchemaDefRequirement array.
+  *  @param   value will update requirements, which is a DockerRequirement type.
   *
   */
-  public void setrequirements( SchemaDefRequirement [] value ) {
+  public void setrequirements( DockerRequirement value ) {
     requirements = value;
   }
 
@@ -467,10 +517,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a ResourceRequirement array.
+  *  @param   value will update requirements, which is a ResourceRequirement type.
   *
   */
-  public void setrequirements( ResourceRequirement [] value ) {
+  public void setrequirements( ResourceRequirement value ) {
     requirements = value;
   }
 
@@ -478,10 +528,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a StepInputExpressionRequirement array.
+  *  @param   value will update requirements, which is a InlineJavascriptRequirement type.
   *
   */
-  public void setrequirements( StepInputExpressionRequirement [] value ) {
+  public void setrequirements( InlineJavascriptRequirement value ) {
     requirements = value;
   }
 
@@ -489,10 +539,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a ShellCommandRequirement array.
+  *  @param   value will update requirements, which is a ShellCommandRequirement type.
   *
   */
-  public void setrequirements( ShellCommandRequirement [] value ) {
+  public void setrequirements( ShellCommandRequirement value ) {
     requirements = value;
   }
 
@@ -500,10 +550,21 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of requirements.
   *
-  *  @param   value will update requirements, which is a InlineJavascriptRequirement array.
+  *  @param   value will update requirements, which is a ScatterFeatureRequirement type.
   *
   */
-  public void setrequirements( InlineJavascriptRequirement [] value ) {
+  public void setrequirements( ScatterFeatureRequirement value ) {
+    requirements = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of requirements.
+  *
+  *  @param   value will update requirements, which is a SubworkflowFeatureRequirement type.
+  *
+  */
+  public void setrequirements( SubworkflowFeatureRequirement value ) {
     requirements = value;
   }
 
@@ -522,10 +583,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of cwlVersion.
   *
-  *  @param   value will update cwlVersion, which is a String type.
+  *  @param   value will update cwlVersion, which is a CWLVersion type.
   *
   */
-  public void setcwlVersion( String value ) {
+  public void setcwlVersion( CWLVersion value ) {
     cwlVersion = value;
   }
 
@@ -533,10 +594,10 @@ public class CommandLineTool implements Process {
   *
   *  This method returns the value of cwlVersion.
   *
-  *  @return   This method will return the value of cwlVersion, which is a String type.
+  *  @return   This method will return the value of cwlVersion, which is a CWLVersion type.
   *
   */
-  public String getcwlVersion() {
+  public CWLVersion getcwlVersion() {
     return cwlVersion;
   }
 
@@ -577,10 +638,10 @@ public class CommandLineTool implements Process {
   *
   *  This method sets the value of hints.
   *
-  *  @param   value will update hints, which is a Any array.
+  *  @param   value will update hints, which is a Any type.
   *
   */
-  public void sethints( Any [] value ) {
+  public void sethints( Any value ) {
     hints = value;
   }
 
@@ -588,33 +649,33 @@ public class CommandLineTool implements Process {
   *
   *  This method returns the value of hints.
   *
-  *  @return   This method will return the value of hints, which is a Any array.
+  *  @return   This method will return the value of hints, which is a Any type.
   *
   */
-  public Any [] gethints() {
+  public Any gethints() {
     return hints;
   }
 
   /*****************************************************************************************************
   *
-  *  This method sets the value of description.
+  *  This method sets the value of doc.
   *
-  *  @param   value will update description, which is a String type.
+  *  @param   value will update doc, which is a String type.
   *
   */
-  public void setdescription( String value ) {
-    description = value;
+  public void setdoc( String value ) {
+    doc = value;
   }
 
   /*****************************************************************************************************
   *
-  *  This method returns the value of description.
+  *  This method returns the value of doc.
   *
-  *  @return   This method will return the value of description, which is a String type.
+  *  @return   This method will return the value of doc, which is a String type.
   *
   */
-  public String getdescription() {
-    return description;
+  public String getdoc() {
+    return doc;
   }
 
   /*****************************************************************************************************

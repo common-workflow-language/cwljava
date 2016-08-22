@@ -92,6 +92,7 @@ public class YAMLParser {
   String ENUM = "enum";
   String DASH = "-";
   String NULL_STRING = "null";
+  String QUESTION_MARK = "?";
   
   HashMap yamlFile;
   public Integer length = 0;
@@ -270,6 +271,26 @@ public class YAMLParser {
     }
 
   }
+
+  /*************************************************************************
+  *
+  *  Purpose: To remove the object's question-mark (?) in a String, such as:
+  *           (i.e. name:, type:, etc.)
+  *
+  */
+  String removeQuestionMark( String lineOfText ) {
+    return new String( lineOfText.replace(QUESTION_MARK, "").trim() );
+  }
+
+  /*************************************************************************
+  *
+  *  Purpose: Add a space to an array-defined type (i.e. string[])
+  *
+  */
+  String addSpacingToBrackets( String lineOfText ) {
+    return new String( lineOfText.replace("[", " [").trim() );
+  }
+
 
 
   /*************************************************************************
@@ -609,6 +630,7 @@ public class YAMLParser {
         // For CWLType where it's a multiline list
         if ( currentLine.replace( OBJECT_DOCUMENTATION, "" ).trim().length() != 0 ) {
           objectDocumentation = new String( replaceAngleBrackets( removeDoubleQuotes( removeLabel(currentLine ) ) ) );
+          objectDocumentation = new String( makeAmpersandLiteralForJavaDoc(objectDocumentation) );
           return;
         }
       } else {
@@ -650,6 +672,7 @@ public class YAMLParser {
 
         // Get the specializeFrom          
         objectDocumentation = new String( objectDocumentation + " " + replaceAngleBrackets( removeDoubleQuotes( currentLine ) ) );
+        objectDocumentation = new String( makeAmpersandLiteralForJavaDoc(objectDocumentation) );
 
       }
 
@@ -783,6 +806,16 @@ public class YAMLParser {
   */
   String replaceAngleBrackets( String reference ) {
     return new String( reference.replace("<", "(").replace(">", ")").trim() );
+  }
+
+  /*************************************************************************
+  *
+  *  Purpose: To replace `&` from document lines, with `{@literal &}`,
+  *           as they interfere with JavaDoc formatting.
+  *
+  */
+  String makeAmpersandLiteralForJavaDoc( String reference ) {
+    return new String( reference.replace("`&`", "`{@literal &}`").trim() );
   }
 
   /*************************************************************************
@@ -1062,9 +1095,11 @@ public class YAMLParser {
         // Process multiple lines if the check does pass (false)
         if( !isDocumentationMultiLine ) {
           fieldDocumentation = new String( fieldDocumentation + replaceAngleBrackets(removeDoubleQuotes(removeLabel( currentLine)) ));
+          fieldDocumentation = new String( makeAmpersandLiteralForJavaDoc(fieldDocumentation) );
           break;
         } else {
           fieldDocumentation = new String( fieldDocumentation + " " + replaceAngleBrackets(  removeDoubleQuotes( currentLine ) ) );
+          fieldDocumentation = new String( makeAmpersandLiteralForJavaDoc(fieldDocumentation) );
         }
 
         readNextLine();
@@ -1224,7 +1259,7 @@ public class YAMLParser {
 
     for (String type : typesList ) {
 
-
+      //System.out.println("TYPE =--------------------------> " + type);
       if( type.contains(FIELD_SYMBOLS) ) {
         isSymbol = true;
         continue;
@@ -1275,12 +1310,27 @@ public class YAMLParser {
                                   removeDash(cleanUpReference(removeLabel(type))) );
           }
         } else {
+          
+          // Remove question mark, and might need to remove them above as well
+          // Ref: https://github.com/common-workflow-language/cwljava/issues/20
+          // Ref: http://www.commonwl.org/v1.0/CommandLineTool.html#Document_preprocessing
+          
           if( processedString.trim().length() != 0 ) {
             processedString = new String(processedString + ", " + 
-                                  removeDash(cleanUpReference(removeLabel(type))));
+                                  removeDash(cleanUpReference(removeLabel(removeQuestionMark(type)))));
+
+            // Ensure there is a spacing in between the type and the brackets (i.e. string[]) and an array
+            processedString = new String( addSpacingToBrackets(processedString) );
+            //System.out.println( "BRACKETS -------------> " + processedString);
+
           } else {
             processedString = new String(
-                                  removeDash(cleanUpReference(removeLabel(type))));
+                                  removeDash(cleanUpReference(removeLabel(removeQuestionMark(type)))));
+
+            // Ensure there is a spacing in between the type and the brackets (i.e. string[]) and an array
+            processedString = new String( addSpacingToBrackets(processedString) );
+            //System.out.println( "BRACKETS -------------> " + processedString);
+            
           }
         }
       }

@@ -35,7 +35,7 @@ public interface DocType {
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for this type should appear in a subsection under `docParent`.
+  *  Hint to indicate that during documentation generation, documentation for this type should appear in a subsection under `docParent`.
   */
   String docParent = null;
 
@@ -47,13 +47,13 @@ public interface DocType {
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for this type should appear after the `docAfter` section at the same level.
+  *  Hint to indicate that during documentation generation, documentation for this type should appear after the `docAfter` section at the same level.
   */
   String docAfter = null;
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for `docChild` should appear in a subsection under this type.
+  *  Hint to indicate that during documentation generation, documentation for `docChild` should appear in a subsection under this type.
   */
   Object docChild = null;
 

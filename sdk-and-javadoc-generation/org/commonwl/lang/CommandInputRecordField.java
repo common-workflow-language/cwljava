@@ -33,29 +33,57 @@ package org.commonwl.lang;
 
 public class CommandInputRecordField extends InputRecordField {
 
+  /*****************************************************************************************************
+  *
+  *  A short, human-readable label of this process object.
+  */
+  String label = null;
+
   CommandLineBinding inputBinding = null;
 
 
   /*****************************************************************************************************
   *
-  *   The name of the field 
+  *  The name of the field
   */
   String name = null;
 
   /*****************************************************************************************************
   *
-  *   A documentation string for this field
+  *  A documentation string for this field
   */
   String doc = null;
 
   /*****************************************************************************************************
   *
-  *   The field type  
+  *  The field type
   */
   Object type = null;
 
 
   public CommandInputRecordField() { super(); }
+
+  /*****************************************************************************************************
+  *
+  *  This method sets the value of label.
+  *
+  *  @param   value will update label, which is a String type.
+  *
+  */
+  public void setlabel( String value ) {
+    label = value;
+  }
+
+  /*****************************************************************************************************
+  *
+  *  This method returns the value of label.
+  *
+  *  @return   This method will return the value of label, which is a String type.
+  *
+  */
+  public String getlabel() {
+    return label;
+  }
 
   /*****************************************************************************************************
   *

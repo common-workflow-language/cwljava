@@ -33,7 +33,7 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   Define a list of environment variables which will be set in the execution environment of the tool.  See `EnvironmentDef` for details.
+*  Define a list of environment variables which will be set in the execution environment of the tool.  See `EnvironmentDef` for details.
 */
 public class EnvVarRequirement implements ProcessRequirement {
 
@@ -41,12 +41,11 @@ public class EnvVarRequirement implements ProcessRequirement {
   *
   *  The list of environment variables.
   */
-  EnvironmentDef [] envDef = null;
-
+  EnvironmentDef envDef = null;
 
   /*****************************************************************************************************
   *
-  *  The specific requirement type.
+  *  Always 'EnvVarRequirement'
   */
   String class_value = null;
 
@@ -57,10 +56,10 @@ public class EnvVarRequirement implements ProcessRequirement {
   *
   *  This method sets the value of envDef.
   *
-  *  @param   value will update envDef, which is a EnvironmentDef array.
+  *  @param   value will update envDef, which is a EnvironmentDef type.
   *
   */
-  public void setenvDef( EnvironmentDef [] value ) {
+  public void setenvDef( EnvironmentDef value ) {
     envDef = value;
   }
 
@@ -68,10 +67,10 @@ public class EnvVarRequirement implements ProcessRequirement {
   *
   *  This method returns the value of envDef.
   *
-  *  @return   This method will return the value of envDef, which is a EnvironmentDef array.
+  *  @return   This method will return the value of envDef, which is a EnvironmentDef type.
   *
   */
-  public EnvironmentDef [] getenvDef() {
+  public EnvironmentDef getenvDef() {
     return envDef;
   }
 

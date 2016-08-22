@@ -35,21 +35,21 @@ public class SaladRecordSchema extends RecordSchema implements NamedType, Schema
 
   /*****************************************************************************************************
   *
-  *   Indicates that this record inherits fields from one or more base records. 
+  *  Indicates that this record inherits fields from one or more base records.
   */
   Object extends_value = null;
 
   /*****************************************************************************************************
   *
-  *   If true, this record is abstract and may be used as a base for other records, but is not valid on its own. 
+  *  If true, this record is abstract and may be used as a base for other records, but is not valid on its own.
   */
   Boolean abstract_value = null;
 
   /*****************************************************************************************************
   *
-  *   Only applies if `extends` is declared.  Apply type specialization using the base record as a template.  For each field inherited from the base record, replace any instance of the type `specializeFrom` with `specializeTo`.  
+  *  Only applies if `extends` is declared.  Apply type specialization using the base record as a template.  For each field inherited from the base record, replace any instance of the type `specializeFrom` with `specializeTo`.
   */
-  Object specialize = null;
+  SpecializeDef [] specialize = null;
 
 
   /*****************************************************************************************************
@@ -61,33 +61,20 @@ public class SaladRecordSchema extends RecordSchema implements NamedType, Schema
 
   /*****************************************************************************************************
   *
-  *  Must be `record`
-  */
-  Object type = null;
-
-  /*****************************************************************************************************
-  *
-  *  Defines the fields of the record.
-  */
-  SaladRecordField [] fields = null;
-
-
-  /*****************************************************************************************************
-  *
-  *   If true, indicates that the type is a valid at the document root.  At least one type in a schema must be tagged with `documentRoot: true`.  
+  *  If true, indicates that the type is a valid at the document root.  At least one type in a schema must be tagged with `documentRoot: true`.
   */
   Boolean documentRoot = null;
 
   /*****************************************************************************************************
   *
-  *   Annotate this type with linked data context.
+  *  Annotate this type with linked data context.
   */
   Object jsonldPredicate = null;
 
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for this type should appear in a subsection under `docParent`.
+  *  Hint to indicate that during documentation generation, documentation for this type should appear in a subsection under `docParent`.
   */
   String docParent = null;
 
@@ -99,13 +86,13 @@ public class SaladRecordSchema extends RecordSchema implements NamedType, Schema
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for this type should appear after the `docAfter` section at the same level.
+  *  Hint to indicate that during documentation generation, documentation for this type should appear after the `docAfter` section at the same level.
   */
   String docAfter = null;
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for `docChild` should appear in a subsection under this type.
+  *  Hint to indicate that during documentation generation, documentation for `docChild` should appear in a subsection under this type.
   */
   Object docChild = null;
 
@@ -171,17 +158,6 @@ public class SaladRecordSchema extends RecordSchema implements NamedType, Schema
   *
   *  This method sets the value of specialize.
   *
-  *  @param   value will update specialize, which is a SpecializeDef type.
-  *
-  */
-  public void setspecialize( SpecializeDef value ) {
-    specialize = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of specialize.
-  *
   *  @param   value will update specialize, which is a SpecializeDef array.
   *
   */
@@ -193,10 +169,10 @@ public class SaladRecordSchema extends RecordSchema implements NamedType, Schema
   *
   *  This method returns the value of specialize.
   *
-  *  @return   This method will return the value of specialize, which is a Object type.
+  *  @return   This method will return the value of specialize, which is a SpecializeDef array.
   *
   */
-  public Object getspecialize() {
+  public SpecializeDef [] getspecialize() {
     return specialize;
   }
 
@@ -220,50 +196,6 @@ public class SaladRecordSchema extends RecordSchema implements NamedType, Schema
   */
   public String getname() {
     return name;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of type.
-  *
-  *  @param   value will update type, which is a Object type.
-  *
-  */
-  public void settype( Object value ) {
-    type = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of type.
-  *
-  *  @return   This method will return the value of type, which is a Object type.
-  *
-  */
-  public Object gettype() {
-    return type;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of fields.
-  *
-  *  @param   value will update fields, which is a RecordField array.
-  *
-  */
-  public void setfields( SaladRecordField [] value ) {
-    fields = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of fields.
-  *
-  *  @return   This method will return the value of fields, which is a SaladRecordField array.
-  *
-  */
-  public SaladRecordField [] getfields() {
-    return fields;
   }
 
   /*****************************************************************************************************

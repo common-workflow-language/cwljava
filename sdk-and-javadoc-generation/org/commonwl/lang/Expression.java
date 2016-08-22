@@ -33,7 +33,7 @@ package org.commonwl.lang;
 
  /*****************************************************************************************************
  *
- *   Not a real type.  Indicates that a field must allow runtime parameter references.  If [InlineJavascriptRequirement](#InlineJavascriptRequirement) is declared and supported by the platform, the field must also allow Javascript expressions.
+ *  'Expression' is not a real type.  It indicates that a field must allow runtime parameter references.  If [InlineJavascriptRequirement](#InlineJavascriptRequirement) is declared and supported by the platform, the field must also allow Javascript expressions.
  */
 public enum Expression {
 

@@ -41,6 +41,7 @@ namespace : EnumSchema : sld
 namespace : ArraySchema : sld
 namespace : PrimitiveType : sld
 namespace : File : cwl
+namespace : Directory : cwl
 namespace : secondaryFiles : cwl
 namespace : format : cwl
 namespace : default : cwl

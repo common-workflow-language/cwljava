@@ -33,63 +33,6 @@ package org.commonwl.lang;
 
 public class RecordSchema {
 
-  /*****************************************************************************************************
-  *
-  *  Must be `record`
-  */
-  Object type = null;
-
-  /*****************************************************************************************************
-  *
-  *  Defines the fields of the record.
-  */
-  RecordField [] fields = null;
-
-
   public RecordSchema() { super(); }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of type.
-  *
-  *  @param   value will update type, which is a Object type.
-  *
-  */
-  public void settype( Object value ) {
-    type = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of type.
-  *
-  *  @return   This method will return the value of type, which is a Object type.
-  *
-  */
-  public Object gettype() {
-    return type;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of fields.
-  *
-  *  @param   value will update fields, which is a RecordField array.
-  *
-  */
-  public void setfields( RecordField [] value ) {
-    fields = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of fields.
-  *
-  *  @return   This method will return the value of fields, which is a RecordField array.
-  *
-  */
-  public RecordField [] getfields() {
-    return fields;
-  }
 
 }

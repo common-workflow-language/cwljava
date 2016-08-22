@@ -33,46 +33,33 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   Define an enumerated type.
+*  Define an enumerated type.
 */
 public class SaladEnumSchema extends EnumSchema implements SchemaDefinedType {
 
   /*****************************************************************************************************
   *
-  *   Indicates that this enum inherits symbols from a base enum.  
+  *  Indicates that this enum inherits symbols from a base enum.
   */
   Object extends_value = null;
 
 
   /*****************************************************************************************************
   *
-  *  Must be `enum`
-  */
-  Enum type = null;
-
-  /*****************************************************************************************************
-  *
-  *  Defines the set of valid symbols.
-  */
-  String [] symbols = null;
-
-
-  /*****************************************************************************************************
-  *
-  *   If true, indicates that the type is a valid at the document root.  At least one type in a schema must be tagged with `documentRoot: true`.  
+  *  If true, indicates that the type is a valid at the document root.  At least one type in a schema must be tagged with `documentRoot: true`.
   */
   Boolean documentRoot = null;
 
   /*****************************************************************************************************
   *
-  *   Annotate this type with linked data context.
+  *  Annotate this type with linked data context.
   */
   Object jsonldPredicate = null;
 
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for this type should appear in a subsection under `docParent`.
+  *  Hint to indicate that during documentation generation, documentation for this type should appear in a subsection under `docParent`.
   */
   String docParent = null;
 
@@ -84,13 +71,13 @@ public class SaladEnumSchema extends EnumSchema implements SchemaDefinedType {
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for this type should appear after the `docAfter` section at the same level.
+  *  Hint to indicate that during documentation generation, documentation for this type should appear after the `docAfter` section at the same level.
   */
   String docAfter = null;
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for `docChild` should appear in a subsection under this type.
+  *  Hint to indicate that during documentation generation, documentation for `docChild` should appear in a subsection under this type.
   */
   Object docChild = null;
 
@@ -128,50 +115,6 @@ public class SaladEnumSchema extends EnumSchema implements SchemaDefinedType {
   */
   public Object getextends() {
     return extends_value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of type.
-  *
-  *  @param   value will update type, which is a Enum type.
-  *
-  */
-  public void settype( Enum value ) {
-    type = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of type.
-  *
-  *  @return   This method will return the value of type, which is a Enum type.
-  *
-  */
-  public Enum gettype() {
-    return type;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of symbols.
-  *
-  *  @param   value will update symbols, which is a String array.
-  *
-  */
-  public void setsymbols( String [] value ) {
-    symbols = value;
-  }
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of symbols.
-  *
-  *  @return   This method will return the value of symbols, which is a String array.
-  *
-  */
-  public String [] getsymbols() {
-    return symbols;
   }
 
   /*****************************************************************************************************

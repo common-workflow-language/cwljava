@@ -33,10 +33,10 @@ package org.commonwl.lang;
 
  /*****************************************************************************************************
  *
- *   - Extends primitive types with the concept of a file as a first class type. - File: A File object
+ *  - Extends primitive types with the concept of a file and directory as a builtin type. - File: A File object - Directory: A Directory object
  */
 public enum CWLType {
 
-  File
+  File, Directory
 
 }

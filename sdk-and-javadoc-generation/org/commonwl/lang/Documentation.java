@@ -33,7 +33,7 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   A documentation section.  This type exists to facilitate self-documenting schemas but has no role in formal validation.
+*  A documentation section.  This type exists to facilitate self-documenting schemas but has no role in formal validation.
 */
 public class Documentation implements NamedType, DocType {
 
@@ -53,7 +53,7 @@ public class Documentation implements NamedType, DocType {
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for this type should appear in a subsection under `docParent`.
+  *  Hint to indicate that during documentation generation, documentation for this type should appear in a subsection under `docParent`.
   */
   String docParent = null;
 
@@ -65,13 +65,13 @@ public class Documentation implements NamedType, DocType {
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for this type should appear after the `docAfter` section at the same level.
+  *  Hint to indicate that during documentation generation, documentation for this type should appear after the `docAfter` section at the same level.
   */
   String docAfter = null;
 
   /*****************************************************************************************************
   *
-  *   Hint to indicate that during documentation generation, documentation for `docChild` should appear in a subsection under this type.
+  *  Hint to indicate that during documentation generation, documentation for `docChild` should appear in a subsection under this type.
   */
   Object docChild = null;
 

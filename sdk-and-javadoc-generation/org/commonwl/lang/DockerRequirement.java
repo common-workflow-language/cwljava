@@ -33,7 +33,7 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   Indicates that a workflow component should be run in a [Docker](http://docker.com) container, and specifies how to fetch or build the image.
+*  Indicates that a workflow component should be run in a [Docker](http://docker.com) container, and specifies how to fetch or build the image.
 */
 public class DockerRequirement implements ProcessRequirement {
 
@@ -57,7 +57,7 @@ public class DockerRequirement implements ProcessRequirement {
 
   /*****************************************************************************************************
   *
-  *   Set the designated output directory to a specific location inside the Docker container.   
+  *  Set the designated output directory to a specific location inside the Docker container.
   */
   String dockerOutputDirectory = null;
 
@@ -69,14 +69,13 @@ public class DockerRequirement implements ProcessRequirement {
 
   /*****************************************************************************************************
   *
-  *   The image id that will be used for `docker run`.  May be a human-readable image name or the image identifier hash.  May be skipped if `dockerPull` is specified, in which case the `dockerPull` image id must be used.
+  *  The image id that will be used for `docker run`.  May be a human-readable image name or the image identifier hash.  May be skipped if `dockerPull` is specified, in which case the `dockerPull` image id must be used.
   */
   String dockerImageId = null;
 
-
   /*****************************************************************************************************
   *
-  *  The specific requirement type.
+  *  Always 'DockerRequirement'
   */
   String class_value = null;
 

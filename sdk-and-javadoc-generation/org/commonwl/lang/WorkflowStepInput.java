@@ -33,13 +33,13 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   The input of a workflow step connects an upstream parameter (from the workflow inputs, or the outputs of other workflows steps) with the input parameters of the underlying process.
+*  The input of a workflow step connects an upstream parameter (from the workflow inputs, or the outputs of other workflows steps) with the input parameters of the underlying step.
 */
 public class WorkflowStepInput implements Sink {
 
   /*****************************************************************************************************
   *
-  *   The default value for this parameter if there is no `source` field.
+  *  The default value for this parameter if there is no `source` field.
   */
   Any default_value = null;
 
@@ -51,20 +51,20 @@ public class WorkflowStepInput implements Sink {
 
   /*****************************************************************************************************
   *
-  *   To use valueFrom, [StepInputExpressionRequirement](#StepInputExpressionRequirement) must be specified in the workflow or workflow step requirements.  If `valueFrom` is a constant string value, use this as the value for this input parameter.  If `valueFrom` is a parameter reference or expression, it must be evaluated to yield the actual value to be assiged to the input field.  The `self` value of in the parameter reference or expression must be the value of the parameter(s) specified in the `source` field, or null if there is no `source` field.  The value of `inputs` in the parameter reference or expression is the input object to the workflow step after assigning the `source` values, but before evaluating any step with `valueFrom`.  The order of evaluating `valueFrom` among step input parameters is undefined.  
+  *  To use valueFrom, [StepInputExpressionRequirement](#StepInputExpressionRequirement) must be specified in the workflow or workflow step requirements. If `valueFrom` is a constant string value, use this as the value for this input parameter. If `valueFrom` is a parameter reference or expression, it must be evaluated to yield the actual value to be assiged to the input field. The `self` value of in the parameter reference or expression must be the value of the parameter(s) specified in the `source` field, or null if there is no `source` field. The value of `inputs` in the parameter reference or expression must be the input object to the workflow step after assigning the `source` values and then scattering.  The order of evaluating `valueFrom` among step input parameters is undefined and the result of evaluating `valueFrom` on a parameter must not be visible to evaluation of `valueFrom` on other parameters.
   */
   Object valueFrom = null;
 
 
   /*****************************************************************************************************
   *
-  *   The method to use to merge multiple inbound links into a single array. If not specified, the default method is merge_nested.  
+  *  The method to use to merge multiple inbound links into a single array. If not specified, the default method is merge_nested.
   */
   LinkMergeMethod linkMerge = null;
 
   /*****************************************************************************************************
   *
-  *   Specifies one or more workflow parameters that will provide input to the underlying process parameter.
+  *  Specifies one or more workflow parameters that will provide input to the underlying step parameter.
   */
   Object source = null;
 

@@ -33,13 +33,13 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   Indicates that the workflow platform must support multiple inbound data links listed in the `source` field of [WorkflowStepInput](#WorkflowStepInput).
+*  Indicates that the workflow platform must support multiple inbound data links listed in the `source` field of [WorkflowStepInput](#WorkflowStepInput).
 */
 public class MultipleInputFeatureRequirement implements ProcessRequirement {
 
   /*****************************************************************************************************
   *
-  *  The specific requirement type.
+  *  Always 'MultipleInputFeatureRequirement'
   */
   String class_value = null;
 

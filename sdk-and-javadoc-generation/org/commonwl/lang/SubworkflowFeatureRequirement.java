@@ -33,13 +33,13 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   Indicates that the workflow platform must support nested workflows in the `run` field of (WorkflowStep)(#WorkflowStep).
+*  Indicates that the workflow platform must support nested workflows in the `run` field of [WorkflowStep](#WorkflowStep).
 */
 public class SubworkflowFeatureRequirement implements ProcessRequirement {
 
   /*****************************************************************************************************
   *
-  *  The specific requirement type.
+  *  Always 'SubworkflowFeatureRequirement'
   */
   String class_value = null;
 

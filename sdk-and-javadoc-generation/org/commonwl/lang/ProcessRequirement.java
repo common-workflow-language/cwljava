@@ -33,32 +33,8 @@ package org.commonwl.lang;
 
 /*****************************************************************************************************
 *
-*   A process requirement declares a prerequisite that may or must be fulfilled before executing a process.  See [`Process.hints`](#process) and [`Process.requirements`](#process).
+*  A process requirement declares a prerequisite that may or must be fulfilled before executing a process.  See [`Process.hints`](#process) and [`Process.requirements`](#process).
 */
 public interface ProcessRequirement {
 
-  /*****************************************************************************************************
-  *
-  *  The specific requirement type.
-  */
-  String class_value = null;
-
-
-  /*****************************************************************************************************
-  *
-  *  This method sets the value of class_value.
-  *
-  *  @param   value will update class_value, which is a String type.
-  *
-  */
-  public void setclass( String value );
-
-  /*****************************************************************************************************
-  *
-  *  This method returns the value of class_value.
-  *
-  *  @return   This method will return the value of class_value, which is a String type.
-  *
-  */
-  public String getclass();
 }
