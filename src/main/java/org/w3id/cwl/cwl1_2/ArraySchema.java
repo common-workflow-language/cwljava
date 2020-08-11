@@ -1,0 +1,23 @@
+package org.w3id.cwl.cwl1_2;
+
+import org.w3id.cwl.cwl1_2.utils.Savable;
+
+/**
+* Auto-generated interface for <I>https://w3id.org/cwl/salad#ArraySchema</I><BR>This interface is implemented by {@link ArraySchemaImpl}<BR>
+ */
+public interface ArraySchema extends Savable {
+  /**
+   * Getter for property <I>https://w3id.org/cwl/salad#items</I><BR>
+   * <BLOCKQUOTE>
+   * Defines the type of the array elements.   * </BLOCKQUOTE>
+   */
+
+  Object getItems();
+  /**
+   * Getter for property <I>https://w3id.org/cwl/salad#type</I><BR>
+   * <BLOCKQUOTE>
+   * Must be `array`   * </BLOCKQUOTE>
+   */
+
+  enum_d062602be0b4b8fd33e69e29a841317b6ab665bc getType();
+}
