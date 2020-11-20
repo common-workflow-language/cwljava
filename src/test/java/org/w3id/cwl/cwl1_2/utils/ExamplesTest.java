@@ -29,7 +29,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_linkfileByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -39,14 +39,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_linkfileByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_linkfile.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_linkfileByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_linkfile.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -515,7 +515,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -525,14 +525,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit2ByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit2.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit2ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit2.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -596,7 +596,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ClassCastException.class)
   public void testvalid_imported_hintByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -606,14 +606,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ClassCastException.class)
   public void testvalid_imported_hintByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_imported-hint.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_imported_hintByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_imported-hint.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -623,7 +623,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit3ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -633,14 +633,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit3ByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit3.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit3ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit3.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -677,7 +677,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_docker_array_secondaryfilesByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -687,14 +687,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_docker_array_secondaryfilesByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_docker-array-secondaryfiles.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_docker_array_secondaryfilesByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_docker-array-secondaryfiles.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -839,7 +839,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ClassCastException.class)
   public void testvalid_schemadef_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -849,14 +849,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ClassCastException.class)
   public void testvalid_schemadef_toolByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_schemadef-tool.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_schemadef_toolByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_schemadef-tool.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -974,7 +974,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_storage_floatByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -984,14 +984,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_storage_floatByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_storage_float.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_storage_floatByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_storage_float.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -1433,7 +1433,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_js_quoteByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -1443,14 +1443,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_js_quoteByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_js-quote.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_js_quoteByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_js-quote.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -1892,7 +1892,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_steplevel_resreqByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -1902,14 +1902,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_steplevel_resreqByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_steplevel-resreq.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_steplevel_resreqByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_steplevel-resreq.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -2945,7 +2945,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit3_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -2955,14 +2955,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit3_wfByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit3-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit3_wfByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit3-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -3323,7 +3323,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_initialworkdir_glob_fullpathByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -3333,14 +3333,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_initialworkdir_glob_fullpathByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_initialworkdir-glob-fullpath.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_initialworkdir_glob_fullpathByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_initialworkdir-glob-fullpath.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -3755,7 +3755,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ClassCastException.class)
   public void testvalid_import_schema_defByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -3765,14 +3765,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ClassCastException.class)
   public void testvalid_import_schema_defByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_import_schema-def.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_import_schema_defByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_import_schema-def.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -4133,7 +4133,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_stage_arrayByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -4143,14 +4143,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_stage_arrayByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_stage-array.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_stage_arrayByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_stage-array.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -4457,7 +4457,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_dynresreqByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -4467,14 +4467,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_dynresreqByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_dynresreq.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_dynresreqByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_dynresreq.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -4538,7 +4538,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_cores_floatByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -4548,14 +4548,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_cores_floatByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_cores_float.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_cores_floatByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_cores_float.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -4565,7 +4565,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimitByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -4575,14 +4575,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimitByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimitByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -4997,7 +4997,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit2_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -5007,14 +5007,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit2_wfByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit2-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit2_wfByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit2-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -5159,7 +5159,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_iwdr_dir_literal_real_fileByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -5169,14 +5169,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_iwdr_dir_literal_real_fileByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_iwdr_dir_literal_real_file.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_iwdr_dir_literal_real_fileByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_iwdr_dir_literal_real_file.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -5294,7 +5294,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = RuntimeException.class)
   public void testvalid_tmap_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -5304,14 +5304,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = RuntimeException.class)
   public void testvalid_tmap_toolByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_tmap-tool.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = RuntimeException.class)
   public void testvalid_tmap_toolByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_tmap-tool.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -5375,7 +5375,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_stage_array_dirsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -5385,14 +5385,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_stage_array_dirsByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_stage-array-dirs.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_stage_array_dirsByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_stage-array-dirs.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -5834,7 +5834,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit4ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -5844,14 +5844,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit4ByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit4.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit4ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit4.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -5942,7 +5942,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_iwd_passthrough4ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -5952,14 +5952,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_iwd_passthrough4ByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_iwd-passthrough4.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_iwd_passthrough4ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_iwd-passthrough4.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -5969,7 +5969,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_initialworkdirrequirement_docker_outByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -5979,14 +5979,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_initialworkdirrequirement_docker_outByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_initialworkdirrequirement-docker-out.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_initialworkdirrequirement_docker_outByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_initialworkdirrequirement-docker-out.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -6202,7 +6202,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_template_toolByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_template-tool.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -6266,7 +6266,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ClassCastException.class)
   public void testvalid_schemadef_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -6276,14 +6276,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ClassCastException.class)
   public void testvalid_schemadef_wfByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_schemadef-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_schemadef_wfByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_schemadef-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -6482,7 +6482,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_dynresreq_defaultByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -6492,14 +6492,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_dynresreq_defaultByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_dynresreq-default.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_dynresreq_defaultByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_dynresreq-default.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -6671,7 +6671,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_dynresreq_dirByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -6681,14 +6681,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_dynresreq_dirByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_dynresreq-dir.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_dynresreq_dirByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_dynresreq-dir.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -6860,7 +6860,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ClassCastException.class)
   public void testvalid_params2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -6870,14 +6870,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ClassCastException.class)
   public void testvalid_params2ByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_params2.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_params2ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_params2.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -7076,7 +7076,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ClassCastException.class)
   public void testvalid_paramsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -7086,14 +7086,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ClassCastException.class)
   public void testvalid_paramsByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_params.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_paramsByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_params.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -7400,7 +7400,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit5ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -7410,14 +7410,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit5ByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit5.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit5ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit5.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -7589,7 +7589,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_dir5ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -7599,14 +7599,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_dir5ByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_dir5.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test
+  @org.junit.Test(expected = ValidationException.class)
   public void testvalid_dir5ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_dir5.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
