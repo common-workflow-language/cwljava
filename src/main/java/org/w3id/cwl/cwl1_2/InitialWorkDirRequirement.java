@@ -14,7 +14,7 @@ public interface InitialWorkDirRequirement extends ProcessRequirement, Savable {
    * InitialWorkDirRequirement   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  InitialWorkDirRequirement_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#listing</I><BR>
    * <BLOCKQUOTE>

@@ -16,7 +16,7 @@ public interface InlineJavascriptRequirement extends ProcessRequirement, Savable
    * Always 'InlineJavascriptRequirement'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  InlineJavascriptRequirement_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#InlineJavascriptRequirement/expressionLib</I><BR>
    * <BLOCKQUOTE>

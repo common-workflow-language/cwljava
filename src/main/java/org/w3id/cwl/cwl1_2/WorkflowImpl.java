@@ -12,7 +12,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  those steps.  When a step produces output that will be consumed by a
  second step, the first step is a dependency of the second step.
  
- When there is a dependency, the workflow engine must execute the preceeding
+ When there is a dependency, the workflow engine must execute the preceding
  step and wait for it to successfully produce output before executing the
  dependent step.  If two steps are defined in the workflow graph that
  are not directly or indirectly dependent, these steps are **independent**,

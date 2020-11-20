@@ -28,7 +28,7 @@ public interface NetworkAccess extends ProcessRequirement, Savable {
    * Always 'NetworkAccess'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  NetworkAccess_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#NetworkAccess/networkAccess</I><BR>
 

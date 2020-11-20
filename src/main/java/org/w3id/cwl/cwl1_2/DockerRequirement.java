@@ -64,7 +64,7 @@ public interface DockerRequirement extends ProcessRequirement, Savable {
    * Always 'DockerRequirement'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  DockerRequirement_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#DockerRequirement/dockerPull</I><BR>
    * <BLOCKQUOTE>

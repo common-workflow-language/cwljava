@@ -66,7 +66,7 @@ public class DockerRequirementImpl extends SavableImpl implements DockerRequirem
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
 
-  private String class_;
+  private DockerRequirement_class class_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#DockerRequirement/class</I><BR>
@@ -74,7 +74,7 @@ public class DockerRequirementImpl extends SavableImpl implements DockerRequirem
    * Always 'DockerRequirement'   * </BLOCKQUOTE>
    */
 
-  public String getClass_() {
+  public DockerRequirement_class getClass_() {
     return this.class_;
   }
 
@@ -189,11 +189,11 @@ public class DockerRequirementImpl extends SavableImpl implements DockerRequirem
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
-    String class_;
+    DockerRequirement_class class_;
     try {
       class_ =
           LoaderInstances
-              .uri_StringInstance_False_True_None
+              .uri_DockerRequirement_class_False_True_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.
@@ -305,7 +305,7 @@ public class DockerRequirementImpl extends SavableImpl implements DockerRequirem
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.class_ = (String) class_;
+    this.class_ = (DockerRequirement_class) class_;
     this.dockerPull = (java.util.Optional<String>) dockerPull;
     this.dockerLoad = (java.util.Optional<String>) dockerLoad;
     this.dockerFile = (java.util.Optional<String>) dockerFile;

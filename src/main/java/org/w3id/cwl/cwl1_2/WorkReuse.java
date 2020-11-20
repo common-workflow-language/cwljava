@@ -22,7 +22,7 @@ public interface WorkReuse extends ProcessRequirement, Savable {
    * Always 'WorkReuse'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  WorkReuse_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#WorkReuse/enableReuse</I><BR>
 

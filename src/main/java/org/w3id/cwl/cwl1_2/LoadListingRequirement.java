@@ -15,7 +15,7 @@ public interface LoadListingRequirement extends ProcessRequirement, Savable {
    * Always 'LoadListingRequirement'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  LoadListingRequirement_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#LoadListingRequirement/loadListing</I><BR>
 

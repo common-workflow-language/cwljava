@@ -22,7 +22,7 @@ public class ToolTimeLimitImpl extends SavableImpl implements ToolTimeLimit {
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
 
-  private String class_;
+  private ToolTimeLimit_class class_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ToolTimeLimit/class</I><BR>
@@ -30,7 +30,7 @@ public class ToolTimeLimitImpl extends SavableImpl implements ToolTimeLimit {
    * Always 'ToolTimeLimit'   * </BLOCKQUOTE>
    */
 
-  public String getClass_() {
+  public ToolTimeLimit_class getClass_() {
     return this.class_;
   }
 
@@ -78,11 +78,11 @@ public class ToolTimeLimitImpl extends SavableImpl implements ToolTimeLimit {
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
-    String class_;
+    ToolTimeLimit_class class_;
     try {
       class_ =
           LoaderInstances
-              .uri_StringInstance_False_True_None
+              .uri_ToolTimeLimit_class_False_True_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.
@@ -103,7 +103,7 @@ public class ToolTimeLimitImpl extends SavableImpl implements ToolTimeLimit {
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.class_ = (String) class_;
+    this.class_ = (ToolTimeLimit_class) class_;
     this.timelimit = (Object) timelimit;
   }
 }

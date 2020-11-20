@@ -15,5 +15,5 @@ public interface StepInputExpressionRequirement extends ProcessRequirement, Sava
    * Always 'StepInputExpressionRequirement'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  StepInputExpressionRequirement_class getClass_();
 }

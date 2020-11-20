@@ -43,7 +43,7 @@ public interface InplaceUpdateRequirement extends ProcessRequirement, Savable {
    * Always 'InplaceUpdateRequirement'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  InplaceUpdateRequirement_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#InplaceUpdateRequirement/inplaceUpdate</I><BR>
 

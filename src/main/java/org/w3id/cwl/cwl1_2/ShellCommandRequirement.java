@@ -20,5 +20,5 @@ public interface ShellCommandRequirement extends ProcessRequirement, Savable {
    * Always 'ShellCommandRequirement'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  ShellCommandRequirement_class getClass_();
 }

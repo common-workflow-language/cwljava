@@ -15,5 +15,5 @@ public interface MultipleInputFeatureRequirement extends ProcessRequirement, Sav
    * Always 'MultipleInputFeatureRequirement'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  MultipleInputFeatureRequirement_class getClass_();
 }
