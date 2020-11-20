@@ -20,7 +20,7 @@ public interface ToolTimeLimit extends ProcessRequirement, Savable {
    * Always 'ToolTimeLimit'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  ToolTimeLimit_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ToolTimeLimit/timelimit</I><BR>
    * <BLOCKQUOTE>

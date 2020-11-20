@@ -15,5 +15,5 @@ public interface SubworkflowFeatureRequirement extends ProcessRequirement, Savab
    * Always 'SubworkflowFeatureRequirement'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  SubworkflowFeatureRequirement_class getClass_();
 }

@@ -38,7 +38,7 @@ public interface ResourceRequirement extends ProcessRequirement, Savable {
    * Always 'ResourceRequirement'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  ResourceRequirement_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ResourceRequirement/coresMin</I><BR>
    * <BLOCKQUOTE>

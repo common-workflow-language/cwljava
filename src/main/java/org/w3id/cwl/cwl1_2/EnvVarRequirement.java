@@ -15,7 +15,7 @@ public interface EnvVarRequirement extends ProcessRequirement, Savable {
    * Always 'EnvVarRequirement'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  EnvVarRequirement_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#EnvVarRequirement/envDef</I><BR>
    * <BLOCKQUOTE>

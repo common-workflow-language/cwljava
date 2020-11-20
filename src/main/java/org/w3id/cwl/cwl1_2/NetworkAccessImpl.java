@@ -30,7 +30,7 @@ public class NetworkAccessImpl extends SavableImpl implements NetworkAccess {
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
 
-  private String class_;
+  private NetworkAccess_class class_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#NetworkAccess/class</I><BR>
@@ -38,7 +38,7 @@ public class NetworkAccessImpl extends SavableImpl implements NetworkAccess {
    * Always 'NetworkAccess'   * </BLOCKQUOTE>
    */
 
-  public String getClass_() {
+  public NetworkAccess_class getClass_() {
     return this.class_;
   }
 
@@ -83,11 +83,11 @@ public class NetworkAccessImpl extends SavableImpl implements NetworkAccess {
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
-    String class_;
+    NetworkAccess_class class_;
     try {
       class_ =
           LoaderInstances
-              .uri_StringInstance_False_True_None
+              .uri_NetworkAccess_class_False_True_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.
@@ -108,7 +108,7 @@ public class NetworkAccessImpl extends SavableImpl implements NetworkAccess {
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.class_ = (String) class_;
+    this.class_ = (NetworkAccess_class) class_;
     this.networkAccess = (Object) networkAccess;
   }
 }

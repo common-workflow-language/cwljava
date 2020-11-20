@@ -17,7 +17,7 @@ public class EnvVarRequirementImpl extends SavableImpl implements EnvVarRequirem
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
 
-  private String class_;
+  private EnvVarRequirement_class class_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#EnvVarRequirement/class</I><BR>
@@ -25,7 +25,7 @@ public class EnvVarRequirementImpl extends SavableImpl implements EnvVarRequirem
    * Always 'EnvVarRequirement'   * </BLOCKQUOTE>
    */
 
-  public String getClass_() {
+  public EnvVarRequirement_class getClass_() {
     return this.class_;
   }
 
@@ -71,11 +71,11 @@ public class EnvVarRequirementImpl extends SavableImpl implements EnvVarRequirem
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
-    String class_;
+    EnvVarRequirement_class class_;
     try {
       class_ =
           LoaderInstances
-              .uri_StringInstance_False_True_None
+              .uri_EnvVarRequirement_class_False_True_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.
@@ -96,7 +96,7 @@ public class EnvVarRequirementImpl extends SavableImpl implements EnvVarRequirem
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.class_ = (String) class_;
+    this.class_ = (EnvVarRequirement_class) class_;
     this.envDef = (java.util.List<Object>) envDef;
   }
 }

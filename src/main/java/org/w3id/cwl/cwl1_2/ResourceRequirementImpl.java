@@ -40,7 +40,7 @@ public class ResourceRequirementImpl extends SavableImpl implements ResourceRequ
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
 
-  private String class_;
+  private ResourceRequirement_class class_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ResourceRequirement/class</I><BR>
@@ -48,7 +48,7 @@ public class ResourceRequirementImpl extends SavableImpl implements ResourceRequ
    * Always 'ResourceRequirement'   * </BLOCKQUOTE>
    */
 
-  public String getClass_() {
+  public ResourceRequirement_class getClass_() {
     return this.class_;
   }
 
@@ -236,11 +236,11 @@ public class ResourceRequirementImpl extends SavableImpl implements ResourceRequ
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
-    String class_;
+    ResourceRequirement_class class_;
     try {
       class_ =
           LoaderInstances
-              .uri_StringInstance_False_True_None
+              .uri_ResourceRequirement_class_False_True_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.
@@ -386,7 +386,7 @@ public class ResourceRequirementImpl extends SavableImpl implements ResourceRequ
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.class_ = (String) class_;
+    this.class_ = (ResourceRequirement_class) class_;
     this.coresMin = (Object) coresMin;
     this.coresMax = (Object) coresMax;
     this.ramMin = (Object) ramMin;

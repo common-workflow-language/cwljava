@@ -231,7 +231,7 @@ public class OperationOutputParameterImpl extends SavableImpl implements Operati
       try {
         secondaryFiles =
             LoaderInstances
-                .union_of_NullInstance_or_SecondaryFileSchema_or_array_of_SecondaryFileSchema
+                .secondaryfilesdsl_union_of_NullInstance_or_SecondaryFileSchema_or_array_of_SecondaryFileSchema
                 .loadField(__doc.get("secondaryFiles"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         secondaryFiles = null; // won't be used but prevents compiler from complaining.

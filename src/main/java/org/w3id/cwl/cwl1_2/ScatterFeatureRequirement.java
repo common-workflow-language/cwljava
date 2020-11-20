@@ -15,5 +15,5 @@ public interface ScatterFeatureRequirement extends ProcessRequirement, Savable {
    * Always 'ScatterFeatureRequirement'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  ScatterFeatureRequirement_class getClass_();
 }

@@ -17,7 +17,7 @@ public class MultipleInputFeatureRequirementImpl extends SavableImpl implements 
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
 
-  private String class_;
+  private MultipleInputFeatureRequirement_class class_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#MultipleInputFeatureRequirement/class</I><BR>
@@ -25,7 +25,7 @@ public class MultipleInputFeatureRequirementImpl extends SavableImpl implements 
    * Always 'MultipleInputFeatureRequirement'   * </BLOCKQUOTE>
    */
 
-  public String getClass_() {
+  public MultipleInputFeatureRequirement_class getClass_() {
     return this.class_;
   }
 
@@ -59,11 +59,11 @@ public class MultipleInputFeatureRequirementImpl extends SavableImpl implements 
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
-    String class_;
+    MultipleInputFeatureRequirement_class class_;
     try {
       class_ =
           LoaderInstances
-              .uri_StringInstance_False_True_None
+              .uri_MultipleInputFeatureRequirement_class_False_True_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.
@@ -73,6 +73,6 @@ public class MultipleInputFeatureRequirementImpl extends SavableImpl implements 
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.class_ = (String) class_;
+    this.class_ = (MultipleInputFeatureRequirement_class) class_;
   }
 }

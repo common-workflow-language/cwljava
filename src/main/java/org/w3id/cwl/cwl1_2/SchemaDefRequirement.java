@@ -25,7 +25,7 @@ public interface SchemaDefRequirement extends ProcessRequirement, Savable {
    * Always 'SchemaDefRequirement'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  SchemaDefRequirement_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#SchemaDefRequirement/types</I><BR>
    * <BLOCKQUOTE>

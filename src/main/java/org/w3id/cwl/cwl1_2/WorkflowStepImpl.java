@@ -397,7 +397,7 @@ public class WorkflowStepImpl extends SavableImpl implements WorkflowStep {
     try {
       run =
           LoaderInstances
-              .uri_union_of_StringInstance_or_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation_False_False_None
+              .union_of_StringInstance_or_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation
               .loadField(__doc.get("run"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       run = null; // won't be used but prevents compiler from complaining.

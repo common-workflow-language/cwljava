@@ -22,7 +22,7 @@ public class ShellCommandRequirementImpl extends SavableImpl implements ShellCom
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
 
-  private String class_;
+  private ShellCommandRequirement_class class_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ShellCommandRequirement/class</I><BR>
@@ -30,7 +30,7 @@ public class ShellCommandRequirementImpl extends SavableImpl implements ShellCom
    * Always 'ShellCommandRequirement'   * </BLOCKQUOTE>
    */
 
-  public String getClass_() {
+  public ShellCommandRequirement_class getClass_() {
     return this.class_;
   }
 
@@ -64,11 +64,11 @@ public class ShellCommandRequirementImpl extends SavableImpl implements ShellCom
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
-    String class_;
+    ShellCommandRequirement_class class_;
     try {
       class_ =
           LoaderInstances
-              .uri_StringInstance_False_True_None
+              .uri_ShellCommandRequirement_class_False_True_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.
@@ -78,6 +78,6 @@ public class ShellCommandRequirementImpl extends SavableImpl implements ShellCom
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.class_ = (String) class_;
+    this.class_ = (ShellCommandRequirement_class) class_;
   }
 }

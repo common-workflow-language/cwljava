@@ -518,7 +518,7 @@ public class FileImpl extends SavableImpl implements File {
       try {
         secondaryFiles =
             LoaderInstances
-                .optional_array_of_union_of_File_or_Directory
+                .secondaryfilesdsl_optional_array_of_union_of_File_or_Directory
                 .loadField(__doc.get("secondaryFiles"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         secondaryFiles = null; // won't be used but prevents compiler from complaining.

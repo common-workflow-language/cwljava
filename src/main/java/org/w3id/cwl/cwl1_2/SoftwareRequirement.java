@@ -15,7 +15,7 @@ public interface SoftwareRequirement extends ProcessRequirement, Savable {
    * Always 'SoftwareRequirement'   * </BLOCKQUOTE>
    */
 
-  String getClass_();
+  SoftwareRequirement_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#SoftwareRequirement/packages</I><BR>
    * <BLOCKQUOTE>
