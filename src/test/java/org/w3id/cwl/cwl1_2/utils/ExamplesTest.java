@@ -7642,4 +7642,59 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc);
   }
+
+  @org.junit.Test(expected = ValidationException.class)
+  public void testvalid_rename_inputsByString() throws Exception {
+    String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
+    String baseUri = Uris.fileUri(path) + "/";
+    java.net.URL url = getClass().getResource("valid_rename-inputs.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, baseUri);
+  }
+
+  @org.junit.Test(expected = ValidationException.class)
+  public void testvalid_rename_inputsByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_rename-inputs.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test(expected = ValidationException.class)
+  public void testvalid_rename_inputsByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_rename-inputs.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc);
+  }
+
+  @org.junit.Test
+  public void testvalid_rename_outputsByString() throws Exception {
+    String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
+    String baseUri = Uris.fileUri(path) + "/";
+    java.net.URL url = getClass().getResource("valid_rename-outputs.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, baseUri);
+  }
+
+  @org.junit.Test
+  public void testvalid_rename_outputsByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_rename-outputs.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_rename_outputsByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_rename-outputs.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc);
+  }
+
 }
