@@ -596,7 +596,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test(expected = ClassCastException.class)
+  @org.junit.Test()
   public void testvalid_imported_hintByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -606,21 +606,21 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ClassCastException.class)
+  @org.junit.Test()
   public void testvalid_imported_hintByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_imported-hint.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test()
   public void testvalid_imported_hintByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_imported-hint.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test(expected = ValidationException.class)
@@ -839,7 +839,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test(expected = ClassCastException.class)
+  @org.junit.Test()
   public void testvalid_schemadef_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -849,21 +849,21 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ClassCastException.class)
+  @org.junit.Test()
   public void testvalid_schemadef_toolByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_schemadef-tool.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test()
   public void testvalid_schemadef_toolByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_schemadef-tool.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test
@@ -3755,7 +3755,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test(expected = ClassCastException.class)
+  @org.junit.Test()
   public void testvalid_import_schema_defByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -3765,21 +3765,21 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ClassCastException.class)
+  @org.junit.Test()
   public void testvalid_import_schema_defByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_import_schema-def.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test()
   public void testvalid_import_schema_defByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_import_schema-def.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test
@@ -6202,14 +6202,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test()
   public void testvalid_template_toolByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_template-tool.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test
@@ -6266,7 +6266,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test(expected = ClassCastException.class)
+  @org.junit.Test()
   public void testvalid_schemadef_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -6276,21 +6276,21 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ClassCastException.class)
+  @org.junit.Test()
   public void testvalid_schemadef_wfByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_schemadef-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test()
   public void testvalid_schemadef_wfByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_schemadef-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test
@@ -6860,7 +6860,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test(expected = ClassCastException.class)
+  @org.junit.Test()
   public void testvalid_params2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -6870,21 +6870,21 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ClassCastException.class)
+  @org.junit.Test()
   public void testvalid_params2ByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_params2.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test()
   public void testvalid_params2ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_params2.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test
@@ -7076,7 +7076,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test(expected = ClassCastException.class)
+  @org.junit.Test
   public void testvalid_paramsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -7086,14 +7086,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ClassCastException.class)
+  @org.junit.Test
   public void testvalid_paramsByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_params.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_paramsByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_params.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
