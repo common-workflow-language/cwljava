@@ -116,5 +116,5 @@ public interface CommandOutputBinding extends LoadContents, Savable {
    *    * </BLOCKQUOTE>
    */
 
-  java.util.Optional<Expression> getOutputEval();
+  java.util.Optional<String> getOutputEval();
 }

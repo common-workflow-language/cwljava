@@ -130,5 +130,5 @@ public interface ExpressionTool extends Process, Savable {
    *    * </BLOCKQUOTE>
    */
 
-  Expression getExpression();
+  String getExpression();
 }

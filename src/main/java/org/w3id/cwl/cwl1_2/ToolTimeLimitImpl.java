@@ -93,7 +93,7 @@ public class ToolTimeLimitImpl extends SavableImpl implements ToolTimeLimit {
     try {
       timelimit =
           LoaderInstances
-              .union_of_LongInstance_or_Expression
+              .union_of_LongInstance_or_ExpressionLoader
               .loadField(__doc.get("timelimit"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       timelimit = null; // won't be used but prevents compiler from complaining.

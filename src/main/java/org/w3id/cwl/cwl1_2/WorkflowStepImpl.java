@@ -208,7 +208,7 @@ public class WorkflowStepImpl extends SavableImpl implements WorkflowStep {
     return this.run;
   }
 
-  private java.util.Optional<Expression> when;
+  private java.util.Optional<String> when;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowStep/when</I><BR>
@@ -219,7 +219,7 @@ public class WorkflowStepImpl extends SavableImpl implements WorkflowStep {
    *    * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<Expression> getWhen() {
+  public java.util.Optional<String> getWhen() {
     return this.when;
   }
 
@@ -404,13 +404,13 @@ public class WorkflowStepImpl extends SavableImpl implements WorkflowStep {
       final String __message = "the `run` field is not valid because:";
       __errors.add(new ValidationException(__message, e));
     }
-    java.util.Optional<Expression> when;
+    java.util.Optional<String> when;
 
     if (__doc.containsKey("when")) {
       try {
         when =
             LoaderInstances
-                .optional_Expression
+                .optional_ExpressionLoader
                 .loadField(__doc.get("when"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         when = null; // won't be used but prevents compiler from complaining.
@@ -466,7 +466,7 @@ public class WorkflowStepImpl extends SavableImpl implements WorkflowStep {
     this.requirements = (java.util.Optional<java.util.List<Object>>) requirements;
     this.hints = (java.util.Optional<java.util.List<Object>>) hints;
     this.run = (Object) run;
-    this.when = (java.util.Optional<Expression>) when;
+    this.when = (java.util.Optional<String>) when;
     this.scatter = (Object) scatter;
     this.scatterMethod = (java.util.Optional<ScatterMethod>) scatterMethod;
   }

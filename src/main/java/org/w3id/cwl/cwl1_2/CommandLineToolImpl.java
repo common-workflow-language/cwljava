@@ -531,7 +531,7 @@ public class CommandLineToolImpl extends SavableImpl implements CommandLineTool 
       try {
         arguments =
             LoaderInstances
-                .optional_array_of_union_of_StringInstance_or_Expression_or_CommandLineBinding
+                .optional_array_of_union_of_StringInstance_or_ExpressionLoader_or_CommandLineBinding
                 .loadField(__doc.get("arguments"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         arguments = null; // won't be used but prevents compiler from complaining.
@@ -548,7 +548,7 @@ public class CommandLineToolImpl extends SavableImpl implements CommandLineTool 
       try {
         stdin =
             LoaderInstances
-                .union_of_NullInstance_or_StringInstance_or_Expression
+                .union_of_NullInstance_or_StringInstance_or_ExpressionLoader
                 .loadField(__doc.get("stdin"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         stdin = null; // won't be used but prevents compiler from complaining.
@@ -565,7 +565,7 @@ public class CommandLineToolImpl extends SavableImpl implements CommandLineTool 
       try {
         stderr =
             LoaderInstances
-                .union_of_NullInstance_or_StringInstance_or_Expression
+                .union_of_NullInstance_or_StringInstance_or_ExpressionLoader
                 .loadField(__doc.get("stderr"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         stderr = null; // won't be used but prevents compiler from complaining.
@@ -582,7 +582,7 @@ public class CommandLineToolImpl extends SavableImpl implements CommandLineTool 
       try {
         stdout =
             LoaderInstances
-                .union_of_NullInstance_or_StringInstance_or_Expression
+                .union_of_NullInstance_or_StringInstance_or_ExpressionLoader
                 .loadField(__doc.get("stdout"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         stdout = null; // won't be used but prevents compiler from complaining.

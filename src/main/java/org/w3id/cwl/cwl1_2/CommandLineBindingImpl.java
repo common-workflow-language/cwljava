@@ -223,7 +223,7 @@ public class CommandLineBindingImpl extends SavableImpl implements CommandLineBi
       try {
         position =
             LoaderInstances
-                .union_of_NullInstance_or_IntegerInstance_or_Expression
+                .union_of_NullInstance_or_IntegerInstance_or_ExpressionLoader
                 .loadField(__doc.get("position"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         position = null; // won't be used but prevents compiler from complaining.
@@ -291,7 +291,7 @@ public class CommandLineBindingImpl extends SavableImpl implements CommandLineBi
       try {
         valueFrom =
             LoaderInstances
-                .union_of_NullInstance_or_StringInstance_or_Expression
+                .union_of_NullInstance_or_StringInstance_or_ExpressionLoader
                 .loadField(__doc.get("valueFrom"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         valueFrom = null; // won't be used but prevents compiler from complaining.

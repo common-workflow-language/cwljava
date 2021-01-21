@@ -98,7 +98,7 @@ public class NetworkAccessImpl extends SavableImpl implements NetworkAccess {
     try {
       networkAccess =
           LoaderInstances
-              .union_of_BooleanInstance_or_Expression
+              .union_of_BooleanInstance_or_ExpressionLoader
               .loadField(__doc.get("networkAccess"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       networkAccess = null; // won't be used but prevents compiler from complaining.

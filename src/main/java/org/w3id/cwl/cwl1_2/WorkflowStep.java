@@ -169,7 +169,7 @@ public interface WorkflowStep extends Identified, Labeled, Documented, Savable {
    *    * </BLOCKQUOTE>
    */
 
-  java.util.Optional<Expression> getWhen();
+  java.util.Optional<String> getWhen();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#scatter</I><BR>
 

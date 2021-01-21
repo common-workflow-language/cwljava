@@ -179,7 +179,7 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
     return this.class_;
   }
 
-  private Expression expression;
+  private String expression;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ExpressionTool/expression</I><BR>
@@ -190,7 +190,7 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
    *    * </BLOCKQUOTE>
    */
 
-  public Expression getExpression() {
+  public String getExpression() {
     return this.expression;
   }
 
@@ -385,11 +385,11 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
       final String __message = "the `class` field is not valid because:";
       __errors.add(new ValidationException(__message, e));
     }
-    Expression expression;
+    String expression;
     try {
       expression =
           LoaderInstances
-              .Expression
+              .ExpressionLoader
               .loadField(__doc.get("expression"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       expression = null; // won't be used but prevents compiler from complaining.
@@ -409,6 +409,6 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
     this.cwlVersion = (java.util.Optional<CWLVersion>) cwlVersion;
     this.intent = (java.util.Optional<java.util.List<Object>>) intent;
     this.class_ = (String) class_;
-    this.expression = (Expression) expression;
+    this.expression = (String) expression;
   }
 }

@@ -114,7 +114,7 @@ public class CommandOutputBindingImpl extends SavableImpl implements CommandOutp
     return this.glob;
   }
 
-  private java.util.Optional<Expression> outputEval;
+  private java.util.Optional<String> outputEval;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#CommandOutputBinding/outputEval</I><BR>
@@ -141,7 +141,7 @@ public class CommandOutputBindingImpl extends SavableImpl implements CommandOutp
    *    * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<Expression> getOutputEval() {
+  public java.util.Optional<String> getOutputEval() {
     return this.outputEval;
   }
 
@@ -215,7 +215,7 @@ public class CommandOutputBindingImpl extends SavableImpl implements CommandOutp
       try {
         glob =
             LoaderInstances
-                .union_of_NullInstance_or_StringInstance_or_Expression_or_array_of_StringInstance
+                .union_of_NullInstance_or_StringInstance_or_ExpressionLoader_or_array_of_StringInstance
                 .loadField(__doc.get("glob"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         glob = null; // won't be used but prevents compiler from complaining.
@@ -226,13 +226,13 @@ public class CommandOutputBindingImpl extends SavableImpl implements CommandOutp
     } else {
       glob = null;
     }
-    java.util.Optional<Expression> outputEval;
+    java.util.Optional<String> outputEval;
 
     if (__doc.containsKey("outputEval")) {
       try {
         outputEval =
             LoaderInstances
-                .optional_Expression
+                .optional_ExpressionLoader
                 .loadField(__doc.get("outputEval"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         outputEval = null; // won't be used but prevents compiler from complaining.
@@ -249,6 +249,6 @@ public class CommandOutputBindingImpl extends SavableImpl implements CommandOutp
     this.loadContents = (java.util.Optional<Boolean>) loadContents;
     this.loadListing = (java.util.Optional<LoadListingEnum>) loadListing;
     this.glob = (Object) glob;
-    this.outputEval = (java.util.Optional<Expression>) outputEval;
+    this.outputEval = (java.util.Optional<String>) outputEval;
   }
 }
