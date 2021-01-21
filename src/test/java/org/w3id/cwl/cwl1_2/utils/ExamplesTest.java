@@ -1,5 +1,9 @@
 package org.w3id.cwl.cwl1_2.utils;
 
+import org.w3id.cwl.cwl1_2.utils.RootLoader;
+import org.w3id.cwl.cwl1_2.utils.Uris;
+import org.w3id.cwl.cwl1_2.utils.YamlUtils;
+
 public class ExamplesTest {
 
   @org.junit.Test
@@ -26,10 +30,10 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_linkfileByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -39,23 +43,22 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_linkfileByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_linkfile.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_linkfileByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_linkfile.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_fileobjs1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -80,9 +83,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_wc_tool_shortcutByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -107,9 +109,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_output_arrays_int_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -134,9 +135,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cat3_from_dirByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -161,9 +161,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_pass_unconnectedByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -188,9 +187,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_output_arrays_intByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -215,9 +213,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines7_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -242,9 +239,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_passthrough3ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -269,9 +265,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_007ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -296,9 +291,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_symlink_legalByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -323,9 +317,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_any_type_compatByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -350,9 +343,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_docker_output_dirByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -377,9 +369,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_011ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -404,9 +395,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_record_output_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -431,9 +421,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_scatter_valuefrom_wf3ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -458,9 +447,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_record_outputByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -485,9 +473,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_wf_loadContents2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -512,7 +499,7 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test(expected = ValidationException.class)
@@ -539,9 +526,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_anon_enum_inside_array_inside_schemadefByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -566,9 +552,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cat_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -593,7 +578,7 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test()
@@ -622,7 +607,6 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test(expected = ValidationException.class)
   public void testvalid_timelimit3ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -647,9 +631,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_wf_loadContents4ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -674,10 +657,10 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_docker_array_secondaryfilesByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -687,23 +670,22 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_docker_array_secondaryfilesByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_docker-array-secondaryfiles.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_docker_array_secondaryfilesByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_docker-array-secondaryfiles.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_wc2_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -728,9 +710,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_passthrough1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -755,9 +736,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_stderrByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -782,9 +762,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_wf_loadContents3ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -809,9 +788,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_fileobjs2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -836,7 +814,7 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test()
@@ -865,7 +843,6 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_stderr_mediumcutByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -890,9 +867,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwdr_entryByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -917,9 +893,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines17_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -944,9 +919,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_updatedir_inplaceByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -971,7 +945,7 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test(expected = ValidationException.class)
@@ -998,9 +972,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_sum_wf_noETByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1025,9 +998,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines2_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1052,9 +1024,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines14_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1079,9 +1050,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_009_nojsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1106,9 +1076,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_env_wf3ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1133,9 +1102,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines6_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1160,9 +1128,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_vf_concatByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1187,9 +1154,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_002ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1214,9 +1180,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_listing_deep1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1241,9 +1206,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_scatter_valuefrom_wf5ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1268,9 +1232,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_recursive_input_directoryByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1295,9 +1258,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines9_wf_noETByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1322,9 +1284,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_formattest3ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1349,9 +1310,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cat3_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1376,9 +1336,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_operationByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1403,9 +1362,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_container_entryname1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1457,9 +1415,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_writable_dirByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1484,9 +1441,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_null_expression2_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1511,9 +1467,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_no_outputs_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1538,9 +1493,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines3_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1565,9 +1519,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_scatter_valuefrom_wf4ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1592,9 +1545,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines11_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1619,9 +1571,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwdr_with_nested_dirsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1646,9 +1597,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines1_wf_noETByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1673,9 +1623,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_echo_tool_defaultByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1700,9 +1649,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_003_1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1727,9 +1675,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_004_nojsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1754,9 +1701,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_glob_path_errorByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1781,9 +1727,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_fail_unspecified_inputByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1808,9 +1753,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_inline_jsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1835,9 +1779,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines16_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1862,9 +1805,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_wc_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1889,7 +1831,7 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test(expected = ValidationException.class)
@@ -1916,9 +1858,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_jsondump3_nlByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1943,9 +1884,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_io_int_default_tool_and_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1970,9 +1910,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_nested_arrayByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -1997,9 +1936,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_no_inputs_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2024,9 +1962,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_stderr_shortcutByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2051,9 +1988,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_007_nojsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2078,9 +2014,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_record_in_secondaryFiles_missing_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2105,9 +2040,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_011_nojsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2132,9 +2066,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_networkaccess2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2159,9 +2092,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_bash_line_continuation_with_expressionByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2186,9 +2118,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_mkdirByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2213,9 +2144,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_valueFrom_constantByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2240,9 +2170,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_test_cwl_out2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2267,9 +2196,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_metadataByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2294,9 +2222,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_fooByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2321,9 +2248,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines9_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2348,9 +2274,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_io_any_wf_1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2375,9 +2300,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_io_file_default_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2402,9 +2326,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_empty_array_inputByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2429,9 +2352,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_inpdir_update_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2456,9 +2378,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_wc3_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2483,9 +2404,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_dir7ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2510,9 +2430,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_binding_testByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2537,9 +2456,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines5_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2564,9 +2482,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_networkaccessByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2591,9 +2508,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cat3_tool_dockerByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2618,9 +2534,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_optional_outputByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2645,9 +2560,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines8_wf_noETByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2672,9 +2586,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_scatter_valuefrom_wf2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2699,9 +2612,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_touchByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2726,9 +2638,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cat1_testcliByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2753,9 +2664,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_dir2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2780,9 +2690,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_io_any_1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2807,9 +2716,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_revtoolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2834,9 +2742,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cat_tool_shortcutByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2861,9 +2768,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_002_nojsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2888,9 +2794,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_bool_empty_inputbindingByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2915,9 +2820,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_env_tool1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2942,7 +2846,7 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test(expected = ValidationException.class)
@@ -2969,9 +2873,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_anon_enum_inside_arrayByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -2996,9 +2899,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_no_outputs_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3023,9 +2925,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_echo_wf_defaultByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3050,9 +2951,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_io_int_optional_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3077,9 +2977,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_001ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3104,9 +3003,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cat3_tool_shortcutByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3131,9 +3029,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_012_nojsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3158,9 +3055,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_013_nojsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3185,9 +3081,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines11_extra_step_wf_noETByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3212,9 +3107,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_001_nojsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3239,9 +3133,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_sum_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3266,9 +3159,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_stage_file_arrayByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3293,9 +3185,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_003ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3320,10 +3211,10 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_initialworkdir_glob_fullpathByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -3333,23 +3224,22 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_initialworkdir_glob_fullpathByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_initialworkdir-glob-fullpath.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_initialworkdir_glob_fullpathByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_initialworkdir-glob-fullpath.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines11_null_step_wf_noETByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3374,9 +3264,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_container_entryname4ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3401,9 +3290,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_echo_position_exprByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3428,9 +3316,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_scatter_wf4ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3455,9 +3342,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_env_wf2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3482,9 +3368,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_no_inputs_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3509,9 +3394,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_scatter_wf2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3536,9 +3420,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_013ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3563,9 +3446,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_010ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3590,9 +3472,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_glob_expr_listByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3617,9 +3498,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_runtime_paths_distinctByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3644,9 +3524,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_scatter_valuefrom_wf1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3671,9 +3550,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_scatter_valuefrom_inputs_wf1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3698,9 +3576,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines10_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3725,9 +3602,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_glob_directoryByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3752,7 +3628,7 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test()
@@ -3781,7 +3657,6 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_docker_run_cmdByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3806,9 +3681,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_003_nojsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3833,9 +3707,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_glob_testByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3860,9 +3733,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_basename_fields_testByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3887,9 +3759,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_echo_tool_packed2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3914,9 +3785,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_wf_loadContentsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3941,9 +3811,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_record_in_secondaryFilesByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3968,9 +3837,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_writable_dir_dockerByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3995,9 +3863,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_env_tool2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4022,9 +3889,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_searchByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4049,9 +3915,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_echo_tool_packedByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4076,9 +3941,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines11_null_step_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4103,9 +3967,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines1_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4130,10 +3993,10 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_stage_arrayByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -4143,23 +4006,22 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_stage_arrayByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_stage-array.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_stage_arrayByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_stage-array.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cwloutput_nolimitByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4184,9 +4046,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_envvar3ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4211,9 +4072,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_renameByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4238,9 +4098,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_env_wf1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4265,9 +4124,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_barByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4292,9 +4150,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines12_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4319,9 +4176,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_io_union_input_default_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4346,9 +4202,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_nolimitByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4373,9 +4228,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines13_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4400,9 +4254,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_listing_shallow1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4427,9 +4280,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_scatter_valuefrom_wf6ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4454,10 +4306,10 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_dynresreqByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -4467,23 +4319,22 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_dynresreqByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_dynresreq.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_dynresreqByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_dynresreq.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cat5_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4508,9 +4359,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_container_entryname2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4535,7 +4385,7 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test(expected = ValidationException.class)
@@ -4562,7 +4412,7 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test(expected = ValidationException.class)
@@ -4589,9 +4439,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_container_entryname3ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4616,9 +4465,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_bash_dollar_quoteByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4643,9 +4491,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_listing_none1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4670,9 +4517,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_listing_none2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4697,9 +4543,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_passthrough2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4724,9 +4569,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines11_wf_noETByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4751,9 +4595,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_stagefileByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4778,9 +4621,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_stage_file_array_basename_and_entrynameByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4805,9 +4647,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_shellchar2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4832,9 +4673,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_record_out_secondaryFilesByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4859,9 +4699,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_inp_update_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4886,9 +4725,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_bwa_mem_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4913,9 +4751,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cat3_tool_mediumcutByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4940,9 +4777,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_loadContents_limitByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4967,9 +4803,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_env_tool3ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -4994,7 +4829,7 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test(expected = ValidationException.class)
@@ -5021,9 +4856,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_revsort_packedByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5048,9 +4882,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_null_definedByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5075,9 +4908,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_listing_none3ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5102,9 +4934,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_jsondump1_nlByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5129,9 +4960,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_jsondump2_nlByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5156,10 +4986,10 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_iwdr_dir_literal_real_fileByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -5169,23 +4999,22 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_iwdr_dir_literal_real_fileByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_iwdr_dir_literal_real_file.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_iwdr_dir_literal_real_fileByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_iwdr_dir_literal_real_file.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_scatter_wf3ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5210,9 +5039,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_io_int_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5237,9 +5065,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_file_literal_exByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5264,9 +5091,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_revsortByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5291,7 +5117,7 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test(expected = RuntimeException.class)
@@ -5318,9 +5144,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_012ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5345,9 +5170,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_env_tool4ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5372,10 +5196,10 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_stage_array_dirsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -5385,23 +5209,22 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_stage_array_dirsByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_stage-array-dirs.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_stage_array_dirsByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_stage-array-dirs.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_formattestByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5426,9 +5249,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_dynresreq_workflow_stepdefaultByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5453,9 +5275,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_jsondump3ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5480,9 +5301,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_size_expression_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5507,9 +5327,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_record_out_formatByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5534,9 +5353,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_revsort_abstractByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5561,9 +5379,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_009ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5588,9 +5405,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_wc4_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5615,9 +5431,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_step_valuefrom5_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5642,9 +5457,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_echo_file_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5669,9 +5483,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_step_valuefrom_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5696,9 +5509,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_output_arrays_file_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5723,9 +5535,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cat_from_dirByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5750,9 +5561,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_fail_unconnectedByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5777,9 +5587,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_symlink_illegalByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5804,9 +5613,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_actionByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5831,10 +5639,10 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_timelimit4ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -5844,23 +5652,22 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_timelimit4ByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit4.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_timelimit4ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_timelimit4.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_echo_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5885,9 +5692,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_step_valuefrom2_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5912,9 +5718,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_scatter_valueFrom_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5939,10 +5744,10 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_iwd_passthrough4ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -5952,24 +5757,24 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_iwd_passthrough4ByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_iwd-passthrough4.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_iwd_passthrough4ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_iwd-passthrough4.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_initialworkdirrequirement_docker_outByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -5979,23 +5784,22 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_initialworkdirrequirement_docker_outByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_initialworkdirrequirement-docker-out.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_initialworkdirrequirement_docker_outByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_initialworkdirrequirement-docker-out.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_record_sd_secondaryFilesByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6020,9 +5824,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_formattest2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6047,9 +5850,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_listing_shallow2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6074,9 +5876,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_004ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6101,9 +5902,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_record_in_secondaryFiles_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6128,9 +5928,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_shellcharByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6155,9 +5954,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_step_valuefrom4_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6182,9 +5980,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_template_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6211,7 +6008,6 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_dirByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6236,9 +6032,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_with_defaultsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6292,7 +6087,6 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_dynresreq_workflowByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6317,9 +6111,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_dir3ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6344,9 +6137,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_dynresreq_workflow_inputdefaultByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6371,9 +6163,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_null_expression1_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6398,9 +6189,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_envvar2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6425,9 +6215,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_dynresreq_workflow_tooldefaultByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6452,9 +6241,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_test_cwl_outByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6479,10 +6267,10 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_dynresreq_defaultByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -6492,23 +6280,22 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_dynresreq_defaultByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_dynresreq-default.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_dynresreq_defaultByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_dynresreq-default.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_record_in_formatByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6533,9 +6320,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_exitcodeByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6560,9 +6346,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_sorttoolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6587,9 +6372,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_import_schema_def_packedByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6614,9 +6398,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines4_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6641,9 +6424,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_dir6ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6668,10 +6450,10 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_dynresreq_dirByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -6681,23 +6463,22 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_dynresreq_dirByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_dynresreq-dir.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_dynresreq_dirByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_dynresreq-dir.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_006ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6722,9 +6503,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_io_int_default_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6749,9 +6529,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines18_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6776,9 +6555,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines19_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6803,9 +6581,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_dir4ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6830,9 +6607,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cat3_nodockerByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6857,7 +6633,7 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test()
@@ -6886,7 +6662,6 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_envvarByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6911,9 +6686,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines15_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6938,9 +6712,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_bash_line_continuationByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6965,9 +6738,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines8_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -6992,9 +6764,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_catByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7019,9 +6790,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_default_pathByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7046,9 +6816,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_io_file_or_filesByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7073,9 +6842,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_paramsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7100,9 +6868,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_initialwork_pathByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7127,9 +6894,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_parseInt_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7154,9 +6920,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_010_nojsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7181,9 +6946,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_step_valuefrom3_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7208,9 +6972,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_namerootByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7235,9 +6998,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_exit_successByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7262,9 +7024,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_stage_file_array_basenameByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7289,9 +7050,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_jsondump2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7316,9 +7076,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_scatter_wf1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7343,9 +7102,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cat4_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7370,9 +7128,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_null_expression3_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7397,7 +7154,7 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
   @org.junit.Test(expected = ValidationException.class)
@@ -7424,9 +7181,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_optional_numerical_output_0ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7451,9 +7207,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_updateval_inplaceByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7478,9 +7233,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_006_nojsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7505,9 +7259,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_count_lines11_extra_step_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7532,9 +7285,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_cond_wf_003_1_nojsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7559,9 +7311,8 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_iwd_jsondump1ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7586,10 +7337,10 @@ public class ExamplesTest {
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_dir5ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -7599,23 +7350,22 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_dir5ByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_dir5.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_dir5ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_dir5.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
-    RootLoader.loadDocument(doc);
+    RootLoader.loadDocument(doc, url.toString());
   }
-
   @org.junit.Test
   public void testvalid_listing_deep2ByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -7643,7 +7393,7 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_rename_inputsByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -7653,14 +7403,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_rename_inputsByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_rename-inputs.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_rename_inputsByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_rename-inputs.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());

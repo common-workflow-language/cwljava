@@ -87,7 +87,7 @@ public class EnvironmentDefImpl extends SavableImpl implements EnvironmentDef {
     try {
       envValue =
           LoaderInstances
-              .union_of_StringInstance_or_Expression
+              .union_of_StringInstance_or_ExpressionLoader
               .loadField(__doc.get("envValue"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       envValue = null; // won't be used but prevents compiler from complaining.

@@ -460,7 +460,7 @@ public class WorkflowStepInputImpl extends SavableImpl implements WorkflowStepIn
       try {
         valueFrom =
             LoaderInstances
-                .union_of_NullInstance_or_StringInstance_or_Expression
+                .union_of_NullInstance_or_StringInstance_or_ExpressionLoader
                 .loadField(__doc.get("valueFrom"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         valueFrom = null; // won't be used but prevents compiler from complaining.

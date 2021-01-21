@@ -139,7 +139,7 @@ public class SecondaryFileSchemaImpl extends SavableImpl implements SecondaryFil
     try {
       pattern =
           LoaderInstances
-              .union_of_StringInstance_or_Expression
+              .union_of_StringInstance_or_ExpressionLoader
               .loadField(__doc.get("pattern"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       pattern = null; // won't be used but prevents compiler from complaining.
@@ -152,7 +152,7 @@ public class SecondaryFileSchemaImpl extends SavableImpl implements SecondaryFil
       try {
         required =
             LoaderInstances
-                .union_of_NullInstance_or_BooleanInstance_or_Expression
+                .union_of_NullInstance_or_BooleanInstance_or_ExpressionLoader
                 .loadField(__doc.get("required"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         required = null; // won't be used but prevents compiler from complaining.

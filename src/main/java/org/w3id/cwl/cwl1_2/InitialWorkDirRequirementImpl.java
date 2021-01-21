@@ -109,7 +109,7 @@ public class InitialWorkDirRequirementImpl extends SavableImpl implements Initia
     try {
       listing =
           LoaderInstances
-              .union_of_Expression_or_array_of_union_of_NullInstance_or_Dirent_or_Expression_or_File_or_Directory_or_array_of_union_of_File_or_Directory
+              .union_of_ExpressionLoader_or_array_of_union_of_NullInstance_or_Dirent_or_ExpressionLoader_or_File_or_Directory_or_array_of_union_of_File_or_Directory
               .loadField(__doc.get("listing"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       listing = null; // won't be used but prevents compiler from complaining.

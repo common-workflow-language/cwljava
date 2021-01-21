@@ -104,6 +104,9 @@ public class DirentImpl extends SavableImpl implements Dirent {
    * implemented by making a copy of the original file or
    * directory.
    * 
+   * Disruptive changes to the referenced file or directory must not
+   * be allowed unless `InplaceUpdateRequirement.inplaceUpdate` is true.
+   * 
    * Default false (files and directories read-only by default).
    * 
    * A directory marked as `writable: true` implies that all files and
@@ -157,7 +160,7 @@ public class DirentImpl extends SavableImpl implements Dirent {
       try {
         entryname =
             LoaderInstances
-                .union_of_NullInstance_or_StringInstance_or_Expression
+                .union_of_NullInstance_or_StringInstance_or_ExpressionLoader
                 .loadField(__doc.get("entryname"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         entryname = null; // won't be used but prevents compiler from complaining.
@@ -172,7 +175,7 @@ public class DirentImpl extends SavableImpl implements Dirent {
     try {
       entry =
           LoaderInstances
-              .union_of_StringInstance_or_Expression
+              .union_of_StringInstance_or_ExpressionLoader
               .loadField(__doc.get("entry"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       entry = null; // won't be used but prevents compiler from complaining.

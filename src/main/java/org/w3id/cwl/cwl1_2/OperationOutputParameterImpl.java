@@ -282,7 +282,7 @@ public class OperationOutputParameterImpl extends SavableImpl implements Operati
       try {
         format =
             LoaderInstances
-                .uri_union_of_NullInstance_or_StringInstance_or_Expression_True_False_None
+                .uri_union_of_NullInstance_or_StringInstance_or_ExpressionLoader_True_False_None
                 .loadField(__doc.get("format"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         format = null; // won't be used but prevents compiler from complaining.
