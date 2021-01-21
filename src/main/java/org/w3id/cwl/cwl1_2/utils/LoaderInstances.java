@@ -125,7 +125,7 @@ public class LoaderInstances {
   public static Loader<File_class> uri_File_class_False_True_None = new UriLoader(File_class, false, true, null);
   public static Loader<java.util.Optional<String>> optional_StringInstance = new OptionalLoader(StringInstance);
   public static Loader<java.util.Optional<String>> uri_optional_StringInstance_False_False_None = new UriLoader(optional_StringInstance, false, false, null);
-  public static Loader<java.util.Optional<Long>> optional_LongInstance = new OptionalLoader(LongInstance);
+  public static Loader<Object> union_of_NullInstance_or_IntegerInstance_or_LongInstance = new UnionLoader(new Loader[] { NullInstance, IntegerInstance, LongInstance });
   public static Loader<Object> union_of_File_or_Directory = new UnionLoader(new Loader[] { File, Directory });
   public static Loader<java.util.List<Object>> array_of_union_of_File_or_Directory = new ArrayLoader(union_of_File_or_Directory);
   public static Loader<java.util.Optional<java.util.List<Object>>> optional_array_of_union_of_File_or_Directory = new OptionalLoader(array_of_union_of_File_or_Directory);
@@ -242,7 +242,7 @@ public class LoaderInstances {
   public static Loader<ShellCommandRequirement_class> uri_ShellCommandRequirement_class_False_True_None = new UriLoader(ShellCommandRequirement_class, false, true, null);
   public static Loader<ResourceRequirement_class> ResourceRequirement_class = new EnumLoader(ResourceRequirement_class.class);
   public static Loader<ResourceRequirement_class> uri_ResourceRequirement_class_False_True_None = new UriLoader(ResourceRequirement_class, false, true, null);
-  public static Loader<Object> union_of_NullInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader = new UnionLoader(new Loader[] { NullInstance, LongInstance, FloatInstance, ExpressionLoader });
+  public static Loader<Object> union_of_NullInstance_or_IntegerInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader = new UnionLoader(new Loader[] { NullInstance, IntegerInstance, LongInstance, FloatInstance, ExpressionLoader });
   public static Loader<WorkReuse_class> WorkReuse_class = new EnumLoader(WorkReuse_class.class);
   public static Loader<WorkReuse_class> uri_WorkReuse_class_False_True_None = new UriLoader(WorkReuse_class, false, true, null);
   public static Loader<Object> union_of_BooleanInstance_or_ExpressionLoader = new UnionLoader(new Loader[] { BooleanInstance, ExpressionLoader });
@@ -252,7 +252,7 @@ public class LoaderInstances {
   public static Loader<InplaceUpdateRequirement_class> uri_InplaceUpdateRequirement_class_False_True_None = new UriLoader(InplaceUpdateRequirement_class, false, true, null);
   public static Loader<ToolTimeLimit_class> ToolTimeLimit_class = new EnumLoader(ToolTimeLimit_class.class);
   public static Loader<ToolTimeLimit_class> uri_ToolTimeLimit_class_False_True_None = new UriLoader(ToolTimeLimit_class, false, true, null);
-  public static Loader<Object> union_of_LongInstance_or_ExpressionLoader = new UnionLoader(new Loader[] { LongInstance, ExpressionLoader });
+  public static Loader<Object> union_of_IntegerInstance_or_LongInstance_or_ExpressionLoader = new UnionLoader(new Loader[] { IntegerInstance, LongInstance, ExpressionLoader });
   public static Loader<java.util.Optional<InputBinding>> optional_InputBinding = new OptionalLoader(InputBinding);
   public static Loader<java.util.List<WorkflowInputParameter>> array_of_WorkflowInputParameter = new ArrayLoader(WorkflowInputParameter);
   public static Loader<java.util.List<Object>> idmap_inputs_array_of_WorkflowInputParameter = new IdMapLoader(array_of_WorkflowInputParameter, "id", "type");

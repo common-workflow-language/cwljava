@@ -253,7 +253,7 @@ public class ResourceRequirementImpl extends SavableImpl implements ResourceRequ
       try {
         coresMin =
             LoaderInstances
-                .union_of_NullInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
+                .union_of_NullInstance_or_IntegerInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
                 .loadField(__doc.get("coresMin"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         coresMin = null; // won't be used but prevents compiler from complaining.
@@ -270,7 +270,7 @@ public class ResourceRequirementImpl extends SavableImpl implements ResourceRequ
       try {
         coresMax =
             LoaderInstances
-                .union_of_NullInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
+                .union_of_NullInstance_or_IntegerInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
                 .loadField(__doc.get("coresMax"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         coresMax = null; // won't be used but prevents compiler from complaining.
@@ -287,7 +287,7 @@ public class ResourceRequirementImpl extends SavableImpl implements ResourceRequ
       try {
         ramMin =
             LoaderInstances
-                .union_of_NullInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
+                .union_of_NullInstance_or_IntegerInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
                 .loadField(__doc.get("ramMin"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         ramMin = null; // won't be used but prevents compiler from complaining.
@@ -304,7 +304,7 @@ public class ResourceRequirementImpl extends SavableImpl implements ResourceRequ
       try {
         ramMax =
             LoaderInstances
-                .union_of_NullInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
+                .union_of_NullInstance_or_IntegerInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
                 .loadField(__doc.get("ramMax"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         ramMax = null; // won't be used but prevents compiler from complaining.
@@ -321,7 +321,7 @@ public class ResourceRequirementImpl extends SavableImpl implements ResourceRequ
       try {
         tmpdirMin =
             LoaderInstances
-                .union_of_NullInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
+                .union_of_NullInstance_or_IntegerInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
                 .loadField(__doc.get("tmpdirMin"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         tmpdirMin = null; // won't be used but prevents compiler from complaining.
@@ -338,7 +338,7 @@ public class ResourceRequirementImpl extends SavableImpl implements ResourceRequ
       try {
         tmpdirMax =
             LoaderInstances
-                .union_of_NullInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
+                .union_of_NullInstance_or_IntegerInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
                 .loadField(__doc.get("tmpdirMax"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         tmpdirMax = null; // won't be used but prevents compiler from complaining.
@@ -355,7 +355,7 @@ public class ResourceRequirementImpl extends SavableImpl implements ResourceRequ
       try {
         outdirMin =
             LoaderInstances
-                .union_of_NullInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
+                .union_of_NullInstance_or_IntegerInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
                 .loadField(__doc.get("outdirMin"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         outdirMin = null; // won't be used but prevents compiler from complaining.
@@ -372,7 +372,7 @@ public class ResourceRequirementImpl extends SavableImpl implements ResourceRequ
       try {
         outdirMax =
             LoaderInstances
-                .union_of_NullInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
+                .union_of_NullInstance_or_IntegerInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader
                 .loadField(__doc.get("outdirMax"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         outdirMax = null; // won't be used but prevents compiler from complaining.

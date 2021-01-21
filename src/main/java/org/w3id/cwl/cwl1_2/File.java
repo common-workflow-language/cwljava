@@ -204,7 +204,7 @@ public interface File extends Savable {
    * Optional file size   * </BLOCKQUOTE>
    */
 
-  java.util.Optional<Long> getSize();
+  Object getSize();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#secondaryFiles</I><BR>
    * <BLOCKQUOTE>
