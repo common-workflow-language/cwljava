@@ -942,7 +942,7 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_storage_floatByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -952,14 +952,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_storage_floatByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_storage_float.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_storage_floatByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_storage_float.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -4400,7 +4400,7 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_cores_floatByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -4410,14 +4410,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_cores_floatByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_cores_float.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test(expected = ValidationException.class)
+  @org.junit.Test
   public void testvalid_cores_floatByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_cores_float.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
