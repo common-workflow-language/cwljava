@@ -8,7 +8,6 @@ public class LoaderInstances {
   public static Loader<String> StringInstance = new PrimitiveLoader<String>(String.class);
   public static Loader<Integer> IntegerInstance = new PrimitiveLoader<Integer>(Integer.class);
   public static Loader<Long> LongInstance = new PrimitiveLoader<Long>(Long.class);
-  public static Loader<Float> FloatInstance = new PrimitiveLoader<Float>(Float.class);
   public static Loader<Double> DoubleInstance = new PrimitiveLoader<Double>(Double.class);
   public static Loader<Boolean> BooleanInstance = new PrimitiveLoader<Boolean>(Boolean.class);
   public static Loader<Object> NullInstance = new NullLoader();
@@ -242,7 +241,7 @@ public class LoaderInstances {
   public static Loader<ShellCommandRequirement_class> uri_ShellCommandRequirement_class_False_True_None = new UriLoader(ShellCommandRequirement_class, false, true, null);
   public static Loader<ResourceRequirement_class> ResourceRequirement_class = new EnumLoader(ResourceRequirement_class.class);
   public static Loader<ResourceRequirement_class> uri_ResourceRequirement_class_False_True_None = new UriLoader(ResourceRequirement_class, false, true, null);
-  public static Loader<Object> union_of_NullInstance_or_IntegerInstance_or_LongInstance_or_FloatInstance_or_ExpressionLoader = new UnionLoader(new Loader[] { NullInstance, IntegerInstance, LongInstance, FloatInstance, ExpressionLoader });
+  public static Loader<Object> union_of_NullInstance_or_IntegerInstance_or_LongInstance_or_DoubleInstance_or_ExpressionLoader = new UnionLoader(new Loader[] { NullInstance, IntegerInstance, LongInstance, DoubleInstance, ExpressionLoader });
   public static Loader<WorkReuse_class> WorkReuse_class = new EnumLoader(WorkReuse_class.class);
   public static Loader<WorkReuse_class> uri_WorkReuse_class_False_True_None = new UriLoader(WorkReuse_class, false, true, null);
   public static Loader<Object> union_of_BooleanInstance_or_ExpressionLoader = new UnionLoader(new Loader[] { BooleanInstance, ExpressionLoader });
