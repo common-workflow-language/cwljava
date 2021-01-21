@@ -246,7 +246,7 @@ public class FileImpl extends SavableImpl implements File {
     return this.checksum;
   }
 
-  private java.util.Optional<Long> size;
+  private Object size;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#File/size</I><BR>
@@ -254,7 +254,7 @@ public class FileImpl extends SavableImpl implements File {
    * Optional file size   * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<Long> getSize() {
+  public Object getSize() {
     return this.size;
   }
 
@@ -495,13 +495,13 @@ public class FileImpl extends SavableImpl implements File {
     } else {
       checksum = null;
     }
-    java.util.Optional<Long> size;
+    Object size;
 
     if (__doc.containsKey("size")) {
       try {
         size =
             LoaderInstances
-                .optional_LongInstance
+                .union_of_NullInstance_or_IntegerInstance_or_LongInstance
                 .loadField(__doc.get("size"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         size = null; // won't be used but prevents compiler from complaining.
@@ -574,7 +574,7 @@ public class FileImpl extends SavableImpl implements File {
     this.nameroot = (java.util.Optional<String>) nameroot;
     this.nameext = (java.util.Optional<String>) nameext;
     this.checksum = (java.util.Optional<String>) checksum;
-    this.size = (java.util.Optional<Long>) size;
+    this.size = (Object) size;
     this.secondaryFiles = (java.util.Optional<java.util.List<Object>>) secondaryFiles;
     this.format = (java.util.Optional<String>) format;
     this.contents = (java.util.Optional<String>) contents;
