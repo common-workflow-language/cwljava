@@ -23,7 +23,7 @@ public class RequirementsClassTest {
 
 	@Test
 	public void className() {
-		Assert.assertEquals(doc.getClass().getSimpleName(), "CommandLineToolImpl");
+		Assert.assertEquals("CommandLineToolImpl", doc.getClass().getSimpleName());
 	}
 
 	@Test
@@ -38,7 +38,7 @@ public class RequirementsClassTest {
 		java.util.Optional<java.util.List<Object>> hints = doc.getHints();
 		Assert.assertTrue(hints.isPresent());
 		java.util.List<Object> hintList = hints.get();
-		Assert.assertEquals(hintList.size(), 1);
+		Assert.assertEquals(1, hintList.size());
 	}
 
 	@Test
@@ -46,10 +46,10 @@ public class RequirementsClassTest {
 		java.util.Optional<java.util.List<Object>> reqs = doc.getRequirements();
 		Assert.assertTrue(reqs.isPresent());
 		java.util.List<Object> reqList = reqs.get();
-		Assert.assertEquals(reqList.size(), 2);
+		Assert.assertEquals(2, reqList.size());
 		InlineJavascriptRequirement reqOne = (InlineJavascriptRequirement) reqList.get(0);
-		Assert.assertEquals(reqOne.getClass().getSimpleName(), "InlineJavascriptRequirementImpl");
-		Assert.assertNotEquals(reqList.get(1).getClass().getSimpleName(), "InlineJavascriptRequirementImpl");
+		Assert.assertEquals("InlineJavascriptRequirementImpl", reqOne.getClass().getSimpleName());
+		Assert.assertNotEquals("InlineJavascriptRequirementImpl", reqList.get(1).getClass().getSimpleName());
 	}
 
 }
