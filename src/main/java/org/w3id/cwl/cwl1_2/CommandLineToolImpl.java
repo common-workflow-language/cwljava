@@ -162,14 +162,14 @@ public class CommandLineToolImpl extends SavableImpl implements CommandLineTool 
     return this.intent;
   }
 
-  private String class_;
+  private CommandLineTool_class class_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineTool/class</I><BR>
 
    */
 
-  public String getClass_() {
+  public CommandLineTool_class getClass_() {
     return this.class_;
   }
 
@@ -497,11 +497,11 @@ public class CommandLineToolImpl extends SavableImpl implements CommandLineTool 
     } else {
       intent = null;
     }
-    String class_;
+    CommandLineTool_class class_;
     try {
       class_ =
           LoaderInstances
-              .uri_StringInstance_False_True_None
+              .uri_CommandLineTool_class_False_True_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.
@@ -656,7 +656,7 @@ public class CommandLineToolImpl extends SavableImpl implements CommandLineTool 
     this.hints = (java.util.Optional<java.util.List<Object>>) hints;
     this.cwlVersion = (java.util.Optional<CWLVersion>) cwlVersion;
     this.intent = (java.util.Optional<java.util.List<Object>>) intent;
-    this.class_ = (String) class_;
+    this.class_ = (CommandLineTool_class) class_;
     this.baseCommand = (Object) baseCommand;
     this.arguments = (java.util.Optional<java.util.List<Object>>) arguments;
     this.stdin = (Object) stdin;

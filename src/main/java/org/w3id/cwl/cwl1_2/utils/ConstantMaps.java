@@ -20,7 +20,7 @@ public class ConstantMaps {
     vocab.put("CommandInputSchema", "https://w3id.org/cwl/cwl#CommandInputSchema");
     vocab.put("CommandLineBindable", "https://w3id.org/cwl/cwl#CommandLineBindable");
     vocab.put("CommandLineBinding", "https://w3id.org/cwl/cwl#CommandLineBinding");
-    vocab.put("CommandLineTool", "https://w3id.org/cwl/cwl#CommandLineTool");
+    vocab.put("CommandLineTool", "CommandLineTool");
     vocab.put("CommandOutputArraySchema", "https://w3id.org/cwl/cwl#CommandOutputArraySchema");
     vocab.put("CommandOutputBinding", "https://w3id.org/cwl/cwl#CommandOutputBinding");
     vocab.put("CommandOutputEnumSchema", "https://w3id.org/cwl/cwl#CommandOutputEnumSchema");
@@ -36,7 +36,7 @@ public class ConstantMaps {
     vocab.put("EnvironmentDef", "https://w3id.org/cwl/cwl#EnvironmentDef");
     vocab.put("Expression", "https://w3id.org/cwl/cwl#Expression");
     vocab.put("ExpressionPlaceholder", "https://w3id.org/cwl/cwl#ExpressionPlaceholder");
-    vocab.put("ExpressionTool", "https://w3id.org/cwl/cwl#ExpressionTool");
+    vocab.put("ExpressionTool", "ExpressionTool");
     vocab.put("ExpressionToolOutputParameter", "https://w3id.org/cwl/cwl#ExpressionToolOutputParameter");
     vocab.put("FieldBase", "https://w3id.org/cwl/cwl#FieldBase");
     vocab.put("File", "File");
@@ -60,7 +60,7 @@ public class ConstantMaps {
     vocab.put("LoadListingRequirement", "LoadListingRequirement");
     vocab.put("MultipleInputFeatureRequirement", "MultipleInputFeatureRequirement");
     vocab.put("NetworkAccess", "NetworkAccess");
-    vocab.put("Operation", "https://w3id.org/cwl/cwl#Operation");
+    vocab.put("Operation", "Operation");
     vocab.put("OperationInputParameter", "https://w3id.org/cwl/cwl#OperationInputParameter");
     vocab.put("OperationOutputParameter", "https://w3id.org/cwl/cwl#OperationOutputParameter");
     vocab.put("OutputArraySchema", "https://w3id.org/cwl/cwl#OutputArraySchema");
@@ -90,7 +90,7 @@ public class ConstantMaps {
     vocab.put("SubworkflowFeatureRequirement", "SubworkflowFeatureRequirement");
     vocab.put("ToolTimeLimit", "ToolTimeLimit");
     vocab.put("WorkReuse", "WorkReuse");
-    vocab.put("Workflow", "https://w3id.org/cwl/cwl#Workflow");
+    vocab.put("Workflow", "Workflow");
     vocab.put("WorkflowInputParameter", "https://w3id.org/cwl/cwl#WorkflowInputParameter");
     vocab.put("WorkflowOutputParameter", "https://w3id.org/cwl/cwl#WorkflowOutputParameter");
     vocab.put("WorkflowStep", "https://w3id.org/cwl/cwl#WorkflowStep");
@@ -154,7 +154,7 @@ public class ConstantMaps {
     rvocab.put("https://w3id.org/cwl/cwl#CommandInputSchema", "CommandInputSchema");
     rvocab.put("https://w3id.org/cwl/cwl#CommandLineBindable", "CommandLineBindable");
     rvocab.put("https://w3id.org/cwl/cwl#CommandLineBinding", "CommandLineBinding");
-    rvocab.put("https://w3id.org/cwl/cwl#CommandLineTool", "CommandLineTool");
+    rvocab.put("CommandLineTool", "CommandLineTool");
     rvocab.put("https://w3id.org/cwl/cwl#CommandOutputArraySchema", "CommandOutputArraySchema");
     rvocab.put("https://w3id.org/cwl/cwl#CommandOutputBinding", "CommandOutputBinding");
     rvocab.put("https://w3id.org/cwl/cwl#CommandOutputEnumSchema", "CommandOutputEnumSchema");
@@ -170,7 +170,7 @@ public class ConstantMaps {
     rvocab.put("https://w3id.org/cwl/cwl#EnvironmentDef", "EnvironmentDef");
     rvocab.put("https://w3id.org/cwl/cwl#Expression", "Expression");
     rvocab.put("https://w3id.org/cwl/cwl#ExpressionPlaceholder", "ExpressionPlaceholder");
-    rvocab.put("https://w3id.org/cwl/cwl#ExpressionTool", "ExpressionTool");
+    rvocab.put("ExpressionTool", "ExpressionTool");
     rvocab.put("https://w3id.org/cwl/cwl#ExpressionToolOutputParameter", "ExpressionToolOutputParameter");
     rvocab.put("https://w3id.org/cwl/cwl#FieldBase", "FieldBase");
     rvocab.put("File", "File");
@@ -194,7 +194,7 @@ public class ConstantMaps {
     rvocab.put("LoadListingRequirement", "LoadListingRequirement");
     rvocab.put("MultipleInputFeatureRequirement", "MultipleInputFeatureRequirement");
     rvocab.put("NetworkAccess", "NetworkAccess");
-    rvocab.put("https://w3id.org/cwl/cwl#Operation", "Operation");
+    rvocab.put("Operation", "Operation");
     rvocab.put("https://w3id.org/cwl/cwl#OperationInputParameter", "OperationInputParameter");
     rvocab.put("https://w3id.org/cwl/cwl#OperationOutputParameter", "OperationOutputParameter");
     rvocab.put("https://w3id.org/cwl/cwl#OutputArraySchema", "OutputArraySchema");
@@ -224,7 +224,7 @@ public class ConstantMaps {
     rvocab.put("SubworkflowFeatureRequirement", "SubworkflowFeatureRequirement");
     rvocab.put("ToolTimeLimit", "ToolTimeLimit");
     rvocab.put("WorkReuse", "WorkReuse");
-    rvocab.put("https://w3id.org/cwl/cwl#Workflow", "Workflow");
+    rvocab.put("Workflow", "Workflow");
     rvocab.put("https://w3id.org/cwl/cwl#WorkflowInputParameter", "WorkflowInputParameter");
     rvocab.put("https://w3id.org/cwl/cwl#WorkflowOutputParameter", "WorkflowOutputParameter");
     rvocab.put("https://w3id.org/cwl/cwl#WorkflowStep", "WorkflowStep");
