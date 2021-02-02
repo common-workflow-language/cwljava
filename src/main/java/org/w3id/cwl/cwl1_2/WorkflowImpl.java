@@ -212,14 +212,14 @@ public class WorkflowImpl extends SavableImpl implements Workflow {
     return this.intent;
   }
 
-  private String class_;
+  private Workflow_class class_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Workflow/class</I><BR>
 
    */
 
-  public String getClass_() {
+  public Workflow_class getClass_() {
     return this.class_;
   }
 
@@ -419,11 +419,11 @@ public class WorkflowImpl extends SavableImpl implements Workflow {
     } else {
       intent = null;
     }
-    String class_;
+    Workflow_class class_;
     try {
       class_ =
           LoaderInstances
-              .uri_StringInstance_False_True_None
+              .uri_Workflow_class_False_True_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.
@@ -453,7 +453,7 @@ public class WorkflowImpl extends SavableImpl implements Workflow {
     this.hints = (java.util.Optional<java.util.List<Object>>) hints;
     this.cwlVersion = (java.util.Optional<CWLVersion>) cwlVersion;
     this.intent = (java.util.Optional<java.util.List<Object>>) intent;
-    this.class_ = (String) class_;
+    this.class_ = (Workflow_class) class_;
     this.steps = (java.util.List<Object>) steps;
   }
 }

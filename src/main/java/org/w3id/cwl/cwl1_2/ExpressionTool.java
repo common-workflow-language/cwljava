@@ -120,7 +120,7 @@ public interface ExpressionTool extends Process, Savable {
 
    */
 
-  String getClass_();
+  ExpressionTool_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ExpressionTool/expression</I><BR>
    * <BLOCKQUOTE>

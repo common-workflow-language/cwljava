@@ -215,7 +215,8 @@ public class LoaderInstances {
   public static Loader<java.util.List<Object>> idmap_inputs_array_of_CommandInputParameter = new IdMapLoader(array_of_CommandInputParameter, "id", "type");
   public static Loader<java.util.List<CommandOutputParameter>> array_of_CommandOutputParameter = new ArrayLoader(CommandOutputParameter);
   public static Loader<java.util.List<Object>> idmap_outputs_array_of_CommandOutputParameter = new IdMapLoader(array_of_CommandOutputParameter, "id", "type");
-  public static Loader<String> uri_StringInstance_False_True_None = new UriLoader(StringInstance, false, true, null);
+  public static Loader<CommandLineTool_class> CommandLineTool_class = new EnumLoader(CommandLineTool_class.class);
+  public static Loader<CommandLineTool_class> uri_CommandLineTool_class_False_True_None = new UriLoader(CommandLineTool_class, false, true, null);
   public static Loader<Object> union_of_StringInstance_or_ExpressionLoader_or_CommandLineBinding = new UnionLoader(new Loader[] { StringInstance, ExpressionLoader, CommandLineBinding });
   public static Loader<java.util.List<Object>> array_of_union_of_StringInstance_or_ExpressionLoader_or_CommandLineBinding = new ArrayLoader(union_of_StringInstance_or_ExpressionLoader_or_CommandLineBinding);
   public static Loader<java.util.Optional<java.util.List<Object>>> optional_array_of_union_of_StringInstance_or_ExpressionLoader_or_CommandLineBinding = new OptionalLoader(array_of_union_of_StringInstance_or_ExpressionLoader_or_CommandLineBinding);
@@ -257,6 +258,8 @@ public class LoaderInstances {
   public static Loader<java.util.List<Object>> idmap_inputs_array_of_WorkflowInputParameter = new IdMapLoader(array_of_WorkflowInputParameter, "id", "type");
   public static Loader<java.util.List<ExpressionToolOutputParameter>> array_of_ExpressionToolOutputParameter = new ArrayLoader(ExpressionToolOutputParameter);
   public static Loader<java.util.List<Object>> idmap_outputs_array_of_ExpressionToolOutputParameter = new IdMapLoader(array_of_ExpressionToolOutputParameter, "id", "type");
+  public static Loader<ExpressionTool_class> ExpressionTool_class = new EnumLoader(ExpressionTool_class.class);
+  public static Loader<ExpressionTool_class> uri_ExpressionTool_class_False_True_None = new UriLoader(ExpressionTool_class, false, true, null);
   public static Loader<Object> uri_union_of_NullInstance_or_StringInstance_or_array_of_StringInstance_False_False_0 = new UriLoader(union_of_NullInstance_or_StringInstance_or_array_of_StringInstance, false, false, 0);
   public static Loader<java.util.Optional<LinkMergeMethod>> optional_LinkMergeMethod = new OptionalLoader(LinkMergeMethod);
   public static Loader<java.util.Optional<PickValueMethod>> optional_PickValueMethod = new OptionalLoader(PickValueMethod);
@@ -271,6 +274,8 @@ public class LoaderInstances {
   public static Loader<java.util.Optional<ScatterMethod>> uri_optional_ScatterMethod_False_True_None = new UriLoader(optional_ScatterMethod, false, true, null);
   public static Loader<java.util.List<WorkflowOutputParameter>> array_of_WorkflowOutputParameter = new ArrayLoader(WorkflowOutputParameter);
   public static Loader<java.util.List<Object>> idmap_outputs_array_of_WorkflowOutputParameter = new IdMapLoader(array_of_WorkflowOutputParameter, "id", "type");
+  public static Loader<Workflow_class> Workflow_class = new EnumLoader(Workflow_class.class);
+  public static Loader<Workflow_class> uri_Workflow_class_False_True_None = new UriLoader(Workflow_class, false, true, null);
   public static Loader<java.util.List<WorkflowStep>> array_of_WorkflowStep = new ArrayLoader(WorkflowStep);
   public static Loader<java.util.List<Object>> idmap_steps_array_of_WorkflowStep = new IdMapLoader(array_of_WorkflowStep, "id", "None");
   public static Loader<SubworkflowFeatureRequirement_class> SubworkflowFeatureRequirement_class = new EnumLoader(SubworkflowFeatureRequirement_class.class);
@@ -285,6 +290,8 @@ public class LoaderInstances {
   public static Loader<java.util.List<Object>> idmap_inputs_array_of_OperationInputParameter = new IdMapLoader(array_of_OperationInputParameter, "id", "type");
   public static Loader<java.util.List<OperationOutputParameter>> array_of_OperationOutputParameter = new ArrayLoader(OperationOutputParameter);
   public static Loader<java.util.List<Object>> idmap_outputs_array_of_OperationOutputParameter = new IdMapLoader(array_of_OperationOutputParameter, "id", "type");
+  public static Loader<Operation_class> Operation_class = new EnumLoader(Operation_class.class);
+  public static Loader<Operation_class> uri_Operation_class_False_True_None = new UriLoader(Operation_class, false, true, null);
   public static Loader<Object> union_of_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation = new UnionLoader(new Loader[] { CommandLineTool, ExpressionTool, Workflow, Operation });
   public static Loader<java.util.List<Object>> array_of_union_of_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation = new ArrayLoader(union_of_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation);
   public static Loader<Object> union_of_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation_or_array_of_union_of_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation = new UnionLoader(new Loader[] { CommandLineTool, ExpressionTool, Workflow, Operation, array_of_union_of_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation });

@@ -120,5 +120,5 @@ public interface Operation extends Process, Savable {
 
    */
 
-  String getClass_();
+  Operation_class getClass_();
 }

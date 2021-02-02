@@ -164,7 +164,7 @@ public interface Workflow extends Process, Savable {
 
    */
 
-  String getClass_();
+  Workflow_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Workflow/steps</I><BR>
    * <BLOCKQUOTE>

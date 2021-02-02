@@ -168,14 +168,14 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
     return this.intent;
   }
 
-  private String class_;
+  private ExpressionTool_class class_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ExpressionTool/class</I><BR>
 
    */
 
-  public String getClass_() {
+  public ExpressionTool_class getClass_() {
     return this.class_;
   }
 
@@ -374,11 +374,11 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
     } else {
       intent = null;
     }
-    String class_;
+    ExpressionTool_class class_;
     try {
       class_ =
           LoaderInstances
-              .uri_StringInstance_False_True_None
+              .uri_ExpressionTool_class_False_True_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.
@@ -408,7 +408,7 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
     this.hints = (java.util.Optional<java.util.List<Object>>) hints;
     this.cwlVersion = (java.util.Optional<CWLVersion>) cwlVersion;
     this.intent = (java.util.Optional<java.util.List<Object>>) intent;
-    this.class_ = (String) class_;
+    this.class_ = (ExpressionTool_class) class_;
     this.expression = (String) expression;
   }
 }

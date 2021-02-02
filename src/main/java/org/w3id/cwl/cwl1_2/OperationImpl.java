@@ -168,14 +168,14 @@ public class OperationImpl extends SavableImpl implements Operation {
     return this.intent;
   }
 
-  private String class_;
+  private Operation_class class_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Operation/class</I><BR>
 
    */
 
-  public String getClass_() {
+  public Operation_class getClass_() {
     return this.class_;
   }
 
@@ -359,11 +359,11 @@ public class OperationImpl extends SavableImpl implements Operation {
     } else {
       intent = null;
     }
-    String class_;
+    Operation_class class_;
     try {
       class_ =
           LoaderInstances
-              .uri_StringInstance_False_True_None
+              .uri_Operation_class_False_True_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.
@@ -382,6 +382,6 @@ public class OperationImpl extends SavableImpl implements Operation {
     this.hints = (java.util.Optional<java.util.List<Object>>) hints;
     this.cwlVersion = (java.util.Optional<CWLVersion>) cwlVersion;
     this.intent = (java.util.Optional<java.util.List<Object>>) intent;
-    this.class_ = (String) class_;
+    this.class_ = (Operation_class) class_;
   }
 }

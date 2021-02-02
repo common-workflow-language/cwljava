@@ -114,7 +114,7 @@ public interface CommandLineTool extends Process, Savable {
 
    */
 
-  String getClass_();
+  CommandLineTool_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#baseCommand</I><BR>
    * <BLOCKQUOTE>
