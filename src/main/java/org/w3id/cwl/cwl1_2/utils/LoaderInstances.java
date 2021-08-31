@@ -1,7 +1,6 @@
 package org.w3id.cwl.cwl1_2.utils;
 
 import java.util.List;
-
 import org.w3id.cwl.cwl1_2.*;
 
 public class LoaderInstances {

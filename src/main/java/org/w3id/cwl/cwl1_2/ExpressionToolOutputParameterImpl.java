@@ -212,6 +212,7 @@ public class ExpressionToolOutputParameterImpl extends SavableImpl implements Ex
       id = null;
     }
 
+    Boolean __original_is_null = id == null;
     if (id == null) {
       if (__docRoot != null) {
         id = java.util.Optional.of(__docRoot);
@@ -219,7 +220,11 @@ public class ExpressionToolOutputParameterImpl extends SavableImpl implements Ex
         id = java.util.Optional.of("_:" + java.util.UUID.randomUUID().toString());
       }
     }
-    __baseUri = (String) id.orElse(null);
+    if (__original_is_null) {
+        __baseUri = __baseUri_;
+    } else {
+        __baseUri = (String) id.orElse(null);
+    }
     java.util.Optional<String> label;
 
     if (__doc.containsKey("label")) {
