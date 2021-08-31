@@ -2,7 +2,6 @@ package org.w3id.cwl.cwl1_2.utils;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.w3id.cwl.cwl1_2.utils.DefaultFetcher;
 
 public class DefaultFetcherTest {
   @Test

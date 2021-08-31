@@ -3,7 +3,6 @@ package org.w3id.cwl.cwl1_2.utils;
 import java.util.Map;
 import org.junit.Assert;
 import org.junit.Test;
-import org.w3id.cwl.cwl1_2.utils.YamlUtils;
 
 public class YamlUtilsTest {
   @Test
