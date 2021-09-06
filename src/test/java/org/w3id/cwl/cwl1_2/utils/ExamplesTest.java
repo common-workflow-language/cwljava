@@ -1,9 +1,5 @@
 package org.w3id.cwl.cwl1_2.utils;
 
-import org.w3id.cwl.cwl1_2.utils.RootLoader;
-import org.w3id.cwl.cwl1_2.utils.Uris;
-import org.w3id.cwl.cwl1_2.utils.YamlUtils;
-
 public class ExamplesTest {
 
   @org.junit.Test
@@ -890,7 +886,7 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines17_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -900,14 +896,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines17_wfByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_count-lines17-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines17_wfByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_count-lines17-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -1020,7 +1016,7 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines14_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -1030,14 +1026,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines14_wfByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_count-lines14-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines14_wfByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_count-lines14-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -1800,7 +1796,7 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines16_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -1810,14 +1806,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines16_wfByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_count-lines16-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines16_wfByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_count-lines16-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -3594,7 +3590,7 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines10_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -3604,14 +3600,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines10_wfByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_count-lines10-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines10_wfByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_count-lines10-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -3828,6 +3824,7 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
+  
   @org.junit.Test
   public void testvalid_record_in_secondaryFilesByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -3854,6 +3851,34 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
+  
+  @org.junit.Test
+  public void testvalid_packed_record_in_secondaryFilesByString() throws Exception {
+    String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
+    String baseUri = Uris.fileUri(path) + "/";
+    java.net.URL url = getClass().getResource("valid_packed_record-in-secondaryFiles.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, baseUri);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_record_in_secondaryFilesByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_record-in-secondaryFiles.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_record_in_secondaryFilesByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_record-in-secondaryFiles.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+
   @org.junit.Test
   public void testvalid_writable_dir_dockerByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
@@ -5128,7 +5153,7 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_tmap_toolByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -5138,14 +5163,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_tmap_toolByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_tmap-tool.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_tmap_toolByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_tmap-tool.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -6532,7 +6557,7 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines18_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -6542,14 +6567,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines18_wfByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_count-lines18-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines18_wfByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_count-lines18-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -6714,7 +6739,7 @@ public class ExamplesTest {
     doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
     RootLoader.loadDocument(doc, url.toString());
   }
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines15_wfByString() throws Exception {
     String path = java.nio.file.Paths.get(".").toAbsolutePath().normalize().toString();
     String baseUri = Uris.fileUri(path) + "/";
@@ -6724,14 +6749,14 @@ public class ExamplesTest {
     RootLoader.loadDocument(yaml, baseUri);
   }
 
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines15_wfByPath() throws Exception {
     java.net.URL url = getClass().getResource("valid_count-lines15-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
 
-  @org.junit.Test()
+  @org.junit.Test
   public void testvalid_count_lines15_wfByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_count-lines15-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
