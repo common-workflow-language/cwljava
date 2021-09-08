@@ -48,6 +48,17 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
     return this.id;
   }
 
+  private ExpressionTool_class class_;
+
+  /**
+   * Getter for property <I>https://w3id.org/cwl/cwl#ExpressionTool/class</I><BR>
+
+   */
+
+  public ExpressionTool_class getClass_() {
+    return this.class_;
+  }
+
   private java.util.Optional<String> label;
 
   /**
@@ -182,17 +193,6 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
     return this.intent;
   }
 
-  private ExpressionTool_class class_;
-
-  /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#ExpressionTool/class</I><BR>
-
-   */
-
-  public ExpressionTool_class getClass_() {
-    return this.class_;
-  }
-
   private String expression;
 
   /**
@@ -268,6 +268,17 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
         __baseUri = __baseUri_;
     } else {
         __baseUri = (String) id.orElse(null);
+    }
+    ExpressionTool_class class_;
+    try {
+      class_ =
+          LoaderInstances
+              .uri_ExpressionTool_class_False_True_None
+              .loadField(__doc.get("class"), __baseUri, __loadingOptions);
+    } catch (ValidationException e) {
+      class_ = null; // won't be used but prevents compiler from complaining.
+      final String __message = "the `class` field is not valid because:";
+      __errors.add(new ValidationException(__message, e));
     }
     java.util.Optional<String> label;
 
@@ -392,17 +403,6 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
 
     } else {
       intent = null;
-    }
-    ExpressionTool_class class_;
-    try {
-      class_ =
-          LoaderInstances
-              .uri_ExpressionTool_class_False_True_None
-              .loadField(__doc.get("class"), __baseUri, __loadingOptions);
-    } catch (ValidationException e) {
-      class_ = null; // won't be used but prevents compiler from complaining.
-      final String __message = "the `class` field is not valid because:";
-      __errors.add(new ValidationException(__message, e));
     }
     String expression;
     try {

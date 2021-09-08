@@ -48,6 +48,17 @@ public class OperationImpl extends SavableImpl implements Operation {
     return this.id;
   }
 
+  private Operation_class class_;
+
+  /**
+   * Getter for property <I>https://w3id.org/cwl/cwl#Operation/class</I><BR>
+
+   */
+
+  public Operation_class getClass_() {
+    return this.class_;
+  }
+
   private java.util.Optional<String> label;
 
   /**
@@ -182,17 +193,6 @@ public class OperationImpl extends SavableImpl implements Operation {
     return this.intent;
   }
 
-  private Operation_class class_;
-
-  /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#Operation/class</I><BR>
-
-   */
-
-  public Operation_class getClass_() {
-    return this.class_;
-  }
-
   /**
    * Used by {@link org.w3id.cwl.cwl1_2.utils.RootLoader} to construct instances of OperationImpl.
    *
@@ -253,6 +253,17 @@ public class OperationImpl extends SavableImpl implements Operation {
         __baseUri = __baseUri_;
     } else {
         __baseUri = (String) id.orElse(null);
+    }
+    Operation_class class_;
+    try {
+      class_ =
+          LoaderInstances
+              .uri_Operation_class_False_True_None
+              .loadField(__doc.get("class"), __baseUri, __loadingOptions);
+    } catch (ValidationException e) {
+      class_ = null; // won't be used but prevents compiler from complaining.
+      final String __message = "the `class` field is not valid because:";
+      __errors.add(new ValidationException(__message, e));
     }
     java.util.Optional<String> label;
 
@@ -377,17 +388,6 @@ public class OperationImpl extends SavableImpl implements Operation {
 
     } else {
       intent = null;
-    }
-    Operation_class class_;
-    try {
-      class_ =
-          LoaderInstances
-              .uri_Operation_class_False_True_None
-              .loadField(__doc.get("class"), __baseUri, __loadingOptions);
-    } catch (ValidationException e) {
-      class_ = null; // won't be used but prevents compiler from complaining.
-      final String __message = "the `class` field is not valid because:";
-      __errors.add(new ValidationException(__message, e));
     }
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
