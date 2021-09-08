@@ -9,3 +9,7 @@ jdk:
 
 after_success:
   - mvn clean test jacoco:report coveralls:report
+
+branches:
+  only:
+    - cwl-1.2.0
