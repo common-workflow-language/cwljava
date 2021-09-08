@@ -28,7 +28,7 @@ public class RootLoader {
   }
 
   public static Object loadDocument(final Path path) {
-    return loadDocument(readPath(path));
+    return loadDocument(readPath(path), path.toUri().toString());
   }
 
   public static Object loadDocument(final Path path, String baseUri) {
