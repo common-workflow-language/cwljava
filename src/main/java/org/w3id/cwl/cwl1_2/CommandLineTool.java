@@ -30,6 +30,12 @@ public interface CommandLineTool extends Process, Savable {
 
   java.util.Optional<String> getId();
   /**
+   * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineTool/class</I><BR>
+
+   */
+
+  CommandLineTool_class getClass_();
+  /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Labeled/label</I><BR>
    * <BLOCKQUOTE>
    * A short, human-readable label of this object.   * </BLOCKQUOTE>
@@ -123,12 +129,6 @@ public interface CommandLineTool extends Process, Savable {
    */
 
   java.util.Optional<java.util.List<Object>> getIntent();
-  /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineTool/class</I><BR>
-
-   */
-
-  CommandLineTool_class getClass_();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#baseCommand</I><BR>
    * <BLOCKQUOTE>

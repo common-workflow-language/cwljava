@@ -92,6 +92,17 @@ public class WorkflowImpl extends SavableImpl implements Workflow {
     return this.id;
   }
 
+  private Workflow_class class_;
+
+  /**
+   * Getter for property <I>https://w3id.org/cwl/cwl#Workflow/class</I><BR>
+
+   */
+
+  public Workflow_class getClass_() {
+    return this.class_;
+  }
+
   private java.util.Optional<String> label;
 
   /**
@@ -226,17 +237,6 @@ public class WorkflowImpl extends SavableImpl implements Workflow {
     return this.intent;
   }
 
-  private Workflow_class class_;
-
-  /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#Workflow/class</I><BR>
-
-   */
-
-  public Workflow_class getClass_() {
-    return this.class_;
-  }
-
   private java.util.List<Object> steps;
 
   /**
@@ -313,6 +313,17 @@ public class WorkflowImpl extends SavableImpl implements Workflow {
         __baseUri = __baseUri_;
     } else {
         __baseUri = (String) id.orElse(null);
+    }
+    Workflow_class class_;
+    try {
+      class_ =
+          LoaderInstances
+              .uri_Workflow_class_False_True_None
+              .loadField(__doc.get("class"), __baseUri, __loadingOptions);
+    } catch (ValidationException e) {
+      class_ = null; // won't be used but prevents compiler from complaining.
+      final String __message = "the `class` field is not valid because:";
+      __errors.add(new ValidationException(__message, e));
     }
     java.util.Optional<String> label;
 
@@ -437,17 +448,6 @@ public class WorkflowImpl extends SavableImpl implements Workflow {
 
     } else {
       intent = null;
-    }
-    Workflow_class class_;
-    try {
-      class_ =
-          LoaderInstances
-              .uri_Workflow_class_False_True_None
-              .loadField(__doc.get("class"), __baseUri, __loadingOptions);
-    } catch (ValidationException e) {
-      class_ = null; // won't be used but prevents compiler from complaining.
-      final String __message = "the `class` field is not valid because:";
-      __errors.add(new ValidationException(__message, e));
     }
     java.util.List<Object> steps;
     try {

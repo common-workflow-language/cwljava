@@ -42,6 +42,17 @@ public class CommandLineToolImpl extends SavableImpl implements CommandLineTool 
     return this.id;
   }
 
+  private CommandLineTool_class class_;
+
+  /**
+   * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineTool/class</I><BR>
+
+   */
+
+  public CommandLineTool_class getClass_() {
+    return this.class_;
+  }
+
   private java.util.Optional<String> label;
 
   /**
@@ -174,17 +185,6 @@ public class CommandLineToolImpl extends SavableImpl implements CommandLineTool 
 
   public java.util.Optional<java.util.List<Object>> getIntent() {
     return this.intent;
-  }
-
-  private CommandLineTool_class class_;
-
-  /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineTool/class</I><BR>
-
-   */
-
-  public CommandLineTool_class getClass_() {
-    return this.class_;
   }
 
   private Object baseCommand;
@@ -392,6 +392,17 @@ public class CommandLineToolImpl extends SavableImpl implements CommandLineTool 
     } else {
         __baseUri = (String) id.orElse(null);
     }
+    CommandLineTool_class class_;
+    try {
+      class_ =
+          LoaderInstances
+              .uri_CommandLineTool_class_False_True_None
+              .loadField(__doc.get("class"), __baseUri, __loadingOptions);
+    } catch (ValidationException e) {
+      class_ = null; // won't be used but prevents compiler from complaining.
+      final String __message = "the `class` field is not valid because:";
+      __errors.add(new ValidationException(__message, e));
+    }
     java.util.Optional<String> label;
 
     if (__doc.containsKey("label")) {
@@ -515,17 +526,6 @@ public class CommandLineToolImpl extends SavableImpl implements CommandLineTool 
 
     } else {
       intent = null;
-    }
-    CommandLineTool_class class_;
-    try {
-      class_ =
-          LoaderInstances
-              .uri_CommandLineTool_class_False_True_None
-              .loadField(__doc.get("class"), __baseUri, __loadingOptions);
-    } catch (ValidationException e) {
-      class_ = null; // won't be used but prevents compiler from complaining.
-      final String __message = "the `class` field is not valid because:";
-      __errors.add(new ValidationException(__message, e));
     }
     Object baseCommand;
 
