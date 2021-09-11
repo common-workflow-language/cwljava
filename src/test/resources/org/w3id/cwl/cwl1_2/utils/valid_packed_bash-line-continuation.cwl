@@ -1,31 +1,13 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "listing": [
-                {
-                    "entryname": "script.sh",
-                    "entry": "echo \\\n  \"My country, 'tis of thee,\" \\\n  \"Sweet land of liberty\"\n"
-                }
-            ],
-            "class": "InitialWorkDirRequirement"
-        }
-    ],
-    "baseCommand": [
-        "bash",
-        "script.sh"
-    ],
-    "inputs": [],
-    "stdout": "out.txt",
-    "id": "#main",
-    "outputs": [
-        {
-            "type": "File",
-            "id": "#main/out",
-            "outputBinding": {
-                "glob": "out.txt"
-            }
-        }
-    ],
-    "cwlVersion": "v1.2"
-}
+baseCommand: [bash, script.sh]
+class: CommandLineTool
+cwlVersion: v1.2
+inputs: []
+outputs:
+- {id: out, type: stdout}
+requirements:
+- class: InitialWorkDirRequirement
+  listing:
+  - {entry: "echo \\\n  \"My country, 'tis of thee,\" \\\n  \"Sweet land of liberty\"\n",
+    entryname: script.sh}
+- {class: InlineJavascriptRequirement}
+stdout: out.txt

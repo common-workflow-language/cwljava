@@ -1,138 +1,51 @@
-{
-    "$graph": [
-        {
-            "class": "CommandLineTool",
-            "inputs": [
-                {
-                    "type": "int",
-                    "id": "#cat.cwl/in1"
-                },
-                {
-                    "type": "int",
-                    "id": "#cat.cwl/in2"
-                },
-                {
-                    "type": "int",
-                    "id": "#cat.cwl/in3"
-                }
-            ],
-            "baseCommand": [
-                "echo"
-            ],
-            "id": "#cat.cwl",
-            "outputs": [
-                {
-                    "type": "string",
-                    "outputBinding": {
-                        "outputEval": "$(inputs.in1)$(inputs.in2)$(inputs.in3)"
-                    },
-                    "id": "#cat.cwl/out1"
-                }
-            ]
-        },
-        {
-            "class": "Workflow",
-            "inputs": [
-                {
-                    "type": {
-                        "type": "array",
-                        "items": "int"
-                    },
-                    "default": [
-                        1,
-                        2
-                    ],
-                    "id": "#main/in1"
-                },
-                {
-                    "type": {
-                        "type": "array",
-                        "items": "int"
-                    },
-                    "default": [
-                        1,
-                        2,
-                        3
-                    ],
-                    "id": "#main/in2"
-                },
-                {
-                    "type": "int",
-                    "default": 23,
-                    "id": "#main/in3"
-                },
-                {
-                    "type": {
-                        "type": "array",
-                        "items": "boolean"
-                    },
-                    "default": [
-                        false,
-                        true,
-                        false,
-                        true
-                    ],
-                    "id": "#main/test"
-                }
-            ],
-            "steps": [
-                {
-                    "in": [
-                        {
-                            "source": "#main/test",
-                            "id": "#main/step1/another_input"
-                        },
-                        {
-                            "source": "#main/in1",
-                            "id": "#main/step1/in1"
-                        },
-                        {
-                            "source": "#main/in2",
-                            "id": "#main/step1/in2"
-                        },
-                        {
-                            "source": "#main/in3",
-                            "id": "#main/step1/in3"
-                        }
-                    ],
-                    "run": "#cat.cwl",
-                    "when": "$(inputs.another_input)",
-                    "out": [
-                        "#main/step1/out1"
-                    ],
-                    "scatter": [
-                        "#main/step1/in1",
-                        "#main/step1/in2",
-                        "#main/step1/another_input"
-                    ],
-                    "scatterMethod": "nested_crossproduct",
-                    "id": "#main/step1"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": {
-                        "type": "array",
-                        "items": {
-                            "type": "array",
-                            "items": {
-                                "type": "array",
-                                "items": "string"
-                            }
-                        }
-                    },
-                    "outputSource": "#main/step1/out1",
-                    "pickValue": "all_non_null",
-                    "id": "#main/out1"
-                }
-            ],
-            "requirements": [
-                {
-                    "class": "ScatterFeatureRequirement"
-                }
-            ],
-            "id": "#main"
-        }
-    ],
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs:
+- default: [1, 2]
+  id: in1
+  type: {items: int, type: array}
+- default: [1, 2, 3]
+  id: in2
+  type: {items: int, type: array}
+- {default: 23, id: in3, type: int}
+- default: [false, true, false, true]
+  id: test
+  type: {items: boolean, type: array}
+outputs:
+- id: out1
+  outputSource: step1/out1
+  pickValue: all_non_null
+  type:
+    items:
+      items: {items: string, type: array}
+      type: array
+    type: array
+requirements:
+- {class: ScatterFeatureRequirement}
+- {class: SubworkflowFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+steps:
+- id: step1
+  in:
+  - {id: in1, source: in1}
+  - {id: in2, source: in2}
+  - {id: in3, source: in3}
+  - {id: another_input, source: test}
+  out: [out1]
+  run:
+    baseCommand: [echo]
+    class: CommandLineTool
+    cwlVersion: v1.2
+    inputs:
+    - {id: in1, type: int}
+    - {id: in2, type: int}
+    - {id: in3, type: int}
+    outputs:
+    - id: out1
+      outputBinding: {outputEval: $(inputs.in1)$(inputs.in2)$(inputs.in3)}
+      type: string
+    requirements:
+    - {class: InlineJavascriptRequirement}
+  scatter: [in1, in2, another_input]
+  scatterMethod: nested_crossproduct
+  when: $(inputs.another_input)

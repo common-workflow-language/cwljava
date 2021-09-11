@@ -1,32 +1,13 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "listing": [
-                {
-                    "entryname": "out-number.json",
-                    "entry": "${\n  return 44.4;\n}"
-                }
-            ],
-            "class": "InitialWorkDirRequirement"
-        },
-        {
-            "class": "InlineJavascriptRequirement"
-        }
-    ],
-    "inputs": [],
-    "outputs": [
-        {
-            "type": "File",
-            "outputBinding": {
-                "glob": "out-number.json"
-            },
-            "id": "#main/filelist"
-        }
-    ],
-    "arguments": [
-        "true"
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+arguments: ['true']
+class: CommandLineTool
+cwlVersion: v1.2
+inputs: []
+outputs:
+- id: filelist
+  outputBinding: {glob: out-number.json}
+  type: File
+requirements:
+- {class: InlineJavascriptRequirement}
+- class: InitialWorkDirRequirement
+  listing:
+  - {entry: "${\n  return 44.4;\n}", entryname: out-number.json}

@@ -1,98 +1,45 @@
-{
-    "class": "Workflow",
-    "inputs": [
-        {
-            "type": {
-                "type": "array",
-                "items": {
-                    "type": "record",
-                    "name": "#main/inp/instr",
-                    "fields": [
-                        {
-                            "name": "#main/inp/instr/instr",
-                            "type": "string"
-                        }
-                    ]
-                }
-            },
-            "id": "#main/inp"
-        }
-    ],
-    "outputs": [
-        {
-            "type": {
-                "type": "array",
-                "items": "string"
-            },
-            "outputSource": "#main/step1/echo_out",
-            "id": "#main/out"
-        }
-    ],
-    "requirements": [
-        {
-            "class": "ScatterFeatureRequirement"
-        },
-        {
-            "class": "StepInputExpressionRequirement"
-        }
-    ],
-    "steps": [
-        {
-            "in": [
-                {
-                    "source": "#main/inp",
-                    "valueFrom": "$(self.instr)",
-                    "id": "#main/step1/echo_in"
-                },
-                {
-                    "source": "#main/inp",
-                    "valueFrom": "$(inputs.echo_in.instr)",
-                    "id": "#main/step1/first"
-                }
-            ],
-            "out": [
-                "#main/step1/echo_out"
-            ],
-            "scatter": "#main/step1/echo_in",
-            "run": {
-                "class": "CommandLineTool",
-                "inputs": [
-                    {
-                        "type": "string",
-                        "inputBinding": {
-                            "position": 2
-                        },
-                        "id": "#main/step1/run/echo_in"
-                    },
-                    {
-                        "type": "string",
-                        "inputBinding": {
-                            "position": 1
-                        },
-                        "id": "#main/step1/run/first"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "type": "string",
-                        "outputBinding": {
-                            "glob": "step1_out",
-                            "loadContents": true,
-                            "outputEval": "$(self[0].contents)"
-                        },
-                        "id": "#main/step1/run/echo_out"
-                    }
-                ],
-                "baseCommand": "echo",
-                "arguments": [
-                    "-n",
-                    "foo"
-                ],
-                "stdout": "step1_out"
-            },
-            "id": "#main/step1"
-        }
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs:
+- id: inp
+  type:
+    items:
+      fields:
+      - {name: instr, type: string}
+      name: instr
+      type: record
+    type: array
+outputs:
+- id: out
+  outputSource: step1/echo_out
+  type: {items: string, type: array}
+requirements:
+- {class: ScatterFeatureRequirement}
+- {class: StepInputExpressionRequirement}
+- {class: SubworkflowFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+steps:
+- id: step1
+  in:
+  - {id: echo_in, source: inp, valueFrom: $(self.instr)}
+  - {id: first, source: inp, valueFrom: $(inputs.echo_in.instr)}
+  out: [echo_out]
+  run:
+    arguments: [-n, foo]
+    baseCommand: echo
+    class: CommandLineTool
+    inputs:
+    - id: first
+      inputBinding: {position: 1}
+      type: string
+    - id: echo_in
+      inputBinding: {position: 2}
+      type: string
+    outputs:
+    - id: echo_out
+      outputBinding: {glob: step1_out, loadContents: true, outputEval: '$(self[0].contents)'}
+      type: string
+    requirements:
+    - {class: InlineJavascriptRequirement}
+    stdout: step1_out
+  scatter: echo_in

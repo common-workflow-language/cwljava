@@ -1,55 +1,26 @@
-{
-    "class": "CommandLineTool",
-    "inputs": [
-        {
-            "type": {
-                "type": "record",
-                "fields": [
-                    {
-                        "type": "File",
-                        "name": "#main/record_input/f1"
-                    },
-                    {
-                        "type": {
-                            "type": "array",
-                            "items": "File"
-                        },
-                        "name": "#main/record_input/f2"
-                    }
-                ]
-            },
-            "id": "#main/record_input"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "File",
-            "format": "http://example.com/format1",
-            "outputBinding": {
-                "outputEval": "$(inputs.record_input.f1)"
-            },
-            "id": "#main/f1out"
-        },
-        {
-            "type": {
-                "type": "record",
-                "fields": [
-                    {
-                        "type": "File",
-                        "format": "http://example.com/format2",
-                        "outputBinding": {
-                            "outputEval": "$(inputs.record_input.f2[0])"
-                        },
-                        "name": "#main/record_output/f2out"
-                    }
-                ]
-            },
-            "id": "#main/record_output"
-        }
-    ],
-    "arguments": [
-        "true"
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+arguments: ['true']
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- id: record_input
+  type:
+    fields:
+    - {name: f1, type: File}
+    - name: f2
+      type: {items: File, type: array}
+    type: record
+outputs:
+- format: http://example.com/format1
+  id: f1out
+  outputBinding: {outputEval: $(inputs.record_input.f1)}
+  type: File
+- id: record_output
+  type:
+    fields:
+    - format: http://example.com/format2
+      name: f2out
+      outputBinding: {outputEval: '$(inputs.record_input.f2[0])'}
+      type: File
+    type: record
+requirements:
+- {class: InlineJavascriptRequirement}

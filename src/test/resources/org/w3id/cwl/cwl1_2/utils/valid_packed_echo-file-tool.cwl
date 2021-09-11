@@ -1,34 +1,14 @@
-{
-    "class": "CommandLineTool",
-    "baseCommand": [
-        "echo"
-    ],
-    "inputs": [
-        {
-            "type": "string",
-            "inputBinding": {
-                "position": 1
-            },
-            "id": "#main/in"
-        },
-        {
-            "type": [
-                "null",
-                "string"
-            ],
-            "id": "#main/name"
-        }
-    ],
-    "stdout": "out.txt",
-    "outputs": [
-        {
-            "type": "File",
-            "id": "#main/out",
-            "outputBinding": {
-                "glob": "out.txt"
-            }
-        }
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: [echo]
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- id: in
+  inputBinding: {position: 1}
+  type: string
+- id: name
+  type: ['null', string]
+outputs:
+- {id: out, type: stdout}
+requirements:
+- {class: InlineJavascriptRequirement}
+stdout: out.txt

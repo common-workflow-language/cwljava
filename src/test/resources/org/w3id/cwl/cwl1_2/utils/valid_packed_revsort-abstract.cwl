@@ -1,110 +1,49 @@
-{
-    "$graph": [
-        {
-            "class": "CommandLineTool",
-            "doc": "Reverse each line using the `rev` command",
-            "inputs": [
-                {
-                    "type": "File",
-                    "inputBinding": {},
-                    "id": "#revtool.cwl/input"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": "File",
-                    "outputBinding": {
-                        "glob": "output.txt"
-                    },
-                    "id": "#revtool.cwl/output"
-                }
-            ],
-            "baseCommand": "rev",
-            "stdout": "output.txt",
-            "id": "#revtool.cwl"
-        },
-        {
-            "class": "Workflow",
-            "doc": "Reverse the lines in a document, then sort those lines.",
-            "inputs": [
-                {
-                    "type": "File",
-                    "doc": "The input file to be processed.",
-                    "id": "#main/input"
-                },
-                {
-                    "type": "boolean",
-                    "default": true,
-                    "doc": "If true, reverse (decending) sort",
-                    "id": "#main/reverse_sort"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": "File",
-                    "outputSource": "#main/sort/sorted",
-                    "doc": "The output with the lines reversed and sorted.",
-                    "id": "#main/output"
-                }
-            ],
-            "steps": [
-                {
-                    "in": [
-                        {
-                            "source": "#main/input",
-                            "id": "#main/rev/input"
-                        }
-                    ],
-                    "out": [
-                        "#main/rev/output"
-                    ],
-                    "run": "#revtool.cwl",
-                    "id": "#main/rev"
-                },
-                {
-                    "in": [
-                        {
-                            "source": "#main/rev/output",
-                            "id": "#main/sort/input"
-                        },
-                        {
-                            "source": "#main/reverse_sort",
-                            "id": "#main/sort/reverse"
-                        }
-                    ],
-                    "out": [
-                        "#main/sort/sorted"
-                    ],
-                    "run": {
-                        "class": "Operation",
-                        "id": "#main/sort/run/sort",
-                        "doc": "Sort the lines of the file",
-                        "inputs": [
-                            {
-                                "type": "File",
-                                "doc": "The input file to be sorted.",
-                                "id": "#main/sort/run/sort/input"
-                            },
-                            {
-                                "type": "boolean",
-                                "default": true,
-                                "doc": "If true, reverse (decending) sort",
-                                "id": "#main/sort/run/sort/reverse"
-                            }
-                        ],
-                        "outputs": [
-                            {
-                                "type": "File",
-                                "doc": "The sorted file",
-                                "id": "#main/sort/run/sort/sorted"
-                            }
-                        ]
-                    },
-                    "id": "#main/sort"
-                }
-            ],
-            "id": "#main"
-        }
-    ],
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+doc: Reverse the lines in a document, then sort those lines.
+inputs:
+- {doc: The input file to be processed., id: input, type: File}
+- {default: true, doc: 'If true, reverse (decending) sort', id: reverse_sort, type: boolean}
+outputs:
+- {doc: The output with the lines reversed and sorted., id: output, outputSource: sort/sorted,
+  type: File}
+requirements:
+- {class: SubworkflowFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+steps:
+- id: rev
+  in:
+  - {id: input, source: input}
+  out: [output]
+  run:
+    baseCommand: rev
+    class: CommandLineTool
+    cwlVersion: v1.2
+    doc: Reverse each line using the `rev` command
+    inputs:
+    - id: input
+      inputBinding: {}
+      type: File
+    outputs:
+    - id: output
+      outputBinding: {glob: output.txt}
+      type: File
+    requirements:
+    - {class: InlineJavascriptRequirement}
+    stdout: output.txt
+- id: sort
+  in:
+  - {id: input, source: rev/output}
+  - {id: reverse, source: reverse_sort}
+  out: [sorted]
+  run:
+    class: Operation
+    doc: Sort the lines of the file
+    id: sort
+    inputs:
+    - {doc: The input file to be sorted., id: input, type: File}
+    - {default: true, doc: 'If true, reverse (decending) sort', id: reverse, type: boolean}
+    outputs:
+    - {doc: The sorted file, id: sorted, type: File}
+    requirements:
+    - {class: InlineJavascriptRequirement}

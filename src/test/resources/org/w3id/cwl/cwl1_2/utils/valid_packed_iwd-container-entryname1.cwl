@@ -1,46 +1,22 @@
-{
-    "class": "CommandLineTool",
-    "doc": "When executing in a container, entryname can have an absolute path\nto a mount location inside the container.\n",
-    "inputs": [
-        {
-            "type": "File",
-            "id": "#main/filelist"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "File",
-            "outputBinding": {
-                "glob": "head.txt"
-            },
-            "id": "#main/head"
-        }
-    ],
-    "requirements": [
-        {
-            "dockerPull": "debian:10",
-            "dockerOutputDirectory": "/output",
-            "class": "DockerRequirement"
-        },
-        {
-            "listing": [
-                {
-                    "entryname": "/tmp2j3y7rpb/input/stuff.txt",
-                    "entry": "$(inputs.filelist)"
-                }
-            ],
-            "class": "InitialWorkDirRequirement"
-        },
-        {
-            "class": "ShellCommandRequirement"
-        }
-    ],
-    "arguments": [
-        {
-            "shellQuote": false,
-            "valueFrom": "head -n10 /tmp2j3y7rpb/input/stuff.txt > /output/head.txt"
-        }
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+arguments:
+- {shellQuote: false, valueFrom: head -n10 /tmp2j3y7rpb/input/stuff.txt > /output/head.txt}
+class: CommandLineTool
+cwlVersion: v1.2
+doc: 'When executing in a container, entryname can have an absolute path
+
+  to a mount location inside the container.
+
+  '
+inputs:
+- {id: filelist, type: File}
+outputs:
+- id: head
+  outputBinding: {glob: head.txt}
+  type: File
+requirements:
+- {class: DockerRequirement, dockerOutputDirectory: /output, dockerPull: 'debian:10'}
+- class: InitialWorkDirRequirement
+  listing:
+  - {entry: $(inputs.filelist), entryname: /tmp2j3y7rpb/input/stuff.txt}
+- {class: ShellCommandRequirement}
+- {class: InlineJavascriptRequirement}

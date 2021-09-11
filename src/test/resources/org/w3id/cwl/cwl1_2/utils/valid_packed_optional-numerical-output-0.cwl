@@ -1,30 +1,11 @@
-{
-    "class": "CommandLineTool",
-    "baseCommand": [
-        "echo",
-        "0"
-    ],
-    "stdout": "a.txt",
-    "requirements": [
-        {
-            "class": "InlineJavascriptRequirement"
-        }
-    ],
-    "inputs": [],
-    "outputs": [
-        {
-            "type": [
-                "null",
-                "float"
-            ],
-            "outputBinding": {
-                "glob": "a.txt",
-                "loadContents": true,
-                "outputEval": "${\n    return parseFloat(self[0].contents);\n}"
-            },
-            "id": "#main/out"
-        }
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: [echo, '0']
+class: CommandLineTool
+cwlVersion: v1.2
+inputs: []
+outputs:
+- id: out
+  outputBinding: {glob: a.txt, loadContents: true, outputEval: "${\n    return parseFloat(self[0].contents);\n}"}
+  type: ['null', float]
+requirements:
+- {class: InlineJavascriptRequirement}
+stdout: a.txt

@@ -1,94 +1,50 @@
-{
-    "$graph": [
-        {
-            "class": "CommandLineTool",
-            "inputs": [
-                {
-                    "type": "int",
-                    "id": "#foo.cwl/in1"
-                }
-            ],
-            "baseCommand": [
-                "echo"
-            ],
-            "id": "#foo.cwl",
-            "outputs": [
-                {
-                    "type": "string",
-                    "outputBinding": {
-                        "outputEval": "foo $(inputs.in1)"
-                    },
-                    "id": "#foo.cwl/out1"
-                }
-            ]
-        },
-        {
-            "class": "Workflow",
-            "inputs": [
-                {
-                    "type": "int",
-                    "id": "#main/val"
-                }
-            ],
-            "steps": [
-                {
-                    "in": [
-                        {
-                            "source": "#main/val",
-                            "id": "#main/step1/a_new_var"
-                        },
-                        {
-                            "source": "#main/val",
-                            "id": "#main/step1/in1"
-                        }
-                    ],
-                    "run": "#foo.cwl",
-                    "when": "$(inputs.in1 < 1)",
-                    "out": [
-                        "#main/step1/out1"
-                    ],
-                    "id": "#main/step1"
-                },
-                {
-                    "in": [
-                        {
-                            "source": "#main/val",
-                            "id": "#main/step2/a_new_var"
-                        },
-                        {
-                            "source": "#main/val",
-                            "id": "#main/step2/in1"
-                        }
-                    ],
-                    "run": "#foo.cwl",
-                    "when": "$(inputs.a_new_var > 2)",
-                    "out": [
-                        "#main/step2/out1"
-                    ],
-                    "id": "#main/step2"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": "string",
-                    "outputSource": [
-                        "#main/step1/out1",
-                        "#main/step2/out1"
-                    ],
-                    "pickValue": "first_non_null",
-                    "id": "#main/out1"
-                }
-            ],
-            "requirements": [
-                {
-                    "class": "InlineJavascriptRequirement"
-                },
-                {
-                    "class": "MultipleInputFeatureRequirement"
-                }
-            ],
-            "id": "#main"
-        }
-    ],
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs:
+- {id: val, type: int}
+outputs:
+- id: out1
+  outputSource: [step1/out1, step2/out1]
+  pickValue: first_non_null
+  type: string
+requirements:
+- {class: InlineJavascriptRequirement}
+- {class: MultipleInputFeatureRequirement}
+- {class: SubworkflowFeatureRequirement}
+steps:
+- id: step1
+  in:
+  - {id: in1, source: val}
+  - {id: a_new_var, source: val}
+  out: [out1]
+  run:
+    baseCommand: [echo]
+    class: CommandLineTool
+    cwlVersion: v1.2
+    inputs:
+    - {id: in1, type: int}
+    outputs:
+    - id: out1
+      outputBinding: {outputEval: foo $(inputs.in1)}
+      type: string
+    requirements:
+    - {class: InlineJavascriptRequirement}
+  when: $(inputs.in1 < 1)
+- id: step2
+  in:
+  - {id: in1, source: val}
+  - {id: a_new_var, source: val}
+  out: [out1]
+  run:
+    baseCommand: [echo]
+    class: CommandLineTool
+    cwlVersion: v1.2
+    inputs:
+    - {id: in1, type: int}
+    outputs:
+    - id: out1
+      outputBinding: {outputEval: foo $(inputs.in1)}
+      type: string
+    requirements:
+    - {class: InlineJavascriptRequirement}
+  when: $(inputs.a_new_var > 2)

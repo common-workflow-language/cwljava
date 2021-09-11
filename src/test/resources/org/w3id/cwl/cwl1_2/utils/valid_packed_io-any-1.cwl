@@ -1,26 +1,11 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "class": "InlineJavascriptRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "id": "#main/bar",
-            "type": "Any"
-        }
-    ],
-    "outputs": [
-        {
-            "id": "#main/t1",
-            "type": "Any",
-            "outputBinding": {
-                "outputEval": "$(inputs.bar.class || inputs.bar)"
-            }
-        }
-    ],
-    "baseCommand": "true",
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: 'true'
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- {id: bar, type: Any}
+outputs:
+- id: t1
+  outputBinding: {outputEval: $(inputs.bar.class || inputs.bar)}
+  type: Any
+requirements:
+- {class: InlineJavascriptRequirement}

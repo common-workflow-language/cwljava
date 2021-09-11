@@ -1,67 +1,30 @@
-{
-    "$graph": [
-        {
-            "class": "CommandLineTool",
-            "inputs": [
-                {
-                    "type": "int",
-                    "id": "#foo.cwl/in1"
-                }
-            ],
-            "baseCommand": [
-                "echo"
-            ],
-            "id": "#foo.cwl",
-            "outputs": [
-                {
-                    "type": "string",
-                    "outputBinding": {
-                        "outputEval": "foo $(inputs.in1)"
-                    },
-                    "id": "#foo.cwl/out1"
-                }
-            ]
-        },
-        {
-            "class": "Workflow",
-            "inputs": [
-                {
-                    "type": "boolean",
-                    "id": "#main/test"
-                }
-            ],
-            "steps": [
-                {
-                    "in": [
-                        {
-                            "source": "#main/test",
-                            "id": "#main/step1/extra"
-                        },
-                        {
-                            "default": 23,
-                            "id": "#main/step1/in1"
-                        }
-                    ],
-                    "run": "#foo.cwl",
-                    "when": "$(inputs.extra)",
-                    "out": [
-                        "#main/step1/out1"
-                    ],
-                    "id": "#main/step1"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "outputSource": "#main/step1/out1",
-                    "id": "#main/out1"
-                }
-            ],
-            "id": "#main"
-        }
-    ],
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs:
+- {id: test, type: boolean}
+outputs:
+- id: out1
+  outputSource: step1/out1
+  type: ['null', string]
+requirements:
+- {class: SubworkflowFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+steps:
+- id: step1
+  in:
+  - {default: 23, id: in1}
+  - {id: extra, source: test}
+  out: [out1]
+  run:
+    baseCommand: [echo]
+    class: CommandLineTool
+    cwlVersion: v1.2
+    inputs:
+    - {id: in1, type: int}
+    outputs:
+    - id: out1
+      outputBinding: {outputEval: foo $(inputs.in1)}
+      type: string
+    requirements:
+    - {class: InlineJavascriptRequirement}
+  when: $(inputs.extra)

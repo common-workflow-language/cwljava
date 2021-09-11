@@ -1,40 +1,16 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "class": "InlineJavascriptRequirement"
-        },
-        {
-            "class": "InitialWorkDirRequirement",
-            "listing": [
-                {
-                    "entryname": "emptyWritableDir",
-                    "entry": "$({class: 'Directory', listing: []})",
-                    "writable": true
-                }
-            ]
-        }
-    ],
-    "hints": [
-        {
-            "class": "DockerRequirement",
-            "dockerPull": "alpine"
-        }
-    ],
-    "inputs": [],
-    "outputs": [
-        {
-            "type": "Directory",
-            "outputBinding": {
-                "glob": "emptyWritableDir"
-            },
-            "id": "#main/out"
-        }
-    ],
-    "arguments": [
-        "touch",
-        "emptyWritableDir/blurg"
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+arguments: [touch, emptyWritableDir/blurg]
+class: CommandLineTool
+cwlVersion: v1.2
+hints:
+- {class: DockerRequirement, dockerPull: alpine}
+inputs: []
+outputs:
+- id: out
+  outputBinding: {glob: emptyWritableDir}
+  type: Directory
+requirements:
+- {class: InlineJavascriptRequirement}
+- class: InitialWorkDirRequirement
+  listing:
+  - {entry: '$({class: ''Directory'', listing: []})', entryname: emptyWritableDir,
+    writable: true}

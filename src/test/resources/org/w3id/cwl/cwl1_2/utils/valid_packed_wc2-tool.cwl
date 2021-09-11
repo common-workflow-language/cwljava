@@ -1,30 +1,14 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "class": "InlineJavascriptRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "id": "#main/file1",
-            "type": "File",
-            "inputBinding": {}
-        }
-    ],
-    "outputs": [
-        {
-            "id": "#main/output",
-            "type": "int",
-            "outputBinding": {
-                "glob": "output.txt",
-                "loadContents": true,
-                "outputEval": "$(parseInt(self[0].contents))"
-            }
-        }
-    ],
-    "stdout": "output.txt",
-    "baseCommand": "wc",
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: wc
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- id: file1
+  inputBinding: {}
+  type: File
+outputs:
+- id: output
+  outputBinding: {glob: output.txt, loadContents: true, outputEval: '$(parseInt(self[0].contents))'}
+  type: int
+requirements:
+- {class: InlineJavascriptRequirement}
+stdout: output.txt

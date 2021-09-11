@@ -1,38 +1,21 @@
-{
-    "class": "CommandLineTool",
-    "doc": "Reverse each line using the `rev` command",
-    "hints": [
-        {
-            "dockerPull": "debian:stretch-slim",
-            "class": "DockerRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "File",
-            "inputBinding": {},
-            "format": "http://edamontology.org/format_2330",
-            "id": "#main/input"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "File",
-            "outputBinding": {
-                "glob": "output.txt"
-            },
-            "format": "$(inputs.input.format)",
-            "id": "#main/output"
-        }
-    ],
-    "baseCommand": "rev",
-    "stdout": "output.txt",
-    "id": "#main",
-    "cwlVersion": "v1.2",
-    "$schemas": [
-        "EDAM.owl"
-    ],
-    "$namespaces": {
-        "edam": "http://edamontology.org/"
-    }
-}
+$namespaces: {edam: 'http://edamontology.org/'}
+$schemas: [EDAM.owl]
+baseCommand: rev
+class: CommandLineTool
+cwlVersion: v1.2
+doc: Reverse each line using the `rev` command
+hints:
+  DockerRequirement: {dockerPull: 'debian:stretch-slim'}
+inputs:
+- format: edam:format_2330
+  id: input
+  inputBinding: {}
+  type: File
+outputs:
+- format: $(inputs.input.format)
+  id: output
+  outputBinding: {glob: output.txt}
+  type: File
+requirements:
+- {class: InlineJavascriptRequirement}
+stdout: output.txt

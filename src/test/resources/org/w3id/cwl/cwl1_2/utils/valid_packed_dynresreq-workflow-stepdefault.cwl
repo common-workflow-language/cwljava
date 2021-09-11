@@ -1,112 +1,48 @@
-{
-    "$graph": [
-        {
-            "class": "CommandLineTool",
-            "inputs": [
-                {
-                    "type": "File",
-                    "id": "#cat-tool.cwl/file1"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": "File",
-                    "outputBinding": {
-                        "glob": "output"
-                    },
-                    "id": "#cat-tool.cwl/output"
-                }
-            ],
-            "baseCommand": [
-                "cat"
-            ],
-            "stdin": "$(inputs.file1.path)",
-            "stdout": "output",
-            "id": "#cat-tool.cwl"
-        },
-        {
-            "class": "CommandLineTool",
-            "requirements": [
-                {
-                    "coresMin": "$(inputs.special_file.size)",
-                    "coresMax": "$(inputs.special_file.size)",
-                    "class": "ResourceRequirement"
-                }
-            ],
-            "inputs": [
-                {
-                    "type": "File",
-                    "id": "#dynresreq.cwl/special_file"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": "File",
-                    "id": "#dynresreq.cwl/output",
-                    "outputBinding": {
-                        "glob": "cores.txt"
-                    }
-                }
-            ],
-            "baseCommand": "echo",
-            "stdout": "cores.txt",
-            "arguments": [
-                "$(runtime.cores)"
-            ],
-            "id": "#dynresreq.cwl"
-        },
-        {
-            "class": "Workflow",
-            "inputs": [
-                {
-                    "type": [
-                        "null",
-                        "File"
-                    ],
-                    "id": "#main/special_file"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": "File",
-                    "outputSource": "#main/report/output",
-                    "id": "#main/cores"
-                }
-            ],
-            "steps": [
-                {
-                    "in": [
-                        {
-                            "source": "#main/special_file",
-                            "default": {
-                                "class": "File",
-                                "location": "special_file"
-                            },
-                            "id": "#main/count/special_file"
-                        }
-                    ],
-                    "out": [
-                        "#main/count/output"
-                    ],
-                    "run": "#dynresreq.cwl",
-                    "id": "#main/count"
-                },
-                {
-                    "in": [
-                        {
-                            "source": "#main/count/output",
-                            "id": "#main/report/file1"
-                        }
-                    ],
-                    "out": [
-                        "#main/report/output"
-                    ],
-                    "run": "#cat-tool.cwl",
-                    "id": "#main/report"
-                }
-            ],
-            "id": "#main"
-        }
-    ],
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs:
+- id: special_file
+  type: ['null', File]
+outputs:
+- {id: cores, outputSource: report/output, type: File}
+requirements:
+- {class: SubworkflowFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+steps:
+- id: count
+  in:
+  - default: {class: File, location: special_file}
+    id: special_file
+    source: special_file
+  out: [output]
+  run:
+    arguments: [$(runtime.cores)]
+    baseCommand: echo
+    class: CommandLineTool
+    cwlVersion: v1.2
+    inputs:
+    - {id: special_file, type: File}
+    outputs:
+    - {id: output, type: stdout}
+    requirements:
+    - {class: ResourceRequirement, coresMax: $(inputs.special_file.size), coresMin: $(inputs.special_file.size)}
+    - {class: InlineJavascriptRequirement}
+    stdout: cores.txt
+- id: report
+  in:
+  - {id: file1, source: count/output}
+  out: [output]
+  run:
+    baseCommand: [cat]
+    class: CommandLineTool
+    cwlVersion: v1.2
+    inputs:
+    - {id: file1, type: File}
+    outputs:
+    - id: output
+      outputBinding: {glob: output}
+      type: File
+    requirements:
+    - {class: InlineJavascriptRequirement}
+    stdin: $(inputs.file1.path)
+    stdout: output

@@ -1,25 +1,28 @@
-{
-    "class": "CommandLineTool",
-    "id": "#main",
-    "inputs": [
-        {
-            "type": "Any",
-            "inputBinding": {},
-            "id": "#main/in"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "string",
-            "outputBinding": {
-                "glob": "out.txt",
-                "loadContents": true,
-                "outputEval": "$(self[0].contents)"
-            },
-            "id": "#main/out"
-        }
-    ],
-    "baseCommand": "echo",
-    "stdout": "out.txt",
-    "cwlVersion": "v1.2"
-}
+$graph:
+- baseCommand: [echo, first]
+  class: CommandLineTool
+  id: first
+  inputs:
+    in: {type: Any}
+  outputs:
+    out:
+      outputBinding: {glob: out.txt, loadContents: true, outputEval: '$(self[0].contents)'}
+      type: string
+  stdout: out.txt
+- baseCommand: echo
+  class: CommandLineTool
+  id: '#main'
+  inputs:
+    in:
+      inputBinding: {}
+      type: Any
+  outputs:
+    out:
+      outputBinding: {glob: out.txt, loadContents: true, outputEval: '$(self[0].contents)'}
+      type: string
+  stdout: out.txt
+cwlVersion: v1.2
+inputs: []
+outputs: []
+requirements:
+- {class: InlineJavascriptRequirement}

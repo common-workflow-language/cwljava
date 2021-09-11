@@ -1,73 +1,31 @@
-{
-    "class": "Workflow",
-    "requirements": [
-        {
-            "class": "StepInputExpressionRequirement"
-        },
-        {
-            "class": "MultipleInputFeatureRequirement"
-        },
-        {
-            "class": "InlineJavascriptRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": [
-                "int",
-                "string"
-            ],
-            "id": "#main/int_1"
-        },
-        {
-            "type": [
-                "int",
-                "string"
-            ],
-            "id": "#main/int_2"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "int",
-            "outputSource": "#main/sum/result",
-            "id": "#main/result"
-        }
-    ],
-    "steps": [
-        {
-            "in": [
-                {
-                    "source": [
-                        "#main/int_1",
-                        "#main/int_2"
-                    ],
-                    "valueFrom": "${\n  var sum = 0;\n  for (var i = 0; i < self.length; i++){\n    sum += self[i];\n  };\n  return sum;\n}\n",
-                    "id": "#main/sum/data"
-                }
-            ],
-            "out": [
-                "#main/sum/result"
-            ],
-            "run": {
-                "class": "ExpressionTool",
-                "inputs": [
-                    {
-                        "type": "int",
-                        "id": "#main/sum/run/data"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "type": "int",
-                        "id": "#main/sum/run/result"
-                    }
-                ],
-                "expression": "${\n  return {\"result\": inputs.data};\n}\n"
-            },
-            "id": "#main/sum"
-        }
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs:
+- id: int_1
+  type: [int, string]
+- id: int_2
+  type: [int, string]
+outputs:
+- {id: result, outputSource: sum/result, type: int}
+requirements:
+- {class: StepInputExpressionRequirement}
+- {class: MultipleInputFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+- {class: SubworkflowFeatureRequirement}
+steps:
+- id: sum
+  in:
+  - id: data
+    source: [int_1, int_2]
+    valueFrom: "${\n  var sum = 0;\n  for (var i = 0; i < self.length; i++){\n    sum
+      += self[i];\n  };\n  return sum;\n}\n"
+  out: [result]
+  run:
+    class: ExpressionTool
+    expression: "${\n  return {\"result\": inputs.data};\n}\n"
+    inputs:
+    - {id: data, type: int}
+    outputs:
+    - {id: result, type: int}
+    requirements:
+    - {class: InlineJavascriptRequirement}

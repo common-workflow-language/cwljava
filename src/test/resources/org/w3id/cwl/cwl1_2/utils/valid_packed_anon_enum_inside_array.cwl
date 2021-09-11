@@ -1,62 +1,25 @@
-{
-    "class": "CommandLineTool",
-    "inputs": [
-        {
-            "type": {
-                "type": "record",
-                "fields": [
-                    {
-                        "type": [
-                            {
-                                "type": "enum",
-                                "symbols": [
-                                    "#main/first/species/homo_sapiens",
-                                    "#main/first/species/mus_musculus"
-                                ]
-                            },
-                            "null"
-                        ],
-                        "name": "#main/first/species"
-                    }
-                ]
-            },
-            "id": "#main/first"
-        },
-        {
-            "type": [
-                "null",
-                {
-                    "type": "enum",
-                    "symbols": [
-                        "#main/second/homo_sapiens",
-                        "#main/second/mus_musculus"
-                    ]
-                }
-            ],
-            "id": "#main/second"
-        }
-    ],
-    "baseCommand": "echo",
-    "arguments": [
-        {
-            "prefix": "first",
-            "valueFrom": "$(inputs.first.species)"
-        },
-        {
-            "prefix": "second",
-            "valueFrom": "$(inputs.second)"
-        }
-    ],
-    "id": "#main",
-    "stdout": "709b3206edab6b9163b81b4a767f8ecd6494e76a",
-    "outputs": [
-        {
-            "type": "File",
-            "id": "#main/result",
-            "outputBinding": {
-                "glob": "709b3206edab6b9163b81b4a767f8ecd6494e76a"
-            }
-        }
-    ],
-    "cwlVersion": "v1.2"
-}
+arguments:
+- {prefix: first, valueFrom: $(inputs.first.species)}
+- {prefix: second, valueFrom: $(inputs.second)}
+baseCommand: echo
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- id: first
+  type:
+    fields:
+    - name: species
+      type:
+      - symbols: [homo_sapiens, mus_musculus]
+        type: enum
+      - 'null'
+    type: record
+- id: second
+  type:
+  - 'null'
+  - symbols: [homo_sapiens, mus_musculus]
+    type: enum
+outputs:
+- {id: result, type: stdout}
+requirements:
+- {class: InlineJavascriptRequirement}

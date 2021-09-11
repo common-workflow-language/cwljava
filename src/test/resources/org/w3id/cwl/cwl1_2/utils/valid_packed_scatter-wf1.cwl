@@ -1,71 +1,34 @@
-{
-    "class": "Workflow",
-    "inputs": [
-        {
-            "type": {
-                "type": "array",
-                "items": "string"
-            },
-            "id": "#main/inp"
-        }
-    ],
-    "outputs": [
-        {
-            "type": {
-                "type": "array",
-                "items": "string"
-            },
-            "outputSource": "#main/step1/echo_out",
-            "id": "#main/out"
-        }
-    ],
-    "requirements": [
-        {
-            "class": "ScatterFeatureRequirement"
-        }
-    ],
-    "steps": [
-        {
-            "in": [
-                {
-                    "source": "#main/inp",
-                    "id": "#main/step1/echo_in"
-                }
-            ],
-            "out": [
-                "#main/step1/echo_out"
-            ],
-            "scatter": "#main/step1/echo_in",
-            "run": {
-                "class": "CommandLineTool",
-                "inputs": [
-                    {
-                        "type": "string",
-                        "inputBinding": {},
-                        "id": "#main/step1/run/echo_in"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "type": "string",
-                        "outputBinding": {
-                            "glob": "step1_out",
-                            "loadContents": true,
-                            "outputEval": "$(self[0].contents)"
-                        },
-                        "id": "#main/step1/run/echo_out"
-                    }
-                ],
-                "baseCommand": "echo",
-                "arguments": [
-                    "-n",
-                    "foo"
-                ],
-                "stdout": "step1_out"
-            },
-            "id": "#main/step1"
-        }
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs:
+- id: inp
+  type: {items: string, type: array}
+outputs:
+- id: out
+  outputSource: step1/echo_out
+  type: {items: string, type: array}
+requirements:
+- {class: ScatterFeatureRequirement}
+- {class: SubworkflowFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+steps:
+- id: step1
+  in:
+  - {id: echo_in, source: inp}
+  out: [echo_out]
+  run:
+    arguments: [-n, foo]
+    baseCommand: echo
+    class: CommandLineTool
+    inputs:
+    - id: echo_in
+      inputBinding: {}
+      type: string
+    outputs:
+    - id: echo_out
+      outputBinding: {glob: step1_out, loadContents: true, outputEval: '$(self[0].contents)'}
+      type: string
+    requirements:
+    - {class: InlineJavascriptRequirement}
+    stdout: step1_out
+  scatter: echo_in

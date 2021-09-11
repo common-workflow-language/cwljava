@@ -1,62 +1,26 @@
-{
-    "class": "Workflow",
-    "requirements": [
-        {
-            "class": "InlineJavascriptRequirement"
-        },
-        {
-            "class": "StepInputExpressionRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "File",
-            "id": "#main/my_file"
-        }
-    ],
-    "steps": [
-        {
-            "run": {
-                "class": "ExpressionTool",
-                "requirements": [
-                    {
-                        "class": "InlineJavascriptRequirement"
-                    }
-                ],
-                "inputs": [
-                    {
-                        "type": "File",
-                        "loadContents": true,
-                        "id": "#main/one/run/my_number"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "type": "int",
-                        "id": "#main/one/run/my_int"
-                    }
-                ],
-                "expression": "${ return { \"my_int\": parseInt(inputs.my_number.contents) }; }\n"
-            },
-            "in": [
-                {
-                    "source": "#main/my_file",
-                    "id": "#main/one/my_number"
-                }
-            ],
-            "out": [
-                "#main/one/my_int"
-            ],
-            "id": "#main/one"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "int",
-            "outputSource": "#main/one/my_int",
-            "id": "#main/my_int"
-        }
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs:
+- {id: my_file, type: File}
+outputs:
+- {id: my_int, outputSource: one/my_int, type: int}
+requirements:
+- {class: StepInputExpressionRequirement}
+- {class: InlineJavascriptRequirement}
+- {class: SubworkflowFeatureRequirement}
+steps:
+- id: one
+  in:
+  - {id: my_number, source: my_file}
+  out: [my_int]
+  run:
+    class: ExpressionTool
+    expression: '${ return { "my_int": parseInt(inputs.my_number.contents) }; }
+
+      '
+    inputs:
+    - {id: my_number, loadContents: true, type: File}
+    outputs:
+    - {id: my_int, type: int}
+    requirements:
+    - {class: InlineJavascriptRequirement}

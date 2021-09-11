@@ -1,25 +1,11 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "dockerPull": "bash:4.4.12",
-            "class": "DockerRequirement"
-        }
-    ],
-    "inputs": [],
-    "outputs": [
-        {
-            "type": "File",
-            "outputBinding": {
-                "glob": "cow"
-            },
-            "id": "#main/cow"
-        }
-    ],
-    "baseCommand": [
-        "-c",
-        "echo 'moo' > cow"
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: [-c, echo 'moo' > cow]
+class: CommandLineTool
+cwlVersion: v1.2
+inputs: []
+outputs:
+- id: cow
+  outputBinding: {glob: cow}
+  type: File
+requirements:
+- {class: DockerRequirement, dockerPull: 'bash:4.4.12'}
+- {class: InlineJavascriptRequirement}

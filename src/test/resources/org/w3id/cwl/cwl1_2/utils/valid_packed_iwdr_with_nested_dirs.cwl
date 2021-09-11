@@ -1,85 +1,40 @@
-{
-    "class": "Workflow",
-    "inputs": [],
-    "outputs": [
-        {
-            "type": "File",
-            "outputSource": "#main/second/ya",
-            "id": "#main/ya_empty"
-        }
-    ],
-    "steps": [
-        {
-            "run": {
-                "class": "CommandLineTool",
-                "baseCommand": [
-                    "mkdir",
-                    "-p",
-                    "deeply/nested/dir/structure"
-                ],
-                "inputs": [],
-                "outputs": [
-                    {
-                        "type": "Directory",
-                        "outputBinding": {
-                            "glob": "deeply"
-                        },
-                        "id": "#main/first/run/deep_dir"
-                    }
-                ]
-            },
-            "in": [],
-            "out": [
-                "#main/first/deep_dir"
-            ],
-            "id": "#main/first"
-        },
-        {
-            "run": {
-                "class": "CommandLineTool",
-                "baseCommand": [
-                    "touch",
-                    "deeply/nested/dir/structure/ya"
-                ],
-                "requirements": [
-                    {
-                        "listing": [
-                            {
-                                "entry": "$(inputs.dir)",
-                                "writable": true
-                            }
-                        ],
-                        "class": "InitialWorkDirRequirement"
-                    }
-                ],
-                "inputs": [
-                    {
-                        "type": "Directory",
-                        "id": "#main/second/run/dir"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "type": "File",
-                        "outputBinding": {
-                            "glob": "deeply/nested/dir/structure/ya"
-                        },
-                        "id": "#main/second/run/ya"
-                    }
-                ]
-            },
-            "in": [
-                {
-                    "source": "#main/first/deep_dir",
-                    "id": "#main/second/dir"
-                }
-            ],
-            "out": [
-                "#main/second/ya"
-            ],
-            "id": "#main/second"
-        }
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs: []
+outputs:
+- {id: ya_empty, outputSource: second/ya, type: File}
+requirements:
+- {class: SubworkflowFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+steps:
+- id: first
+  in: []
+  out: [deep_dir]
+  run:
+    baseCommand: [mkdir, -p, deeply/nested/dir/structure]
+    class: CommandLineTool
+    inputs: []
+    outputs:
+    - id: deep_dir
+      outputBinding: {glob: deeply}
+      type: Directory
+    requirements:
+    - {class: InlineJavascriptRequirement}
+- id: second
+  in:
+  - {id: dir, source: first/deep_dir}
+  out: [ya]
+  run:
+    baseCommand: [touch, deeply/nested/dir/structure/ya]
+    class: CommandLineTool
+    inputs:
+    - {id: dir, type: Directory}
+    outputs:
+    - id: ya
+      outputBinding: {glob: deeply/nested/dir/structure/ya}
+      type: File
+    requirements:
+    - class: InitialWorkDirRequirement
+      listing:
+      - {entry: $(inputs.dir), writable: true}
+    - {class: InlineJavascriptRequirement}

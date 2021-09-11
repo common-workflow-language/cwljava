@@ -1,72 +1,26 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "types": [
-                {
-                    "name": "#main/vcf2maf_params",
-                    "type": "record",
-                    "fields": [
-                        {
-                            "type": [
-                                "null",
-                                {
-                                    "type": "enum",
-                                    "symbols": [
-                                        "#main/vcf2maf_params/ncbi_build/GRCh37",
-                                        "#main/vcf2maf_params/ncbi_build/GRCh38",
-                                        "#main/vcf2maf_params/ncbi_build/GRCm38"
-                                    ]
-                                }
-                            ],
-                            "name": "#main/vcf2maf_params/ncbi_build"
-                        },
-                        {
-                            "type": [
-                                "null",
-                                {
-                                    "type": "enum",
-                                    "symbols": [
-                                        "#main/vcf2maf_params/species/homo_sapiens",
-                                        "#main/vcf2maf_params/species/mus_musculus"
-                                    ]
-                                }
-                            ],
-                            "name": "#main/vcf2maf_params/species"
-                        }
-                    ]
-                }
-            ],
-            "class": "SchemaDefRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "#main/vcf2maf_params",
-            "id": "#main/first"
-        }
-    ],
-    "baseCommand": "echo",
-    "arguments": [
-        {
-            "prefix": "species",
-            "valueFrom": "$(inputs.first.species)"
-        },
-        {
-            "prefix": "ncbi_build",
-            "valueFrom": "$(inputs.first.ncbi_build)"
-        }
-    ],
-    "id": "#main",
-    "stdout": "71df1f60fb50b612846b19a37ccc0ccec190f843",
-    "outputs": [
-        {
-            "type": "File",
-            "id": "#main/result",
-            "outputBinding": {
-                "glob": "71df1f60fb50b612846b19a37ccc0ccec190f843"
-            }
-        }
-    ],
-    "cwlVersion": "v1.2"
-}
+arguments:
+- {prefix: species, valueFrom: $(inputs.first.species)}
+- {prefix: ncbi_build, valueFrom: $(inputs.first.ncbi_build)}
+baseCommand: echo
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- id: first
+  type:
+    fields:
+    - name: species
+      type:
+      - 'null'
+      - symbols: [homo_sapiens, mus_musculus]
+        type: enum
+    - name: ncbi_build
+      type:
+      - 'null'
+      - symbols: [GRCh37, GRCh38, GRCm38]
+        type: enum
+    name: user_type_2
+    type: record
+outputs:
+- {id: result, type: stdout}
+requirements:
+- {class: InlineJavascriptRequirement}

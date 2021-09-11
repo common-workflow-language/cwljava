@@ -1,18 +1,8 @@
-{
-    "class": "ExpressionTool",
-    "requirements": [
-        {
-            "class": "InlineJavascriptRequirement"
-        }
-    ],
-    "inputs": [],
-    "outputs": [
-        {
-            "type": "Any",
-            "id": "#main/output"
-        }
-    ],
-    "expression": "$({'output': null })",
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+class: ExpressionTool
+cwlVersion: v1.2
+expression: '$({''output'': null })'
+inputs: []
+outputs:
+- {id: output, type: Any}
+requirements:
+- {class: InlineJavascriptRequirement}

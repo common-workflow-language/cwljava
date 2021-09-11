@@ -1,25 +1,13 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "listing": [
-                "$(inputs.filelist)"
-            ],
-            "class": "InitialWorkDirRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "File",
-            "id": "#main/filelist"
-        }
-    ],
-    "outputs": [
-        {
-            "$import": "#main/filelist"
-        }
-    ],
-    "baseCommand": "true",
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: 'true'
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- {id: filelist, type: File}
+outputs:
+- id: filelist
+  outputBinding: {glob: $(inputs.filelist.basename)}
+  type: File
+requirements:
+- class: InitialWorkDirRequirement
+  listing: [$(inputs.filelist)]
+- {class: InlineJavascriptRequirement}

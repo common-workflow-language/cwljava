@@ -1,24 +1,11 @@
-{
-    "requirements": [
-        {
-            "class": "DockerRequirement",
-            "dockerPull": "debian:stretch-slim"
-        }
-    ],
-    "class": "CommandLineTool",
-    "inputs": [],
-    "outputs": [
-        {
-            "id": "#main/OUTPUT",
-            "type": "File",
-            "outputBinding": {
-                "glob": "/etc/passwd"
-            }
-        }
-    ],
-    "baseCommand": [
-        "echo"
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: [echo]
+class: CommandLineTool
+cwlVersion: v1.2
+inputs: []
+outputs:
+- id: OUTPUT
+  outputBinding: {glob: /etc/passwd}
+  type: File
+requirements:
+- {class: DockerRequirement, dockerPull: 'debian:stretch-slim'}
+- {class: InlineJavascriptRequirement}

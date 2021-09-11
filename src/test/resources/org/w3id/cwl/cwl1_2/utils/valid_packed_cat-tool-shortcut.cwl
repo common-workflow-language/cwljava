@@ -1,31 +1,13 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "class": "DockerRequirement",
-            "dockerPull": "debian:stretch-slim"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "File",
-            "id": "#main/file1"
-        }
-    ],
-    "baseCommand": [
-        "cat"
-    ],
-    "stdout": "output",
-    "id": "#main",
-    "stdin": "$(inputs.file1.path)",
-    "outputs": [
-        {
-            "type": "File",
-            "outputBinding": {
-                "glob": "output"
-            },
-            "id": "#main/output"
-        }
-    ],
-    "cwlVersion": "v1.2"
-}
+baseCommand: [cat]
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- {id: file1, type: stdin}
+outputs:
+- id: output
+  outputBinding: {glob: output}
+  type: File
+requirements:
+- {class: DockerRequirement, dockerPull: 'debian:stretch-slim'}
+- {class: InlineJavascriptRequirement}
+stdout: output

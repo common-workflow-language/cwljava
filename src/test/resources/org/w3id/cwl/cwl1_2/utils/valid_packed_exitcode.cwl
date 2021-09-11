@@ -1,27 +1,12 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "class": "ShellCommandRequirement"
-        }
-    ],
-    "inputs": [],
-    "outputs": [
-        {
-            "type": "int",
-            "outputBinding": {
-                "outputEval": "$(runtime.exitCode)"
-            },
-            "id": "#main/code"
-        }
-    ],
-    "successCodes": [
-        7
-    ],
-    "arguments": [
-        "exit",
-        "7"
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+arguments: [exit, '7']
+class: CommandLineTool
+cwlVersion: v1.2
+inputs: []
+outputs:
+- id: code
+  outputBinding: {outputEval: $(runtime.exitCode)}
+  type: int
+requirements:
+- {class: ShellCommandRequirement}
+- {class: InlineJavascriptRequirement}
+successCodes: [7]

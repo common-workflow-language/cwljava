@@ -1,54 +1,25 @@
-{
-    "class": "Workflow",
-    "requirements": [
-        {
-            "coresMin": 4,
-            "coresMax": 4,
-            "class": "ResourceRequirement"
-        }
-    ],
-    "inputs": [],
-    "steps": [
-        {
-            "requirements": [
-                {
-                    "coresMin": 1,
-                    "coresMax": 1,
-                    "class": "ResourceRequirement"
-                }
-            ],
-            "run": {
-                "class": "CommandLineTool",
-                "inputs": [],
-                "outputs": [
-                    {
-                        "type": "File",
-                        "id": "#main/step1/run/output",
-                        "outputBinding": {
-                            "glob": "cores.txt"
-                        }
-                    }
-                ],
-                "baseCommand": "echo",
-                "stdout": "cores.txt",
-                "arguments": [
-                    "$(runtime.cores)"
-                ]
-            },
-            "in": [],
-            "out": [
-                "#main/step1/output"
-            ],
-            "id": "#main/step1"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "File",
-            "outputSource": "#main/step1/output",
-            "id": "#main/out"
-        }
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs: []
+outputs:
+- {id: out, outputSource: step1/output, type: File}
+requirements:
+- {class: ResourceRequirement, coresMax: 4, coresMin: 4}
+- {class: SubworkflowFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+steps:
+- id: step1
+  in: []
+  out: [output]
+  requirements:
+    ResourceRequirement: {coresMax: 1, coresMin: 1}
+  run:
+    arguments: [$(runtime.cores)]
+    baseCommand: echo
+    class: CommandLineTool
+    inputs: []
+    outputs:
+    - {id: output, type: stdout}
+    requirements:
+    - {class: InlineJavascriptRequirement}
+    stdout: cores.txt

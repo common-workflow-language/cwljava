@@ -1,21 +1,9 @@
-{
-    "class": "CommandLineTool",
-    "inputs": [],
-    "outputs": [],
-    "requirements": [
-        {
-            "timelimit": 3,
-            "class": "ToolTimeLimit"
-        },
-        {
-            "enableReuse": false,
-            "class": "WorkReuse"
-        }
-    ],
-    "baseCommand": [
-        "sleep",
-        "15"
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: [sleep, '15']
+class: CommandLineTool
+cwlVersion: v1.2
+inputs: []
+outputs: []
+requirements:
+- {class: ToolTimeLimit, timelimit: 3}
+- {class: WorkReuse, enableReuse: false}
+- {class: InlineJavascriptRequirement}

@@ -1,49 +1,24 @@
-{
-    "class": "CommandLineTool",
-    "label": "Check for a JS quoting bug",
-    "requirements": [
-        {
-            "listing": [
-                {
-                    "entryname": "file.txt",
-                    "entry": "${return 'quote \"' + inputs.quote + '\"'}\n"
-                },
-                {
-                    "entryname": "script.sh",
-                    "entry": "set -xe\ncat file.txt\n"
-                }
-            ],
-            "class": "InitialWorkDirRequirement"
-        },
-        {
-            "class": "InlineJavascriptRequirement"
-        },
-        {
-            "coresMin": 2,
-            "ramMin": 1000,
-            "class": "ResourceRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "string",
-            "default": "Hello",
-            "id": "#main/quote"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "File",
-            "outputBinding": {
-                "glob": "file.txt"
-            },
-            "id": "#main/out"
-        }
-    ],
-    "baseCommand": [
-        "echo"
-    ],
-    "arguments": [],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+arguments: []
+baseCommand: [echo]
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- {default: Hello, id: quote, type: string}
+label: Check for a JS quoting bug
+outputs:
+- id: out
+  outputBinding: {glob: file.txt}
+  type: File
+requirements:
+- class: InitialWorkDirRequirement
+  listing:
+  - {entry: '${return ''quote "'' + inputs.quote + ''"''}
+
+      ', entryname: file.txt}
+  - {entry: 'set -xe
+
+      cat file.txt
+
+      ', entryname: script.sh}
+- {class: InlineJavascriptRequirement}
+- {class: ResourceRequirement, coresMin: 2, ramMin: 1000}

@@ -1,34 +1,15 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "dockerPull": "debian:stable-slim",
-            "class": "DockerRequirement"
-        },
-        {
-            "listing": "${\n   return [{\"class\": \"Directory\",\n            \"basename\": \"subdir\",\n            \"listing\": [ inputs.filelist ]\n            }]}\n",
-            "class": "InitialWorkDirRequirement"
-        },
-        {
-            "class": "InlineJavascriptRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "File",
-            "id": "#main/filelist"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "File",
-            "outputBinding": {
-                "glob": "subdir/$(inputs.filelist.basename)"
-            },
-            "id": "#main/same"
-        }
-    ],
-    "baseCommand": "echo",
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: echo
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- {id: filelist, type: File}
+outputs:
+- id: same
+  outputBinding: {glob: subdir/$(inputs.filelist.basename)}
+  type: File
+requirements:
+- {class: DockerRequirement, dockerPull: 'debian:stable-slim'}
+- {class: InlineJavascriptRequirement}
+- {class: InitialWorkDirRequirement, listing: "${\n   return [{\"class\": \"Directory\",\n
+    \           \"basename\": \"subdir\",\n            \"listing\": [ inputs.filelist
+    ]\n            }]}\n"}

@@ -1,48 +1,29 @@
-{
-    "class": "Workflow",
-    "doc": "Workflow without outputs.",
-    "inputs": [
-        {
-            "type": "File",
-            "id": "#main/file1"
-        }
-    ],
-    "outputs": [],
-    "steps": [
-        {
-            "in": [
-                {
-                    "source": "#main/file1",
-                    "id": "#main/step0/file1"
-                }
-            ],
-            "out": [],
-            "run": {
-                "class": "CommandLineTool",
-                "cwlVersion": "v1.2",
-                "doc": "CommandLineTool without outputs.",
-                "hints": [
-                    {
-                        "dockerPull": "debian:stretch-slim",
-                        "class": "DockerRequirement"
-                    }
-                ],
-                "inputs": [
-                    {
-                        "type": "File",
-                        "label": "Input File",
-                        "inputBinding": {
-                            "position": 1
-                        },
-                        "id": "#main/step0/run/file1"
-                    }
-                ],
-                "outputs": [],
-                "baseCommand": "echo"
-            },
-            "id": "#main/step0"
-        }
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+doc: Workflow without outputs.
+inputs:
+- {id: file1, type: File}
+outputs: []
+requirements:
+- {class: SubworkflowFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+steps:
+- id: step0
+  in:
+  - {id: file1, source: file1}
+  out: []
+  run:
+    baseCommand: echo
+    class: CommandLineTool
+    cwlVersion: v1.2
+    doc: CommandLineTool without outputs.
+    hints:
+      DockerRequirement: {dockerPull: 'debian:stretch-slim'}
+    inputs:
+    - id: file1
+      inputBinding: {position: 1}
+      label: Input File
+      type: File
+    outputs: []
+    requirements:
+    - {class: InlineJavascriptRequirement}

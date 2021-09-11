@@ -1,100 +1,45 @@
-{
-    "class": "Workflow",
-    "requirements": [
-        {
-            "class": "InlineJavascriptRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "File",
-            "id": "#main/i"
-        }
-    ],
-    "outputs": [
-        {
-            "type": {
-                "type": "array",
-                "items": "File"
-            },
-            "outputSource": "#main/step2/o",
-            "id": "#main/o"
-        }
-    ],
-    "steps": [
-        {
-            "in": [
-                {
-                    "source": "#main/i",
-                    "id": "#main/step1/i"
-                }
-            ],
-            "out": [
-                "#main/step1/o"
-            ],
-            "run": {
-                "class": "ExpressionTool",
-                "inputs": [
-                    {
-                        "type": "File",
-                        "loadContents": true,
-                        "id": "#main/step1/run/i"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "type": {
-                            "type": "array",
-                            "items": "string"
-                        },
-                        "id": "#main/step1/run/o"
-                    }
-                ],
-                "expression": "${return {'o': inputs.i.contents.split(\" \")};}\n"
-            },
-            "id": "#main/step1"
-        },
-        {
-            "in": [
-                {
-                    "source": "#main/step1/o",
-                    "id": "#main/step2/i"
-                }
-            ],
-            "out": [
-                "#main/step2/o"
-            ],
-            "run": {
-                "class": "CommandLineTool",
-                "inputs": [
-                    {
-                        "type": {
-                            "type": "array",
-                            "items": "string"
-                        },
-                        "inputBinding": {
-                            "position": 1
-                        },
-                        "id": "#main/step2/run/i"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "type": {
-                            "type": "array",
-                            "items": "File"
-                        },
-                        "outputBinding": {
-                            "glob": "$(inputs.i)"
-                        },
-                        "id": "#main/step2/run/o"
-                    }
-                ],
-                "baseCommand": "touch"
-            },
-            "id": "#main/step2"
-        }
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs:
+- {id: i, type: File}
+outputs:
+- id: o
+  outputSource: step2/o
+  type: {items: File, type: array}
+requirements:
+- {class: InlineJavascriptRequirement}
+- {class: SubworkflowFeatureRequirement}
+steps:
+- id: step1
+  in:
+  - {id: i, source: i}
+  out: [o]
+  run:
+    class: ExpressionTool
+    expression: '${return {''o'': inputs.i.contents.split(" ")};}
+
+      '
+    inputs:
+    - {id: i, loadContents: true, type: File}
+    outputs:
+    - id: o
+      type: {items: string, type: array}
+    requirements:
+    - {class: InlineJavascriptRequirement}
+- id: step2
+  in:
+  - {id: i, source: step1/o}
+  out: [o]
+  run:
+    baseCommand: touch
+    class: CommandLineTool
+    inputs:
+    - id: i
+      inputBinding: {position: 1}
+      type: {items: string, type: array}
+    outputs:
+    - id: o
+      outputBinding: {glob: $(inputs.i)}
+      type: {items: File, type: array}
+    requirements:
+    - {class: InlineJavascriptRequirement}

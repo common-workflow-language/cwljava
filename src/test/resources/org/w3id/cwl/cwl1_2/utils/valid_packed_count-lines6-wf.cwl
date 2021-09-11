@@ -1,95 +1,40 @@
-{
-    "$graph": [
-        {
-            "class": "Workflow",
-            "inputs": [
-                {
-                    "type": {
-                        "type": "array",
-                        "items": "File"
-                    },
-                    "id": "#main/file1"
-                },
-                {
-                    "type": {
-                        "type": "array",
-                        "items": "File"
-                    },
-                    "id": "#main/file2"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": {
-                        "type": "array",
-                        "items": "int"
-                    },
-                    "outputSource": "#main/step1/output",
-                    "id": "#main/count_output"
-                }
-            ],
-            "requirements": [
-                {
-                    "class": "ScatterFeatureRequirement"
-                },
-                {
-                    "class": "MultipleInputFeatureRequirement"
-                }
-            ],
-            "steps": [
-                {
-                    "run": "#wc3-tool.cwl",
-                    "scatter": "#main/step1/file1",
-                    "in": [
-                        {
-                            "source": [
-                                "#main/file1",
-                                "#main/file2"
-                            ],
-                            "linkMerge": "merge_nested",
-                            "id": "#main/step1/file1"
-                        }
-                    ],
-                    "out": [
-                        "#main/step1/output"
-                    ],
-                    "id": "#main/step1"
-                }
-            ],
-            "id": "#main"
-        },
-        {
-            "class": "CommandLineTool",
-            "requirements": [
-                {
-                    "class": "InlineJavascriptRequirement"
-                }
-            ],
-            "inputs": [
-                {
-                    "type": {
-                        "type": "array",
-                        "items": "File"
-                    },
-                    "inputBinding": {},
-                    "id": "#wc3-tool.cwl/file1"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": "int",
-                    "outputBinding": {
-                        "glob": "output.txt",
-                        "loadContents": true,
-                        "outputEval": "${\n  var s = self[0].contents.split(/\\r?\\n/);\n  return parseInt(s[s.length-2]);\n}\n"
-                    },
-                    "id": "#wc3-tool.cwl/output"
-                }
-            ],
-            "stdout": "output.txt",
-            "baseCommand": "wc",
-            "id": "#wc3-tool.cwl"
-        }
-    ],
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs:
+- id: file1
+  type: {items: File, type: array}
+- id: file2
+  type: {items: File, type: array}
+outputs:
+- id: count_output
+  outputSource: step1/output
+  type: {items: int, type: array}
+requirements:
+- {class: ScatterFeatureRequirement}
+- {class: MultipleInputFeatureRequirement}
+- {class: SubworkflowFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+steps:
+- id: step1
+  in:
+  - id: file1
+    linkMerge: merge_nested
+    source: [file1, file2]
+  out: [output]
+  run:
+    baseCommand: wc
+    class: CommandLineTool
+    cwlVersion: v1.2
+    inputs:
+    - id: file1
+      inputBinding: {}
+      type: {items: File, type: array}
+    outputs:
+    - id: output
+      outputBinding: {glob: output.txt, loadContents: true, outputEval: "${\n  var
+          s = self[0].contents.split(/\\r?\\n/);\n  return parseInt(s[s.length-2]);\n}\n"}
+      type: int
+    requirements:
+    - {class: InlineJavascriptRequirement}
+    stdout: output.txt
+  scatter: file1

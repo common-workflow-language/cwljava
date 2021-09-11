@@ -1,36 +1,15 @@
-{
-    "class": "CommandLineTool",
-    "baseCommand": "true",
-    "requirements": [
-        {
-            "listing": [
-                {
-                    "entryname": "$(inputs.newname)",
-                    "entry": "$(inputs.srcfile)"
-                }
-            ],
-            "class": "InitialWorkDirRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "string",
-            "id": "#main/newname"
-        },
-        {
-            "type": "File",
-            "id": "#main/srcfile"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "File",
-            "outputBinding": {
-                "glob": "$(inputs.newname)"
-            },
-            "id": "#main/outfile"
-        }
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: 'true'
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- {id: srcfile, type: File}
+- {id: newname, type: string}
+outputs:
+- id: outfile
+  outputBinding: {glob: $(inputs.newname)}
+  type: File
+requirements:
+- class: InitialWorkDirRequirement
+  listing:
+  - {entry: $(inputs.srcfile), entryname: $(inputs.newname)}
+- {class: InlineJavascriptRequirement}

@@ -1,30 +1,13 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "class": "InlineJavascriptRequirement"
-        },
-        {
-            "loadListing": "deep_listing",
-            "class": "LoadListingRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "Directory",
-            "id": "#main/d"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "boolean",
-            "outputBinding": {
-                "outputEval": "$(inputs.d.listing.length === 1 && inputs.d.listing[0].listing.length === 1)"
-            },
-            "id": "#main/out"
-        }
-    ],
-    "baseCommand": "true",
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: 'true'
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- {id: d, type: Directory}
+outputs:
+- id: out
+  outputBinding: {outputEval: '$(inputs.d.listing.length === 1 && inputs.d.listing[0].listing.length
+      === 1)'}
+  type: boolean
+requirements:
+- {class: LoadListingRequirement, loadListing: deep_listing}
+- {class: InlineJavascriptRequirement}

@@ -1,35 +1,14 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "class": "InlineJavascriptRequirement"
-        }
-    ],
-    "baseCommand": "echo",
-    "inputs": [
-        {
-            "type": [
-                "null",
-                "File"
-            ],
-            "inputBinding": {
-                "valueFrom": "$(\"a \")$(\"string\")"
-            },
-            "id": "#main/file1"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "string",
-            "outputBinding": {
-                "glob": "output.txt",
-                "loadContents": true,
-                "outputEval": "$(self[0].contents)"
-            },
-            "id": "#main/out"
-        }
-    ],
-    "stdout": "output.txt",
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: echo
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- id: file1
+  inputBinding: {valueFrom: $("a ")$("string")}
+  type: ['null', File]
+outputs:
+- id: out
+  outputBinding: {glob: output.txt, loadContents: true, outputEval: '$(self[0].contents)'}
+  type: string
+requirements:
+- {class: InlineJavascriptRequirement}
+stdout: output.txt

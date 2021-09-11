@@ -1,24 +1,15 @@
-{
-    "class": "CommandLineTool",
-    "doc": "Reverse each line using the `rev` command",
-    "inputs": [
-        {
-            "type": "File",
-            "inputBinding": {},
-            "id": "#main/input"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "File",
-            "outputBinding": {
-                "glob": "output.txt"
-            },
-            "id": "#main/output"
-        }
-    ],
-    "baseCommand": "rev",
-    "stdout": "output.txt",
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: rev
+class: CommandLineTool
+cwlVersion: v1.2
+doc: Reverse each line using the `rev` command
+inputs:
+- id: input
+  inputBinding: {}
+  type: File
+outputs:
+- id: output
+  outputBinding: {glob: output.txt}
+  type: File
+requirements:
+- {class: InlineJavascriptRequirement}
+stdout: output.txt

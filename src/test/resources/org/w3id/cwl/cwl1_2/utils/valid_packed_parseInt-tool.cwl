@@ -1,24 +1,9 @@
-{
-    "class": "ExpressionTool",
-    "requirements": [
-        {
-            "class": "InlineJavascriptRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "File",
-            "loadContents": true,
-            "id": "#main/file1"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "int",
-            "id": "#main/output"
-        }
-    ],
-    "expression": "$({'output': parseInt(inputs.file1.contents)})",
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+class: ExpressionTool
+cwlVersion: v1.2
+expression: '$({''output'': parseInt(inputs.file1.contents)})'
+inputs:
+- {id: file1, loadContents: true, type: File}
+outputs:
+- {id: output, type: int}
+requirements:
+- {class: InlineJavascriptRequirement}

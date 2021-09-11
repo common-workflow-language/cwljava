@@ -1,89 +1,36 @@
-{
-    "$graph": [
-        {
-            "class": "CommandLineTool",
-            "hints": [
-                {
-                    "dockerPull": "debian:stretch-slim",
-                    "class": "DockerRequirement"
-                }
-            ],
-            "inputs": [
-                {
-                    "type": "string",
-                    "inputBinding": {
-                        "position": 0
-                    },
-                    "id": "#touch.cwl/name"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": "File",
-                    "outputBinding": {
-                        "glob": "$(inputs.name)"
-                    },
-                    "id": "#touch.cwl/empty_file"
-                }
-            ],
-            "baseCommand": [
-                "touch"
-            ],
-            "id": "#touch.cwl"
-        },
-        {
-            "class": "Workflow",
-            "requirements": [
-                {
-                    "types": [
-                        {
-                            "name": "#capture_kit.yml/capture_kit",
-                            "type": "record",
-                            "fields": [
-                                {
-                                    "name": "#capture_kit.yml/capture_kit/bait",
-                                    "type": "string"
-                                }
-                            ]
-                        }
-                    ],
-                    "class": "SchemaDefRequirement"
-                }
-            ],
-            "inputs": [
-                {
-                    "type": "string",
-                    "id": "#main/bam"
-                },
-                {
-                    "type": "#capture_kit.yml/capture_kit",
-                    "id": "#main/capture_kit[]"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": "File",
-                    "outputSource": "#main/touch_bam/empty_file",
-                    "id": "#main/output_bam"
-                }
-            ],
-            "steps": [
-                {
-                    "run": "#touch.cwl",
-                    "in": [
-                        {
-                            "source": "#main/bam",
-                            "id": "#main/touch_bam/name"
-                        }
-                    ],
-                    "out": [
-                        "#main/touch_bam/empty_file"
-                    ],
-                    "id": "#main/touch_bam"
-                }
-            ],
-            "id": "#main"
-        }
-    ],
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs:
+- {id: bam, type: string}
+- id: capture_kit[]
+  type:
+    fields:
+    - {name: bait, type: string}
+    name: user_type_3
+    type: record
+outputs:
+- {id: output_bam, outputSource: touch_bam/empty_file, type: File}
+requirements:
+- {class: SubworkflowFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+steps:
+- id: touch_bam
+  in:
+  - {id: name, source: bam}
+  out: [empty_file]
+  run:
+    baseCommand: [touch]
+    class: CommandLineTool
+    cwlVersion: v1.2
+    hints:
+      DockerRequirement: {dockerPull: 'debian:stretch-slim'}
+    inputs:
+    - id: name
+      inputBinding: {position: 0}
+      type: string
+    outputs:
+    - id: empty_file
+      outputBinding: {glob: $(inputs.name)}
+      type: File
+    requirements:
+    - {class: InlineJavascriptRequirement}

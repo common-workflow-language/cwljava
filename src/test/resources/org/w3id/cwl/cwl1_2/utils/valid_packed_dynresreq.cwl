@@ -1,32 +1,12 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "coresMin": "$(inputs.special_file.size)",
-            "coresMax": "$(inputs.special_file.size)",
-            "class": "ResourceRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "File",
-            "id": "#main/special_file"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "File",
-            "id": "#main/output",
-            "outputBinding": {
-                "glob": "cores.txt"
-            }
-        }
-    ],
-    "baseCommand": "echo",
-    "stdout": "cores.txt",
-    "arguments": [
-        "$(runtime.cores)"
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+arguments: [$(runtime.cores)]
+baseCommand: echo
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- {id: special_file, type: File}
+outputs:
+- {id: output, type: stdout}
+requirements:
+- {class: ResourceRequirement, coresMax: $(inputs.special_file.size), coresMin: $(inputs.special_file.size)}
+- {class: InlineJavascriptRequirement}
+stdout: cores.txt

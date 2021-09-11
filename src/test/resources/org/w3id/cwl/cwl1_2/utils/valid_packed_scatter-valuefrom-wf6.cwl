@@ -1,90 +1,37 @@
-{
-    "$graph": [
-        {
-            "class": "CommandLineTool",
-            "inputs": [
-                {
-                    "type": "string",
-                    "inputBinding": {
-                        "position": 1
-                    },
-                    "id": "#scatter-valueFrom-tool.cwl/message"
-                },
-                {
-                    "type": "string",
-                    "inputBinding": {
-                        "position": 2
-                    },
-                    "id": "#scatter-valueFrom-tool.cwl/scattered_message"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": "File",
-                    "id": "#scatter-valueFrom-tool.cwl/out_message",
-                    "outputBinding": {
-                        "glob": "3340cc7a567db1458bf3abd86f34f5e89c399aea"
-                    }
-                }
-            ],
-            "baseCommand": "echo",
-            "id": "#scatter-valueFrom-tool.cwl",
-            "stdout": "3340cc7a567db1458bf3abd86f34f5e89c399aea"
-        },
-        {
-            "class": "Workflow",
-            "requirements": [
-                {
-                    "class": "ScatterFeatureRequirement"
-                },
-                {
-                    "class": "StepInputExpressionRequirement"
-                }
-            ],
-            "inputs": [
-                {
-                    "type": {
-                        "type": "array",
-                        "items": "string"
-                    },
-                    "id": "#main/scattered_messages"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": {
-                        "type": "array",
-                        "items": "File"
-                    },
-                    "outputSource": "#main/step1/out_message",
-                    "id": "#main/out_message"
-                }
-            ],
-            "steps": [
-                {
-                    "run": "#scatter-valueFrom-tool.cwl",
-                    "scatter": [
-                        "#main/step1/scattered_message"
-                    ],
-                    "scatterMethod": "dotproduct",
-                    "in": [
-                        {
-                            "valueFrom": "Hello",
-                            "id": "#main/step1/message"
-                        },
-                        {
-                            "source": "#main/scattered_messages",
-                            "id": "#main/step1/scattered_message"
-                        }
-                    ],
-                    "out": [
-                        "#main/step1/out_message"
-                    ],
-                    "id": "#main/step1"
-                }
-            ],
-            "id": "#main"
-        }
-    ],
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs:
+- id: scattered_messages
+  type: {items: string, type: array}
+outputs:
+- id: out_message
+  outputSource: step1/out_message
+  type: {items: File, type: array}
+requirements:
+- {class: ScatterFeatureRequirement}
+- {class: StepInputExpressionRequirement}
+- {class: SubworkflowFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+steps:
+- id: step1
+  in:
+  - {id: scattered_message, source: scattered_messages}
+  - {id: message, valueFrom: Hello}
+  out: [out_message]
+  run:
+    baseCommand: echo
+    class: CommandLineTool
+    cwlVersion: v1.2
+    inputs:
+    - id: scattered_message
+      inputBinding: {position: 2}
+      type: string
+    - id: message
+      inputBinding: {position: 1}
+      type: string
+    outputs:
+    - {id: out_message, type: stdout}
+    requirements:
+    - {class: InlineJavascriptRequirement}
+  scatter: [scattered_message]
+  scatterMethod: dotproduct

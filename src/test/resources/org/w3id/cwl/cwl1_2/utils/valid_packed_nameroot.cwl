@@ -1,28 +1,11 @@
-{
-    "class": "CommandLineTool",
-    "inputs": [
-        {
-            "type": "File",
-            "id": "#main/file1"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "File",
-            "id": "#main/b",
-            "outputBinding": {
-                "glob": "$(inputs.file1.nameroot).xtx"
-            }
-        }
-    ],
-    "stdout": "$(inputs.file1.nameroot).xtx",
-    "baseCommand": [],
-    "arguments": [
-        "echo",
-        "$(inputs.file1.basename)",
-        "$(inputs.file1.nameroot)",
-        "$(inputs.file1.nameext)"
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+arguments: [echo, $(inputs.file1.basename), $(inputs.file1.nameroot), $(inputs.file1.nameext)]
+baseCommand: []
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- {id: file1, type: File}
+outputs:
+- {id: b, type: stdout}
+requirements:
+- {class: InlineJavascriptRequirement}
+stdout: $(inputs.file1.nameroot).xtx

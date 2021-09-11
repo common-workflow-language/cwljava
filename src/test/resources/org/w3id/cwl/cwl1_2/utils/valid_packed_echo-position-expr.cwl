@@ -1,50 +1,20 @@
-{
-    "class": "CommandLineTool",
-    "requirements": [
-        {
-            "class": "InlineJavascriptRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "int",
-            "inputBinding": {
-                "position": "$(self)"
-            },
-            "id": "#main/one"
-        },
-        {
-            "type": "int",
-            "inputBinding": {
-                "valueFrom": "sensation!",
-                "position": "${return self+1;}"
-            },
-            "id": "#main/two"
-        }
-    ],
-    "arguments": [
-        {
-            "position": "${return 2;}",
-            "valueFrom": "singular"
-        },
-        {
-            "position": "${return null;}",
-            "valueFrom": "\ud83d\udd7a"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "string",
-            "outputBinding": {
-                "glob": "out.txt",
-                "loadContents": true,
-                "outputEval": "$(self[0].contents)"
-            },
-            "id": "#main/out"
-        }
-    ],
-    "baseCommand": "echo",
-    "stdout": "out.txt",
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+arguments:
+- {position: '${return 2;}', valueFrom: singular}
+- {position: '${return null;}', valueFrom: "\U0001F57A"}
+baseCommand: echo
+class: CommandLineTool
+cwlVersion: v1.2
+inputs:
+- id: one
+  inputBinding: {position: $(self)}
+  type: int
+- id: two
+  inputBinding: {position: '${return self+1;}', valueFrom: sensation!}
+  type: int
+outputs:
+- id: out
+  outputBinding: {glob: out.txt, loadContents: true, outputEval: '$(self[0].contents)'}
+  type: string
+requirements:
+- {class: InlineJavascriptRequirement}
+stdout: out.txt

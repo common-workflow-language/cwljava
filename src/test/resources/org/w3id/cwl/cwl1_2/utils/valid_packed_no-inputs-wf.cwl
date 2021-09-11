@@ -1,49 +1,28 @@
-{
-    "class": "Workflow",
-    "doc": "Workflow without inputs.",
-    "inputs": [],
-    "outputs": [
-        {
-            "type": "File",
-            "outputSource": "#main/step0/output",
-            "id": "#main/output"
-        }
-    ],
-    "steps": [
-        {
-            "in": [],
-            "out": [
-                "#main/step0/output"
-            ],
-            "run": {
-                "class": "CommandLineTool",
-                "cwlVersion": "v1.2",
-                "doc": "CommandLineTool without inputs.",
-                "hints": [
-                    {
-                        "dockerPull": "debian:stretch-slim",
-                        "class": "DockerRequirement"
-                    }
-                ],
-                "inputs": [],
-                "outputs": [
-                    {
-                        "type": "File",
-                        "outputBinding": {
-                            "glob": "output"
-                        },
-                        "id": "#main/step0/run/output"
-                    }
-                ],
-                "baseCommand": [
-                    "echo",
-                    "cwl"
-                ],
-                "stdout": "output"
-            },
-            "id": "#main/step0"
-        }
-    ],
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+doc: Workflow without inputs.
+inputs: []
+outputs:
+- {id: output, outputSource: step0/output, type: File}
+requirements:
+- {class: SubworkflowFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+steps:
+- id: step0
+  in: []
+  out: [output]
+  run:
+    baseCommand: [echo, cwl]
+    class: CommandLineTool
+    cwlVersion: v1.2
+    doc: CommandLineTool without inputs.
+    hints:
+      DockerRequirement: {dockerPull: 'debian:stretch-slim'}
+    inputs: []
+    outputs:
+    - id: output
+      outputBinding: {glob: output}
+      type: File
+    requirements:
+    - {class: InlineJavascriptRequirement}
+    stdout: output

@@ -1,46 +1,19 @@
-{
-    "class": "CommandLineTool",
-    "hints": [
-        {
-            "class": "DockerRequirement",
-            "dockerPull": "python:2-slim"
-        }
-    ],
-    "inputs": [
-        {
-            "id": "#main/array_input",
-            "type": [
-                {
-                    "type": "array",
-                    "items": "File"
-                }
-            ],
-            "inputBinding": {
-                "valueFrom": "replacementValue"
-            }
-        },
-        {
-            "id": "#main/args.py",
-            "type": "File",
-            "default": {
-                "class": "File",
-                "location": "args.py"
-            },
-            "inputBinding": {
-                "position": -1
-            }
-        }
-    ],
-    "outputs": [
-        {
-            "id": "#main/args",
-            "type": {
-                "type": "array",
-                "items": "string"
-            }
-        }
-    ],
-    "baseCommand": "python",
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: python
+class: CommandLineTool
+cwlVersion: v1.2
+hints:
+- {class: DockerRequirement, dockerPull: 'python:2-slim'}
+inputs:
+- id: array_input
+  inputBinding: {valueFrom: replacementValue}
+  type:
+  - {items: File, type: array}
+- default: {class: File, location: args.py}
+  id: args.py
+  inputBinding: {position: -1}
+  type: File
+outputs:
+- id: args
+  type: {items: string, type: array}
+requirements:
+- {class: InlineJavascriptRequirement}

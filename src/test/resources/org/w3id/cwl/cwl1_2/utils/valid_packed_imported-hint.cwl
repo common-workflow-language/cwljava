@@ -1,34 +1,13 @@
-{
-    "class": "CommandLineTool",
-    "inputs": [],
-    "outputs": [
-        {
-            "type": "File",
-            "id": "#main/out",
-            "outputBinding": {
-                "glob": "out"
-            }
-        }
-    ],
-    "hints": [
-        {
-            "class": "EnvVarRequirement",
-            "envDef": [
-                {
-                    "envName": "TEST_ENV",
-                    "envValue": "hello test env"
-                }
-            ],
-            "id": "#envvar.yml",
-            "name": "#envvar.yml"
-        }
-    ],
-    "baseCommand": [
-        "/bin/sh",
-        "-c",
-        "echo $TEST_ENV"
-    ],
-    "stdout": "out",
-    "id": "#main",
-    "cwlVersion": "v1.2"
-}
+baseCommand: [/bin/sh, -c, echo $TEST_ENV]
+class: CommandLineTool
+cwlVersion: v1.2
+hints:
+- class: EnvVarRequirement
+  envDef:
+  - {envName: TEST_ENV, envValue: hello test env}
+inputs: []
+outputs:
+- {id: out, type: stdout}
+requirements:
+- {class: InlineJavascriptRequirement}
+stdout: out

@@ -1,30 +1,17 @@
-{
-    "class": "CommandLineTool",
-    "doc": "Print the contents of a file to stdout using 'cat' running in a docker container if docker is available.",
-    "hints": [
-        {
-            "dockerPull": "debian:stretch-slim",
-            "class": "DockerRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "File",
-            "id": "#main/file1"
-        }
-    ],
-    "baseCommand": "cat",
-    "stdout": "output.txt",
-    "stdin": "$(inputs.file1.path)",
-    "id": "#main",
-    "outputs": [
-        {
-            "type": "File",
-            "outputBinding": {
-                "glob": "output.txt"
-            },
-            "id": "#main/output_txt"
-        }
-    ],
-    "cwlVersion": "v1.2"
-}
+baseCommand: cat
+class: CommandLineTool
+cwlVersion: v1.2
+doc: Print the contents of a file to stdout using 'cat' running in a docker container
+  if docker is available.
+hints:
+  DockerRequirement: {dockerPull: 'debian:stretch-slim'}
+inputs:
+- {id: file1, type: File}
+outputs:
+- id: output_txt
+  outputBinding: {glob: output.txt}
+  type: File
+requirements:
+- {class: InlineJavascriptRequirement}
+stdin: $(inputs.file1.path)
+stdout: output.txt

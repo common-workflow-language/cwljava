@@ -1,72 +1,32 @@
-{
-    "$graph": [
-        {
-            "class": "Workflow",
-            "inputs": [
-                {
-                    "type": "File",
-                    "id": "#main/file1"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": "int",
-                    "outputSource": "#main/step1/output",
-                    "id": "#main/count_output"
-                }
-            ],
-            "steps": [
-                {
-                    "run": "#wc3-tool.cwl",
-                    "in": [
-                        {
-                            "source": [
-                                "#main/file1"
-                            ],
-                            "linkMerge": "merge_nested",
-                            "id": "#main/step1/file1"
-                        }
-                    ],
-                    "out": [
-                        "#main/step1/output"
-                    ],
-                    "id": "#main/step1"
-                }
-            ],
-            "id": "#main"
-        },
-        {
-            "class": "CommandLineTool",
-            "requirements": [
-                {
-                    "class": "InlineJavascriptRequirement"
-                }
-            ],
-            "inputs": [
-                {
-                    "type": {
-                        "type": "array",
-                        "items": "File"
-                    },
-                    "inputBinding": {},
-                    "id": "#wc3-tool.cwl/file1"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": "int",
-                    "outputBinding": {
-                        "glob": "output.txt",
-                        "loadContents": true,
-                        "outputEval": "${\n  var s = self[0].contents.split(/\\r?\\n/);\n  return parseInt(s[s.length-2]);\n}\n"
-                    },
-                    "id": "#wc3-tool.cwl/output"
-                }
-            ],
-            "stdout": "output.txt",
-            "baseCommand": "wc",
-            "id": "#wc3-tool.cwl"
-        }
-    ],
-    "cwlVersion": "v1.2"
-}
+class: Workflow
+cwlVersion: v1.2
+inputs:
+- {id: file1, type: File}
+outputs:
+- {id: count_output, outputSource: step1/output, type: int}
+requirements:
+- {class: SubworkflowFeatureRequirement}
+- {class: InlineJavascriptRequirement}
+steps:
+- id: step1
+  in:
+  - id: file1
+    linkMerge: merge_nested
+    source: [file1]
+  out: [output]
+  run:
+    baseCommand: wc
+    class: CommandLineTool
+    cwlVersion: v1.2
+    inputs:
+    - id: file1
+      inputBinding: {}
+      type: {items: File, type: array}
+    outputs:
+    - id: output
+      outputBinding: {glob: output.txt, loadContents: true, outputEval: "${\n  var
+          s = self[0].contents.split(/\\r?\\n/);\n  return parseInt(s[s.length-2]);\n}\n"}
+      type: int
+    requirements:
+    - {class: InlineJavascriptRequirement}
+    stdout: output.txt

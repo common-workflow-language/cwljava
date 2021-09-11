@@ -1,40 +1,21 @@
-{
-    "class": "CommandLineTool",
-    "doc": "Reverse each line using the `rev` command",
-    "hints": [
-        {
-            "dockerPull": "debian:stretch-slim",
-            "class": "DockerRequirement"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "File",
-            "inputBinding": {},
-            "format": "http://galaxyproject.org/formats/fasta",
-            "id": "#main/input"
-        }
-    ],
-    "outputs": [
-        {
-            "type": "File",
-            "outputBinding": {
-                "glob": "output.txt"
-            },
-            "format": "$(inputs.input.format)",
-            "id": "#main/output"
-        }
-    ],
-    "baseCommand": "rev",
-    "stdout": "output.txt",
-    "id": "#main",
-    "cwlVersion": "v1.2",
-    "$schemas": [
-        "EDAM.owl",
-        "gx_edam.ttl"
-    ],
-    "$namespaces": {
-        "edam": "http://edamontology.org/",
-        "gx": "http://galaxyproject.org/formats/"
-    }
-}
+$namespaces: {edam: 'http://edamontology.org/', gx: 'http://galaxyproject.org/formats/'}
+$schemas: [EDAM.owl, gx_edam.ttl]
+baseCommand: rev
+class: CommandLineTool
+cwlVersion: v1.2
+doc: Reverse each line using the `rev` command
+hints:
+  DockerRequirement: {dockerPull: 'debian:stretch-slim'}
+inputs:
+- format: gx:fasta
+  id: input
+  inputBinding: {}
+  type: File
+outputs:
+- format: $(inputs.input.format)
+  id: output
+  outputBinding: {glob: output.txt}
+  type: File
+requirements:
+- {class: InlineJavascriptRequirement}
+stdout: output.txt
