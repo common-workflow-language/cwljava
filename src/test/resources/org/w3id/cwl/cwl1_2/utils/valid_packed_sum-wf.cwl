@@ -17,8 +17,8 @@ steps:
   in:
   - id: data
     source: [int_1, int_2]
-    valueFrom: "${\n  var sum = 0;\n  for (var i = 0; i < self.length; i++){\n    sum
-      += self[i];\n  };\n  return sum;\n}\n"
+    valueFrom: "${\n  var sum = 0;\n  for (var i = 0; i < self.length; i++){\n   \
+      \ sum += self[i];\n  };\n  return sum;\n}\n"
   out: [result]
   run:
     class: ExpressionTool

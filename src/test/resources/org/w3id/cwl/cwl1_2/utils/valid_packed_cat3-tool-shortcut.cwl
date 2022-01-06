@@ -11,5 +11,5 @@ inputs:
 outputs:
 - {id: output_file, type: stdout}
 requirements:
-- {class: DockerRequirement, dockerPull: 'debian:stretch-slim'}
+- {class: DockerRequirement, dockerPull: debian:stretch-slim}
 - {class: InlineJavascriptRequirement}

@@ -8,6 +8,6 @@ outputs:
   outputBinding: {glob: output}
   type: File
 requirements:
-- {class: DockerRequirement, dockerPull: 'debian:stretch-slim'}
+- {class: DockerRequirement, dockerPull: debian:stretch-slim}
 - {class: InlineJavascriptRequirement}
 stdout: output

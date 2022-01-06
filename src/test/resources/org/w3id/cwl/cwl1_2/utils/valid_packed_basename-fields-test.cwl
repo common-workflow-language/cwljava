@@ -18,7 +18,6 @@ steps:
   run:
     baseCommand: [echo]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - id: in
       inputBinding: {position: 1}
@@ -38,7 +37,6 @@ steps:
   run:
     baseCommand: [echo]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - id: in
       inputBinding: {position: 1}

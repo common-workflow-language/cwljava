@@ -18,7 +18,6 @@ steps:
     arguments: [$(runtime.cores)]
     baseCommand: echo
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: special_file, type: File}
     outputs:
@@ -34,7 +33,6 @@ steps:
   run:
     baseCommand: [cat]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: file1, type: File}
     outputs:

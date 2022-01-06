@@ -25,6 +25,6 @@ outputs:
   - {pattern: '${ return null }'}
   type: File
 requirements:
-- {class: DockerRequirement, dockerPull: 'debian:stretch-slim'}
+- {class: DockerRequirement, dockerPull: debian:stretch-slim}
 - {class: InlineJavascriptRequirement}
 - {class: ShellCommandRequirement}

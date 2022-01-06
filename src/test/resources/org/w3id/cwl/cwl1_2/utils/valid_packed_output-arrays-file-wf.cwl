@@ -16,9 +16,7 @@ steps:
   out: [o]
   run:
     class: ExpressionTool
-    expression: '${return {''o'': inputs.i.contents.split(" ")};}
-
-      '
+    expression: "${return {'o': inputs.i.contents.split(\" \")};}\n"
     inputs:
     - {id: i, loadContents: true, type: File}
     outputs:

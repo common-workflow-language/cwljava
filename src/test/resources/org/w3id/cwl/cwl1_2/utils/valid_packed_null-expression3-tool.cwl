@@ -1,6 +1,6 @@
 class: ExpressionTool
 cwlVersion: v1.2
-expression: '$({''output'': null })'
+expression: "$({'output': null })"
 inputs: []
 outputs:
 - {id: output, type: Any}

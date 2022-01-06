@@ -7,5 +7,5 @@ outputs:
   outputBinding: {glob: /etc/passwd}
   type: File
 requirements:
-- {class: DockerRequirement, dockerPull: 'debian:stretch-slim'}
+- {class: DockerRequirement, dockerPull: debian:stretch-slim}
 - {class: InlineJavascriptRequirement}

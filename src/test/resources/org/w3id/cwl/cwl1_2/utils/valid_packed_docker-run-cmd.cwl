@@ -7,5 +7,5 @@ outputs:
   outputBinding: {glob: cow}
   type: File
 requirements:
-- {class: DockerRequirement, dockerPull: 'bash:4.4.12'}
+- {class: DockerRequirement, dockerPull: bash:4.4.12}
 - {class: InlineJavascriptRequirement}

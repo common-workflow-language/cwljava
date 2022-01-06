@@ -22,7 +22,7 @@ $graph:
 - baseCommand: [touch]
   class: CommandLineTool
   hints:
-  - {class: DockerRequirement, dockerPull: 'debian:stretch-slim'}
+  - {class: DockerRequirement, dockerPull: debian:stretch-slim}
   id: '#touch.cwl'
   inputs:
   - id: '#touch.cwl/name'
@@ -33,7 +33,3 @@ $graph:
     outputBinding: {glob: $(inputs.name)}
     type: File
 cwlVersion: v1.2
-inputs: []
-outputs: []
-requirements:
-- {class: InlineJavascriptRequirement}

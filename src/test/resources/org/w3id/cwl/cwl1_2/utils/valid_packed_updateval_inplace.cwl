@@ -2,7 +2,7 @@ arguments: [python, $(inputs.script), $(inputs.r.basename)]
 class: CommandLineTool
 cwlVersion: v1.2
 hints:
-  DockerRequirement: {dockerPull: 'python:2.7.15-alpine3.7'}
+  DockerRequirement: {dockerPull: python:2.7.15-alpine3.7}
 inputs:
 - {id: r, type: File}
 - default: {class: File, location: updateval.py}

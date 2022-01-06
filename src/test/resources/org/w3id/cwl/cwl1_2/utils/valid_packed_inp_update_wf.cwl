@@ -15,7 +15,6 @@ steps:
   run:
     baseCommand: [echo]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - id: in
       inputBinding: {position: 1}
@@ -34,9 +33,8 @@ steps:
   run:
     arguments: [python, $(inputs.script), $(inputs.r.basename)]
     class: CommandLineTool
-    cwlVersion: v1.2
     hints:
-      DockerRequirement: {dockerPull: 'python:2.7.15-alpine3.7'}
+      DockerRequirement: {dockerPull: python:2.7.15-alpine3.7}
     inputs:
     - {id: r, type: File}
     - default: {class: File, location: updateval.py}
@@ -59,8 +57,7 @@ steps:
   out: [output]
   run:
     class: ExpressionTool
-    cwlVersion: v1.2
-    expression: '$({''output'': parseInt(inputs.file1.contents)})'
+    expression: "$({'output': parseInt(inputs.file1.contents)})"
     inputs:
     - {id: file1, loadContents: true, type: File}
     outputs:
@@ -73,8 +70,7 @@ steps:
   out: [output]
   run:
     class: ExpressionTool
-    cwlVersion: v1.2
-    expression: '$({''output'': parseInt(inputs.file1.contents)})'
+    expression: "$({'output': parseInt(inputs.file1.contents)})"
     inputs:
     - {id: file1, loadContents: true, type: File}
     outputs:

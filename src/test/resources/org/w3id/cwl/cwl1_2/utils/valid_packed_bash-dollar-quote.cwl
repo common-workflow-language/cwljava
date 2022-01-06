@@ -9,21 +9,23 @@ requirements:
 - {class: InlineJavascriptRequirement}
 - class: InitialWorkDirRequirement
   listing:
-  - {entry: "echo \\$(echo \\\n  \"My country, 'tis of thee,\" \\\n  \"Sweet land
-      of liberty\" | rev)\necho '$(inputs.val)'     # produce val\necho '\\$(inputs.val)'
-      \   # produce $(inputs.val)\necho\necho '\\\\$(inputs.val)'   # produce \\val\necho
-      '\\\\\\$(inputs.val)'  # produce \\$(inputs.val)\necho\necho '\\\\\\\\$(inputs.val)'
-      \ # produce \\\\val\necho '\\\\\\\\\\$(inputs.val)'  # produce \\\\$(inputs.val)\necho\necho
-      '\\\\\\\\\\\\$(inputs.val)'  # produce \\\\\\val\necho '\\\\\\\\\\\\\\$(inputs.val)'
-      \ # produce \\\\\\$(inputs.val)\necho\necho '\\\\\\\\\\\\\\\\$(inputs.val)'
-      \ # produce \\\\\\\\val\necho '\\\\\\\\\\\\\\\\\\$(inputs.val)'  # produce \\\\\\\\$(inputs.val)\necho\necho
-      '\\\\\\\\\\\\\\\\\\\\$(inputs.val)'  # produce \\\\\\\\\\val\necho '\\\\\\\\\\\\\\\\\\\\\\$(inputs.val)'
-      \ # produce \\\\\\\\\\$(inputs.val)\necho '\\'          # produce \\\necho '\\\\'
-      \        # produce \\\necho '\\\\\\'        # produce \\\\\necho '\\\\\\\\'
-      \      # produce \\\\\necho '\\\\\\\\\\'      # produce \\\\\\\necho '\\\\\\\\\\\\'
-      \    # produce \\\\\\\necho '\\\\\\\\\\\\\\'    # produce \\\\\\\\\necho '\\\\\\\\\\\\\\\\'
-      \  # produce \\\\\\\\\necho '\\\\\\\\\\\\\\\\\\'  # produce \\\\\\\\\\\necho
-      '\\\\\\\\\\\\\\\\\\\\' # produce \\\\\\\\\\\necho '$'          # produce $\necho
-      '\\$'         # produce \\$\necho '\\\\$'        # produce \\$\necho '$$'         #
-      produce $$\necho '$$$'        # produce $$$\n", entryname: script.sh}
+  - {entry: "echo \\$(echo \\\n  \"My country, 'tis of thee,\" \\\n  \"Sweet land\
+      \ of liberty\" | rev)\necho '$(inputs.val)'     # produce val\necho '\\$(inputs.val)'\
+      \    # produce $(inputs.val)\necho\necho '\\\\$(inputs.val)'   # produce \\\
+      val\necho '\\\\\\$(inputs.val)'  # produce \\$(inputs.val)\necho\necho '\\\\\
+      \\\\$(inputs.val)'  # produce \\\\val\necho '\\\\\\\\\\$(inputs.val)'  # produce\
+      \ \\\\$(inputs.val)\necho\necho '\\\\\\\\\\\\$(inputs.val)'  # produce \\\\\\\
+      val\necho '\\\\\\\\\\\\\\$(inputs.val)'  # produce \\\\\\$(inputs.val)\necho\n\
+      echo '\\\\\\\\\\\\\\\\$(inputs.val)'  # produce \\\\\\\\val\necho '\\\\\\\\\\\
+      \\\\\\\\$(inputs.val)'  # produce \\\\\\\\$(inputs.val)\necho\necho '\\\\\\\\\
+      \\\\\\\\\\\\$(inputs.val)'  # produce \\\\\\\\\\val\necho '\\\\\\\\\\\\\\\\\\\
+      \\\\$(inputs.val)'  # produce \\\\\\\\\\$(inputs.val)\necho '\\'          #\
+      \ produce \\\necho '\\\\'         # produce \\\necho '\\\\\\'        # produce\
+      \ \\\\\necho '\\\\\\\\'       # produce \\\\\necho '\\\\\\\\\\'      # produce\
+      \ \\\\\\\necho '\\\\\\\\\\\\'     # produce \\\\\\\necho '\\\\\\\\\\\\\\'  \
+      \  # produce \\\\\\\\\necho '\\\\\\\\\\\\\\\\'   # produce \\\\\\\\\necho '\\\
+      \\\\\\\\\\\\\\\\'  # produce \\\\\\\\\\\necho '\\\\\\\\\\\\\\\\\\\\' # produce\
+      \ \\\\\\\\\\\necho '$'          # produce $\necho '\\$'         # produce \\\
+      $\necho '\\\\$'        # produce \\$\necho '$$'         # produce $$\necho '$$$'\
+      \        # produce $$$\n", entryname: script.sh}
 stdout: out.txt

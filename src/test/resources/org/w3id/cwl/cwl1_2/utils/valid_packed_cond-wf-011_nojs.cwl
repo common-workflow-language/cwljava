@@ -35,7 +35,6 @@ steps:
   run:
     baseCommand: [echo]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: in1, type: int}
     - {id: in2, type: int}

@@ -12,13 +12,7 @@ outputs:
 requirements:
 - class: InitialWorkDirRequirement
   listing:
-  - {entry: '${return ''quote "'' + inputs.quote + ''"''}
-
-      ', entryname: file.txt}
-  - {entry: 'set -xe
-
-      cat file.txt
-
-      ', entryname: script.sh}
+  - {entry: "${return 'quote \"' + inputs.quote + '\"'}\n", entryname: file.txt}
+  - {entry: "set -xe\ncat file.txt\n", entryname: script.sh}
 - {class: InlineJavascriptRequirement}
 - {class: ResourceRequirement, coresMin: 2, ramMin: 1000}

@@ -17,7 +17,6 @@ steps:
   run:
     arguments: [echo, $(inputs.in), $(inputs.in2)]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: in, type: string}
     outputs:

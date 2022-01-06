@@ -14,9 +14,7 @@ steps:
   out: [o]
   run:
     class: ExpressionTool
-    expression: '${return {''o'': (inputs.i || 2)};}
-
-      '
+    expression: "${return {'o': (inputs.i || 2)};}\n"
     inputs:
     - {id: i, type: int}
     outputs:
@@ -29,9 +27,7 @@ steps:
   out: [o]
   run:
     class: ExpressionTool
-    expression: '${return {''o'': inputs.i * 2 + inputs.i2};}
-
-      '
+    expression: "${return {'o': inputs.i * 2 + inputs.i2};}\n"
     inputs:
     - {id: i, type: int}
     - {default: 5, id: i2, type: int}

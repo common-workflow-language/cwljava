@@ -2,9 +2,7 @@ arguments:
 - {shellQuote: false, valueFrom: head -n10 ../input/stuff.txt > head.txt}
 class: CommandLineTool
 cwlVersion: v1.2
-doc: 'Must fail if entryname starts with ../
-
-  '
+doc: "Must fail if entryname starts with ../\n"
 inputs:
 - {id: filelist, type: File}
 outputs:

@@ -4,7 +4,7 @@ $graph:
   baseCommand: python
   class: CommandLineTool
   hints:
-  - {class: DockerRequirement, dockerPull: 'python:2-slim'}
+  - {class: DockerRequirement, dockerPull: python:2-slim}
   id: index
   inputs:
     file: File
@@ -28,7 +28,7 @@ $graph:
 - baseCommand: python
   class: CommandLineTool
   hints:
-  - {class: DockerRequirement, dockerPull: 'python:2-slim'}
+  - {class: DockerRequirement, dockerPull: python:2-slim}
   id: search
   inputs:
     file:
@@ -67,7 +67,3 @@ $graph:
       out: [result]
       run: '#search'
 cwlVersion: v1.2
-inputs: []
-outputs: []
-requirements:
-- {class: InlineJavascriptRequirement}

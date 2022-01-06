@@ -2,11 +2,8 @@ arguments: [foo 1>&2]
 baseCommand: echo
 class: CommandLineTool
 cwlVersion: v1.2
-doc: 'Ensure that `shellQuote: true` is the default behavior when
-
-  ShellCommandRequirement is in effect.
-
-  '
+doc: "Ensure that `shellQuote: true` is the default behavior when\nShellCommandRequirement\
+  \ is in effect.\n"
 inputs: []
 outputs:
 - {id: stdout_file, type: stdout}

@@ -10,7 +10,7 @@ outputs:
 requirements:
 - class: InitialWorkDirRequirement
   listing:
-  - {entry: "echo \\\n  \"My country, 'tis of thee,\" \\\n  \"Sweet land of $(inputs.liberty)\"\n",
-    entryname: script.sh}
+  - {entry: "echo \\\n  \"My country, 'tis of thee,\" \\\n  \"Sweet land of $(inputs.liberty)\"\
+      \n", entryname: script.sh}
 - {class: InlineJavascriptRequirement}
 stdout: out.txt

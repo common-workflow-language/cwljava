@@ -15,5 +15,5 @@ requirements:
 - {class: InlineJavascriptRequirement}
 - class: InitialWorkDirRequirement
   listing:
-  - {entry: '${ return {class: ''Directory'', basename: ''not_input_dir'', listing:
-      inputs.input_list} }', entryname: input_dir}
+  - {entry: "${ return {class: 'Directory', basename: 'not_input_dir', listing: inputs.input_list}\
+      \ }", entryname: input_dir}

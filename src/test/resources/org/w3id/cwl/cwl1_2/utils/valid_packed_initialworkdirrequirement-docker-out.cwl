@@ -11,7 +11,7 @@ outputs:
   secondaryFiles: [.fai]
   type: File
 requirements:
-- {class: DockerRequirement, dockerPull: 'debian:stretch-slim'}
+- {class: DockerRequirement, dockerPull: debian:stretch-slim}
 - class: InitialWorkDirRequirement
   listing: [$(inputs.INPUT)]
 - {class: InlineJavascriptRequirement}

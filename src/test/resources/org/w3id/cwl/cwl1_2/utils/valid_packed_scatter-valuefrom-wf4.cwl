@@ -49,7 +49,3 @@ $graph:
       scatter: [echo_in1, echo_in2]
       scatterMethod: dotproduct
 cwlVersion: v1.2
-inputs: []
-outputs: []
-requirements:
-- {class: InlineJavascriptRequirement}

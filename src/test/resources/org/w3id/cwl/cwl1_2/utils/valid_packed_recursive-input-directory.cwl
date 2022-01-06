@@ -1,27 +1,13 @@
 arguments:
-- {shellQuote: false, valueFrom: 'touch work_dir/e;
-
-    if [ ! -w work_dir ]; then echo work_dir not writable; fi;
-
-    if [ -L work_dir ]; then echo work_dir is a symlink; fi;
-
-    if [ ! -w work_dir/a ]; then echo work_dir/a not writable; fi;
-
-    if [ -L work_dir/a ]; then echo work_dir/a is a symlink; fi;
-
-    if [ ! -w work_dir/c ]; then echo work_dir/c not writable; fi;
-
-    if [ -L work_dir/c ]; then echo work_dir/c is a symlink; fi;
-
-    if [ ! -w work_dir/c/d ]; then echo work_dir/c/d not writable; fi;
-
-    if [ -L work_dir/c/d ]; then echo work_dir/c/d is a symlink; fi;
-
-    if [ ! -w work_dir/e ]; then echo work_dir/e not writable; fi;
-
-    if [ -L work_dir/e ]; then echo work_dir/e is a symlink ; fi;
-
-    '}
+- {shellQuote: false, valueFrom: "touch work_dir/e;\nif [ ! -w work_dir ]; then echo\
+    \ work_dir not writable; fi;\nif [ -L work_dir ]; then echo work_dir is a symlink;\
+    \ fi;\nif [ ! -w work_dir/a ]; then echo work_dir/a not writable; fi;\nif [ -L\
+    \ work_dir/a ]; then echo work_dir/a is a symlink; fi;\nif [ ! -w work_dir/c ];\
+    \ then echo work_dir/c not writable; fi;\nif [ -L work_dir/c ]; then echo work_dir/c\
+    \ is a symlink; fi;\nif [ ! -w work_dir/c/d ]; then echo work_dir/c/d not writable;\
+    \ fi;\nif [ -L work_dir/c/d ]; then echo work_dir/c/d is a symlink; fi;\nif [\
+    \ ! -w work_dir/e ]; then echo work_dir/e not writable; fi;\nif [ -L work_dir/e\
+    \ ]; then echo work_dir/e is a symlink ; fi;\n"}
 class: CommandLineTool
 cwlVersion: v1.2
 inputs:

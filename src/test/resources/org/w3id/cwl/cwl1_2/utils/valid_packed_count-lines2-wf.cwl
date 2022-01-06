@@ -33,9 +33,7 @@ steps:
   out: [parseInt_output]
   run:
     class: ExpressionTool
-    expression: '${return {''parseInt_output'': parseInt(inputs.parseInt_file1.contents)};}
-
-      '
+    expression: "${return {'parseInt_output': parseInt(inputs.parseInt_file1.contents)};}\n"
     inputs:
     - {id: parseInt_file1, loadContents: true, type: File}
     outputs:

@@ -1,17 +1,10 @@
-arguments: [-c, 'f = open("bob.txt", "r+")
-
-    f.seek(8)
-
-    f.write("Bob.    ")
-
-    f.close()
-
-    ']
+arguments: [-c, "f = open(\"bob.txt\", \"r+\")\nf.seek(8)\nf.write(\"Bob.    \")\n\
+    f.close()\n"]
 baseCommand: python
 class: CommandLineTool
 cwlVersion: v1.2
 hints:
-- {class: DockerRequirement, dockerPull: 'python:2-slim'}
+- {class: DockerRequirement, dockerPull: python:2-slim}
 inputs:
 - {id: infile, type: File}
 outputs:

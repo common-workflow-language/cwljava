@@ -2,7 +2,7 @@ baseCommand: python
 class: CommandLineTool
 cwlVersion: v1.2
 hints:
-- {class: DockerRequirement, dockerPull: 'python:2-slim'}
+- {class: DockerRequirement, dockerPull: python:2-slim}
 inputs:
 - id: array_input
   inputBinding: {valueFrom: replacementValue}

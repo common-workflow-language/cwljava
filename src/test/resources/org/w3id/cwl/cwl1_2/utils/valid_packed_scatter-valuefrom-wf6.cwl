@@ -21,7 +21,6 @@ steps:
   run:
     baseCommand: echo
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - id: scattered_message
       inputBinding: {position: 2}

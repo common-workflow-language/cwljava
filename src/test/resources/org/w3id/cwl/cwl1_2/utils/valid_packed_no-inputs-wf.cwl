@@ -14,10 +14,9 @@ steps:
   run:
     baseCommand: [echo, cwl]
     class: CommandLineTool
-    cwlVersion: v1.2
     doc: CommandLineTool without inputs.
     hints:
-      DockerRequirement: {dockerPull: 'debian:stretch-slim'}
+      DockerRequirement: {dockerPull: debian:stretch-slim}
     inputs: []
     outputs:
     - id: output

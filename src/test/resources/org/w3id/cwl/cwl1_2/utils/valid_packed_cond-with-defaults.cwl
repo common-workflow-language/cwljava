@@ -32,7 +32,6 @@ steps:
   run:
     arguments: [echo, $(inputs.initial_file.basename)]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: initial_file, type: File}
     - {id: out_file_name, type: string}
@@ -53,7 +52,6 @@ steps:
   run:
     arguments: [echo, $(inputs.initial_file.basename)]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: initial_file, type: File}
     - {id: out_file_name, type: string}

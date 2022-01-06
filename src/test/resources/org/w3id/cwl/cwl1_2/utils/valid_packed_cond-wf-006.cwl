@@ -20,7 +20,6 @@ steps:
   run:
     baseCommand: [echo]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: in1, type: int}
     outputs:
@@ -38,7 +37,6 @@ steps:
   run:
     baseCommand: [echo]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: in1, type: int}
     outputs:

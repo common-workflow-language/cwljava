@@ -14,7 +14,6 @@ steps:
   run:
     baseCommand: [echo, -n]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - default: tool_default
       id: in

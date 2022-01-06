@@ -8,8 +8,8 @@ outputs:
   outputBinding: {glob: subdir/$(inputs.filelist.basename)}
   type: File
 requirements:
-- {class: DockerRequirement, dockerPull: 'debian:stable-slim'}
+- {class: DockerRequirement, dockerPull: debian:stable-slim}
 - {class: InlineJavascriptRequirement}
-- {class: InitialWorkDirRequirement, listing: "${\n   return [{\"class\": \"Directory\",\n
-    \           \"basename\": \"subdir\",\n            \"listing\": [ inputs.filelist
-    ]\n            }]}\n"}
+- {class: InitialWorkDirRequirement, listing: "${\n   return [{\"class\": \"Directory\"\
+    ,\n            \"basename\": \"subdir\",\n            \"listing\": [ inputs.filelist\
+    \ ]\n            }]}\n"}

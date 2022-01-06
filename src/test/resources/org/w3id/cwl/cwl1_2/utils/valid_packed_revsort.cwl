@@ -2,7 +2,7 @@ class: Workflow
 cwlVersion: v1.2
 doc: Reverse the lines in a document, then sort those lines.
 hints:
-- {class: DockerRequirement, dockerPull: 'debian:stretch-slim'}
+- {class: DockerRequirement, dockerPull: debian:stretch-slim}
 inputs:
 - {doc: The input file to be processed., id: input, type: File}
 - {default: true, doc: 'If true, reverse (decending) sort', id: reverse_sort, type: boolean}
@@ -20,7 +20,6 @@ steps:
   run:
     baseCommand: rev
     class: CommandLineTool
-    cwlVersion: v1.2
     doc: Reverse each line using the `rev` command
     inputs:
     - id: input
@@ -41,7 +40,6 @@ steps:
   run:
     baseCommand: sort
     class: CommandLineTool
-    cwlVersion: v1.2
     doc: Sort lines using the `sort` command
     inputs:
     - id: reverse

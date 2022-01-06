@@ -1,4 +1,4 @@
-$namespaces: {edam: 'http://edamontology.org/'}
+$namespaces: {edam: http://edamontology.org/}
 baseCommand: rev
 class: CommandLineTool
 cwlVersion: v1.2

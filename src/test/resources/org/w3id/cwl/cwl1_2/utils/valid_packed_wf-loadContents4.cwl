@@ -15,9 +15,7 @@ steps:
   out: [my_int]
   run:
     class: ExpressionTool
-    expression: '${ return { "my_int": inputs.my_number }; }
-
-      '
+    expression: "${ return { \"my_int\": inputs.my_number }; }\n"
     inputs:
     - {id: my_number, type: int}
     outputs:

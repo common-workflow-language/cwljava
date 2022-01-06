@@ -15,7 +15,6 @@ steps:
   run:
     baseCommand: 'true'
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: bar, type: Any}
     outputs:

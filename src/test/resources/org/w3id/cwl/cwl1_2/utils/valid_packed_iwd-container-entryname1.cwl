@@ -2,11 +2,8 @@ arguments:
 - {shellQuote: false, valueFrom: head -n10 /tmp2j3y7rpb/input/stuff.txt > /output/head.txt}
 class: CommandLineTool
 cwlVersion: v1.2
-doc: 'When executing in a container, entryname can have an absolute path
-
-  to a mount location inside the container.
-
-  '
+doc: "When executing in a container, entryname can have an absolute path\nto a mount\
+  \ location inside the container.\n"
 inputs:
 - {id: filelist, type: File}
 outputs:
@@ -14,7 +11,7 @@ outputs:
   outputBinding: {glob: head.txt}
   type: File
 requirements:
-- {class: DockerRequirement, dockerOutputDirectory: /output, dockerPull: 'debian:10'}
+- {class: DockerRequirement, dockerOutputDirectory: /output, dockerPull: debian:10}
 - class: InitialWorkDirRequirement
   listing:
   - {entry: $(inputs.filelist), entryname: /tmp2j3y7rpb/input/stuff.txt}

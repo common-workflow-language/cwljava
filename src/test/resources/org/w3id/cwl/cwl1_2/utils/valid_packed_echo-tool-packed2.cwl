@@ -22,7 +22,3 @@ $graph:
       type: string
   stdout: out.txt
 cwlVersion: v1.2
-inputs: []
-outputs: []
-requirements:
-- {class: InlineJavascriptRequirement}

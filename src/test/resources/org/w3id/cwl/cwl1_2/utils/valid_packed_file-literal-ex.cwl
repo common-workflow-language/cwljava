@@ -1,10 +1,7 @@
 class: ExpressionTool
 cwlVersion: v1.2
-expression: '${
-
-  return {"lit": {"class": "File", "basename": "a_file", "contents": "Hello file literal."}};
-
-  }'
+expression: "${\nreturn {\"lit\": {\"class\": \"File\", \"basename\": \"a_file\",\
+  \ \"contents\": \"Hello file literal.\"}};\n}"
 inputs: []
 outputs:
 - {id: lit, type: File}

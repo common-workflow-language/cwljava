@@ -14,7 +14,6 @@ steps:
   out: [count_output]
   run:
     class: Workflow
-    cwlVersion: v1.2
     inputs:
     - {id: file1, type: File}
     outputs:
@@ -30,7 +29,6 @@ steps:
       run:
         baseCommand: [wc, -l]
         class: CommandLineTool
-        cwlVersion: v1.2
         inputs:
         - {id: file1, type: File}
         outputs:
@@ -47,8 +45,7 @@ steps:
       out: [output]
       run:
         class: ExpressionTool
-        cwlVersion: v1.2
-        expression: '$({''output'': parseInt(inputs.file1.contents)})'
+        expression: "$({'output': parseInt(inputs.file1.contents)})"
         inputs:
         - {id: file1, loadContents: true, type: File}
         outputs:

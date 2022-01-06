@@ -2,11 +2,8 @@ arguments:
 - {shellQuote: false, valueFrom: head -n10 /tmp2j3y7rpb/input/stuff.txt > /output/head.txt}
 class: CommandLineTool
 cwlVersion: v1.2
-doc: 'Must fail if entryname is an absolute path and DockerRequirement is
-
-  not in the ''requirements'' section.
-
-  '
+doc: "Must fail if entryname is an absolute path and DockerRequirement is\nnot in\
+  \ the 'requirements' section.\n"
 inputs:
 - {id: filelist, type: File}
 outputs:

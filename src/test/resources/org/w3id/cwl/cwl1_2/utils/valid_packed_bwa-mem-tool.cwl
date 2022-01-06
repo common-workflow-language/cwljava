@@ -7,7 +7,7 @@ class: CommandLineTool
 cwlVersion: v1.2
 hints:
 - {class: ResourceRequirement, coresMin: 2}
-- {class: DockerRequirement, dockerPull: 'python:2-slim'}
+- {class: DockerRequirement, dockerPull: python:2-slim}
 inputs:
 - id: reference
   inputBinding: {position: 2}

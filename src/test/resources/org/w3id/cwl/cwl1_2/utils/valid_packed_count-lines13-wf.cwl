@@ -16,7 +16,6 @@ steps:
   run:
     baseCommand: wc
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - id: file1
       inputBinding: {}

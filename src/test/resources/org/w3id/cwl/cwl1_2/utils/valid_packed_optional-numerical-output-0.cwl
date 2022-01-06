@@ -4,7 +4,8 @@ cwlVersion: v1.2
 inputs: []
 outputs:
 - id: out
-  outputBinding: {glob: a.txt, loadContents: true, outputEval: "${\n    return parseFloat(self[0].contents);\n}"}
+  outputBinding: {glob: a.txt, loadContents: true, outputEval: "${\n    return parseFloat(self[0].contents);\n\
+      }"}
   type: ['null', float]
 requirements:
 - {class: InlineJavascriptRequirement}

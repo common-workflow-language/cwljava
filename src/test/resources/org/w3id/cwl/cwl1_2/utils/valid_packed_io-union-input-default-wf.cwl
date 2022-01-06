@@ -16,9 +16,7 @@ steps:
   out: [o]
   run:
     class: ExpressionTool
-    expression: '${return {''o'': (inputs.i.class || inputs.i)};}
-
-      '
+    expression: "${return {'o': (inputs.i.class || inputs.i)};}\n"
     inputs:
     - id: i
       type: [File, 'null', string]

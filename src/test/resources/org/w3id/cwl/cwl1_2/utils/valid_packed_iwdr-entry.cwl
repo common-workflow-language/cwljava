@@ -10,7 +10,5 @@ outputs:
 requirements:
 - class: InitialWorkDirRequirement
   listing:
-  - {entry: 'CONFIGVAR=$(inputs.message)
-
-      ', entryname: example.conf}
+  - {entry: "CONFIGVAR=$(inputs.message)\n", entryname: example.conf}
 - {class: InlineJavascriptRequirement}

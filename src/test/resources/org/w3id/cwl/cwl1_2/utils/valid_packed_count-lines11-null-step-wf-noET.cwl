@@ -12,8 +12,7 @@ steps:
   out: [output]
   run:
     class: ExpressionTool
-    cwlVersion: v1.2
-    expression: '$({''output'': null })'
+    expression: "$({'output': null })"
     inputs: []
     outputs:
     - {id: output, type: Any}
@@ -28,7 +27,6 @@ steps:
   run:
     baseCommand: [wc, -l]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: file1, type: File}
     outputs:

@@ -22,7 +22,6 @@ steps:
       -a, -f, '$(inputs.record_input.f2[1].path).s3']
     baseCommand: test
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - id: record_input
       type:

@@ -17,7 +17,6 @@ steps:
     arguments: [$(runtime.cores)]
     baseCommand: echo
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - default: {class: File, location: special_file}
       id: special_file
@@ -35,7 +34,6 @@ steps:
   run:
     baseCommand: [cat]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: file1, type: File}
     outputs:

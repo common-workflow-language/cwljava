@@ -1,6 +1,6 @@
 arguments:
 - {position: '${return 2;}', valueFrom: singular}
-- {position: '${return null;}', valueFrom: "\U0001F57A"}
+- {position: '${return null;}', valueFrom: 🕺}
 baseCommand: echo
 class: CommandLineTool
 cwlVersion: v1.2

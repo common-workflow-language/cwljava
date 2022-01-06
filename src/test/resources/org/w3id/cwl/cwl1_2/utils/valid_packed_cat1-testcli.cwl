@@ -4,7 +4,7 @@ class: CommandLineTool
 cwlVersion: v1.2
 doc: Print the contents of a file to stdout using 'cat' running in a docker container.
 hints:
-- {class: DockerRequirement, dockerPull: 'python:2-slim'}
+- {class: DockerRequirement, dockerPull: python:2-slim}
 inputs:
 - id: file1
   inputBinding: {position: 1}

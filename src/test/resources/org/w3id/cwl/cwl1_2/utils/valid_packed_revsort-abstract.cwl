@@ -18,7 +18,6 @@ steps:
   run:
     baseCommand: rev
     class: CommandLineTool
-    cwlVersion: v1.2
     doc: Reverse each line using the `rev` command
     inputs:
     - id: input

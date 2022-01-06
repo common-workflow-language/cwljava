@@ -18,7 +18,7 @@ outputs:
   outputBinding: {outputEval: $(inputs.bar)}
   type: Any
 - id: t3
-  outputBinding: {outputEval: '$(inputs[''bar''])'}
+  outputBinding: {outputEval: "$(inputs['bar'])"}
   type: Any
 - id: t4
   outputBinding: {outputEval: '$(inputs["bar"])'}
@@ -27,61 +27,61 @@ outputs:
   outputBinding: {outputEval: $(inputs.bar.baz)}
   type: Any
 - id: t6
-  outputBinding: {outputEval: '$(inputs[''bar''].baz)'}
+  outputBinding: {outputEval: "$(inputs['bar'].baz)"}
   type: Any
 - id: t7
-  outputBinding: {outputEval: '$(inputs[''bar'']["baz"])'}
+  outputBinding: {outputEval: "$(inputs['bar'][\"baz\"])"}
   type: Any
 - id: t8
-  outputBinding: {outputEval: '$(inputs.bar[''baz''])'}
+  outputBinding: {outputEval: "$(inputs.bar['baz'])"}
   type: Any
 - id: t9
-  outputBinding: {outputEval: '$(inputs.bar[''b az''])'}
+  outputBinding: {outputEval: "$(inputs.bar['b az'])"}
   type: Any
 - id: t10
-  outputBinding: {outputEval: '$(inputs.bar[''b\''az''])'}
+  outputBinding: {outputEval: "$(inputs.bar['b\\'az'])"}
   type: Any
 - id: t11
-  outputBinding: {outputEval: '$(inputs.bar["b''az"])'}
+  outputBinding: {outputEval: "$(inputs.bar[\"b'az\"])"}
   type: Any
 - id: t12
-  outputBinding: {outputEval: '$(inputs.bar[''b"az''])'}
+  outputBinding: {outputEval: "$(inputs.bar['b\"az'])"}
   type: 'null'
 - id: t13
   outputBinding: {outputEval: -$(inputs.bar.baz)}
   type: Any
 - id: t14
-  outputBinding: {outputEval: '-$(inputs[''bar''].baz)'}
+  outputBinding: {outputEval: "-$(inputs['bar'].baz)"}
   type: Any
 - id: t15
-  outputBinding: {outputEval: '-$(inputs[''bar'']["baz"])'}
+  outputBinding: {outputEval: "-$(inputs['bar'][\"baz\"])"}
   type: Any
 - id: t16
-  outputBinding: {outputEval: '-$(inputs.bar[''baz''])'}
+  outputBinding: {outputEval: "-$(inputs.bar['baz'])"}
   type: Any
 - id: t17
   outputBinding: {outputEval: $(inputs.bar.baz) $(inputs.bar.baz)}
   type: Any
 - id: t18
-  outputBinding: {outputEval: '$(inputs[''bar''].baz) $(inputs[''bar''].baz)'}
+  outputBinding: {outputEval: "$(inputs['bar'].baz) $(inputs['bar'].baz)"}
   type: Any
 - id: t19
-  outputBinding: {outputEval: '$(inputs[''bar'']["baz"]) $(inputs[''bar'']["baz"])'}
+  outputBinding: {outputEval: "$(inputs['bar'][\"baz\"]) $(inputs['bar'][\"baz\"])"}
   type: Any
 - id: t20
-  outputBinding: {outputEval: '$(inputs.bar[''baz'']) $(inputs.bar[''baz''])'}
+  outputBinding: {outputEval: "$(inputs.bar['baz']) $(inputs.bar['baz'])"}
   type: Any
 - id: t21
-  outputBinding: {outputEval: '$(inputs.bar[''b az'']) $(inputs.bar[''b az''])'}
+  outputBinding: {outputEval: "$(inputs.bar['b az']) $(inputs.bar['b az'])"}
   type: Any
 - id: t22
-  outputBinding: {outputEval: '$(inputs.bar[''b\''az'']) $(inputs.bar[''b\''az''])'}
+  outputBinding: {outputEval: "$(inputs.bar['b\\'az']) $(inputs.bar['b\\'az'])"}
   type: Any
 - id: t23
-  outputBinding: {outputEval: '$(inputs.bar["b''az"]) $(inputs.bar["b''az"])'}
+  outputBinding: {outputEval: "$(inputs.bar[\"b'az\"]) $(inputs.bar[\"b'az\"])"}
   type: Any
 - id: t24
-  outputBinding: {outputEval: '$(inputs.bar[''b"az'']) $(inputs.bar[''b"az''])'}
+  outputBinding: {outputEval: "$(inputs.bar['b\"az']) $(inputs.bar['b\"az'])"}
   type: Any
 - id: t25
   outputBinding: {outputEval: '$(inputs.bar.buz[1])'}

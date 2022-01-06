@@ -33,7 +33,6 @@ steps:
     - {position: 5, valueFrom: cat}
     - {position: 7, shellQuote: false, valueFrom: '> bar'}
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - id: irec
       type:

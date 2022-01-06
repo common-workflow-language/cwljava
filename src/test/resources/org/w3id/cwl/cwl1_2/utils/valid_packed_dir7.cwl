@@ -1,10 +1,7 @@
 class: ExpressionTool
 cwlVersion: v1.2
-expression: '${
-
-  return {"dir": {"class": "Directory", "basename": "a_directory", "listing": inputs.files}};
-
-  }'
+expression: "${\nreturn {\"dir\": {\"class\": \"Directory\", \"basename\": \"a_directory\"\
+  , \"listing\": inputs.files}};\n}"
 inputs:
 - id: files
   type: {items: File, type: array}

@@ -17,7 +17,6 @@ steps:
   run:
     baseCommand: [/bin/sh, -c, echo $TEST_ENV]
     class: CommandLineTool
-    cwlVersion: v1.2
     hints:
       EnvVarRequirement:
         envDef: {TEST_ENV: $(inputs.in)}

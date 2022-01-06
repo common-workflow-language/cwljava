@@ -7,5 +7,5 @@ outputs:
   outputBinding: {glob: thing}
   type: File
 requirements:
-- {class: DockerRequirement, dockerOutputDirectory: /other, dockerPull: 'debian:stretch-slim'}
+- {class: DockerRequirement, dockerOutputDirectory: /other, dockerPull: debian:stretch-slim}
 - {class: InlineJavascriptRequirement}

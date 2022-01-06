@@ -16,7 +16,6 @@ steps:
   run:
     baseCommand: [cat]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: file1, type: File}
     outputs:
@@ -36,7 +35,6 @@ steps:
   run:
     baseCommand: [wc, -l]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: file1, type: File}
     outputs:

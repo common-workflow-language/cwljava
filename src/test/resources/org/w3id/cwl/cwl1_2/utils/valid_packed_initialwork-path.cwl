@@ -1,7 +1,6 @@
 arguments:
-- {shellQuote: false, valueFrom: 'test "$(inputs.file1.path)" = "$(runtime.outdir)/bob.txt"
-
-    '}
+- {shellQuote: false, valueFrom: "test \"$(inputs.file1.path)\" = \"$(runtime.outdir)/bob.txt\"\
+    \n"}
 class: CommandLineTool
 cwlVersion: v1.2
 inputs:

@@ -15,9 +15,7 @@ steps:
   out: [my_int]
   run:
     class: ExpressionTool
-    expression: '${ return { "my_int": parseInt(inputs.my_number.contents) }; }
-
-      '
+    expression: "${ return { \"my_int\": parseInt(inputs.my_number.contents) }; }\n"
     inputs:
     - {id: my_number, loadContents: true, type: File}
     outputs:

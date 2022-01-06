@@ -14,10 +14,8 @@ steps:
   out: [o]
   run:
     class: ExpressionTool
-    expression: '${return {''o'': Array.apply(null, {length: inputs.i}).map(Number.call,
-      Number)};}
-
-      '
+    expression: "${return {'o': Array.apply(null, {length: inputs.i}).map(Number.call,\
+      \ Number)};}\n"
     inputs:
     - {id: i, type: int}
     outputs:
@@ -31,9 +29,7 @@ steps:
   out: [o]
   run:
     class: ExpressionTool
-    expression: '${return {''o'': inputs.i.map(function(x) { return (x + 1) * 2; })};}
-
-      '
+    expression: "${return {'o': inputs.i.map(function(x) { return (x + 1) * 2; })};}\n"
     inputs:
     - id: i
       type: {items: int, type: array}
@@ -48,9 +44,7 @@ steps:
   out: [o]
   run:
     class: ExpressionTool
-    expression: '${return {''o'': inputs.i.reduce(function(a, b) { return a + b; })};}
-
-      '
+    expression: "${return {'o': inputs.i.reduce(function(a, b) { return a + b; })};}\n"
     inputs:
     - id: i
       type: {items: int, type: array}

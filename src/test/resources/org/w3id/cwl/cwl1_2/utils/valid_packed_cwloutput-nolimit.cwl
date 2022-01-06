@@ -9,5 +9,5 @@ outputs:
 - id: filelist
   type: {items: string, type: array}
 requirements:
-- {class: DockerRequirement, dockerPull: 'python:3-slim'}
+- {class: DockerRequirement, dockerPull: python:3-slim}
 - {class: InlineJavascriptRequirement}

@@ -2,7 +2,7 @@ $graph:
 - class: Workflow
   doc: Reverse the lines in a document, then sort those lines.
   hints:
-  - {class: DockerRequirement, dockerPull: 'debian:stretch-slim'}
+  - {class: DockerRequirement, dockerPull: debian:stretch-slim}
   id: '#main'
   inputs:
   - {doc: The input file to be processed., id: '#main/input', type: File}
@@ -53,7 +53,3 @@ $graph:
     type: File
   stdout: output.txt
 cwlVersion: v1.2
-inputs: []
-outputs: []
-requirements:
-- {class: InlineJavascriptRequirement}

@@ -19,7 +19,6 @@ steps:
   run:
     arguments: [mkdir, $(inputs.dirname)]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: dirname, type: string}
     outputs:
@@ -35,7 +34,6 @@ steps:
   run:
     arguments: [touch, inp/blurb]
     class: CommandLineTool
-    cwlVersion: v1.2
     inputs:
     - {id: r, type: Directory}
     outputs:
