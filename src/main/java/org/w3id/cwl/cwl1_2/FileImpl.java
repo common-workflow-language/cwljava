@@ -30,8 +30,8 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  a number of properties that provide metadata about the file.
  
  The `location` property of a File is a URI that uniquely identifies the
- file.  Implementations must support the file:// URI scheme and may support
- other schemes such as http://.  The value of `location` may also be a
+ file.  Implementations must support the `file://` URI scheme and may support
+ other schemes such as `http://` and `https://`.  The value of `location` may also be a
  relative reference, in which case it must be resolved relative to the URI
  of the document it appears in.  Alternately to `location`, implementations
  must also accept the `path` property on File, which must be a filesystem
@@ -265,7 +265,7 @@ public class FileImpl extends SavableImpl implements File {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#File/size</I><BR>
    * <BLOCKQUOTE>
-   * Optional file size   * </BLOCKQUOTE>
+   * Optional file size (in bytes)   * </BLOCKQUOTE>
    */
 
   public Object getSize() {
@@ -306,8 +306,8 @@ public class FileImpl extends SavableImpl implements File {
    * `<B> owl:equivalentClass <C>` and `<B> owl:subclassOf <A>` then infer
    * `<C> owl:subclassOf <A>`.
    * 
-   * File format ontologies may be provided in the "$schema" metadata at the
-   * root of the document.  If no ontologies are specified in `$schema`, the
+   * File format ontologies may be provided in the "$schemas" metadata at the
+   * root of the document.  If no ontologies are specified in `$schemas`, the
    * runtime may perform exact file format matches.
    *    * </BLOCKQUOTE>
    */

@@ -153,7 +153,7 @@ public class InputArraySchemaImpl extends SavableImpl implements InputArraySchem
     try {
       items =
           LoaderInstances
-              .uri_union_of_CWLType_or_InputRecordSchema_or_InputEnumSchema_or_InputArraySchema_or_StringInstance_or_array_of_union_of_CWLType_or_InputRecordSchema_or_InputEnumSchema_or_InputArraySchema_or_StringInstance_False_True_2
+              .typedsl_union_of_CWLType_or_InputRecordSchema_or_InputEnumSchema_or_InputArraySchema_or_StringInstance_or_array_of_union_of_CWLType_or_InputRecordSchema_or_InputEnumSchema_or_InputArraySchema_or_StringInstance_2
               .loadField(__doc.get("items"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       items = null; // won't be used but prevents compiler from complaining.
