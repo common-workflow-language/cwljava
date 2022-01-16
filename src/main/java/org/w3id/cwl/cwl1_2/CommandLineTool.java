@@ -128,7 +128,7 @@ public interface CommandLineTool extends Process, Savable {
    *    * </BLOCKQUOTE>
    */
 
-  java.util.Optional<java.util.List<Object>> getIntent();
+  java.util.Optional<java.util.List<String>> getIntent();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#baseCommand</I><BR>
    * <BLOCKQUOTE>

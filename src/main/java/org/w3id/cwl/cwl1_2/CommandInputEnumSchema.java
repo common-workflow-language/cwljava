@@ -33,7 +33,7 @@ public interface CommandInputEnumSchema extends InputEnumSchema, CommandInputSch
    * Defines the set of valid symbols.   * </BLOCKQUOTE>
    */
 
-  java.util.List<Object> getSymbols();
+  java.util.List<String> getSymbols();
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#type</I><BR>
    * <BLOCKQUOTE>

@@ -113,7 +113,6 @@ public class LoaderInstances {
   public static Loader<java.util.Optional<java.util.List<Object>>> idmap_fields_optional_array_of_RecordField = new IdMapLoader(optional_array_of_RecordField, "name", "type");
   public static Loader<enum_d9cba076fca539106791a4f46d198c7fcfbdb779> enum_d9cba076fca539106791a4f46d198c7fcfbdb779 = new EnumLoader(enum_d9cba076fca539106791a4f46d198c7fcfbdb779.class);
   public static Loader<enum_d9cba076fca539106791a4f46d198c7fcfbdb779> typedsl_enum_d9cba076fca539106791a4f46d198c7fcfbdb779_2 = new TypeDslLoader(enum_d9cba076fca539106791a4f46d198c7fcfbdb779, 2);
-  public static Loader<java.util.List<Object>> uri_array_of_StringInstance_True_False_None = new UriLoader(array_of_StringInstance, true, false, null);
   public static Loader<enum_d961d79c225752b9fadb617367615ab176b47d77> enum_d961d79c225752b9fadb617367615ab176b47d77 = new EnumLoader(enum_d961d79c225752b9fadb617367615ab176b47d77.class);
   public static Loader<enum_d961d79c225752b9fadb617367615ab176b47d77> typedsl_enum_d961d79c225752b9fadb617367615ab176b47d77_2 = new TypeDslLoader(enum_d961d79c225752b9fadb617367615ab176b47d77, 2);
   public static Loader<enum_d062602be0b4b8fd33e69e29a841317b6ab665bc> enum_d062602be0b4b8fd33e69e29a841317b6ab665bc = new EnumLoader(enum_d062602be0b4b8fd33e69e29a841317b6ab665bc.class);
@@ -170,8 +169,8 @@ public class LoaderInstances {
   public static Loader<java.util.Optional<java.util.List<Object>>> idmap_hints_optional_array_of_AnyInstance = new IdMapLoader(optional_array_of_AnyInstance, "class", "None");
   public static Loader<java.util.Optional<CWLVersion>> optional_CWLVersion = new OptionalLoader(CWLVersion);
   public static Loader<java.util.Optional<CWLVersion>> uri_optional_CWLVersion_False_True_None = new UriLoader(optional_CWLVersion, false, true, null);
-  public static Loader<java.util.Optional<java.util.List<Object>>> optional_array_of_StringInstance = new OptionalLoader(array_of_StringInstance);
-  public static Loader<java.util.Optional<java.util.List<Object>>> uri_optional_array_of_StringInstance_True_False_None = new UriLoader(optional_array_of_StringInstance, true, false, null);
+  public static Loader<java.util.Optional<java.util.List<String>>> optional_array_of_StringInstance = new OptionalLoader(array_of_StringInstance);
+  public static Loader<java.util.Optional<java.util.List<String>>> uri_optional_array_of_StringInstance_True_False_None = new UriLoader(optional_array_of_StringInstance, true, false, null);
   public static Loader<InlineJavascriptRequirement_class> InlineJavascriptRequirement_class = new EnumLoader(InlineJavascriptRequirement_class.class);
   public static Loader<InlineJavascriptRequirement_class> uri_InlineJavascriptRequirement_class_False_True_None = new UriLoader(InlineJavascriptRequirement_class, false, true, null);
   public static Loader<SchemaDefRequirement_class> SchemaDefRequirement_class = new EnumLoader(SchemaDefRequirement_class.class);
@@ -222,7 +221,7 @@ public class LoaderInstances {
   public static Loader<SoftwareRequirement_class> uri_SoftwareRequirement_class_False_True_None = new UriLoader(SoftwareRequirement_class, false, true, null);
   public static Loader<java.util.List<SoftwarePackage>> array_of_SoftwarePackage = new ArrayLoader(SoftwarePackage);
   public static Loader<java.util.List<Object>> idmap_packages_array_of_SoftwarePackage = new IdMapLoader(array_of_SoftwarePackage, "package", "specs");
-  public static Loader<java.util.Optional<java.util.List<Object>>> uri_optional_array_of_StringInstance_False_False_None = new UriLoader(optional_array_of_StringInstance, false, false, null);
+  public static Loader<java.util.Optional<java.util.List<String>>> uri_optional_array_of_StringInstance_False_False_None = new UriLoader(optional_array_of_StringInstance, false, false, null);
   public static Loader<InitialWorkDirRequirement_class> InitialWorkDirRequirement_class = new EnumLoader(InitialWorkDirRequirement_class.class);
   public static Loader<InitialWorkDirRequirement_class> uri_InitialWorkDirRequirement_class_False_True_None = new UriLoader(InitialWorkDirRequirement_class, false, true, null);
   public static Loader<Object> union_of_NullInstance_or_Dirent_or_ExpressionLoader_or_File_or_Directory_or_array_of_union_of_File_or_Directory = new UnionLoader(new Loader[] { NullInstance, Dirent, ExpressionLoader, File, Directory, array_of_union_of_File_or_Directory });

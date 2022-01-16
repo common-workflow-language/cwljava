@@ -40,7 +40,7 @@ public class InputEnumSchemaImpl extends SavableImpl implements InputEnumSchema 
     return this.name;
   }
 
-  private java.util.List<Object> symbols;
+  private java.util.List<String> symbols;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#symbols</I><BR>
@@ -48,7 +48,7 @@ public class InputEnumSchemaImpl extends SavableImpl implements InputEnumSchema 
    * Defines the set of valid symbols.   * </BLOCKQUOTE>
    */
 
-  public java.util.List<Object> getSymbols() {
+  public java.util.List<String> getSymbols() {
     return this.symbols;
   }
 
@@ -149,11 +149,11 @@ public class InputEnumSchemaImpl extends SavableImpl implements InputEnumSchema 
     } else {
         __baseUri = (String) name.orElse(null);
     }
-    java.util.List<Object> symbols;
+    java.util.List<String> symbols;
     try {
       symbols =
           LoaderInstances
-              .uri_array_of_StringInstance_True_False_None
+              .array_of_StringInstance
               .loadField(__doc.get("symbols"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       symbols = null; // won't be used but prevents compiler from complaining.
@@ -208,7 +208,7 @@ public class InputEnumSchemaImpl extends SavableImpl implements InputEnumSchema 
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.symbols = (java.util.List<Object>) symbols;
+    this.symbols = (java.util.List<String>) symbols;
     this.type = (enum_d961d79c225752b9fadb617367615ab176b47d77) type;
     this.label = (java.util.Optional<String>) label;
     this.doc = (Object) doc;

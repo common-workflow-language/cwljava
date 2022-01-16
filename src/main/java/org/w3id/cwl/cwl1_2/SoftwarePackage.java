@@ -38,7 +38,7 @@ public interface SoftwarePackage extends Savable {
    *    * </BLOCKQUOTE>
    */
 
-  java.util.Optional<java.util.List<Object>> getVersion();
+  java.util.Optional<java.util.List<String>> getVersion();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#SoftwarePackage/specs</I><BR>
    * <BLOCKQUOTE>
@@ -86,5 +86,5 @@ public interface SoftwarePackage extends Savable {
    *    * </BLOCKQUOTE>
    */
 
-  java.util.Optional<java.util.List<Object>> getSpecs();
+  java.util.Optional<java.util.List<String>> getSpecs();
 }
