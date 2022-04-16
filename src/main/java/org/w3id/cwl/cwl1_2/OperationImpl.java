@@ -168,7 +168,7 @@ public class OperationImpl extends SavableImpl implements Operation {
     return this.cwlVersion;
   }
 
-  private java.util.Optional<java.util.List<Object>> intent;
+  private java.util.Optional<java.util.List<String>> intent;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Process/intent</I><BR>
@@ -189,7 +189,7 @@ public class OperationImpl extends SavableImpl implements Operation {
    *    * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<java.util.List<Object>> getIntent() {
+  public java.util.Optional<java.util.List<String>> getIntent() {
     return this.intent;
   }
 
@@ -372,7 +372,7 @@ public class OperationImpl extends SavableImpl implements Operation {
     } else {
       cwlVersion = null;
     }
-    java.util.Optional<java.util.List<Object>> intent;
+    java.util.Optional<java.util.List<String>> intent;
 
     if (__doc.containsKey("intent")) {
       try {
@@ -400,7 +400,7 @@ public class OperationImpl extends SavableImpl implements Operation {
     this.requirements = (java.util.Optional<java.util.List<Object>>) requirements;
     this.hints = (java.util.Optional<java.util.List<Object>>) hints;
     this.cwlVersion = (java.util.Optional<CWLVersion>) cwlVersion;
-    this.intent = (java.util.Optional<java.util.List<Object>>) intent;
+    this.intent = (java.util.Optional<java.util.List<String>>) intent;
     this.class_ = (Operation_class) class_;
   }
 }

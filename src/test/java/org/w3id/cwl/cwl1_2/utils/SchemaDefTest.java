@@ -1,11 +1,10 @@
 package org.w3id.cwl.cwl1_2.utils;
-import org.w3id.cwl.cwl1_2.Process;
-import org.w3id.cwl.cwl1_2.SchemaDefRequirement;
-import org.w3id.cwl.cwl1_2.InputRecordSchema;
 
 import java.util.List;
-
 import org.junit.Assert;
+import org.w3id.cwl.cwl1_2.InputRecordSchema;
+import org.w3id.cwl.cwl1_2.Process;
+import org.w3id.cwl.cwl1_2.SchemaDefRequirement;
 
 public class SchemaDefTest {
 
@@ -20,12 +19,11 @@ public class SchemaDefTest {
     Assert.assertEquals(reqList.size(), 1);
     SchemaDefRequirement schemaReq = (SchemaDefRequirement) reqList.get(0);
     List<Object> schemaTypes = schemaReq.getTypes();
-    for (Object schemaType: schemaTypes) {
-    	Assert.assertTrue(schemaType instanceof InputRecordSchema);
+    for (Object schemaType : schemaTypes) {
+      Assert.assertTrue(schemaType instanceof InputRecordSchema);
     }
-   
   }
-  
+
   @org.junit.Test
   public void testvalid_record_sd_secondaryFiles() throws Exception {
     java.net.URL url = getClass().getResource("valid_record-sd-secondaryFiles.cwl");
@@ -37,11 +35,8 @@ public class SchemaDefTest {
     Assert.assertEquals(reqList.size(), 1);
     SchemaDefRequirement schemaReq = (SchemaDefRequirement) reqList.get(0);
     List<Object> schemaTypes = schemaReq.getTypes();
-    for (Object schemaType: schemaTypes) {
-    	Assert.assertTrue(schemaType instanceof InputRecordSchema);
+    for (Object schemaType : schemaTypes) {
+      Assert.assertTrue(schemaType instanceof InputRecordSchema);
     }
-   
   }
-
 }
-

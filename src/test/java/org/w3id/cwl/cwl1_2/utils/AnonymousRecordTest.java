@@ -1,8 +1,5 @@
 package org.w3id.cwl.cwl1_2.utils;
 
-import org.w3id.cwl.cwl1_2.utils.RootLoader;
-import org.w3id.cwl.cwl1_2.utils.Uris;
-import org.w3id.cwl.cwl1_2.utils.YamlUtils;
 
 public class AnonymousRecordTest {
 
@@ -12,5 +9,4 @@ public class AnonymousRecordTest {
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     RootLoader.loadDocument(resPath);
   }
-  
 }

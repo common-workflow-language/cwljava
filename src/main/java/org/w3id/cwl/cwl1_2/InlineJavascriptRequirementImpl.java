@@ -44,7 +44,7 @@ public class InlineJavascriptRequirementImpl extends SavableImpl implements Inli
     return this.class_;
   }
 
-  private java.util.Optional<java.util.List<Object>> expressionLib;
+  private java.util.Optional<java.util.List<String>> expressionLib;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#InlineJavascriptRequirement/expressionLib</I><BR>
@@ -55,7 +55,7 @@ public class InlineJavascriptRequirementImpl extends SavableImpl implements Inli
    *    * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<java.util.List<Object>> getExpressionLib() {
+  public java.util.Optional<java.util.List<String>> getExpressionLib() {
     return this.expressionLib;
   }
 
@@ -100,7 +100,7 @@ public class InlineJavascriptRequirementImpl extends SavableImpl implements Inli
       final String __message = "the `class` field is not valid because:";
       __errors.add(new ValidationException(__message, e));
     }
-    java.util.Optional<java.util.List<Object>> expressionLib;
+    java.util.Optional<java.util.List<String>> expressionLib;
 
     if (__doc.containsKey("expressionLib")) {
       try {
@@ -121,6 +121,6 @@ public class InlineJavascriptRequirementImpl extends SavableImpl implements Inli
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
     this.class_ = (InlineJavascriptRequirement_class) class_;
-    this.expressionLib = (java.util.Optional<java.util.List<Object>>) expressionLib;
+    this.expressionLib = (java.util.Optional<java.util.List<String>>) expressionLib;
   }
 }

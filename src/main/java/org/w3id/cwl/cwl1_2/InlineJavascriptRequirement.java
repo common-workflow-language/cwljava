@@ -40,5 +40,5 @@ public interface InlineJavascriptRequirement extends ProcessRequirement, Savable
    *    * </BLOCKQUOTE>
    */
 
-  java.util.Optional<java.util.List<Object>> getExpressionLib();
+  java.util.Optional<java.util.List<String>> getExpressionLib();
 }

@@ -43,7 +43,7 @@ public class SoftwarePackageImpl extends SavableImpl implements SoftwarePackage 
     return this.package_;
   }
 
-  private java.util.Optional<java.util.List<Object>> version;
+  private java.util.Optional<java.util.List<String>> version;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#SoftwarePackage/version</I><BR>
@@ -53,11 +53,11 @@ public class SoftwarePackageImpl extends SavableImpl implements SoftwarePackage 
    *    * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<java.util.List<Object>> getVersion() {
+  public java.util.Optional<java.util.List<String>> getVersion() {
     return this.version;
   }
 
-  private java.util.Optional<java.util.List<Object>> specs;
+  private java.util.Optional<java.util.List<String>> specs;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#SoftwarePackage/specs</I><BR>
@@ -106,7 +106,7 @@ public class SoftwarePackageImpl extends SavableImpl implements SoftwarePackage 
    *    * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<java.util.List<Object>> getSpecs() {
+  public java.util.Optional<java.util.List<String>> getSpecs() {
     return this.specs;
   }
 
@@ -151,7 +151,7 @@ public class SoftwarePackageImpl extends SavableImpl implements SoftwarePackage 
       final String __message = "the `package` field is not valid because:";
       __errors.add(new ValidationException(__message, e));
     }
-    java.util.Optional<java.util.List<Object>> version;
+    java.util.Optional<java.util.List<String>> version;
 
     if (__doc.containsKey("version")) {
       try {
@@ -168,7 +168,7 @@ public class SoftwarePackageImpl extends SavableImpl implements SoftwarePackage 
     } else {
       version = null;
     }
-    java.util.Optional<java.util.List<Object>> specs;
+    java.util.Optional<java.util.List<String>> specs;
 
     if (__doc.containsKey("specs")) {
       try {
@@ -189,7 +189,7 @@ public class SoftwarePackageImpl extends SavableImpl implements SoftwarePackage 
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
     this.package_ = (String) package_;
-    this.version = (java.util.Optional<java.util.List<Object>>) version;
-    this.specs = (java.util.Optional<java.util.List<Object>>) specs;
+    this.version = (java.util.Optional<java.util.List<String>>) version;
+    this.specs = (java.util.Optional<java.util.List<String>>) specs;
   }
 }

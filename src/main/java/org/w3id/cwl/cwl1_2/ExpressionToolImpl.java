@@ -168,7 +168,7 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
     return this.cwlVersion;
   }
 
-  private java.util.Optional<java.util.List<Object>> intent;
+  private java.util.Optional<java.util.List<String>> intent;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Process/intent</I><BR>
@@ -189,7 +189,7 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
    *    * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<java.util.List<Object>> getIntent() {
+  public java.util.Optional<java.util.List<String>> getIntent() {
     return this.intent;
   }
 
@@ -387,7 +387,7 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
     } else {
       cwlVersion = null;
     }
-    java.util.Optional<java.util.List<Object>> intent;
+    java.util.Optional<java.util.List<String>> intent;
 
     if (__doc.containsKey("intent")) {
       try {
@@ -426,7 +426,7 @@ public class ExpressionToolImpl extends SavableImpl implements ExpressionTool {
     this.requirements = (java.util.Optional<java.util.List<Object>>) requirements;
     this.hints = (java.util.Optional<java.util.List<Object>>) hints;
     this.cwlVersion = (java.util.Optional<CWLVersion>) cwlVersion;
-    this.intent = (java.util.Optional<java.util.List<Object>>) intent;
+    this.intent = (java.util.Optional<java.util.List<String>>) intent;
     this.class_ = (ExpressionTool_class) class_;
     this.expression = (String) expression;
   }
