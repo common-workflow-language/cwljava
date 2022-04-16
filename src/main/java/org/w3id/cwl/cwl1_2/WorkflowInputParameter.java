@@ -169,7 +169,7 @@ public interface WorkflowInputParameter extends InputParameter, Savable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowInputParameter/inputBinding</I><BR>
    * <BLOCKQUOTE>
-   * Deprecated.  Preserved for v1.0 backwards compatability.  Will be removed in
+   * Deprecated.  Preserved for v1.0 backwards compatibility.  Will be removed in
    * CWL v2.0.  Use `WorkflowInputParameter.loadContents` instead.
    *    * </BLOCKQUOTE>
    */

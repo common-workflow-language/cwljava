@@ -239,7 +239,7 @@ public interface File extends Savable {
    * represents the file format, preferrably defined within an ontology.
    * If no ontology is available, file formats may be tested by exact match.
    * 
-   * Reasoning about format compatability must be done by checking that an
+   * Reasoning about format compatibility must be done by checking that an
    * input file format is the same, `owl:equivalentClass` or
    * `rdfs:subClassOf` the format required by the input parameter.
    * `owl:equivalentClass` is transitive with `rdfs:subClassOf`, e.g. if

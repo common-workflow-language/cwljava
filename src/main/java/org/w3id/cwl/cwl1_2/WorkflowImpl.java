@@ -212,7 +212,7 @@ public class WorkflowImpl extends SavableImpl implements Workflow {
     return this.cwlVersion;
   }
 
-  private java.util.Optional<java.util.List<Object>> intent;
+  private java.util.Optional<java.util.List<String>> intent;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Process/intent</I><BR>
@@ -233,7 +233,7 @@ public class WorkflowImpl extends SavableImpl implements Workflow {
    *    * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<java.util.List<Object>> getIntent() {
+  public java.util.Optional<java.util.List<String>> getIntent() {
     return this.intent;
   }
 
@@ -432,7 +432,7 @@ public class WorkflowImpl extends SavableImpl implements Workflow {
     } else {
       cwlVersion = null;
     }
-    java.util.Optional<java.util.List<Object>> intent;
+    java.util.Optional<java.util.List<String>> intent;
 
     if (__doc.containsKey("intent")) {
       try {
@@ -471,7 +471,7 @@ public class WorkflowImpl extends SavableImpl implements Workflow {
     this.requirements = (java.util.Optional<java.util.List<Object>>) requirements;
     this.hints = (java.util.Optional<java.util.List<Object>>) hints;
     this.cwlVersion = (java.util.Optional<CWLVersion>) cwlVersion;
-    this.intent = (java.util.Optional<java.util.List<Object>>) intent;
+    this.intent = (java.util.Optional<java.util.List<String>>) intent;
     this.class_ = (Workflow_class) class_;
     this.steps = (java.util.List<Object>) steps;
   }

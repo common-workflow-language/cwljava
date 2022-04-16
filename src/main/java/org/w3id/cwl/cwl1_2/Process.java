@@ -118,5 +118,5 @@ public interface Process extends Identified, Labeled, Documented, Savable {
    *    * </BLOCKQUOTE>
    */
 
-  java.util.Optional<java.util.List<Object>> getIntent();
+  java.util.Optional<java.util.List<String>> getIntent();
 }

@@ -40,7 +40,7 @@ public class CommandInputEnumSchemaImpl extends SavableImpl implements CommandIn
     return this.name;
   }
 
-  private java.util.List<Object> symbols;
+  private java.util.List<String> symbols;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#symbols</I><BR>
@@ -48,7 +48,7 @@ public class CommandInputEnumSchemaImpl extends SavableImpl implements CommandIn
    * Defines the set of valid symbols.   * </BLOCKQUOTE>
    */
 
-  public java.util.List<Object> getSymbols() {
+  public java.util.List<String> getSymbols() {
     return this.symbols;
   }
 
@@ -161,7 +161,7 @@ public class CommandInputEnumSchemaImpl extends SavableImpl implements CommandIn
     } else {
         __baseUri = (String) name.orElse(null);
     }
-    java.util.List<Object> symbols;
+    java.util.List<String> symbols;
     try {
       symbols =
           LoaderInstances
@@ -237,7 +237,7 @@ public class CommandInputEnumSchemaImpl extends SavableImpl implements CommandIn
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.symbols = (java.util.List<Object>) symbols;
+    this.symbols = (java.util.List<String>) symbols;
     this.type = (enum_d961d79c225752b9fadb617367615ab176b47d77) type;
     this.label = (java.util.Optional<String>) label;
     this.doc = (Object) doc;
