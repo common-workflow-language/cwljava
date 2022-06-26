@@ -164,8 +164,11 @@ public class WorkflowOutputParameterImpl extends SavableImpl implements Workflow
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#outputSource</I><BR>
    * <BLOCKQUOTE>
-   * Specifies one or more workflow parameters that supply the value of to
-   * the output parameter.
+   * Specifies one or more names of an output from a workflow step (in the form 
+   * `step_name/output_name` with a `/` separator`), or a workflow input name,
+   * that supply their value(s) to the output parameter.
+   * the output parameter.  It is valid to reference workflow level inputs
+   * here.
    *    * </BLOCKQUOTE>
    */
 

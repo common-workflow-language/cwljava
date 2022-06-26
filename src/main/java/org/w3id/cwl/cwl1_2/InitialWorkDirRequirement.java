@@ -19,7 +19,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#InitialWorkDirRequirement</I><BR>This interface is implemented by {@link InitialWorkDirRequirementImpl}<BR> <BLOCKQUOTE>
  Define a list of files and subdirectories that must be staged by the workflow platform prior to executing the command line tool.
- Normally files are staged within the designated output directory. However, when running inside containers, files may be staged at arbitrary locations, see discussion for `Dirent.entryname`. Together with `DockerRequirement.dockerOutputDirectory` this it possible to control the locations of both input and output files when running in containers. </BLOCKQUOTE>
+ Normally files are staged within the designated output directory. However, when running inside containers, files may be staged at arbitrary locations, see discussion for [`Dirent.entryname`](#Dirent). Together with `DockerRequirement.dockerOutputDirectory` it is possible to control the locations of both input and output files when running in containers. </BLOCKQUOTE>
  */
 public interface InitialWorkDirRequirement extends ProcessRequirement, Savable {
   /**
