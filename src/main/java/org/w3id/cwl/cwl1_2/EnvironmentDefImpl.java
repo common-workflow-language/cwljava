@@ -17,7 +17,7 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.LoaderInstances;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptions;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptionsBuilder;
-import org.w3id.cwl.cwl1_2.utils.SavableImpl;
+import org.w3id.cwl.cwl1_2.utils.SaveableImpl;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 /**
@@ -27,7 +27,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  result of executing an expression, such as getting a parameter from input.
   </BLOCKQUOTE>
  */
-public class EnvironmentDefImpl extends SavableImpl implements EnvironmentDef {
+public class EnvironmentDefImpl extends SaveableImpl implements EnvironmentDef {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();

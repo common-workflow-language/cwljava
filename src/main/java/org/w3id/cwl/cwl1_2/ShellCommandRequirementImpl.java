@@ -17,21 +17,21 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.LoaderInstances;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptions;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptionsBuilder;
-import org.w3id.cwl.cwl1_2.utils.SavableImpl;
+import org.w3id.cwl.cwl1_2.utils.SaveableImpl;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 /**
 * Auto-generated class implementation for <I>https://w3id.org/cwl/cwl#ShellCommandRequirement</I><BR> <BLOCKQUOTE>
  Modify the behavior of CommandLineTool to generate a single string
- containing a shell command line.  Each item in the argument list must be
- joined into a string separated by single spaces and quoted to prevent
+ containing a shell command line.  Each item in the `arguments` list must
+ be joined into a string separated by single spaces and quoted to prevent
  intepretation by the shell, unless `CommandLineBinding` for that argument
  contains `shellQuote: false`.  If `shellQuote: false` is specified, the
  argument is joined into the command string without quoting, which allows
  the use of shell metacharacters such as `|` for pipes.
   </BLOCKQUOTE>
  */
-public class ShellCommandRequirementImpl extends SavableImpl implements ShellCommandRequirement {
+public class ShellCommandRequirementImpl extends SaveableImpl implements ShellCommandRequirement {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();

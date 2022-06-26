@@ -17,7 +17,7 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.LoaderInstances;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptions;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptionsBuilder;
-import org.w3id.cwl.cwl1_2.utils.SavableImpl;
+import org.w3id.cwl.cwl1_2.utils.SaveableImpl;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 /**
@@ -49,7 +49,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  If neither "min" nor "max" is specified for a resource, use the default values below.
   </BLOCKQUOTE>
  */
-public class ResourceRequirementImpl extends SavableImpl implements ResourceRequirement {
+public class ResourceRequirementImpl extends SaveableImpl implements ResourceRequirement {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();

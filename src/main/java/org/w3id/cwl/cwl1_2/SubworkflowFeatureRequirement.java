@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#SubworkflowFeatureRequirement</I><BR>This interface is implemented by {@link SubworkflowFeatureRequirementImpl}<BR> <BLOCKQUOTE>
@@ -22,7 +22,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  the `run` field of [WorkflowStep](#WorkflowStep).
   </BLOCKQUOTE>
  */
-public interface SubworkflowFeatureRequirement extends ProcessRequirement, Savable {
+public interface SubworkflowFeatureRequirement extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#SubworkflowFeatureRequirement/class</I><BR>
    * <BLOCKQUOTE>

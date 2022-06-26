@@ -17,7 +17,7 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.LoaderInstances;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptions;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptionsBuilder;
-import org.w3id.cwl.cwl1_2.utils.SavableImpl;
+import org.w3id.cwl.cwl1_2.utils.SaveableImpl;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 /**
@@ -31,7 +31,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  `linkMerge` and `pickValue`.
   </BLOCKQUOTE>
  */
-public class WorkflowOutputParameterImpl extends SavableImpl implements WorkflowOutputParameter {
+public class WorkflowOutputParameterImpl extends SaveableImpl implements WorkflowOutputParameter {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
@@ -164,8 +164,11 @@ public class WorkflowOutputParameterImpl extends SavableImpl implements Workflow
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#outputSource</I><BR>
    * <BLOCKQUOTE>
-   * Specifies one or more workflow parameters that supply the value of to
-   * the output parameter.
+   * Specifies one or more names of an output from a workflow step (in the form
+   * `step_name/output_name` with a `/` separator`), or a workflow input name,
+   * that supply their value(s) to the output parameter.
+   * the output parameter.  It is valid to reference workflow level inputs
+   * here.
    *    * </BLOCKQUOTE>
    */
 
@@ -365,7 +368,7 @@ public class WorkflowOutputParameterImpl extends SavableImpl implements Workflow
       try {
         outputSource =
             LoaderInstances
-                .uri_union_of_NullInstance_or_StringInstance_or_array_of_StringInstance_False_False_0
+                .uri_union_of_NullInstance_or_StringInstance_or_array_of_StringInstance_False_False_1
                 .loadField(__doc.get("outputSource"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         outputSource = null; // won't be used but prevents compiler from complaining.

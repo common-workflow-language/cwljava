@@ -17,7 +17,7 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.LoaderInstances;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptions;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptionsBuilder;
-import org.w3id.cwl.cwl1_2.utils.SavableImpl;
+import org.w3id.cwl.cwl1_2.utils.SaveableImpl;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 /**
@@ -132,7 +132,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
     should be filtered out.
   </BLOCKQUOTE>
  */
-public class WorkflowStepInputImpl extends SavableImpl implements WorkflowStepInput {
+public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepInput {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
@@ -271,7 +271,7 @@ public class WorkflowStepInputImpl extends SavableImpl implements WorkflowStepIn
    * this input parameter.
    * 
    * If `valueFrom` is a parameter reference or expression, it must be
-   * evaluated to yield the actual value to be assiged to the input field.
+   * evaluated to yield the actual value to be assigned to the input field.
    * 
    * The `self` value in the parameter reference or expression must be
    * 1. `null` if there is no `source` field

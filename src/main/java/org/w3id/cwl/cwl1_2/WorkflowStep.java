@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#WorkflowStep</I><BR>This interface is implemented by {@link WorkflowStepImpl}<BR> <BLOCKQUOTE>
@@ -99,7 +99,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  a subworkflow (recursive workflows are not allowed).
   </BLOCKQUOTE>
  */
-public interface WorkflowStep extends Identified, Labeled, Documented, Savable {
+public interface WorkflowStep extends Identified, Labeled, Documented, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
    * <BLOCKQUOTE>
@@ -169,7 +169,8 @@ public interface WorkflowStep extends Identified, Labeled, Documented, Savable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#run</I><BR>
    * <BLOCKQUOTE>
-   * Specifies the process to run.
+   * Specifies the process to run.  If `run` is a string, it must be an absolute IRI
+   * or a relative path from the primary document.
    *    * </BLOCKQUOTE>
    */
 

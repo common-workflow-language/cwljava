@@ -17,7 +17,7 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.LoaderInstances;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptions;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptionsBuilder;
-import org.w3id.cwl.cwl1_2.utils.SavableImpl;
+import org.w3id.cwl.cwl1_2.utils.SaveableImpl;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 /**
@@ -39,7 +39,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  address or the ability to accept inbound connections.
   </BLOCKQUOTE>
  */
-public class NetworkAccessImpl extends SavableImpl implements NetworkAccess {
+public class NetworkAccessImpl extends SaveableImpl implements NetworkAccess {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();

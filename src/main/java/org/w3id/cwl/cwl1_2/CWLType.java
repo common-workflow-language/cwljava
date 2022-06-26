@@ -17,10 +17,17 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 public enum CWLType {
+  NULL("null"),
+  BOOLEAN("boolean"),
+  INT("int"),
+  LONG("long"),
+  FLOAT("float"),
+  DOUBLE("double"),
+  STRING("string"),
   FILE("File"),
   DIRECTORY("Directory");
 
-  private static String[] symbols = new String[] {"File", "Directory"};
+  private static String[] symbols = new String[] {"null", "boolean", "int", "long", "float", "double", "string", "File", "Directory"};
   private String docVal;
 
   private CWLType(final String docVal) {

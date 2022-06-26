@@ -14,12 +14,12 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/salad#ArraySchema</I><BR>This interface is implemented by {@link ArraySchemaImpl}<BR>
  */
-public interface ArraySchema extends Savable {
+public interface ArraySchema extends Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#items</I><BR>
    * <BLOCKQUOTE>

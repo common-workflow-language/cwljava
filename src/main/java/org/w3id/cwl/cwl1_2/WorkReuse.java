@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#WorkReuse</I><BR>This interface is implemented by {@link WorkReuseImpl}<BR> <BLOCKQUOTE>
@@ -29,7 +29,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  is enabled by default.
   </BLOCKQUOTE>
  */
-public interface WorkReuse extends ProcessRequirement, Savable {
+public interface WorkReuse extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#WorkReuse/class</I><BR>
    * <BLOCKQUOTE>

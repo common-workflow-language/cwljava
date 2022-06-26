@@ -14,12 +14,12 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#CommandOutputRecordSchema</I><BR>This interface is implemented by {@link CommandOutputRecordSchemaImpl}<BR>
  */
-public interface CommandOutputRecordSchema extends OutputRecordSchema, Savable {
+public interface CommandOutputRecordSchema extends OutputRecordSchema, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#IOSchema/name</I><BR>
    * <BLOCKQUOTE>

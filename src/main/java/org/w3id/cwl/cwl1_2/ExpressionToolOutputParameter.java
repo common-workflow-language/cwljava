@@ -14,12 +14,12 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#ExpressionToolOutputParameter</I><BR>This interface is implemented by {@link ExpressionToolOutputParameterImpl}<BR>
  */
-public interface ExpressionToolOutputParameter extends OutputParameter, Savable {
+public interface ExpressionToolOutputParameter extends OutputParameter, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
    * <BLOCKQUOTE>

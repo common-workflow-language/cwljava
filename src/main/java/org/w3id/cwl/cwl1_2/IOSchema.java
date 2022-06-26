@@ -14,12 +14,12 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#IOSchema</I><BR>
  */
-public interface IOSchema extends Labeled, Documented, Savable {
+public interface IOSchema extends Labeled, Documented, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Labeled/label</I><BR>
    * <BLOCKQUOTE>

@@ -14,12 +14,12 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#OutputRecordField</I><BR>This interface is implemented by {@link OutputRecordFieldImpl}<BR>
  */
-public interface OutputRecordField extends RecordField, FieldBase, OutputFormat, Savable {
+public interface OutputRecordField extends RecordField, FieldBase, OutputFormat, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#RecordField/name</I><BR>
    * <BLOCKQUOTE>

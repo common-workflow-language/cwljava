@@ -14,14 +14,14 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#OperationInputParameter</I><BR>This interface is implemented by {@link OperationInputParameterImpl}<BR> <BLOCKQUOTE>
  Describe an input parameter of an operation.
   </BLOCKQUOTE>
  */
-public interface OperationInputParameter extends InputParameter, Savable {
+public interface OperationInputParameter extends InputParameter, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
    * <BLOCKQUOTE>
@@ -159,7 +159,7 @@ public interface OperationInputParameter extends InputParameter, Savable {
    *    * </BLOCKQUOTE>
    */
 
-  java.util.Optional<Object> getDefault();
+  Object getDefault();
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#type</I><BR>
    * <BLOCKQUOTE>

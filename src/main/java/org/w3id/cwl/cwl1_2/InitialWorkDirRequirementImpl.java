@@ -17,15 +17,15 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.LoaderInstances;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptions;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptionsBuilder;
-import org.w3id.cwl.cwl1_2.utils.SavableImpl;
+import org.w3id.cwl.cwl1_2.utils.SaveableImpl;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 /**
 * Auto-generated class implementation for <I>https://w3id.org/cwl/cwl#InitialWorkDirRequirement</I><BR> <BLOCKQUOTE>
  Define a list of files and subdirectories that must be staged by the workflow platform prior to executing the command line tool.
- Normally files are staged within the designated output directory. However, when running inside containers, files may be staged at arbitrary locations, see discussion for `Dirent.entryname`. Together with `DockerRequirement.dockerOutputDirectory` this it possible to control the locations of both input and output files when running in containers. </BLOCKQUOTE>
+ Normally files are staged within the designated output directory. However, when running inside containers, files may be staged at arbitrary locations, see discussion for [`Dirent.entryname`](#Dirent). Together with `DockerRequirement.dockerOutputDirectory` it is possible to control the locations of both input and output files when running in containers. </BLOCKQUOTE>
  */
-public class InitialWorkDirRequirementImpl extends SavableImpl implements InitialWorkDirRequirement {
+public class InitialWorkDirRequirementImpl extends SaveableImpl implements InitialWorkDirRequirement {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();

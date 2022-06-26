@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#WorkflowStepInput</I><BR>This interface is implemented by {@link WorkflowStepInputImpl}<BR> <BLOCKQUOTE>
@@ -128,7 +128,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
     should be filtered out.
   </BLOCKQUOTE>
  */
-public interface WorkflowStepInput extends Identified, Sink, LoadContents, Labeled, Savable {
+public interface WorkflowStepInput extends Identified, Sink, LoadContents, Labeled, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
    * <BLOCKQUOTE>
@@ -221,7 +221,7 @@ public interface WorkflowStepInput extends Identified, Sink, LoadContents, Label
    * this input parameter.
    * 
    * If `valueFrom` is a parameter reference or expression, it must be
-   * evaluated to yield the actual value to be assiged to the input field.
+   * evaluated to yield the actual value to be assigned to the input field.
    * 
    * The `self` value in the parameter reference or expression must be
    * 1. `null` if there is no `source` field

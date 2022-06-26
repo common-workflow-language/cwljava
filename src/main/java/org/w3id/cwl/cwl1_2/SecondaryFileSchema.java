@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#SecondaryFileSchema</I><BR>This interface is implemented by {@link SecondaryFileSchemaImpl}<BR> <BLOCKQUOTE>
@@ -33,7 +33,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  in the Schema Salad specification.
   </BLOCKQUOTE>
  */
-public interface SecondaryFileSchema extends Savable {
+public interface SecondaryFileSchema extends Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#SecondaryFileSchema/pattern</I><BR>
    * <BLOCKQUOTE>
@@ -70,10 +70,11 @@ public interface SecondaryFileSchema extends Savable {
    * secondary file from that expression.
    * 
    * To work on non-filename-preserving storage systems, portable
-   * tool descriptions should treat `location` as an opaque
-   * identifier and avoid constructing new values from `location`,
-   * but should construct relative references using `basename` or
-   * `nameroot` instead, or propagate `location` from defined inputs.
+   * tool descriptions should treat `location` as an
+   * [opaque identifier](#opaque-strings) and avoid constructing new
+   * values from `location`, but should construct relative references
+   * using `basename` or `nameroot` instead, or propagate `location`
+   * from defined inputs.
    * 
    * If a value in `secondaryFiles` is a string that is not an expression,
    * it specifies that the following pattern should be applied to the path

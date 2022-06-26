@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#CommandLineBinding</I><BR>This interface is implemented by {@link CommandLineBindingImpl}<BR> <BLOCKQUOTE>
@@ -55,7 +55,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
    - **null**: Add nothing.
   </BLOCKQUOTE>
  */
-public interface CommandLineBinding extends InputBinding, Savable {
+public interface CommandLineBinding extends InputBinding, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#InputBinding/loadContents</I><BR>
    * <BLOCKQUOTE>

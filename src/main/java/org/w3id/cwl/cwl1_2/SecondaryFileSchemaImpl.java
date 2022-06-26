@@ -17,7 +17,7 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.LoaderInstances;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptions;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptionsBuilder;
-import org.w3id.cwl.cwl1_2.utils.SavableImpl;
+import org.w3id.cwl.cwl1_2.utils.SaveableImpl;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 /**
@@ -37,7 +37,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  in the Schema Salad specification.
   </BLOCKQUOTE>
  */
-public class SecondaryFileSchemaImpl extends SavableImpl implements SecondaryFileSchema {
+public class SecondaryFileSchemaImpl extends SaveableImpl implements SecondaryFileSchema {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
@@ -80,10 +80,11 @@ public class SecondaryFileSchemaImpl extends SavableImpl implements SecondaryFil
    * secondary file from that expression.
    * 
    * To work on non-filename-preserving storage systems, portable
-   * tool descriptions should treat `location` as an opaque
-   * identifier and avoid constructing new values from `location`,
-   * but should construct relative references using `basename` or
-   * `nameroot` instead, or propagate `location` from defined inputs.
+   * tool descriptions should treat `location` as an
+   * [opaque identifier](#opaque-strings) and avoid constructing new
+   * values from `location`, but should construct relative references
+   * using `basename` or `nameroot` instead, or propagate `location`
+   * from defined inputs.
    * 
    * If a value in `secondaryFiles` is a string that is not an expression,
    * it specifies that the following pattern should be applied to the path

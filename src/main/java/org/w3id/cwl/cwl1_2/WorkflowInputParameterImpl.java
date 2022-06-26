@@ -17,13 +17,13 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.LoaderInstances;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptions;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptionsBuilder;
-import org.w3id.cwl.cwl1_2.utils.SavableImpl;
+import org.w3id.cwl.cwl1_2.utils.SaveableImpl;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 /**
 * Auto-generated class implementation for <I>https://w3id.org/cwl/cwl#WorkflowInputParameter</I><BR>
  */
-public class WorkflowInputParameterImpl extends SavableImpl implements WorkflowInputParameter {
+public class WorkflowInputParameterImpl extends SaveableImpl implements WorkflowInputParameter {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
@@ -195,7 +195,7 @@ public class WorkflowInputParameterImpl extends SavableImpl implements WorkflowI
     return this.loadListing;
   }
 
-  private java.util.Optional<Object> default_;
+  private Object default_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#default</I><BR>
@@ -207,7 +207,7 @@ public class WorkflowInputParameterImpl extends SavableImpl implements WorkflowI
    *    * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<Object> getDefault() {
+  public Object getDefault() {
     return this.default_;
   }
 
@@ -418,13 +418,13 @@ public class WorkflowInputParameterImpl extends SavableImpl implements WorkflowI
     } else {
       loadListing = null;
     }
-    java.util.Optional<Object> default_;
+    Object default_;
 
     if (__doc.containsKey("default")) {
       try {
         default_ =
             LoaderInstances
-                .optional_AnyInstance
+                .union_of_NullInstance_or_File_or_Directory_or_AnyInstance
                 .loadField(__doc.get("default"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         default_ = null; // won't be used but prevents compiler from complaining.
@@ -474,7 +474,7 @@ public class WorkflowInputParameterImpl extends SavableImpl implements WorkflowI
     this.format = (Object) format;
     this.loadContents = (java.util.Optional<Boolean>) loadContents;
     this.loadListing = (java.util.Optional<LoadListingEnum>) loadListing;
-    this.default_ = (java.util.Optional<Object>) default_;
+    this.default_ = (Object) default_;
     this.type = (Object) type;
     this.inputBinding = (java.util.Optional<InputBinding>) inputBinding;
   }

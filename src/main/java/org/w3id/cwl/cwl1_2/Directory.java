@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#Directory</I><BR>This interface is implemented by {@link DirectoryImpl}<BR> <BLOCKQUOTE>
@@ -50,7 +50,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  the same Directory.
  
  When executing a CommandLineTool, Directories must be recursively staged
- first and have local values of `path` assigend.
+ first and have local values of `path` assigned.
  
  Directory objects in CommandLineTool output must provide either a
  `location` URI or a `path` property in the context of the tool execution
@@ -63,7 +63,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  or in any entry in `secondaryFiles` in the listing) is a fatal error.
   </BLOCKQUOTE>
  */
-public interface Directory extends Savable {
+public interface Directory extends Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Directory/class</I><BR>
    * <BLOCKQUOTE>

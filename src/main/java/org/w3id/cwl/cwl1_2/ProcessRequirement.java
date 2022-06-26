@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#ProcessRequirement</I><BR> <BLOCKQUOTE>
@@ -26,5 +26,5 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  the CWL core specification.
   </BLOCKQUOTE>
  */
-public interface ProcessRequirement extends Savable {
+public interface ProcessRequirement extends Saveable {
 }

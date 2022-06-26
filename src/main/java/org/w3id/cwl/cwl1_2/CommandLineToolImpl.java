@@ -17,7 +17,7 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.LoaderInstances;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptions;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptionsBuilder;
-import org.w3id.cwl.cwl1_2.utils.SavableImpl;
+import org.w3id.cwl.cwl1_2.utils.SaveableImpl;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 /**
@@ -25,7 +25,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  This defines the schema of the CWL Command Line Tool Description document.
   </BLOCKQUOTE>
  */
-public class CommandLineToolImpl extends SavableImpl implements CommandLineTool {
+public class CommandLineToolImpl extends SaveableImpl implements CommandLineTool {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
@@ -33,9 +33,13 @@ public class CommandLineToolImpl extends SavableImpl implements CommandLineTool 
   private java.util.Optional<String> id;
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
+   * Getter for property <I>https://w3id.org/cwl/cwl#Process/id</I><BR>
    * <BLOCKQUOTE>
-   * The unique identifier for this object.   * </BLOCKQUOTE>
+   * The unique identifier for this object.
+   * 
+   * Only useful for `$graph` at `Process` level. Should not be exposed
+   * to users in graphical or terminal user interfaces.
+   *    * </BLOCKQUOTE>
    */
 
   public java.util.Optional<String> getId() {
@@ -273,6 +277,10 @@ public class CommandLineToolImpl extends SavableImpl implements CommandLineTool 
    * Capture the command's standard output stream to a file written to
    * the designated output directory.
    * 
+   * If the `CommandLineTool` contains logically chained commands
+   * (e.g. `echo a && echo b`) `stdout` must include the output of
+   * every command.
+   * 
    * If `stdout` is a string, it specifies the file name to use.
    * 
    * If `stdout` is an expression, the expression is evaluated and must
@@ -482,7 +490,7 @@ public class CommandLineToolImpl extends SavableImpl implements CommandLineTool 
       try {
         hints =
             LoaderInstances
-                .idmap_hints_optional_array_of_AnyInstance
+                .idmap_hints_optional_array_of_union_of_InlineJavascriptRequirement_or_SchemaDefRequirement_or_LoadListingRequirement_or_DockerRequirement_or_SoftwareRequirement_or_InitialWorkDirRequirement_or_EnvVarRequirement_or_ShellCommandRequirement_or_ResourceRequirement_or_WorkReuse_or_NetworkAccess_or_InplaceUpdateRequirement_or_ToolTimeLimit_or_SubworkflowFeatureRequirement_or_ScatterFeatureRequirement_or_MultipleInputFeatureRequirement_or_StepInputExpressionRequirement_or_AnyInstance
                 .loadField(__doc.get("hints"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         hints = null; // won't be used but prevents compiler from complaining.
