@@ -14,13 +14,13 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#CommandOutputParameter</I><BR>This interface is implemented by {@link CommandOutputParameterImpl}<BR> <BLOCKQUOTE>
  An output parameter for a CommandLineTool. </BLOCKQUOTE>
  */
-public interface CommandOutputParameter extends OutputParameter, Savable {
+public interface CommandOutputParameter extends OutputParameter, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
    * <BLOCKQUOTE>

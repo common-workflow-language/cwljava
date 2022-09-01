@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#File</I><BR>This interface is implemented by {@link FileImpl}<BR> <BLOCKQUOTE>
@@ -86,7 +86,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  the same value for `location`.
   </BLOCKQUOTE>
  */
-public interface File extends Savable {
+public interface File extends Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#File/class</I><BR>
    * <BLOCKQUOTE>

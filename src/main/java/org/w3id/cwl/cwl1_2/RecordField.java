@@ -14,13 +14,13 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/salad#RecordField</I><BR>This interface is implemented by {@link RecordFieldImpl}<BR> <BLOCKQUOTE>
  A field of a record. </BLOCKQUOTE>
  */
-public interface RecordField extends Documented, Savable {
+public interface RecordField extends Documented, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#RecordField/name</I><BR>
    * <BLOCKQUOTE>

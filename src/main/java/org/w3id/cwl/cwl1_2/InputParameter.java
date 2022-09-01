@@ -14,12 +14,12 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#InputParameter</I><BR>
  */
-public interface InputParameter extends Parameter, InputFormat, LoadContents, Savable {
+public interface InputParameter extends Parameter, InputFormat, LoadContents, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Labeled/label</I><BR>
    * <BLOCKQUOTE>
@@ -150,5 +150,5 @@ public interface InputParameter extends Parameter, InputFormat, LoadContents, Sa
    *    * </BLOCKQUOTE>
    */
 
-  java.util.Optional<Object> getDefault();
+  Object getDefault();
 }

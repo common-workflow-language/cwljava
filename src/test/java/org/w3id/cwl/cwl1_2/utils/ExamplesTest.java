@@ -171,6 +171,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_record_outputevalByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_record_outputeval.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_record_outputevalByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_record_outputeval.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_record_outputevalByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_record_outputeval.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_packed_timelimit3_wfByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_timelimit3-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -1227,6 +1251,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_packed_synth_fileByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_synth-file.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_synth_fileByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_synth-file.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_synth_fileByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_synth-file.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_iwd_passthrough1ByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_iwd-passthrough1.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -2067,6 +2115,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_wf_renByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_wf_ren.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_wf_renByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_wf_ren.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_wf_renByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_wf_ren.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_count_lines14_wfByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_count-lines14-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -2379,6 +2451,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_packed_js_input_recordByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_js-input-record.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_js_input_recordByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_js-input-record.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_js_input_recordByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_js-input-record.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_scatter_valuefrom_wf5ByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_scatter-valuefrom-wf5.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -2636,6 +2732,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_packed_cond_wf_002_nojsByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_cond-wf-002_nojs.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_synth_fileByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_synth-file.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_synth_fileByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_synth-file.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_synth_fileByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_synth-file.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -3044,6 +3164,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_writable_dirByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_writable-dir.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_colon_testByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_colon:test.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_colon_testByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_colon:test.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_colon_testByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_colon:test.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -3507,6 +3651,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_packed_cat4_from_dirByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_cat4-from-dir.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_cat4_from_dirByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_cat4-from-dir.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_cat4_from_dirByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_cat4-from-dir.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_packed_envvarByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_envvar.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -3668,6 +3836,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_packed_count_lines1_wfByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_count-lines1-wf.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_packed_schemadef_types_with_import_wfByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_schemadef_types_with_import-wf.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_schemadef_types_with_import_wfByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_schemadef_types_with_import-wf.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_schemadef_types_with_import_wfByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_schemadef_types_with_import-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -4347,6 +4539,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_packed_multiple_input_feature_requirementByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_multiple_input_feature_requirement.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_multiple_input_feature_requirementByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_multiple_input_feature_requirement.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_multiple_input_feature_requirementByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_multiple_input_feature_requirement.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_packed_iwd_passthrough3ByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_iwd-passthrough3.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -4779,6 +4995,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_packed_record_orderByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_record-order.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_record_orderByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_record-order.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_record_orderByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_record-order.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_packed_count_lines8_wf_noETByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_count-lines8-wf-noET.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -4796,6 +5036,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_packed_count_lines8_wf_noETByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_count-lines8-wf-noET.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_output_reference_workflow_inputByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_output_reference_workflow_input.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_output_reference_workflow_inputByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_output_reference_workflow_input.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_output_reference_workflow_inputByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_output_reference_workflow_input.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -4940,6 +5204,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_packed_empty_array_inputByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_empty-array-input.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_packed_colon_test_outputByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_colon_test_output.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_colon_test_outputByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_colon_test_output.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_colon_test_outputByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_colon_test_output.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -5523,6 +5811,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_packed_valid_schemadef_types_with_import_wfByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_valid_schemadef_types_with_import-wf.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_valid_schemadef_types_with_import_wfByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_valid_schemadef_types_with_import-wf.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_valid_schemadef_types_with_import_wfByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_valid_schemadef_types_with_import-wf.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_packed_cond_wf_004ByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_cond-wf-004.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -5708,6 +6020,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_packed_iwd_container_entryname2ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_iwd-container-entryname2.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_colon_test_outputByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_colon_test_output.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_colon_test_outputByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_colon_test_output.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_colon_test_outputByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_colon_test_output.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -6315,6 +6651,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_packed_checkByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_check.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_checkByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_check.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_checkByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_check.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_packed_wf_loadContents3ByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_wf-loadContents3.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -6723,6 +7083,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_runtime_outdirByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_runtime-outdir.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_runtime_outdirByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_runtime-outdir.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_runtime_outdirByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_runtime-outdir.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_packed_cond_wf_003ByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_cond-wf-003.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -7107,6 +7491,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_schemadef_types_with_import_wfByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_schemadef_types_with_import-wf.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_schemadef_types_with_import_wfByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_schemadef_types_with_import-wf.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_schemadef_types_with_import_wfByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_schemadef_types_with_import-wf.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_packed_no_outputs_wfByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_no-outputs-wf.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -7268,6 +7676,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_packed_stage_file_array_basename_and_entrynameByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_stage_file_array_basename_and_entryname.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_packed_runtime_outdirByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_runtime-outdir.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_runtime_outdirByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_runtime-outdir.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_runtime_outdirByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_runtime-outdir.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -7587,6 +8019,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_packed_params_input_length_non_arrayByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_params_input_length_non_array.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_params_input_length_non_arrayByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_params_input_length_non_array.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_params_input_length_non_arrayByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_params_input_length_non_array.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_echo_tool_packedByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_echo-tool-packed.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -7748,6 +8204,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_packed_cat1_testcliByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_cat1-testcli.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_params_input_length_non_arrayByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_params_input_length_non_array.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_params_input_length_non_arrayByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_params_input_length_non_array.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_params_input_length_non_arrayByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_params_input_length_non_array.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -7988,6 +8468,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_packed_count_lines13_wfByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_count-lines13-wf.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_packed_record_outputeval_nojsByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_record_outputeval_nojs.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_record_outputeval_nojsByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_record_outputeval_nojs.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_record_outputeval_nojsByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_record_outputeval_nojs.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -8300,6 +8804,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_listing_shallow1ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_listing_shallow1.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_packed_colon_testByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_colon:test.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_colon_testByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_colon:test.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_colon_testByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_colon:test.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -9291,6 +9819,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_packed_output_reference_workflow_inputByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_output_reference_workflow_input.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_output_reference_workflow_inputByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_output_reference_workflow_input.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_output_reference_workflow_inputByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_output_reference_workflow_input.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_env_tool3ByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_env-tool3.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -9452,6 +10004,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_packed_cat3_toolByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_cat3-tool.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_packed_wf_renByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_wf_ren.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_wf_renByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_wf_ren.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_wf_renByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_wf_ren.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -9764,6 +10340,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_tmap_toolByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_tmap-tool.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_packed_record_outputevalByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_record_outputeval.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_record_outputevalByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_record_outputeval.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_record_outputevalByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_record_outputeval.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -10196,6 +10796,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_size_expression_toolByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_size-expression-tool.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_cat4_from_dirByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_cat4-from-dir.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_cat4_from_dirByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_cat4-from-dir.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_cat4_from_dirByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_cat4-from-dir.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -11691,6 +12315,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_stdout_chained_commandsByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_stdout_chained_commands.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_stdout_chained_commandsByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_stdout_chained_commands.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_stdout_chained_commandsByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_stdout_chained_commands.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_packed_formattest3ByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_formattest3.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -11708,6 +12356,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_packed_formattest3ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_formattest3.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_js_input_recordByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_js-input-record.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_js_input_recordByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_js-input-record.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_js_input_recordByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_js-input-record.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -11756,6 +12428,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_test_cwl_outByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_test-cwl-out.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_multiple_input_feature_requirementByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_multiple_input_feature_requirement.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_multiple_input_feature_requirementByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_multiple_input_feature_requirement.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_multiple_input_feature_requirementByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_multiple_input_feature_requirement.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -12027,6 +12723,30 @@ public class ExamplesTest {
     RootLoader.loadDocument(doc, url.toString());
   }
   @org.junit.Test
+  public void testvalid_checkByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_check.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_checkByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_check.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_checkByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_check.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
   public void testvalid_packed_updateval_inplaceByString() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_updateval_inplace.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
@@ -12260,6 +12980,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_packed_count_lines5_wfByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_packed_count-lines5-wf.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_record_outputeval_nojsByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_record_outputeval_nojs.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_record_outputeval_nojsByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_record_outputeval_nojs.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_record_outputeval_nojsByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_record_outputeval_nojs.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -12788,6 +13532,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_count_lines8_wfByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_count-lines8-wf.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_record_orderByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_record-order.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_record_orderByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_record-order.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_record_orderByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_record-order.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;
@@ -13460,6 +14228,30 @@ public class ExamplesTest {
   @org.junit.Test
   public void testvalid_optional_numerical_output_0ByMap() throws Exception {
     java.net.URL url = getClass().getResource("valid_optional-numerical-output-0.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    java.util.Map<String, Object> doc;
+    doc = (java.util.Map<String, Object>) YamlUtils.mapFromString(yaml);
+    RootLoader.loadDocument(doc, url.toString());
+  }
+  @org.junit.Test
+  public void testvalid_packed_stdout_chained_commandsByString() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_stdout_chained_commands.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
+    RootLoader.loadDocument(yaml, url.toString());
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_stdout_chained_commandsByPath() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_stdout_chained_commands.cwl");
+    java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
+    RootLoader.loadDocument(resPath);
+  }
+
+  @org.junit.Test
+  public void testvalid_packed_stdout_chained_commandsByMap() throws Exception {
+    java.net.URL url = getClass().getResource("valid_packed_stdout_chained_commands.cwl");
     java.nio.file.Path resPath = java.nio.file.Paths.get(url.toURI());
     String yaml = new String(java.nio.file.Files.readAllBytes(resPath), "UTF8");
     java.util.Map<String, Object> doc;

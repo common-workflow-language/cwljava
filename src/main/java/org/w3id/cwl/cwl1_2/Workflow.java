@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#Workflow</I><BR>This interface is implemented by {@link WorkflowImpl}<BR> <BLOCKQUOTE>
@@ -71,11 +71,15 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  workflow semantics.
   </BLOCKQUOTE>
  */
-public interface Workflow extends Process, Savable {
+public interface Workflow extends Process, Saveable {
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
+   * Getter for property <I>https://w3id.org/cwl/cwl#Process/id</I><BR>
    * <BLOCKQUOTE>
-   * The unique identifier for this object.   * </BLOCKQUOTE>
+   * The unique identifier for this object.
+   * 
+   * Only useful for `$graph` at `Process` level. Should not be exposed
+   * to users in graphical or terminal user interfaces.
+   *    * </BLOCKQUOTE>
    */
 
   java.util.Optional<String> getId();

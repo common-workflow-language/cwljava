@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#InplaceUpdateRequirement</I><BR>This interface is implemented by {@link InplaceUpdateRequirementImpl}<BR> <BLOCKQUOTE>
@@ -50,7 +50,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  not be enabled.
   </BLOCKQUOTE>
  */
-public interface InplaceUpdateRequirement extends ProcessRequirement, Savable {
+public interface InplaceUpdateRequirement extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#InplaceUpdateRequirement/class</I><BR>
    * <BLOCKQUOTE>

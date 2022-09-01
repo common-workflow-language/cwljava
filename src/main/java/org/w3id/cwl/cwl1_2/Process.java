@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#Process</I><BR> <BLOCKQUOTE>
@@ -24,7 +24,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  directly executed.
   </BLOCKQUOTE>
  */
-public interface Process extends Identified, Labeled, Documented, Savable {
+public interface Process extends Identified, Labeled, Documented, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Labeled/label</I><BR>
    * <BLOCKQUOTE>

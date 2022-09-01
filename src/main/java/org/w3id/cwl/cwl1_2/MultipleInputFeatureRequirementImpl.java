@@ -17,7 +17,7 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.LoaderInstances;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptions;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptionsBuilder;
-import org.w3id.cwl.cwl1_2.utils.SavableImpl;
+import org.w3id.cwl.cwl1_2.utils.SaveableImpl;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 /**
@@ -26,7 +26,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  listed in the `source` field of [WorkflowStepInput](#WorkflowStepInput).
   </BLOCKQUOTE>
  */
-public class MultipleInputFeatureRequirementImpl extends SavableImpl implements MultipleInputFeatureRequirement {
+public class MultipleInputFeatureRequirementImpl extends SaveableImpl implements MultipleInputFeatureRequirement {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();

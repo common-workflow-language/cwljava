@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#LoadListingRequirement</I><BR>This interface is implemented by {@link LoadListingRequirementImpl}<BR> <BLOCKQUOTE>
@@ -22,7 +22,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  a Directory object for use by expressions.
   </BLOCKQUOTE>
  */
-public interface LoadListingRequirement extends ProcessRequirement, Savable {
+public interface LoadListingRequirement extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#LoadListingRequirement/class</I><BR>
    * <BLOCKQUOTE>

@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#ScatterFeatureRequirement</I><BR>This interface is implemented by {@link ScatterFeatureRequirementImpl}<BR> <BLOCKQUOTE>
@@ -22,7 +22,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  `scatterMethod` fields of [WorkflowStep](#WorkflowStep).
   </BLOCKQUOTE>
  */
-public interface ScatterFeatureRequirement extends ProcessRequirement, Savable {
+public interface ScatterFeatureRequirement extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ScatterFeatureRequirement/class</I><BR>
    * <BLOCKQUOTE>

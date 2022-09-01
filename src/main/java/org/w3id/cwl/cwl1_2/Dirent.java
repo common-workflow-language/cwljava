@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#Dirent</I><BR>This interface is implemented by {@link DirentImpl}<BR> <BLOCKQUOTE>
@@ -28,7 +28,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  arbitrary locations, see discussion for `entryname`.
   </BLOCKQUOTE>
  */
-public interface Dirent extends Savable {
+public interface Dirent extends Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#entryname</I><BR>
    * <BLOCKQUOTE>

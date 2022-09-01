@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#DockerRequirement</I><BR>This interface is implemented by {@link DockerRequirementImpl}<BR> <BLOCKQUOTE>
@@ -71,7 +71,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  environment as defined by Docker.
   </BLOCKQUOTE>
  */
-public interface DockerRequirement extends ProcessRequirement, Savable {
+public interface DockerRequirement extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#DockerRequirement/class</I><BR>
    * <BLOCKQUOTE>

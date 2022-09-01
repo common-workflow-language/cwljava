@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#ToolTimeLimit</I><BR>This interface is implemented by {@link ToolTimeLimitImpl}<BR> <BLOCKQUOTE>
@@ -27,7 +27,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  wall-time for the execution of the command line itself.
   </BLOCKQUOTE>
  */
-public interface ToolTimeLimit extends ProcessRequirement, Savable {
+public interface ToolTimeLimit extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ToolTimeLimit/class</I><BR>
    * <BLOCKQUOTE>

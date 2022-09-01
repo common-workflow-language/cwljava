@@ -14,14 +14,14 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#OperationOutputParameter</I><BR>This interface is implemented by {@link OperationOutputParameterImpl}<BR> <BLOCKQUOTE>
  Describe an output parameter of an operation.
   </BLOCKQUOTE>
  */
-public interface OperationOutputParameter extends OutputParameter, Savable {
+public interface OperationOutputParameter extends OutputParameter, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
    * <BLOCKQUOTE>

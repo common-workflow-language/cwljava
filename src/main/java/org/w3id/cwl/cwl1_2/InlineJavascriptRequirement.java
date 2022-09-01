@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#InlineJavascriptRequirement</I><BR>This interface is implemented by {@link InlineJavascriptRequirementImpl}<BR> <BLOCKQUOTE>
@@ -23,7 +23,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  interpolatation.
   </BLOCKQUOTE>
  */
-public interface InlineJavascriptRequirement extends ProcessRequirement, Savable {
+public interface InlineJavascriptRequirement extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#InlineJavascriptRequirement/class</I><BR>
    * <BLOCKQUOTE>

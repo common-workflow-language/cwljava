@@ -17,7 +17,7 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.LoaderInstances;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptions;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptionsBuilder;
-import org.w3id.cwl.cwl1_2.utils.SavableImpl;
+import org.w3id.cwl.cwl1_2.utils.SaveableImpl;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 /**
@@ -31,7 +31,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  wall-time for the execution of the command line itself.
   </BLOCKQUOTE>
  */
-public class ToolTimeLimitImpl extends SavableImpl implements ToolTimeLimit {
+public class ToolTimeLimitImpl extends SaveableImpl implements ToolTimeLimit {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();

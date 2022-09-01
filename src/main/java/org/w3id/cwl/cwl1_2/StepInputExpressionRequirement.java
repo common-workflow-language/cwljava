@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#StepInputExpressionRequirement</I><BR>This interface is implemented by {@link StepInputExpressionRequirementImpl}<BR> <BLOCKQUOTE>
@@ -22,7 +22,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  of [WorkflowStepInput](#WorkflowStepInput).
   </BLOCKQUOTE>
  */
-public interface StepInputExpressionRequirement extends ProcessRequirement, Savable {
+public interface StepInputExpressionRequirement extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#StepInputExpressionRequirement/class</I><BR>
    * <BLOCKQUOTE>

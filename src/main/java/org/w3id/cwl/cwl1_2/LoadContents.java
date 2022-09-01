@@ -14,12 +14,12 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#LoadContents</I><BR>
  */
-public interface LoadContents extends Savable {
+public interface LoadContents extends Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#LoadContents/loadContents</I><BR>
    * <BLOCKQUOTE>

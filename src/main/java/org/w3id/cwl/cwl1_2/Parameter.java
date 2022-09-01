@@ -14,14 +14,14 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#Parameter</I><BR> <BLOCKQUOTE>
  Define an input or output parameter to a process.
   </BLOCKQUOTE>
  */
-public interface Parameter extends FieldBase, Documented, Identified, Savable {
+public interface Parameter extends FieldBase, Documented, Identified, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Labeled/label</I><BR>
    * <BLOCKQUOTE>

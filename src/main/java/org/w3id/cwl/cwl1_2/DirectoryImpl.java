@@ -17,7 +17,7 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.LoaderInstances;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptions;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptionsBuilder;
-import org.w3id.cwl.cwl1_2.utils.SavableImpl;
+import org.w3id.cwl.cwl1_2.utils.SaveableImpl;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 /**
@@ -54,7 +54,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  the same Directory.
  
  When executing a CommandLineTool, Directories must be recursively staged
- first and have local values of `path` assigend.
+ first and have local values of `path` assigned.
  
  Directory objects in CommandLineTool output must provide either a
  `location` URI or a `path` property in the context of the tool execution
@@ -67,7 +67,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  or in any entry in `secondaryFiles` in the listing) is a fatal error.
   </BLOCKQUOTE>
  */
-public class DirectoryImpl extends SavableImpl implements Directory {
+public class DirectoryImpl extends SaveableImpl implements Directory {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();

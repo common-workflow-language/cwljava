@@ -14,12 +14,12 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#CommandInputRecordField</I><BR>This interface is implemented by {@link CommandInputRecordFieldImpl}<BR>
  */
-public interface CommandInputRecordField extends InputRecordField, CommandLineBindable, Savable {
+public interface CommandInputRecordField extends InputRecordField, CommandLineBindable, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#RecordField/name</I><BR>
    * <BLOCKQUOTE>

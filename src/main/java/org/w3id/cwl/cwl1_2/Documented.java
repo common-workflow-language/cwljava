@@ -14,12 +14,12 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/salad#Documented</I><BR>
  */
-public interface Documented extends Savable {
+public interface Documented extends Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#Documented/doc</I><BR>
    * <BLOCKQUOTE>

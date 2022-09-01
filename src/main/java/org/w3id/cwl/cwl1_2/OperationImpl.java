@@ -17,7 +17,7 @@ package org.w3id.cwl.cwl1_2;
 import org.w3id.cwl.cwl1_2.utils.LoaderInstances;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptions;
 import org.w3id.cwl.cwl1_2.utils.LoadingOptionsBuilder;
-import org.w3id.cwl.cwl1_2.utils.SavableImpl;
+import org.w3id.cwl.cwl1_2.utils.SaveableImpl;
 import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
 /**
@@ -31,7 +31,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  CommandLineTool, or ExpressionTool) with a compatible signature.
   </BLOCKQUOTE>
  */
-public class OperationImpl extends SavableImpl implements Operation {
+public class OperationImpl extends SaveableImpl implements Operation {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
@@ -39,9 +39,13 @@ public class OperationImpl extends SavableImpl implements Operation {
   private java.util.Optional<String> id;
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
+   * Getter for property <I>https://w3id.org/cwl/cwl#Process/id</I><BR>
    * <BLOCKQUOTE>
-   * The unique identifier for this object.   * </BLOCKQUOTE>
+   * The unique identifier for this object.
+   * 
+   * Only useful for `$graph` at `Process` level. Should not be exposed
+   * to users in graphical or terminal user interfaces.
+   *    * </BLOCKQUOTE>
    */
 
   public java.util.Optional<String> getId() {
@@ -344,7 +348,7 @@ public class OperationImpl extends SavableImpl implements Operation {
       try {
         hints =
             LoaderInstances
-                .idmap_hints_optional_array_of_AnyInstance
+                .idmap_hints_optional_array_of_union_of_InlineJavascriptRequirement_or_SchemaDefRequirement_or_LoadListingRequirement_or_DockerRequirement_or_SoftwareRequirement_or_InitialWorkDirRequirement_or_EnvVarRequirement_or_ShellCommandRequirement_or_ResourceRequirement_or_WorkReuse_or_NetworkAccess_or_InplaceUpdateRequirement_or_ToolTimeLimit_or_SubworkflowFeatureRequirement_or_ScatterFeatureRequirement_or_MultipleInputFeatureRequirement_or_StepInputExpressionRequirement_or_AnyInstance
                 .loadField(__doc.get("hints"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         hints = null; // won't be used but prevents compiler from complaining.

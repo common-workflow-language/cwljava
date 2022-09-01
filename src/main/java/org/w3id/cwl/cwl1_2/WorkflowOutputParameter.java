@@ -14,7 +14,7 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Savable;
+import org.w3id.cwl.cwl1_2.utils.Saveable;
 
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#WorkflowOutputParameter</I><BR>This interface is implemented by {@link WorkflowOutputParameterImpl}<BR> <BLOCKQUOTE>
@@ -27,7 +27,7 @@ import org.w3id.cwl.cwl1_2.utils.Savable;
  `linkMerge` and `pickValue`.
   </BLOCKQUOTE>
  */
-public interface WorkflowOutputParameter extends OutputParameter, Savable {
+public interface WorkflowOutputParameter extends OutputParameter, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
    * <BLOCKQUOTE>
@@ -124,8 +124,11 @@ public interface WorkflowOutputParameter extends OutputParameter, Savable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#outputSource</I><BR>
    * <BLOCKQUOTE>
-   * Specifies one or more workflow parameters that supply the value of to
-   * the output parameter.
+   * Specifies one or more names of an output from a workflow step (in the form
+   * `step_name/output_name` with a `/` separator`), or a workflow input name,
+   * that supply their value(s) to the output parameter.
+   * the output parameter.  It is valid to reference workflow level inputs
+   * here.
    *    * </BLOCKQUOTE>
    */
 
