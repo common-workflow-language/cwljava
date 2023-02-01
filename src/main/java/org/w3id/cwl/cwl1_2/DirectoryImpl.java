@@ -120,7 +120,7 @@ public class DirectoryImpl extends SaveableImpl implements Directory {
    * The local path where the Directory is made available prior to executing a
    * CommandLineTool.  This must be set by the implementation.  This field
    * must not be used in any other context.  The command line tool being
-   * executed must be able to to access the directory at `path` using the POSIX
+   * executed must be able to access the directory at `path` using the POSIX
    * `opendir(2)` syscall.
    * 
    * If the `path` contains [POSIX shell metacharacters](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_02)

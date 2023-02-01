@@ -24,7 +24,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
 * Auto-generated class implementation for <I>https://w3id.org/cwl/cwl#InlineJavascriptRequirement</I><BR> <BLOCKQUOTE>
  Indicates that the workflow platform must support inline Javascript expressions.
  If this requirement is not present, the workflow platform must not perform expression
- interpolatation.
+ interpolation.
   </BLOCKQUOTE>
  */
 public class InlineJavascriptRequirementImpl extends SaveableImpl implements InlineJavascriptRequirement {

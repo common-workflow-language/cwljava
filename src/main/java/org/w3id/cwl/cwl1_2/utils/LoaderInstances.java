@@ -259,7 +259,6 @@ public class LoaderInstances {
   public static Loader<java.util.Optional<LinkMergeMethod>> optional_LinkMergeMethod = new OptionalLoader(LinkMergeMethod);
   public static Loader<java.util.Optional<PickValueMethod>> optional_PickValueMethod = new OptionalLoader(PickValueMethod);
   public static Loader<Object> uri_union_of_NullInstance_or_StringInstance_or_array_of_StringInstance_False_False_2 = new UriLoader(union_of_NullInstance_or_StringInstance_or_array_of_StringInstance, false, false, 2);
-  public static Loader<java.util.Optional<Object>> optional_AnyInstance = new OptionalLoader(AnyInstance);
   public static Loader<java.util.List<WorkflowStepInput>> array_of_WorkflowStepInput = new ArrayLoader(WorkflowStepInput);
   public static Loader<java.util.List<Object>> idmap_in_array_of_WorkflowStepInput = new IdMapLoader(array_of_WorkflowStepInput, "id", "source");
   public static Loader<Object> union_of_StringInstance_or_WorkflowStepOutput = new UnionLoader(new Loader[] { StringInstance, WorkflowStepOutput });
@@ -269,6 +268,7 @@ public class LoaderInstances {
   public static Loader<java.util.Optional<java.util.List<Object>>> optional_array_of_AnyInstance = new OptionalLoader(array_of_AnyInstance);
   public static Loader<java.util.Optional<java.util.List<Object>>> idmap_hints_optional_array_of_AnyInstance = new IdMapLoader(optional_array_of_AnyInstance, "class", "None");
   public static Loader<Object> union_of_StringInstance_or_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation = new UnionLoader(new Loader[] { StringInstance, CommandLineTool, ExpressionTool, Workflow, Operation });
+  public static Loader<Object> uri_union_of_StringInstance_or_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation_False_False_None = new UriLoader(union_of_StringInstance_or_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation, false, false, null);
   public static Loader<Object> uri_union_of_NullInstance_or_StringInstance_or_array_of_StringInstance_False_False_0 = new UriLoader(union_of_NullInstance_or_StringInstance_or_array_of_StringInstance, false, false, 0);
   public static Loader<java.util.Optional<ScatterMethod>> optional_ScatterMethod = new OptionalLoader(ScatterMethod);
   public static Loader<java.util.Optional<ScatterMethod>> uri_optional_ScatterMethod_False_True_None = new UriLoader(optional_ScatterMethod, false, true, null);

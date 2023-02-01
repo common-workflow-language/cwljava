@@ -26,7 +26,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  workflow inputs, or the outputs of other workflows steps) with the input
  parameters of the process specified by the `run` field. Only input parameters
  declared by the target process will be passed through at runtime to the process
- though additonal parameters may be specified (for use within `valueFrom`
+ though additional parameters may be specified (for use within `valueFrom`
  expressions for instance) - unconnected or unused parameters do not represent an
  error condition.
  
@@ -75,7 +75,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  
  # Picking non-null values among inbound data links
  
- If present, `pickValue` specifies how to picking non-null values among inbound data links.
+ If present, `pickValue` specifies how to pick non-null values among inbound data links.
  
  `pickValue` is evaluated
    1. Once all source values from upstream step or parameters are available.
@@ -87,7 +87,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  steps may be connected to a single input (`source` is a list), and
  skipped steps produce null values.
  
- Static type checkers should check for type consistency after infering what the type
+ Static type checkers should check for type consistency after inferring what the type
  will be after `pickValue` is applied, just as they do currently for `linkMerge`.
  
  * **first_non_null**
@@ -244,7 +244,7 @@ public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepI
     return this.label;
   }
 
-  private java.util.Optional<Object> default_;
+  private Object default_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#default</I><BR>
@@ -255,7 +255,7 @@ public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepI
    *    * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<Object> getDefault() {
+  public Object getDefault() {
     return this.default_;
   }
 
@@ -456,13 +456,13 @@ public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepI
     } else {
       label = null;
     }
-    java.util.Optional<Object> default_;
+    Object default_;
 
     if (__doc.containsKey("default")) {
       try {
         default_ =
             LoaderInstances
-                .optional_AnyInstance
+                .union_of_NullInstance_or_File_or_Directory_or_AnyInstance
                 .loadField(__doc.get("default"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         default_ = null; // won't be used but prevents compiler from complaining.
@@ -500,7 +500,7 @@ public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepI
     this.loadContents = (java.util.Optional<Boolean>) loadContents;
     this.loadListing = (java.util.Optional<LoadListingEnum>) loadListing;
     this.label = (java.util.Optional<String>) label;
-    this.default_ = (java.util.Optional<Object>) default_;
+    this.default_ = (Object) default_;
     this.valueFrom = (Object) valueFrom;
   }
 }

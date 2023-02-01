@@ -116,7 +116,7 @@ public interface CommandOutputBinding extends LoadContents, Saveable {
    * element.  The exit code of the process is
    * available in the expression as `runtime.exitCode`.
    * 
-   * Additionally if `loadContents` is true, the file must be a
+   * Additionally, if `loadContents` is true, the file must be a
    * UTF-8 text file 64 KiB or smaller, and the implementation must
    * read the entire contents of the file (or file array) and place
    * it in the `contents` field of the File object for use in

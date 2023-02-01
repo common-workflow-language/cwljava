@@ -22,7 +22,7 @@ import org.w3id.cwl.cwl1_2.utils.Saveable;
  workflow inputs, or the outputs of other workflows steps) with the input
  parameters of the process specified by the `run` field. Only input parameters
  declared by the target process will be passed through at runtime to the process
- though additonal parameters may be specified (for use within `valueFrom`
+ though additional parameters may be specified (for use within `valueFrom`
  expressions for instance) - unconnected or unused parameters do not represent an
  error condition.
  
@@ -71,7 +71,7 @@ import org.w3id.cwl.cwl1_2.utils.Saveable;
  
  # Picking non-null values among inbound data links
  
- If present, `pickValue` specifies how to picking non-null values among inbound data links.
+ If present, `pickValue` specifies how to pick non-null values among inbound data links.
  
  `pickValue` is evaluated
    1. Once all source values from upstream step or parameters are available.
@@ -83,7 +83,7 @@ import org.w3id.cwl.cwl1_2.utils.Saveable;
  steps may be connected to a single input (`source` is a list), and
  skipped steps produce null values.
  
- Static type checkers should check for type consistency after infering what the type
+ Static type checkers should check for type consistency after inferring what the type
  will be after `pickValue` is applied, just as they do currently for `linkMerge`.
  
  * **first_non_null**
@@ -210,7 +210,7 @@ public interface WorkflowStepInput extends Identified, Sink, LoadContents, Label
    *    * </BLOCKQUOTE>
    */
 
-  java.util.Optional<Object> getDefault();
+  Object getDefault();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowStepInput/valueFrom</I><BR>
    * <BLOCKQUOTE>

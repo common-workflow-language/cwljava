@@ -45,7 +45,7 @@ public interface SoftwarePackage extends Saveable {
    * One or more [IRI](https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier)s
    * identifying resources for installing or enabling the software named in
    * the `package` field. Implementations may provide resolvers which map
-   * these software identifer IRIs to some configuration action; or they can
+   * these software identifier IRIs to some configuration action; or they can
    * use only the name from the `package` field on a best effort basis.
    * 
    * For example, the IRI https://packages.debian.org/bowtie could
@@ -57,15 +57,15 @@ public interface SoftwarePackage extends Saveable {
    * software installation or selection mechanism.
    * Using [RRID](https://www.identifiers.org/rrid/) as an example:
    * https://identifiers.org/rrid/RRID:SCR_005476
-   * could be fulfilled using the above mentioned Debian or bioconda
-   * package, a local installation managed by [Environment Modules](http://modules.sourceforge.net/),
+   * could be fulfilled using the above-mentioned Debian or bioconda
+   * package, a local installation managed by [Environment Modules](https://modules.sourceforge.net/),
    * or any other mechanism the platform chooses. IRIs can also be from
-   * identifer sources that are discipline specific yet still system
+   * identifier sources that are discipline specific yet still system
    * independent. As an example, the equivalent [ELIXIR Tools and Data
    * Service Registry](https://bio.tools) IRI to the previous RRID example is
    * https://bio.tools/tool/bowtie2/version/2.2.8.
    * If supported by a given registry, implementations are encouraged to
-   * query these system independent sofware identifier IRIs directly for
+   * query these system independent software identifier IRIs directly for
    * links to packaging systems.
    * 
    * A site specific IRI can be listed as well. For example, an academic

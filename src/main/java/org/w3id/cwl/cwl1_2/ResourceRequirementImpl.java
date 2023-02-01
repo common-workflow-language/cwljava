@@ -84,7 +84,7 @@ public class ResourceRequirementImpl extends SaveableImpl implements ResourceReq
    * do not exceed the capacity of the node.
    * 
    * Processes sharing a core must have the same level of isolation
-   * (typically a container or VM) that they would normally.
+   * (typically a container or VM) that they would normally have.
    * 
    * The reported number of CPU cores reserved for the process,
    * which is available to expressions on the CommandLineTool as

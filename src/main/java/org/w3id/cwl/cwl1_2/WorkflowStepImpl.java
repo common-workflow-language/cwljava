@@ -40,7 +40,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  
  The `scatter` field specifies one or more input parameters which will be
  scattered.  An input parameter may be listed more than once.  The declared
- type of each input parameter is implicitly becomes an array of items of the
+ type of each input parameter implicitly becomes an array of items of the
  input parameter type.  If a parameter is listed more than once, it becomes
  a nested array.  As a result, upstream parameters which are connected to
  scattered parameters must be arrays.
@@ -90,7 +90,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  Conditionals in CWL are an optional feature and are not required
  to be implemented by all consumers of CWL documents.  An
  implementation that does not support conditionals must return a
- fatal error when attempting execute a workflow that uses
+ fatal error when attempting to execute a workflow that uses
  conditional constructs the implementation does not support.
  
  # Subworkflows
@@ -417,7 +417,7 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
     try {
       run =
           LoaderInstances
-              .union_of_StringInstance_or_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation
+              .uri_union_of_StringInstance_or_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation_False_False_None
               .loadField(__doc.get("run"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       run = null; // won't be used but prevents compiler from complaining.

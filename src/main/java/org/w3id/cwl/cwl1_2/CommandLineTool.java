@@ -121,7 +121,7 @@ public interface CommandLineTool extends Process, Saveable {
    * CommandLineTool, Workflow, or ExpressionTool.
    * 
    * If provided, then this must be an IRI of a concept node that
-   * represents the type of operation, preferrably defined within an ontology.
+   * represents the type of operation, preferably defined within an ontology.
    * 
    * For example, in the domain of bioinformatics, one can use an IRI from
    * the EDAM Ontology's [Operation concept nodes](http://edamontology.org/operation_0004),

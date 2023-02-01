@@ -23,7 +23,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
 /**
 * Auto-generated class implementation for <I>https://w3id.org/cwl/cwl#DockerRequirement</I><BR> <BLOCKQUOTE>
  Indicates that a workflow component should be run in a
- [Docker](http://docker.com) or Docker-compatible (such as
+ [Docker](https://docker.com) or Docker-compatible (such as
  [Singularity](https://www.sylabs.io/) and [udocker](https://github.com/indigo-dc/udocker)) container environment and
  specifies how to fetch or build the image.
  
@@ -112,7 +112,7 @@ public class DockerRequirementImpl extends SaveableImpl implements DockerRequire
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#DockerRequirement/dockerLoad</I><BR>
    * <BLOCKQUOTE>
-   * Specify a HTTP URL from which to download a Docker image using `docker load`.   * </BLOCKQUOTE>
+   * Specify an HTTP URL from which to download a Docker image using `docker load`.   * </BLOCKQUOTE>
    */
 
   public java.util.Optional<String> getDockerLoad() {

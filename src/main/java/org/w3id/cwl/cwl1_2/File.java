@@ -38,7 +38,7 @@ import org.w3id.cwl.cwl1_2.utils.Saveable;
  If no `location` or `path` is specified, a file object must specify
  `contents` with the UTF-8 text content of the file.  This is a "file
  literal".  File literals do not correspond to external resources, but are
- created on disk with `contents` with when needed for a executing a tool.
+ created on disk with `contents` with when needed for executing a tool.
  Where appropriate, expressions can return file literals to define new files
  on a runtime.  The maximum size of `contents` is 64 kilobytes.
  
@@ -123,7 +123,7 @@ public interface File extends Saveable {
    * executed.  This field must be set by the implementation.  The final
    * path component must match the value of `basename`.  This field
    * must not be used in any other context.  The command line tool being
-   * executed must be able to to access the file at `path` using the POSIX
+   * executed must be able to access the file at `path` using the POSIX
    * `open(2)` syscall.
    * 
    * As a special case, if the `path` field is provided but the `location`
@@ -179,7 +179,7 @@ public interface File extends Saveable {
    * <BLOCKQUOTE>
    * The basename root such that `nameroot + nameext == basename`, and
    * `nameext` is empty or begins with a period and contains at most one
-   * period.  For the purposess of path splitting leading periods on the
+   * period.  For the purposes of path splitting leading periods on the
    * basename are ignored; a basename of `.cshrc` will have a nameroot of
    * `.cshrc`.
    * 
@@ -206,7 +206,7 @@ public interface File extends Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#File/checksum</I><BR>
    * <BLOCKQUOTE>
-   * Optional hash code for validating file integrity.  Currently must be in the form
+   * Optional hash code for validating file integrity.  Currently, must be in the form
    * "sha1$ + hexadecimal string" using the SHA-1 algorithm.
    *    * </BLOCKQUOTE>
    */
@@ -236,7 +236,7 @@ public interface File extends Saveable {
    * Getter for property <I>https://w3id.org/cwl/cwl#format</I><BR>
    * <BLOCKQUOTE>
    * The format of the file: this must be an IRI of a concept node that
-   * represents the file format, preferrably defined within an ontology.
+   * represents the file format, preferably defined within an ontology.
    * If no ontology is available, file formats may be tested by exact match.
    * 
    * Reasoning about format compatibility must be done by checking that an
@@ -263,7 +263,7 @@ public interface File extends Saveable {
    * `location` field.  When the file is staged as input to CommandLineTool,
    * the value of `contents` must be written to a file.
    * 
-   * If `contents` is set as a result of an Javascript expression,
+   * If `contents` is set as a result of a Javascript expression,
    * an `entry` in `InitialWorkDirRequirement`, or read in from
    * `cwl.output.json`, there is no specified upper limit on the
    * size of `contents`.  Implementations may have practical limits

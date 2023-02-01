@@ -25,7 +25,7 @@ import org.w3id.cwl.cwl1_2.utils.ValidationException;
  For implementations that support reusing output from past work (on
  the assumption that same code and same input produce same
  results), control whether to enable or disable the reuse behavior
- for a particular tool or step (to accomodate situations where that
+ for a particular tool or step (to accommodate situations where that
  assumption is incorrect).  A reused step is not executed but
  instead returns the same output as the original execution.
  

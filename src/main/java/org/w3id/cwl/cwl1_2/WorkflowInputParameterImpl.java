@@ -144,7 +144,7 @@ public class WorkflowInputParameterImpl extends SaveableImpl implements Workflow
    * 
    * This must be one or more IRIs of concept nodes
    * that represents file formats which are allowed as input to this
-   * parameter, preferrably defined within an ontology.  If no ontology is
+   * parameter, preferably defined within an ontology.  If no ontology is
    * available, file formats may be tested by exact match.
    *    * </BLOCKQUOTE>
    */
