@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/common-workflow-lab/cwljava/badge.svg)](https://coveralls.io/github/common-workflow-lab/cwljava)
+[![Coverage Status](https://coveralls.io/repos/github/common-workflow-language/cwljava/badge.svg?branch=cwl-1.2.0)](https://coveralls.io/github/common-workflow-language/cwljava?branch=cwl-1.2.0)
 
 # org.w3id.cwl.cwl1_2
 
