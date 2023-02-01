@@ -19,7 +19,7 @@ import org.w3id.cwl.cwl1_2.utils.Saveable;
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#DockerRequirement</I><BR>This interface is implemented by {@link DockerRequirementImpl}<BR> <BLOCKQUOTE>
  Indicates that a workflow component should be run in a
- [Docker](http://docker.com) or Docker-compatible (such as
+ [Docker](https://docker.com) or Docker-compatible (such as
  [Singularity](https://www.sylabs.io/) and [udocker](https://github.com/indigo-dc/udocker)) container environment and
  specifies how to fetch or build the image.
  
@@ -92,7 +92,7 @@ public interface DockerRequirement extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#DockerRequirement/dockerLoad</I><BR>
    * <BLOCKQUOTE>
-   * Specify a HTTP URL from which to download a Docker image using `docker load`.   * </BLOCKQUOTE>
+   * Specify an HTTP URL from which to download a Docker image using `docker load`.   * </BLOCKQUOTE>
    */
 
   java.util.Optional<String> getDockerLoad();

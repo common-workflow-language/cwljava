@@ -20,7 +20,7 @@ import org.w3id.cwl.cwl1_2.utils.Saveable;
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#CommandLineBinding</I><BR>This interface is implemented by {@link CommandLineBindingImpl}<BR> <BLOCKQUOTE>
  
  When listed under `inputBinding` in the input schema, the term
- "value" refers to the the corresponding value in the input object.  For
+ "value" refers to the corresponding value in the input object.  For
  binding objects listed in `CommandLineTool.arguments`, the term "value"
  refers to the effective value after evaluating `valueFrom`.
  
@@ -45,7 +45,7 @@ import org.w3id.cwl.cwl1_2.utils.Saveable;
  
    - **array**: If `itemSeparator` is specified, add `prefix` and the join
        the array into a single string with `itemSeparator` separating the
-       items.  Otherwise first add `prefix`, then recursively process
+       items.  Otherwise, first add `prefix`, then recursively process
        individual elements.
        If the array is empty, it does not add anything to command line.
  
@@ -101,7 +101,7 @@ public interface CommandLineBinding extends InputBinding, Saveable {
    * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineBinding/itemSeparator</I><BR>
    * <BLOCKQUOTE>
    * Join the array elements into a single string with the elements
-   * separated by by `itemSeparator`.
+   * separated by `itemSeparator`.
    *    * </BLOCKQUOTE>
    */
 
