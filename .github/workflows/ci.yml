@@ -33,4 +33,4 @@ jobs:
         COVERALLS_SECRET: ${{ secrets.GITHUB_TOKEN }}
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
-      uses: advanced-security/maven-dependency-submission-action@2ecce44ccb44fd4b52f43468d3644e2d3e2b3cf2
+      uses: advanced-security/maven-dependency-submission-action@72bdd87d620be905d2add3aa48214250a1921eb3
