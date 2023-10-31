@@ -136,7 +136,7 @@ public class CommandInputRecordSchemaImpl extends SaveableImpl implements Comman
       try {
         name =
             LoaderInstances
-                .uri_optional_StringInstance_True_False_None
+                .uri_optional_StringInstance_True_False_None_None
                 .loadField(__doc.get("name"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         name = null; // won't be used but prevents compiler from complaining.

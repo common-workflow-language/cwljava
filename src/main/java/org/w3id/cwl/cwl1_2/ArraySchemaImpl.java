@@ -86,7 +86,7 @@ public class ArraySchemaImpl extends SaveableImpl implements ArraySchema {
     try {
       items =
           LoaderInstances
-              .uri_union_of_PrimitiveType_or_RecordSchema_or_EnumSchema_or_ArraySchema_or_StringInstance_or_array_of_union_of_PrimitiveType_or_RecordSchema_or_EnumSchema_or_ArraySchema_or_StringInstance_False_True_2
+              .uri_union_of_PrimitiveType_or_RecordSchema_or_EnumSchema_or_ArraySchema_or_StringInstance_or_array_of_union_of_PrimitiveType_or_RecordSchema_or_EnumSchema_or_ArraySchema_or_StringInstance_False_True_2_None
               .loadField(__doc.get("items"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       items = null; // won't be used but prevents compiler from complaining.
