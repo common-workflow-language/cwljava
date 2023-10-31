@@ -157,6 +157,8 @@ public class ExpressionToolOutputParameterImpl extends SaveableImpl implements E
    * Getter for property <I>https://w3id.org/cwl/salad#type</I><BR>
    * <BLOCKQUOTE>
    * Specify valid types of data that may be assigned to this parameter.
+   * Note that this field just acts as a hint, as the outputs of an
+   * ExpressionTool process are always considered valid.
    *    * </BLOCKQUOTE>
    */
 

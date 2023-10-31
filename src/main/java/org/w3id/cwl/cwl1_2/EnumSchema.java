@@ -23,6 +23,12 @@ import org.w3id.cwl.cwl1_2.utils.Saveable;
  */
 public interface EnumSchema extends Saveable {
   /**
+   * Getter for property <I>https://w3id.org/cwl/salad#EnumSchema/name</I><BR>
+
+   */
+
+  java.util.Optional<String> getName();
+  /**
    * Getter for property <I>https://w3id.org/cwl/salad#symbols</I><BR>
    * <BLOCKQUOTE>
    * Defines the set of valid symbols.   * </BLOCKQUOTE>
@@ -35,5 +41,5 @@ public interface EnumSchema extends Saveable {
    * Must be `enum`   * </BLOCKQUOTE>
    */
 
-  enum_d961d79c225752b9fadb617367615ab176b47d77 getType();
+  Enum_name getType();
 }

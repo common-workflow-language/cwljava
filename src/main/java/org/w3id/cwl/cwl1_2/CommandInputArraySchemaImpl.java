@@ -52,7 +52,7 @@ public class CommandInputArraySchemaImpl extends SaveableImpl implements Command
     return this.items;
   }
 
-  private enum_d062602be0b4b8fd33e69e29a841317b6ab665bc type;
+  private Array_name type;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#type</I><BR>
@@ -60,7 +60,7 @@ public class CommandInputArraySchemaImpl extends SaveableImpl implements Command
    * Must be `array`   * </BLOCKQUOTE>
    */
 
-  public enum_d062602be0b4b8fd33e69e29a841317b6ab665bc getType() {
+  public Array_name getType() {
     return this.type;
   }
 
@@ -165,18 +165,18 @@ public class CommandInputArraySchemaImpl extends SaveableImpl implements Command
     try {
       items =
           LoaderInstances
-              .typedsl_union_of_CWLType_or_CommandInputRecordSchema_or_CommandInputEnumSchema_or_CommandInputArraySchema_or_StringInstance_or_array_of_union_of_CWLType_or_CommandInputRecordSchema_or_CommandInputEnumSchema_or_CommandInputArraySchema_or_StringInstance_2
+              .uri_union_of_CWLType_or_CommandInputRecordSchema_or_CommandInputEnumSchema_or_CommandInputArraySchema_or_StringInstance_or_array_of_union_of_CWLType_or_CommandInputRecordSchema_or_CommandInputEnumSchema_or_CommandInputArraySchema_or_StringInstance_False_True_2
               .loadField(__doc.get("items"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       items = null; // won't be used but prevents compiler from complaining.
       final String __message = "the `items` field is not valid because:";
       __errors.add(new ValidationException(__message, e));
     }
-    enum_d062602be0b4b8fd33e69e29a841317b6ab665bc type;
+    Array_name type;
     try {
       type =
           LoaderInstances
-              .typedsl_enum_d062602be0b4b8fd33e69e29a841317b6ab665bc_2
+              .typedsl_Array_name_2
               .loadField(__doc.get("type"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       type = null; // won't be used but prevents compiler from complaining.
@@ -238,7 +238,7 @@ public class CommandInputArraySchemaImpl extends SaveableImpl implements Command
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
     this.items = (Object) items;
-    this.type = (enum_d062602be0b4b8fd33e69e29a841317b6ab665bc) type;
+    this.type = (Array_name) type;
     this.label = (java.util.Optional<String>) label;
     this.doc = (Object) doc;
     this.name = (java.util.Optional<String>) name;

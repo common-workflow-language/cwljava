@@ -40,7 +40,7 @@ public interface OutputRecordSchema extends RecordSchema, OutputSchema, Saveable
    * Must be `record`   * </BLOCKQUOTE>
    */
 
-  enum_d9cba076fca539106791a4f46d198c7fcfbdb779 getType();
+  Record_name getType();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Labeled/label</I><BR>
    * <BLOCKQUOTE>

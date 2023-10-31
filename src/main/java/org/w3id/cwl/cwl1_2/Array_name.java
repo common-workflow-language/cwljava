@@ -14,24 +14,24 @@
 
 package org.w3id.cwl.cwl1_2;
 
-import org.w3id.cwl.cwl1_2.utils.Saveable;
+import org.w3id.cwl.cwl1_2.utils.ValidationException;
 
-/**
-* Auto-generated interface for <I>https://w3id.org/cwl/salad#RecordSchema</I><BR>This interface is implemented by {@link RecordSchemaImpl}<BR>
- */
-public interface RecordSchema extends Saveable {
-  /**
-   * Getter for property <I>https://w3id.org/cwl/salad#fields</I><BR>
-   * <BLOCKQUOTE>
-   * Defines the fields of the record.   * </BLOCKQUOTE>
-   */
+public enum Array_name {
+  ARRAY("array");
 
-  java.util.Optional<java.util.List<Object>> getFields();
-  /**
-   * Getter for property <I>https://w3id.org/cwl/salad#type</I><BR>
-   * <BLOCKQUOTE>
-   * Must be `record`   * </BLOCKQUOTE>
-   */
+  private static String[] symbols = new String[] {"array"};
+  private String docVal;
 
-  Record_name getType();
+  private Array_name(final String docVal) {
+    this.docVal = docVal;
+  }
+
+  public static Array_name fromDocumentVal(final String docVal) {
+    for(final Array_name val : Array_name.values()) {
+      if(val.docVal.equals(docVal)) {
+        return val;
+      }
+    }
+    throw new ValidationException(String.format("Expected one of %s", Array_name.symbols, docVal));
+  }
 }

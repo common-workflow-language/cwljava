@@ -30,6 +30,17 @@ public class EnumSchemaImpl extends SaveableImpl implements EnumSchema {
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
 
+  private java.util.Optional<String> name;
+
+  /**
+   * Getter for property <I>https://w3id.org/cwl/salad#EnumSchema/name</I><BR>
+
+   */
+
+  public java.util.Optional<String> getName() {
+    return this.name;
+  }
+
   private java.util.List<String> symbols;
 
   /**
@@ -42,7 +53,7 @@ public class EnumSchemaImpl extends SaveableImpl implements EnumSchema {
     return this.symbols;
   }
 
-  private enum_d961d79c225752b9fadb617367615ab176b47d77 type;
+  private Enum_name type;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#type</I><BR>
@@ -50,7 +61,7 @@ public class EnumSchemaImpl extends SaveableImpl implements EnumSchema {
    * Must be `enum`   * </BLOCKQUOTE>
    */
 
-  public enum_d961d79c225752b9fadb617367615ab176b47d77 getType() {
+  public Enum_name getType() {
     return this.type;
   }
 
@@ -84,6 +95,37 @@ public class EnumSchemaImpl extends SaveableImpl implements EnumSchema {
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
+    java.util.Optional<String> name;
+
+    if (__doc.containsKey("name")) {
+      try {
+        name =
+            LoaderInstances
+                .uri_optional_StringInstance_True_False_None
+                .loadField(__doc.get("name"), __baseUri, __loadingOptions);
+      } catch (ValidationException e) {
+        name = null; // won't be used but prevents compiler from complaining.
+        final String __message = "the `name` field is not valid because:";
+        __errors.add(new ValidationException(__message, e));
+      }
+
+    } else {
+      name = null;
+    }
+
+    Boolean __original_is_null = name == null;
+    if (name == null) {
+      if (__docRoot != null) {
+        name = java.util.Optional.of(__docRoot);
+      } else {
+        name = java.util.Optional.of("_:" + java.util.UUID.randomUUID().toString());
+      }
+    }
+    if (__original_is_null) {
+        __baseUri = __baseUri_;
+    } else {
+        __baseUri = (String) name.orElse(null);
+    }
     java.util.List<String> symbols;
     try {
       symbols =
@@ -95,11 +137,11 @@ public class EnumSchemaImpl extends SaveableImpl implements EnumSchema {
       final String __message = "the `symbols` field is not valid because:";
       __errors.add(new ValidationException(__message, e));
     }
-    enum_d961d79c225752b9fadb617367615ab176b47d77 type;
+    Enum_name type;
     try {
       type =
           LoaderInstances
-              .typedsl_enum_d961d79c225752b9fadb617367615ab176b47d77_2
+              .typedsl_Enum_name_2
               .loadField(__doc.get("type"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       type = null; // won't be used but prevents compiler from complaining.
@@ -109,7 +151,8 @@ public class EnumSchemaImpl extends SaveableImpl implements EnumSchema {
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
+    this.name = (java.util.Optional<String>) name;
     this.symbols = (java.util.List<String>) symbols;
-    this.type = (enum_d961d79c225752b9fadb617367615ab176b47d77) type;
+    this.type = (Enum_name) type;
   }
 }
