@@ -124,7 +124,7 @@ public class InputArraySchemaImpl extends SaveableImpl implements InputArraySche
       try {
         name =
             LoaderInstances
-                .uri_optional_StringInstance_True_False_None
+                .uri_optional_StringInstance_True_False_None_None
                 .loadField(__doc.get("name"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         name = null; // won't be used but prevents compiler from complaining.
@@ -153,7 +153,7 @@ public class InputArraySchemaImpl extends SaveableImpl implements InputArraySche
     try {
       items =
           LoaderInstances
-              .uri_union_of_CWLType_or_InputRecordSchema_or_InputEnumSchema_or_InputArraySchema_or_StringInstance_or_array_of_union_of_CWLType_or_InputRecordSchema_or_InputEnumSchema_or_InputArraySchema_or_StringInstance_False_True_2
+              .uri_union_of_CWLType_or_InputRecordSchema_or_InputEnumSchema_or_InputArraySchema_or_StringInstance_or_array_of_union_of_CWLType_or_InputRecordSchema_or_InputEnumSchema_or_InputArraySchema_or_StringInstance_False_True_2_None
               .loadField(__doc.get("items"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       items = null; // won't be used but prevents compiler from complaining.

@@ -103,7 +103,7 @@ public class RecordFieldImpl extends SaveableImpl implements RecordField {
       try {
         name =
             LoaderInstances
-                .uri_StringInstance_True_False_None
+                .uri_StringInstance_True_False_None_None
                 .loadField(__doc.get("name"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         name = null; // won't be used but prevents compiler from complaining.

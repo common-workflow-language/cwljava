@@ -215,7 +215,7 @@ public class CommandOutputRecordFieldImpl extends SaveableImpl implements Comman
       try {
         name =
             LoaderInstances
-                .uri_StringInstance_True_False_None
+                .uri_StringInstance_True_False_None_None
                 .loadField(__doc.get("name"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         name = null; // won't be used but prevents compiler from complaining.
@@ -320,7 +320,7 @@ public class CommandOutputRecordFieldImpl extends SaveableImpl implements Comman
       try {
         format =
             LoaderInstances
-                .uri_union_of_NullInstance_or_StringInstance_or_ExpressionLoader_True_False_None
+                .uri_union_of_NullInstance_or_StringInstance_or_ExpressionLoader_True_False_None_None
                 .loadField(__doc.get("format"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         format = null; // won't be used but prevents compiler from complaining.

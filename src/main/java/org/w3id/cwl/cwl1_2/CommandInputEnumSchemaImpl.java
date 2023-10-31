@@ -136,7 +136,7 @@ public class CommandInputEnumSchemaImpl extends SaveableImpl implements CommandI
       try {
         name =
             LoaderInstances
-                .uri_optional_StringInstance_True_False_None
+                .uri_optional_StringInstance_True_False_None_None
                 .loadField(__doc.get("name"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         name = null; // won't be used but prevents compiler from complaining.
@@ -165,7 +165,7 @@ public class CommandInputEnumSchemaImpl extends SaveableImpl implements CommandI
     try {
       symbols =
           LoaderInstances
-              .uri_array_of_StringInstance_True_False_None
+              .uri_array_of_StringInstance_True_False_None_None
               .loadField(__doc.get("symbols"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       symbols = null; // won't be used but prevents compiler from complaining.
