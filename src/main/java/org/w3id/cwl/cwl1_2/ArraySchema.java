@@ -33,5 +33,5 @@ public interface ArraySchema extends Saveable {
    * Must be `array`   * </BLOCKQUOTE>
    */
 
-  enum_d062602be0b4b8fd33e69e29a841317b6ab665bc getType();
+  Array_name getType();
 }

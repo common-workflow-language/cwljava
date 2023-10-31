@@ -52,7 +52,7 @@ public class OutputEnumSchemaImpl extends SaveableImpl implements OutputEnumSche
     return this.symbols;
   }
 
-  private enum_d961d79c225752b9fadb617367615ab176b47d77 type;
+  private Enum_name type;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#type</I><BR>
@@ -60,7 +60,7 @@ public class OutputEnumSchemaImpl extends SaveableImpl implements OutputEnumSche
    * Must be `enum`   * </BLOCKQUOTE>
    */
 
-  public enum_d961d79c225752b9fadb617367615ab176b47d77 getType() {
+  public Enum_name getType() {
     return this.type;
   }
 
@@ -160,11 +160,11 @@ public class OutputEnumSchemaImpl extends SaveableImpl implements OutputEnumSche
       final String __message = "the `symbols` field is not valid because:";
       __errors.add(new ValidationException(__message, e));
     }
-    enum_d961d79c225752b9fadb617367615ab176b47d77 type;
+    Enum_name type;
     try {
       type =
           LoaderInstances
-              .typedsl_enum_d961d79c225752b9fadb617367615ab176b47d77_2
+              .typedsl_Enum_name_2
               .loadField(__doc.get("type"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       type = null; // won't be used but prevents compiler from complaining.
@@ -208,10 +208,10 @@ public class OutputEnumSchemaImpl extends SaveableImpl implements OutputEnumSche
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
+    this.name = (java.util.Optional<String>) name;
     this.symbols = (java.util.List<String>) symbols;
-    this.type = (enum_d961d79c225752b9fadb617367615ab176b47d77) type;
+    this.type = (Enum_name) type;
     this.label = (java.util.Optional<String>) label;
     this.doc = (Object) doc;
-    this.name = (java.util.Optional<String>) name;
   }
 }

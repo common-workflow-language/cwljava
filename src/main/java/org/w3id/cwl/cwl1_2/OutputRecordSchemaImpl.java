@@ -52,7 +52,7 @@ public class OutputRecordSchemaImpl extends SaveableImpl implements OutputRecord
     return this.fields;
   }
 
-  private enum_d9cba076fca539106791a4f46d198c7fcfbdb779 type;
+  private Record_name type;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#type</I><BR>
@@ -60,7 +60,7 @@ public class OutputRecordSchemaImpl extends SaveableImpl implements OutputRecord
    * Must be `record`   * </BLOCKQUOTE>
    */
 
-  public enum_d9cba076fca539106791a4f46d198c7fcfbdb779 getType() {
+  public Record_name getType() {
     return this.type;
   }
 
@@ -166,11 +166,11 @@ public class OutputRecordSchemaImpl extends SaveableImpl implements OutputRecord
     } else {
       fields = null;
     }
-    enum_d9cba076fca539106791a4f46d198c7fcfbdb779 type;
+    Record_name type;
     try {
       type =
           LoaderInstances
-              .typedsl_enum_d9cba076fca539106791a4f46d198c7fcfbdb779_2
+              .typedsl_Record_name_2
               .loadField(__doc.get("type"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       type = null; // won't be used but prevents compiler from complaining.
@@ -215,7 +215,7 @@ public class OutputRecordSchemaImpl extends SaveableImpl implements OutputRecord
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
     this.fields = (java.util.Optional<java.util.List<Object>>) fields;
-    this.type = (enum_d9cba076fca539106791a4f46d198c7fcfbdb779) type;
+    this.type = (Record_name) type;
     this.label = (java.util.Optional<String>) label;
     this.doc = (Object) doc;
     this.name = (java.util.Optional<String>) name;

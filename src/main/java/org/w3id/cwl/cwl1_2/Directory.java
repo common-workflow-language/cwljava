@@ -23,8 +23,8 @@ import org.w3id.cwl.cwl1_2.utils.Saveable;
  Directories are represented as objects with `class` of `Directory`.  Directory objects have
  a number of properties that provide metadata about the directory.
  
- The `location` property of a Directory is a URI that uniquely identifies
- the directory.  Implementations must support the file:// URI scheme and may
+ The `location` property of a Directory is a IRI that uniquely identifies
+ the directory.  Implementations must support the file:// IRI scheme and may
  support other schemes such as http://.  Alternately to `location`,
  implementations must also accept the `path` property on Directory, which
  must be a filesystem path available on the same host as the CWL runner (for
@@ -53,7 +53,7 @@ import org.w3id.cwl.cwl1_2.utils.Saveable;
  first and have local values of `path` assigned.
  
  Directory objects in CommandLineTool output must provide either a
- `location` URI or a `path` property in the context of the tool execution
+ `location` IRI or a `path` property in the context of the tool execution
  runtime (local to the compute node, or within the executing container).
  
  An ExpressionTool may forward file references from input to output by using

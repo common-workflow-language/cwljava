@@ -40,7 +40,7 @@ public interface OutputArraySchema extends ArraySchema, OutputSchema, Saveable {
    * Must be `array`   * </BLOCKQUOTE>
    */
 
-  enum_d062602be0b4b8fd33e69e29a841317b6ab665bc getType();
+  Array_name getType();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Labeled/label</I><BR>
    * <BLOCKQUOTE>
