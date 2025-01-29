@@ -197,7 +197,7 @@ public class OperationInputParameterImpl extends SaveableImpl implements Operati
     return this.loadListing;
   }
 
-  private Object default_;
+  private java.util.Optional<Object> default_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#default</I><BR>
@@ -209,7 +209,7 @@ public class OperationInputParameterImpl extends SaveableImpl implements Operati
    *    * </BLOCKQUOTE>
    */
 
-  public Object getDefault() {
+  public java.util.Optional<Object> getDefault() {
     return this.default_;
   }
 
@@ -361,7 +361,7 @@ public class OperationInputParameterImpl extends SaveableImpl implements Operati
       try {
         format =
             LoaderInstances
-                .uri_union_of_NullInstance_or_StringInstance_or_array_of_StringInstance_or_ExpressionLoader_True_False_None_None
+                .uri_union_of_NullInstance_or_StringInstance_or_array_of_StringInstance_or_ExpressionLoader_True_False_None_True
                 .loadField(__doc.get("format"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         format = null; // won't be used but prevents compiler from complaining.
@@ -406,13 +406,13 @@ public class OperationInputParameterImpl extends SaveableImpl implements Operati
     } else {
       loadListing = null;
     }
-    Object default_;
+    java.util.Optional<Object> default_;
 
     if (__doc.containsKey("default")) {
       try {
         default_ =
             LoaderInstances
-                .union_of_NullInstance_or_File_or_Directory_or_AnyInstance
+                .optional_CWLObjectType
                 .loadField(__doc.get("default"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         default_ = null; // won't be used but prevents compiler from complaining.
@@ -445,7 +445,7 @@ public class OperationInputParameterImpl extends SaveableImpl implements Operati
     this.format = (Object) format;
     this.loadContents = (java.util.Optional<Boolean>) loadContents;
     this.loadListing = (java.util.Optional<LoadListingEnum>) loadListing;
-    this.default_ = (Object) default_;
+    this.default_ = (java.util.Optional<Object>) default_;
     this.type = (Object) type;
   }
 }

@@ -19,7 +19,7 @@ import org.w3id.cwl.cwl1_1.utils.Saveable;
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#InputRecordField</I><BR>This interface is implemented by {@link InputRecordFieldImpl}<BR>
  */
-public interface InputRecordField extends RecordField, FieldBase, InputFormat, LoadContents, Saveable {
+public interface InputRecordField extends CWLRecordField, FieldBase, InputFormat, LoadContents, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#RecordField/name</I><BR>
    * <BLOCKQUOTE>

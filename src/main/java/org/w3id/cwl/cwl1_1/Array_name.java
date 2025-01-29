@@ -16,22 +16,22 @@ package org.w3id.cwl.cwl1_1;
 
 import org.w3id.cwl.cwl1_1.utils.ValidationException;
 
-public enum enum_d961d79c225752b9fadb617367615ab176b47d77 {
-  ENUM("enum");
+public enum Array_name {
+  ARRAY("array");
 
-  private static String[] symbols = new String[] {"enum"};
+  private static String[] symbols = new String[] {"array"};
   private String docVal;
 
-  private enum_d961d79c225752b9fadb617367615ab176b47d77(final String docVal) {
+  private Array_name(final String docVal) {
     this.docVal = docVal;
   }
 
-  public static enum_d961d79c225752b9fadb617367615ab176b47d77 fromDocumentVal(final String docVal) {
-    for(final enum_d961d79c225752b9fadb617367615ab176b47d77 val : enum_d961d79c225752b9fadb617367615ab176b47d77.values()) {
+  public static Array_name fromDocumentVal(final String docVal) {
+    for(final Array_name val : Array_name.values()) {
       if(val.docVal.equals(docVal)) {
         return val;
       }
     }
-    throw new ValidationException(String.format("Expected one of %s", enum_d961d79c225752b9fadb617367615ab176b47d77.symbols, docVal));
+    throw new ValidationException(String.format("Expected one of %s", Array_name.symbols, docVal));
   }
 }

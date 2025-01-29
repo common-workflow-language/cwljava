@@ -59,7 +59,9 @@ public class RecordFieldImpl extends SaveableImpl implements RecordField {
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#type</I><BR>
    * <BLOCKQUOTE>
-   * The field type
+   * The field type. If it is an array, it indicates
+   * that the field type is a union type of its elements.
+   * Its elements may be duplicated.
    *    * </BLOCKQUOTE>
    */
 
@@ -103,7 +105,7 @@ public class RecordFieldImpl extends SaveableImpl implements RecordField {
       try {
         name =
             LoaderInstances
-                .uri_StringInstance_True_False_None
+                .uri_StringInstance_True_False_None_None
                 .loadField(__doc.get("name"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         name = null; // won't be used but prevents compiler from complaining.
@@ -144,7 +146,7 @@ public class RecordFieldImpl extends SaveableImpl implements RecordField {
     try {
       type =
           LoaderInstances
-              .typedsl_union_of_PrimitiveType_or_RecordSchema_or_EnumSchema_or_ArraySchema_or_StringInstance_or_array_of_union_of_PrimitiveType_or_RecordSchema_or_EnumSchema_or_ArraySchema_or_StringInstance_2
+              .typedsl_union_of_PrimitiveType_or_RecordSchema_or_EnumSchema_or_ArraySchema_or_MapSchema_or_UnionSchema_or_StringInstance_or_array_of_union_of_PrimitiveType_or_RecordSchema_or_EnumSchema_or_ArraySchema_or_MapSchema_or_UnionSchema_or_StringInstance_2
               .loadField(__doc.get("type"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       type = null; // won't be used but prevents compiler from complaining.

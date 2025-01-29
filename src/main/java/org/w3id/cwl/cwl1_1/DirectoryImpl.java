@@ -213,7 +213,7 @@ public class DirectoryImpl extends SaveableImpl implements Directory {
     try {
       class_ =
           LoaderInstances
-              .uri_Directory_class_False_True_None
+              .uri_Directory_class_False_True_None_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.
@@ -226,7 +226,7 @@ public class DirectoryImpl extends SaveableImpl implements Directory {
       try {
         location =
             LoaderInstances
-                .uri_optional_StringInstance_False_False_None
+                .uri_optional_StringInstance_False_False_None_None
                 .loadField(__doc.get("location"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         location = null; // won't be used but prevents compiler from complaining.
@@ -243,7 +243,7 @@ public class DirectoryImpl extends SaveableImpl implements Directory {
       try {
         path =
             LoaderInstances
-                .uri_optional_StringInstance_False_False_None
+                .uri_optional_StringInstance_False_False_None_None
                 .loadField(__doc.get("path"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         path = null; // won't be used but prevents compiler from complaining.

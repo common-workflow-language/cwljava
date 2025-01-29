@@ -40,7 +40,7 @@ public interface InputEnumSchema extends EnumSchema, InputSchema, Saveable {
    * Must be `enum`   * </BLOCKQUOTE>
    */
 
-  enum_d961d79c225752b9fadb617367615ab176b47d77 getType();
+  Enum_name getType();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Labeled/label</I><BR>
    * <BLOCKQUOTE>

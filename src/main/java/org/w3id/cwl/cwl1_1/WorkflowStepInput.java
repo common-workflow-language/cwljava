@@ -133,7 +133,7 @@ public interface WorkflowStepInput extends Identified, Sink, LoadContents, Label
    *    * </BLOCKQUOTE>
    */
 
-  Object getDefault();
+  java.util.Optional<Object> getDefault();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowStepInput/valueFrom</I><BR>
    * <BLOCKQUOTE>

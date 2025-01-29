@@ -19,7 +19,7 @@ import org.w3id.cwl.cwl1_1.utils.Saveable;
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#InputArraySchema</I><BR>This interface is implemented by {@link InputArraySchemaImpl}<BR>
  */
-public interface InputArraySchema extends ArraySchema, InputSchema, Saveable {
+public interface InputArraySchema extends CWLArraySchema, InputSchema, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#IOSchema/name</I><BR>
    * <BLOCKQUOTE>
@@ -40,7 +40,7 @@ public interface InputArraySchema extends ArraySchema, InputSchema, Saveable {
    * Must be `array`   * </BLOCKQUOTE>
    */
 
-  enum_d062602be0b4b8fd33e69e29a841317b6ab665bc getType();
+  Array_name getType();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Labeled/label</I><BR>
    * <BLOCKQUOTE>

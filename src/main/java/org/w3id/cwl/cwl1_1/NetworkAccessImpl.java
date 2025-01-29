@@ -101,7 +101,7 @@ public class NetworkAccessImpl extends SaveableImpl implements NetworkAccess {
     try {
       class_ =
           LoaderInstances
-              .uri_NetworkAccess_class_False_True_None
+              .uri_NetworkAccess_class_False_True_None_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.

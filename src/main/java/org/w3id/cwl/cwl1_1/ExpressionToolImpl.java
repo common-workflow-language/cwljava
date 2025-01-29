@@ -218,7 +218,7 @@ public class ExpressionToolImpl extends SaveableImpl implements ExpressionTool {
       try {
         id =
             LoaderInstances
-                .uri_optional_StringInstance_True_False_None
+                .uri_optional_StringInstance_True_False_None_None
                 .loadField(__doc.get("id"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         id = null; // won't be used but prevents compiler from complaining.
@@ -247,7 +247,7 @@ public class ExpressionToolImpl extends SaveableImpl implements ExpressionTool {
     try {
       class_ =
           LoaderInstances
-              .uri_ExpressionTool_class_False_True_None
+              .uri_ExpressionTool_class_False_True_None_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.
@@ -350,7 +350,7 @@ public class ExpressionToolImpl extends SaveableImpl implements ExpressionTool {
       try {
         cwlVersion =
             LoaderInstances
-                .uri_optional_CWLVersion_False_True_None
+                .uri_optional_CWLVersion_False_True_None_None
                 .loadField(__doc.get("cwlVersion"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         cwlVersion = null; // won't be used but prevents compiler from complaining.

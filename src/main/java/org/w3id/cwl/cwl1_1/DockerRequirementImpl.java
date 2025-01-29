@@ -207,7 +207,7 @@ public class DockerRequirementImpl extends SaveableImpl implements DockerRequire
     try {
       class_ =
           LoaderInstances
-              .uri_DockerRequirement_class_False_True_None
+              .uri_DockerRequirement_class_False_True_None_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.

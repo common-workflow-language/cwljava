@@ -19,7 +19,7 @@ import org.w3id.cwl.cwl1_2.utils.Saveable;
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#OutputArraySchema</I><BR>This interface is implemented by {@link OutputArraySchemaImpl}<BR>
  */
-public interface OutputArraySchema extends ArraySchema, OutputSchema, Saveable {
+public interface OutputArraySchema extends CWLArraySchema, OutputSchema, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#IOSchema/name</I><BR>
    * <BLOCKQUOTE>

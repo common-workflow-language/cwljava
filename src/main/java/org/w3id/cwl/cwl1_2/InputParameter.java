@@ -150,5 +150,5 @@ public interface InputParameter extends Parameter, InputFormat, LoadContents, Sa
    *    * </BLOCKQUOTE>
    */
 
-  Object getDefault();
+  java.util.Optional<Object> getDefault();
 }
