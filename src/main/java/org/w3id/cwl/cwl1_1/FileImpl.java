@@ -372,7 +372,7 @@ public class FileImpl extends SaveableImpl implements File {
     try {
       class_ =
           LoaderInstances
-              .uri_File_class_False_True_None
+              .uri_File_class_False_True_None_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.
@@ -385,7 +385,7 @@ public class FileImpl extends SaveableImpl implements File {
       try {
         location =
             LoaderInstances
-                .uri_optional_StringInstance_False_False_None
+                .uri_optional_StringInstance_False_False_None_None
                 .loadField(__doc.get("location"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         location = null; // won't be used but prevents compiler from complaining.
@@ -402,7 +402,7 @@ public class FileImpl extends SaveableImpl implements File {
       try {
         path =
             LoaderInstances
-                .uri_optional_StringInstance_False_False_None
+                .uri_optional_StringInstance_False_False_None_None
                 .loadField(__doc.get("path"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         path = null; // won't be used but prevents compiler from complaining.
@@ -538,7 +538,7 @@ public class FileImpl extends SaveableImpl implements File {
       try {
         format =
             LoaderInstances
-                .uri_optional_StringInstance_True_False_None
+                .uri_optional_StringInstance_True_False_None_True
                 .loadField(__doc.get("format"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         format = null; // won't be used but prevents compiler from complaining.

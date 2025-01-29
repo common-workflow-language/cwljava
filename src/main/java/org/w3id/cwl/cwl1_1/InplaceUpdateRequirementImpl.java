@@ -116,7 +116,7 @@ public class InplaceUpdateRequirementImpl extends SaveableImpl implements Inplac
     try {
       class_ =
           LoaderInstances
-              .uri_InplaceUpdateRequirement_class_False_True_None
+              .uri_InplaceUpdateRequirement_class_False_True_None_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.

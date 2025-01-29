@@ -77,7 +77,7 @@ public class MultipleInputFeatureRequirementImpl extends SaveableImpl implements
     try {
       class_ =
           LoaderInstances
-              .uri_MultipleInputFeatureRequirement_class_False_True_None
+              .uri_MultipleInputFeatureRequirement_class_False_True_None_None
               .loadField(__doc.get("class"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
       class_ = null; // won't be used but prevents compiler from complaining.

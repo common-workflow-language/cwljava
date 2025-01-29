@@ -19,7 +19,7 @@ import org.w3id.cwl.cwl1_1.utils.Saveable;
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#OutputRecordSchema</I><BR>This interface is implemented by {@link OutputRecordSchemaImpl}<BR>
  */
-public interface OutputRecordSchema extends RecordSchema, OutputSchema, Saveable {
+public interface OutputRecordSchema extends CWLRecordSchema, OutputSchema, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#IOSchema/name</I><BR>
    * <BLOCKQUOTE>
@@ -40,7 +40,7 @@ public interface OutputRecordSchema extends RecordSchema, OutputSchema, Saveable
    * Must be `record`   * </BLOCKQUOTE>
    */
 
-  enum_d9cba076fca539106791a4f46d198c7fcfbdb779 getType();
+  Record_name getType();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Labeled/label</I><BR>
    * <BLOCKQUOTE>

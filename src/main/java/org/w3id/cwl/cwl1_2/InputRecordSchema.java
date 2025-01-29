@@ -19,7 +19,7 @@ import org.w3id.cwl.cwl1_2.utils.Saveable;
 /**
 * Auto-generated interface for <I>https://w3id.org/cwl/cwl#InputRecordSchema</I><BR>This interface is implemented by {@link InputRecordSchemaImpl}<BR>
  */
-public interface InputRecordSchema extends RecordSchema, InputSchema, Saveable {
+public interface InputRecordSchema extends CWLRecordSchema, InputSchema, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#IOSchema/name</I><BR>
    * <BLOCKQUOTE>

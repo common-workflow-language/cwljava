@@ -157,7 +157,7 @@ public interface WorkflowInputParameter extends InputParameter, Saveable {
    *    * </BLOCKQUOTE>
    */
 
-  Object getDefault();
+  java.util.Optional<Object> getDefault();
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#type</I><BR>
    * <BLOCKQUOTE>

@@ -39,7 +39,9 @@ public interface RecordField extends Documented, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#type</I><BR>
    * <BLOCKQUOTE>
-   * The field type
+   * The field type. If it is an array, it indicates
+   * that the field type is a union type of its elements.
+   * Its elements may be duplicated.
    *    * </BLOCKQUOTE>
    */
 

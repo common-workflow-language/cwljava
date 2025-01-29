@@ -174,7 +174,7 @@ public class SoftwarePackageImpl extends SaveableImpl implements SoftwarePackage
       try {
         specs =
             LoaderInstances
-                .uri_optional_array_of_StringInstance_False_False_None
+                .uri_optional_array_of_StringInstance_False_False_None_True
                 .loadField(__doc.get("specs"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         specs = null; // won't be used but prevents compiler from complaining.

@@ -162,7 +162,7 @@ public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepI
     return this.label;
   }
 
-  private Object default_;
+  private java.util.Optional<Object> default_;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/salad#default</I><BR>
@@ -173,7 +173,7 @@ public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepI
    *    * </BLOCKQUOTE>
    */
 
-  public Object getDefault() {
+  public java.util.Optional<Object> getDefault() {
     return this.default_;
   }
 
@@ -247,7 +247,7 @@ public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepI
       try {
         id =
             LoaderInstances
-                .uri_optional_StringInstance_True_False_None
+                .uri_optional_StringInstance_True_False_None_None
                 .loadField(__doc.get("id"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         id = null; // won't be used but prevents compiler from complaining.
@@ -278,7 +278,7 @@ public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepI
       try {
         source =
             LoaderInstances
-                .uri_union_of_NullInstance_or_StringInstance_or_array_of_StringInstance_False_False_2
+                .uri_union_of_NullInstance_or_StringInstance_or_array_of_StringInstance_False_False_2_None
                 .loadField(__doc.get("source"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         source = null; // won't be used but prevents compiler from complaining.
@@ -357,13 +357,13 @@ public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepI
     } else {
       label = null;
     }
-    Object default_;
+    java.util.Optional<Object> default_;
 
     if (__doc.containsKey("default")) {
       try {
         default_ =
             LoaderInstances
-                .union_of_NullInstance_or_File_or_Directory_or_AnyInstance
+                .optional_CWLObjectType
                 .loadField(__doc.get("default"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         default_ = null; // won't be used but prevents compiler from complaining.
@@ -400,7 +400,7 @@ public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepI
     this.loadContents = (java.util.Optional<Boolean>) loadContents;
     this.loadListing = (java.util.Optional<LoadListingEnum>) loadListing;
     this.label = (java.util.Optional<String>) label;
-    this.default_ = (Object) default_;
+    this.default_ = (java.util.Optional<Object>) default_;
     this.valueFrom = (Object) valueFrom;
   }
 }

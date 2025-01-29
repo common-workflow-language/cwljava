@@ -10,6 +10,11 @@ public class ConstantMaps {
   static {
     vocab.put("Any", "https://w3id.org/cwl/salad#Any");
     vocab.put("ArraySchema", "https://w3id.org/cwl/salad#ArraySchema");
+    vocab.put("CWLArraySchema", "https://w3id.org/cwl/cwl#CWLArraySchema");
+    vocab.put("CWLInputFile", "https://w3id.org/cwl/cwl#CWLInputFile");
+    vocab.put("CWLObjectType", "https://w3id.org/cwl/cwl#CWLObjectType");
+    vocab.put("CWLRecordField", "https://w3id.org/cwl/cwl#CWLRecordField");
+    vocab.put("CWLRecordSchema", "https://w3id.org/cwl/cwl#CWLRecordSchema");
     vocab.put("CWLType", "https://w3id.org/cwl/cwl#CWLType");
     vocab.put("CWLVersion", "https://w3id.org/cwl/cwl#CWLVersion");
     vocab.put("CommandInputArraySchema", "https://w3id.org/cwl/cwl#CommandInputArraySchema");
@@ -58,6 +63,7 @@ public class ConstantMaps {
     vocab.put("LoadContents", "https://w3id.org/cwl/cwl#LoadContents");
     vocab.put("LoadListingEnum", "https://w3id.org/cwl/cwl#LoadListingEnum");
     vocab.put("LoadListingRequirement", "LoadListingRequirement");
+    vocab.put("MapSchema", "https://w3id.org/cwl/salad#MapSchema");
     vocab.put("MultipleInputFeatureRequirement", "MultipleInputFeatureRequirement");
     vocab.put("NetworkAccess", "NetworkAccess");
     vocab.put("OutputArraySchema", "https://w3id.org/cwl/cwl#OutputArraySchema");
@@ -85,6 +91,7 @@ public class ConstantMaps {
     vocab.put("StepInputExpressionRequirement", "StepInputExpressionRequirement");
     vocab.put("SubworkflowFeatureRequirement", "SubworkflowFeatureRequirement");
     vocab.put("ToolTimeLimit", "ToolTimeLimit");
+    vocab.put("UnionSchema", "https://w3id.org/cwl/salad#UnionSchema");
     vocab.put("WorkReuse", "WorkReuse");
     vocab.put("Workflow", "Workflow");
     vocab.put("WorkflowInputParameter", "https://w3id.org/cwl/cwl#WorkflowInputParameter");
@@ -112,6 +119,7 @@ public class ConstantMaps {
     vocab.put("float", "http://www.w3.org/2001/XMLSchema#float");
     vocab.put("int", "http://www.w3.org/2001/XMLSchema#int");
     vocab.put("long", "http://www.w3.org/2001/XMLSchema#long");
+    vocab.put("map", "map");
     vocab.put("merge_flattened", "https://w3id.org/cwl/cwl#LinkMergeMethod/merge_flattened");
     vocab.put("merge_nested", "https://w3id.org/cwl/cwl#LinkMergeMethod/merge_nested");
     vocab.put("nested_crossproduct", "https://w3id.org/cwl/cwl#ScatterMethod/nested_crossproduct");
@@ -123,6 +131,7 @@ public class ConstantMaps {
     vocab.put("stdin", "https://w3id.org/cwl/cwl#stdin");
     vocab.put("stdout", "https://w3id.org/cwl/cwl#stdout");
     vocab.put("string", "http://www.w3.org/2001/XMLSchema#string");
+    vocab.put("union", "union");
     vocab.put("v1.0", "https://w3id.org/cwl/cwl#v1.0");
     vocab.put("v1.0.dev4", "https://w3id.org/cwl/cwl#v1.0.dev4");
     vocab.put("v1.1", "https://w3id.org/cwl/cwl#v1.1");
@@ -131,6 +140,11 @@ public class ConstantMaps {
 
     rvocab.put("https://w3id.org/cwl/salad#Any", "Any");
     rvocab.put("https://w3id.org/cwl/salad#ArraySchema", "ArraySchema");
+    rvocab.put("https://w3id.org/cwl/cwl#CWLArraySchema", "CWLArraySchema");
+    rvocab.put("https://w3id.org/cwl/cwl#CWLInputFile", "CWLInputFile");
+    rvocab.put("https://w3id.org/cwl/cwl#CWLObjectType", "CWLObjectType");
+    rvocab.put("https://w3id.org/cwl/cwl#CWLRecordField", "CWLRecordField");
+    rvocab.put("https://w3id.org/cwl/cwl#CWLRecordSchema", "CWLRecordSchema");
     rvocab.put("https://w3id.org/cwl/cwl#CWLType", "CWLType");
     rvocab.put("https://w3id.org/cwl/cwl#CWLVersion", "CWLVersion");
     rvocab.put("https://w3id.org/cwl/cwl#CommandInputArraySchema", "CommandInputArraySchema");
@@ -179,6 +193,7 @@ public class ConstantMaps {
     rvocab.put("https://w3id.org/cwl/cwl#LoadContents", "LoadContents");
     rvocab.put("https://w3id.org/cwl/cwl#LoadListingEnum", "LoadListingEnum");
     rvocab.put("LoadListingRequirement", "LoadListingRequirement");
+    rvocab.put("https://w3id.org/cwl/salad#MapSchema", "MapSchema");
     rvocab.put("MultipleInputFeatureRequirement", "MultipleInputFeatureRequirement");
     rvocab.put("NetworkAccess", "NetworkAccess");
     rvocab.put("https://w3id.org/cwl/cwl#OutputArraySchema", "OutputArraySchema");
@@ -206,6 +221,7 @@ public class ConstantMaps {
     rvocab.put("StepInputExpressionRequirement", "StepInputExpressionRequirement");
     rvocab.put("SubworkflowFeatureRequirement", "SubworkflowFeatureRequirement");
     rvocab.put("ToolTimeLimit", "ToolTimeLimit");
+    rvocab.put("https://w3id.org/cwl/salad#UnionSchema", "UnionSchema");
     rvocab.put("WorkReuse", "WorkReuse");
     rvocab.put("Workflow", "Workflow");
     rvocab.put("https://w3id.org/cwl/cwl#WorkflowInputParameter", "WorkflowInputParameter");
@@ -233,6 +249,7 @@ public class ConstantMaps {
     rvocab.put("http://www.w3.org/2001/XMLSchema#float", "float");
     rvocab.put("http://www.w3.org/2001/XMLSchema#int", "int");
     rvocab.put("http://www.w3.org/2001/XMLSchema#long", "long");
+    rvocab.put("map", "map");
     rvocab.put("https://w3id.org/cwl/cwl#LinkMergeMethod/merge_flattened", "merge_flattened");
     rvocab.put("https://w3id.org/cwl/cwl#LinkMergeMethod/merge_nested", "merge_nested");
     rvocab.put("https://w3id.org/cwl/cwl#ScatterMethod/nested_crossproduct", "nested_crossproduct");
@@ -244,6 +261,7 @@ public class ConstantMaps {
     rvocab.put("https://w3id.org/cwl/cwl#stdin", "stdin");
     rvocab.put("https://w3id.org/cwl/cwl#stdout", "stdout");
     rvocab.put("http://www.w3.org/2001/XMLSchema#string", "string");
+    rvocab.put("union", "union");
     rvocab.put("https://w3id.org/cwl/cwl#v1.0", "v1.0");
     rvocab.put("https://w3id.org/cwl/cwl#v1.0.dev4", "v1.0.dev4");
     rvocab.put("https://w3id.org/cwl/cwl#v1.1", "v1.1");
