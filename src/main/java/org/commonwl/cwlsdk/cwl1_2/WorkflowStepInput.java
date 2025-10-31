@@ -135,12 +135,12 @@ public interface WorkflowStepInput extends Identified, Sink, LoadContents, Label
   LoadingOptions getLoadingOptions();
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
+   * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowStepInput/id</I><BR>
    * <BLOCKQUOTE>
-   * The unique identifier for this object.   * </BLOCKQUOTE>
+   * The unique identifier of the source input field name.   * </BLOCKQUOTE>
    */
 
-  java.util.Optional<String> getId();
+  String getId();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#source</I><BR>
    * <BLOCKQUOTE>

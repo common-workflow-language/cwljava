@@ -106,12 +106,12 @@ public interface WorkflowStep extends Identified, Labeled, Documented, Saveable 
   LoadingOptions getLoadingOptions();
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
+   * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowStep/id</I><BR>
    * <BLOCKQUOTE>
-   * The unique identifier for this object.   * </BLOCKQUOTE>
+   * The unique identifier for this WorkflowStep.   * </BLOCKQUOTE>
    */
 
-  java.util.Optional<String> getId();
+  String getId();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Labeled/label</I><BR>
    * <BLOCKQUOTE>

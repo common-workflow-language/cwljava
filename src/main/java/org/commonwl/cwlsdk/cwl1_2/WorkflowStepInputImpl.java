@@ -143,15 +143,15 @@ public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepI
     return this.extensionFields_;
   }
 
-  private java.util.Optional<String> id;
+  private String id;
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
+   * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowStepInput/id</I><BR>
    * <BLOCKQUOTE>
-   * The unique identifier for this object.   * </BLOCKQUOTE>
+   * The unique identifier of the source input field name.   * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<String> getId() {
+  public String getId() {
     return this.id;
   }
 
@@ -329,13 +329,13 @@ public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepI
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
-    java.util.Optional<String> id;
+    String id;
 
     if (__doc.containsKey("id")) {
       try {
         id =
             LoaderInstances
-                .uri_optional_StringInstance_True_False_None_None
+                .uri_StringInstance_True_False_None_None
                 .loadField(__doc.get("id"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         id = null; // won't be used but prevents compiler from complaining.
@@ -347,19 +347,14 @@ public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepI
       id = null;
     }
 
-    Boolean __original_is_null = id == null;
     if (id == null) {
       if (__docRoot != null) {
-        id = java.util.Optional.of(__docRoot);
+        id = __docRoot;
       } else {
-        id = java.util.Optional.of("_:" + java.util.UUID.randomUUID().toString());
+        throw new ValidationException("Missing id");
       }
     }
-    if (__original_is_null) {
-        __baseUri = __baseUri_;
-    } else {
-        __baseUri = (String) id.orElse(null);
-    }
+    __baseUri = (String) id;
     Object source;
 
     if (__doc.containsKey("source")) {
@@ -499,7 +494,7 @@ public class WorkflowStepInputImpl extends SaveableImpl implements WorkflowStepI
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.id = (java.util.Optional<String>) id;
+    this.id = (String) id;
     this.source = (Object) source;
     this.linkMerge = (java.util.Optional<LinkMergeMethod>) linkMerge;
     this.pickValue = (java.util.Optional<PickValueMethod>) pickValue;

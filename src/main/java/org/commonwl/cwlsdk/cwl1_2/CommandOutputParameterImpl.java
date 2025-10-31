@@ -35,15 +35,15 @@ public class CommandOutputParameterImpl extends SaveableImpl implements CommandO
     return this.extensionFields_;
   }
 
-  private java.util.Optional<String> id;
+  private String id;
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
+   * Getter for property <I>https://w3id.org/cwl/cwl#Parameter/id</I><BR>
    * <BLOCKQUOTE>
-   * The unique identifier for this object.   * </BLOCKQUOTE>
+   * The unique identifier for this Parameter.   * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<String> getId() {
+  public String getId() {
     return this.id;
   }
 
@@ -213,13 +213,13 @@ public class CommandOutputParameterImpl extends SaveableImpl implements CommandO
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
-    java.util.Optional<String> id;
+    String id;
 
     if (__doc.containsKey("id")) {
       try {
         id =
             LoaderInstances
-                .uri_optional_StringInstance_True_False_None_None
+                .uri_StringInstance_True_False_None_None
                 .loadField(__doc.get("id"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         id = null; // won't be used but prevents compiler from complaining.
@@ -231,19 +231,14 @@ public class CommandOutputParameterImpl extends SaveableImpl implements CommandO
       id = null;
     }
 
-    Boolean __original_is_null = id == null;
     if (id == null) {
       if (__docRoot != null) {
-        id = java.util.Optional.of(__docRoot);
+        id = __docRoot;
       } else {
-        id = java.util.Optional.of("_:" + java.util.UUID.randomUUID().toString());
+        throw new ValidationException("Missing id");
       }
     }
-    if (__original_is_null) {
-        __baseUri = __baseUri_;
-    } else {
-        __baseUri = (String) id.orElse(null);
-    }
+    __baseUri = (String) id;
     java.util.Optional<String> label;
 
     if (__doc.containsKey("label")) {
@@ -364,7 +359,7 @@ public class CommandOutputParameterImpl extends SaveableImpl implements CommandO
     this.secondaryFiles = (Object) secondaryFiles;
     this.streamable = (java.util.Optional<Boolean>) streamable;
     this.doc = (Object) doc;
-    this.id = (java.util.Optional<String>) id;
+    this.id = (String) id;
     this.format = (Object) format;
     this.type = (Object) type;
     this.outputBinding = (java.util.Optional<CommandOutputBinding>) outputBinding;

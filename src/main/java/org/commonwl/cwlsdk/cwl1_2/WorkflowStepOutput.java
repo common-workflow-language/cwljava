@@ -35,10 +35,10 @@ public interface WorkflowStepOutput extends Identified, Saveable {
   LoadingOptions getLoadingOptions();
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
+   * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowStepOutput/id</I><BR>
    * <BLOCKQUOTE>
-   * The unique identifier for this object.   * </BLOCKQUOTE>
+   * The unique identifier of the workflow parameter to export.   * </BLOCKQUOTE>
    */
 
-  java.util.Optional<String> getId();
+  String getId();
 }

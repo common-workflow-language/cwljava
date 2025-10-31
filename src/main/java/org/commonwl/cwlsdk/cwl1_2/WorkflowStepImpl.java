@@ -114,15 +114,15 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
     return this.extensionFields_;
   }
 
-  private java.util.Optional<String> id;
+  private String id;
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
+   * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowStep/id</I><BR>
    * <BLOCKQUOTE>
-   * The unique identifier for this object.   * </BLOCKQUOTE>
+   * The unique identifier for this WorkflowStep.   * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<String> getId() {
+  public String getId() {
     return this.id;
   }
 
@@ -298,13 +298,13 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
-    java.util.Optional<String> id;
+    String id;
 
     if (__doc.containsKey("id")) {
       try {
         id =
             LoaderInstances
-                .uri_optional_StringInstance_True_False_None_None
+                .uri_StringInstance_True_False_None_None
                 .loadField(__doc.get("id"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         id = null; // won't be used but prevents compiler from complaining.
@@ -316,19 +316,14 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
       id = null;
     }
 
-    Boolean __original_is_null = id == null;
     if (id == null) {
       if (__docRoot != null) {
-        id = java.util.Optional.of(__docRoot);
+        id = __docRoot;
       } else {
-        id = java.util.Optional.of("_:" + java.util.UUID.randomUUID().toString());
+        throw new ValidationException("Missing id");
       }
     }
-    if (__original_is_null) {
-        __baseUri = __baseUri_;
-    } else {
-        __baseUri = (String) id.orElse(null);
-    }
+    __baseUri = (String) id;
     java.util.Optional<String> label;
 
     if (__doc.containsKey("label")) {
@@ -484,7 +479,7 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.id = (java.util.Optional<String>) id;
+    this.id = (String) id;
     this.label = (java.util.Optional<String>) label;
     this.doc = (Object) doc;
     this.in = (java.util.List<Object>) in;
