@@ -6,7 +6,7 @@ git ls-files -- tests | grep cwl$ | xargs -I{} bash -c 'cwltool --relax-path-che
 mkdir valid-examples; for file in $(cat valid_examples.txt); do cp ${file} valid-examples/valid_$(basename ${file}) ; done
 
 # build the Java parser
-schema-salad-tool --codegen java --codegen-package org.w3id.cwl.cwl1_1 --codegen-examples ~/cwl-v1.1/valid-examples ~/cwl-v1.1/CommonWorkflowLanguage.yml
+schema-salad-tool --codegen java --codegen-package org.commonwl.cwlsdk.cwl1_1 --codegen-examples ~/cwl-v1.1/valid-examples ~/cwl-v1.1/CommonWorkflowLanguage.yml
 
 mvn test
-# copy missing files into ./src/test/resources/org/w3id/cwl/cwl1_1/utils
+# copy missing files into ./src/test/resources/org/commonwl/cwlsdk/cwl1_1/utils
