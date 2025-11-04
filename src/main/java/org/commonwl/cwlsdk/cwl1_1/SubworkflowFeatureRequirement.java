@@ -31,7 +31,7 @@ public interface SubworkflowFeatureRequirement extends ProcessRequirement, Savea
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#SubworkflowFeatureRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'SubworkflowFeatureRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;SubworkflowFeatureRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   SubworkflowFeatureRequirement_class getClass_();

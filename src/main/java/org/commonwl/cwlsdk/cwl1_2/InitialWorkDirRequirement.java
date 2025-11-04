@@ -40,7 +40,7 @@ public interface InitialWorkDirRequirement extends ProcessRequirement, Saveable 
    * The list of files or subdirectories that must be staged prior
    * to executing the command line tool.
    * 
-   * Return type of each expression must validate as `["null",
+   * Return type of each expression must validate as `[&quot;null&quot;,
    * File, Directory, Dirent, {type: array, items: [File,
    * Directory]}]`.
    * 

@@ -71,7 +71,7 @@ import org.commonwl.cwlsdk.cwl1_1.utils.ValidationException;
  
  If [EnvVarRequirement](#EnvVarRequirement) is specified alongside a
  DockerRequirement, the environment variables must be provided to Docker
- using `--env` or `--env-file` and interact with the container's preexisting
+ using `--env` or `--env-file` and interact with the container&#x27;s preexisting
  environment as defined by Docker.
   </BLOCKQUOTE>
  */
@@ -91,7 +91,7 @@ public class DockerRequirementImpl extends SaveableImpl implements DockerRequire
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#DockerRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'DockerRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;DockerRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   public DockerRequirement_class getClass_() {

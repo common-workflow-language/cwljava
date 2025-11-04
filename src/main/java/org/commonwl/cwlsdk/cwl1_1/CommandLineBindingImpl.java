@@ -24,8 +24,8 @@ import org.commonwl.cwlsdk.cwl1_1.utils.ValidationException;
 * Auto-generated class implementation for <I>https://w3id.org/cwl/cwl#CommandLineBinding</I><BR> <BLOCKQUOTE>
  
  When listed under `inputBinding` in the input schema, the term
- "value" refers to the the corresponding value in the input object.  For
- binding objects listed in `CommandLineTool.arguments`, the term "value"
+ &quot;value&quot; refers to the the corresponding value in the input object.  For
+ binding objects listed in `CommandLineTool.arguments`, the term &quot;value&quot;
  refers to the effective value after evaluating `valueFrom`.
  
  The binding behavior when building the command line depends on the data
@@ -82,7 +82,7 @@ public class CommandLineBindingImpl extends SaveableImpl implements CommandLineB
    * Only valid when `type: File` or is an array of `items: File`.
    * 
    * Read up to the first 64 KiB of text from the file and place it in the
-   * "contents" field of the file object for use by expressions.
+   * &quot;contents&quot; field of the file object for use by expressions.
    *    * </BLOCKQUOTE>
    */
 

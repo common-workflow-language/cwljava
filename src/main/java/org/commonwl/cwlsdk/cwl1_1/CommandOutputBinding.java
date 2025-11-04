@@ -42,7 +42,7 @@ public interface CommandOutputBinding extends LoadContents, Saveable {
    * Only valid when `type: File` or is an array of `items: File`.
    * 
    * Read up to the first 64 KiB of text from the file and place it in the
-   * "contents" field of the file object for use by expressions.
+   * &quot;contents&quot; field of the file object for use by expressions.
    *    * </BLOCKQUOTE>
    */
 
@@ -75,9 +75,9 @@ public interface CommandOutputBinding extends LoadContents, Saveable {
    * match and return files/directories which actually exist.
    * 
    * If the value of glob is a relative path pattern (does not
-   * begin with a slash '/') then it is resolved relative to the
+   * begin with a slash &#x27;/&#x27;) then it is resolved relative to the
    * output directory.  If the value of the glob is an absolute
-   * path pattern (it does begin with a slash '/') then it must
+   * path pattern (it does begin with a slash &#x27;/&#x27;) then it must
    * refer to a path within the output directory.  It is an error
    * if any glob resolves to a path outside the output directory.
    * Specifically this means globs that resolve to paths outside the output

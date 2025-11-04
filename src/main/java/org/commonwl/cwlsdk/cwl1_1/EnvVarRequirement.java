@@ -31,7 +31,7 @@ public interface EnvVarRequirement extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#EnvVarRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'EnvVarRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;EnvVarRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   EnvVarRequirement_class getClass_();

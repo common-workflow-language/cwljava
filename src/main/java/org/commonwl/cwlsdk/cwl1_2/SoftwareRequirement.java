@@ -31,7 +31,7 @@ public interface SoftwareRequirement extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#SoftwareRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'SoftwareRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;SoftwareRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   SoftwareRequirement_class getClass_();

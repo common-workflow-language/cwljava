@@ -40,12 +40,12 @@ import org.commonwl.cwlsdk.cwl1_2.utils.ValidationException;
  
  The `source` field on each workflow step input parameter expresses
  the data links that contribute to the value of the step input
- parameter (the "sink").  A workflow step can only begin execution
+ parameter (the &quot;sink&quot;).  A workflow step can only begin execution
  when every data link connected to a step has been fulfilled.
  
  The `outputSource` field on each workflow step input parameter
  expresses the data links that contribute to the value of the
- workflow output parameter (the "sink").  Workflow execution cannot
+ workflow output parameter (the &quot;sink&quot;).  Workflow execution cannot
  complete successfully until every data link connected to an output
  parameter has been fulfilled.
  
@@ -236,7 +236,7 @@ public class WorkflowImpl extends SaveableImpl implements Workflow {
    * represents the type of operation, preferably defined within an ontology.
    * 
    * For example, in the domain of bioinformatics, one can use an IRI from
-   * the EDAM Ontology's [Operation concept nodes](http://edamontology.org/operation_0004),
+   * the EDAM Ontology&#x27;s [Operation concept nodes](http://edamontology.org/operation_0004),
    * like [Alignment](http://edamontology.org/operation_2928),
    * or [Clustering](http://edamontology.org/operation_3432); or a more
    * specific Operation concept like

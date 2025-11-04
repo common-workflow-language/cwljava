@@ -36,7 +36,7 @@ public interface ToolTimeLimit extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ToolTimeLimit/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'ToolTimeLimit'   * </BLOCKQUOTE>
+   * Always &#x27;ToolTimeLimit&#x27;   * </BLOCKQUOTE>
    */
 
   ToolTimeLimit_class getClass_();

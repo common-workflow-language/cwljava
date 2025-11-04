@@ -38,7 +38,7 @@ public interface WorkReuse extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#WorkReuse/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'WorkReuse'   * </BLOCKQUOTE>
+   * Always &#x27;WorkReuse&#x27;   * </BLOCKQUOTE>
    */
 
   WorkReuse_class getClass_();

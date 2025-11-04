@@ -40,7 +40,7 @@ public interface InitialWorkDirRequirement extends ProcessRequirement, Saveable 
    * designated output directory prior to executing the command line tool.
    * 
    * May be an expression. If so, the expression return value must validate as
-   * `{type: array, items: ["null", File, File[], Directory, Directory[], Dirent]}`.
+   * `{type: array, items: [&quot;null&quot;, File, File[], Directory, Directory[], Dirent]}`.
    * 
    * Files or Directories which are listed in the input parameters and
    * appear in the `InitialWorkDirRequirement` listing must have their

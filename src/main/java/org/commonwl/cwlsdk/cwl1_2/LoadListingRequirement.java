@@ -31,7 +31,7 @@ public interface LoadListingRequirement extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#LoadListingRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'LoadListingRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;LoadListingRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   LoadListingRequirement_class getClass_();

@@ -42,7 +42,7 @@ public class LoadListingRequirementImpl extends SaveableImpl implements LoadList
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#LoadListingRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'LoadListingRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;LoadListingRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   public LoadListingRequirement_class getClass_() {

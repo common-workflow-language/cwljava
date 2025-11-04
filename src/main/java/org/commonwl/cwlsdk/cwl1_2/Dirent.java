@@ -37,7 +37,7 @@ public interface Dirent extends Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#entryname</I><BR>
    * <BLOCKQUOTE>
-   * The "target" name of the file or subdirectory.  If `entry` is
+   * The &quot;target&quot; name of the file or subdirectory.  If `entry` is
    * a File or Directory, the `entryname` field overrides the value
    * of `basename` of the File or Directory object.
    * 

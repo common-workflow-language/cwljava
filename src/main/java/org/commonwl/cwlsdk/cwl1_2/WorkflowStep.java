@@ -30,7 +30,7 @@ import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
  [ScatterFeatureRequirement](#ScatterFeatureRequirement) must be specified
  in the workflow or workflow step requirements.
  
- A "scatter" operation specifies that the associated workflow step or
+ A &quot;scatter&quot; operation specifies that the associated workflow step or
  subworkflow should execute separately over a list of input elements.  Each
  job making up a scatter operation is independent and may be executed
  concurrently.
@@ -69,7 +69,7 @@ import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
  # Conditional execution (Optional)
  
  Conditional execution makes execution of a step conditional on an
- expression.  A step that is not executed is "skipped".  A skipped
+ expression.  A step that is not executed is &quot;skipped&quot;.  A skipped
  step produces `null` for all output parameters.
  
  The condition is evaluated after `scatter`, using the input object

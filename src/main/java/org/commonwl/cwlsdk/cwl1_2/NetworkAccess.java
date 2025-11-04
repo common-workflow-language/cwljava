@@ -44,7 +44,7 @@ public interface NetworkAccess extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#NetworkAccess/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'NetworkAccess'   * </BLOCKQUOTE>
+   * Always &#x27;NetworkAccess&#x27;   * </BLOCKQUOTE>
    */
 
   NetworkAccess_class getClass_();

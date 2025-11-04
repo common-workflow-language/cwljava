@@ -150,7 +150,7 @@ public interface CommandLineTool extends Process, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineTool/stdin</I><BR>
    * <BLOCKQUOTE>
-   * A path to a file whose contents must be piped into the command's
+   * A path to a file whose contents must be piped into the command&#x27;s
    * standard input stream.
    *    * </BLOCKQUOTE>
    */
@@ -159,7 +159,7 @@ public interface CommandLineTool extends Process, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineTool/stderr</I><BR>
    * <BLOCKQUOTE>
-   * Capture the command's standard error stream to a file written to
+   * Capture the command&#x27;s standard error stream to a file written to
    * the designated output directory.
    * 
    * If `stderr` is a string, it specifies the file name to use.
@@ -175,7 +175,7 @@ public interface CommandLineTool extends Process, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineTool/stdout</I><BR>
    * <BLOCKQUOTE>
-   * Capture the command's standard output stream to a file written to
+   * Capture the command&#x27;s standard output stream to a file written to
    * the designated output directory.
    * 
    * If `stdout` is a string, it specifies the file name to use.

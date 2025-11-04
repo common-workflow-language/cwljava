@@ -46,18 +46,18 @@ import org.commonwl.cwlsdk.cwl1_1.utils.Saveable;
  scatter](#WorkflowStep) operation, there may be multiple inbound data links
  listed in the `source` field.  The values from the input links are merged
  depending on the method specified in the `linkMerge` field.  If not
- specified, the default method is "merge_nested".
+ specified, the default method is &quot;merge_nested&quot;.
  
  * **merge_nested**
  
    The input must be an array consisting of exactly one entry for each
-   input link.  If "merge_nested" is specified with a single link, the value
+   input link.  If &quot;merge_nested&quot; is specified with a single link, the value
    from the link must be wrapped in a single-item list.
  
  * **merge_flattened**
  
    1. The source and sink parameters must be compatible types, or the source
-      type must be compatible with single element from the "items" type of
+      type must be compatible with single element from the &quot;items&quot; type of
       the destination array parameter.
    2. Source parameters which are arrays are concatenated.
       Source parameters which are single element types are appended as
@@ -89,7 +89,7 @@ public interface WorkflowStepInput extends Identified, Sink, LoadContents, Label
    * Getter for property <I>https://w3id.org/cwl/cwl#Sink/linkMerge</I><BR>
    * <BLOCKQUOTE>
    * The method to use to merge multiple inbound links into a single array.
-   * If not specified, the default method is "merge_nested".
+   * If not specified, the default method is &quot;merge_nested&quot;.
    *    * </BLOCKQUOTE>
    */
 
@@ -100,7 +100,7 @@ public interface WorkflowStepInput extends Identified, Sink, LoadContents, Label
    * Only valid when `type: File` or is an array of `items: File`.
    * 
    * Read up to the first 64 KiB of text from the file and place it in the
-   * "contents" field of the file object for use by expressions.
+   * &quot;contents&quot; field of the file object for use by expressions.
    *    * </BLOCKQUOTE>
    */
 
@@ -154,9 +154,9 @@ public interface WorkflowStepInput extends Identified, Sink, LoadContents, Label
    * The `self` value in the parameter reference or expression must be
    * 1. `null` if there is no `source` field
    * 2. the value of the parameter(s) specified in the `source` field when this
-   * workflow input parameter **is not** specified in this workflow step's `scatter` field.
+   * workflow input parameter **is not** specified in this workflow step&#x27;s `scatter` field.
    * 3. an element of the parameter specified in the `source` field when this workflow input
-   * parameter **is** specified in this workflow step's `scatter` field.
+   * parameter **is** specified in this workflow step&#x27;s `scatter` field.
    * 
    * The value of `inputs` in the parameter reference or expression must be
    * the input object to the workflow step after assigning the `source`

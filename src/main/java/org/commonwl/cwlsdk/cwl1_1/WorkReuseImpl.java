@@ -49,7 +49,7 @@ public class WorkReuseImpl extends SaveableImpl implements WorkReuse {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#WorkReuse/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'WorkReuse'   * </BLOCKQUOTE>
+   * Always &#x27;WorkReuse&#x27;   * </BLOCKQUOTE>
    */
 
   public WorkReuse_class getClass_() {

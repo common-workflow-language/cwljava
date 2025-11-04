@@ -47,7 +47,7 @@ public class ToolTimeLimitImpl extends SaveableImpl implements ToolTimeLimit {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ToolTimeLimit/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'ToolTimeLimit'   * </BLOCKQUOTE>
+   * Always &#x27;ToolTimeLimit&#x27;   * </BLOCKQUOTE>
    */
 
   public ToolTimeLimit_class getClass_() {

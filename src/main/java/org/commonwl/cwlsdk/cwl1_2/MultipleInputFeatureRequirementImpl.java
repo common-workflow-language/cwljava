@@ -42,7 +42,7 @@ public class MultipleInputFeatureRequirementImpl extends SaveableImpl implements
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#MultipleInputFeatureRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'MultipleInputFeatureRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;MultipleInputFeatureRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   public MultipleInputFeatureRequirement_class getClass_() {

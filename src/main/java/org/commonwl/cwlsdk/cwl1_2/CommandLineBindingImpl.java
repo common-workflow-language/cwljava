@@ -24,8 +24,8 @@ import org.commonwl.cwlsdk.cwl1_2.utils.ValidationException;
 * Auto-generated class implementation for <I>https://w3id.org/cwl/cwl#CommandLineBinding</I><BR> <BLOCKQUOTE>
  
  When listed under `inputBinding` in the input schema, the term
- "value" refers to the corresponding value in the input object.  For
- binding objects listed in `CommandLineTool.arguments`, the term "value"
+ &quot;value&quot; refers to the corresponding value in the input object.  For
+ binding objects listed in `CommandLineTool.arguments`, the term &quot;value&quot;
  refers to the effective value after evaluating `valueFrom`.
  
  The binding behavior when building the command line depends on the data

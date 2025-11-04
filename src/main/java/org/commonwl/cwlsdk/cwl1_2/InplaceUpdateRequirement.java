@@ -59,7 +59,7 @@ public interface InplaceUpdateRequirement extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#InplaceUpdateRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'InplaceUpdateRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;InplaceUpdateRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   InplaceUpdateRequirement_class getClass_();

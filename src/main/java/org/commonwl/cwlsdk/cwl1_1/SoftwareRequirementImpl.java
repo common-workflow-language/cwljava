@@ -42,7 +42,7 @@ public class SoftwareRequirementImpl extends SaveableImpl implements SoftwareReq
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#SoftwareRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'SoftwareRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;SoftwareRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   public SoftwareRequirement_class getClass_() {
