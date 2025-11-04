@@ -31,7 +31,7 @@ public interface StepInputExpressionRequirement extends ProcessRequirement, Save
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#StepInputExpressionRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'StepInputExpressionRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;StepInputExpressionRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   StepInputExpressionRequirement_class getClass_();

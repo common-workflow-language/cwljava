@@ -42,7 +42,7 @@ public class SubworkflowFeatureRequirementImpl extends SaveableImpl implements S
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#SubworkflowFeatureRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'SubworkflowFeatureRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;SubworkflowFeatureRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   public SubworkflowFeatureRequirement_class getClass_() {

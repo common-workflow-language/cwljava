@@ -42,7 +42,7 @@ public class ScatterFeatureRequirementImpl extends SaveableImpl implements Scatt
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ScatterFeatureRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'ScatterFeatureRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;ScatterFeatureRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   public ScatterFeatureRequirement_class getClass_() {

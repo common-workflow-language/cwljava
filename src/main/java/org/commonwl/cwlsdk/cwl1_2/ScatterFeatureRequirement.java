@@ -31,7 +31,7 @@ public interface ScatterFeatureRequirement extends ProcessRequirement, Saveable 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ScatterFeatureRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'ScatterFeatureRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;ScatterFeatureRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   ScatterFeatureRequirement_class getClass_();

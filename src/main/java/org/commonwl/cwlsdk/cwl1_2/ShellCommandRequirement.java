@@ -36,7 +36,7 @@ public interface ShellCommandRequirement extends ProcessRequirement, Saveable {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ShellCommandRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'ShellCommandRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;ShellCommandRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   ShellCommandRequirement_class getClass_();

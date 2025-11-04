@@ -43,7 +43,7 @@ public class InlineJavascriptRequirementImpl extends SaveableImpl implements Inl
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#InlineJavascriptRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'InlineJavascriptRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;InlineJavascriptRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   public InlineJavascriptRequirement_class getClass_() {

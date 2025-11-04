@@ -37,8 +37,8 @@ import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
  outputs).
  
  If no `location` or `path` is specified, a file object must specify
- `contents` with the UTF-8 text content of the file.  This is a "file
- literal".  File literals do not correspond to external resources, but are
+ `contents` with the UTF-8 text content of the file.  This is a &quot;file
+ literal&quot;.  File literals do not correspond to external resources, but are
  created on disk with `contents` with when needed for executing a tool.
  Where appropriate, expressions can return file literals to define new files
  on a runtime.  The maximum size of `contents` is 64 kilobytes.
@@ -136,8 +136,8 @@ public interface File extends Saveable {
    * field to `location`, and remove the `path` field.
    * 
    * If the `path` contains [POSIX shell metacharacters](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_02)
-   * (`|`,`&`, `;`, `<`, `>`, `(`,`)`, `$`,`` ` ``, `\`, `"`, `'`,
-   * `<space>`, `<tab>`, and `<newline>`) or characters
+   * (`|`,`&amp;`, `;`, `&lt;`, `&gt;`, `(`,`)`, `$`,`` ` ``, `\`, `&quot;`, `&#x27;`,
+   * `&lt;space&gt;`, `&lt;tab&gt;`, and `&lt;newline&gt;`) or characters
    * [not allowed](http://www.iana.org/assignments/idna-tables-6.3.0/idna-tables-6.3.0.xhtml)
    * for [Internationalized Domain Names for Applications](https://tools.ietf.org/html/rfc6452)
    * then implementations may terminate the process with a
@@ -168,7 +168,7 @@ public interface File extends Saveable {
    * Getter for property <I>https://w3id.org/cwl/cwl#File/dirname</I><BR>
    * <BLOCKQUOTE>
    * The name of the directory containing file, that is, the path leading up
-   * to the final slash in the path such that `dirname + '/' + basename ==
+   * to the final slash in the path such that `dirname + &#x27;/&#x27; + basename ==
    * path`.
    * 
    * The implementation must set this field based on the value of `path`
@@ -212,7 +212,7 @@ public interface File extends Saveable {
    * Getter for property <I>https://w3id.org/cwl/cwl#File/checksum</I><BR>
    * <BLOCKQUOTE>
    * Optional hash code for validating file integrity.  Currently, must be in the form
-   * "sha1$ + hexadecimal string" using the SHA-1 algorithm.
+   * &quot;sha1$ + hexadecimal string&quot; using the SHA-1 algorithm.
    *    * </BLOCKQUOTE>
    */
 
@@ -248,10 +248,10 @@ public interface File extends Saveable {
    * input file format is the same, `owl:equivalentClass` or
    * `rdfs:subClassOf` the format required by the input parameter.
    * `owl:equivalentClass` is transitive with `rdfs:subClassOf`, e.g. if
-   * `<B> owl:equivalentClass <C>` and `<B> owl:subclassOf <A>` then infer
-   * `<C> owl:subclassOf <A>`.
+   * `&lt;B&gt; owl:equivalentClass &lt;C&gt;` and `&lt;B&gt; owl:subclassOf &lt;A&gt;` then infer
+   * `&lt;C&gt; owl:subclassOf &lt;A&gt;`.
    * 
-   * File format ontologies may be provided in the "$schemas" metadata at the
+   * File format ontologies may be provided in the &quot;$schemas&quot; metadata at the
    * root of the document.  If no ontologies are specified in `$schemas`, the
    * runtime may perform exact file format matches.
    *    * </BLOCKQUOTE>

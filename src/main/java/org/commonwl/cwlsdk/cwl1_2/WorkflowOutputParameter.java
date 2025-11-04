@@ -72,7 +72,7 @@ public interface WorkflowOutputParameter extends OutputParameter, Saveable {
    * `path` or `location` and `basename` fields set, or an array consisting
    * of strings or File or Directory objects.  It is legal to reference an
    * unchanged File or Directory object taken from input as a secondaryFile.
-   * The expression may return "null" in which case there is no secondaryFile
+   * The expression may return &quot;null&quot; in which case there is no secondaryFile
    * from that expression.
    * 
    * To work on non-filename-preserving storage systems, portable tool
@@ -142,7 +142,7 @@ public interface WorkflowOutputParameter extends OutputParameter, Saveable {
    * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowOutputParameter/linkMerge</I><BR>
    * <BLOCKQUOTE>
    * The method to use to merge multiple sources into a single array.
-   * If not specified, the default method is "merge_nested".
+   * If not specified, the default method is &quot;merge_nested&quot;.
    *    * </BLOCKQUOTE>
    */
 

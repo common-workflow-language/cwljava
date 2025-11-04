@@ -24,24 +24,24 @@ import org.commonwl.cwlsdk.cwl1_1.utils.ValidationException;
 * Auto-generated class implementation for <I>https://w3id.org/cwl/cwl#ResourceRequirement</I><BR> <BLOCKQUOTE>
  Specify basic hardware resource requirements.
  
- "min" is the minimum amount of a resource that must be reserved to schedule
- a job. If "min" cannot be satisfied, the job should not be run.
+ &quot;min&quot; is the minimum amount of a resource that must be reserved to schedule
+ a job. If &quot;min&quot; cannot be satisfied, the job should not be run.
  
- "max" is the maximum amount of a resource that the job shall be permitted
+ &quot;max&quot; is the maximum amount of a resource that the job shall be permitted
  to use. If a node has sufficient resources, multiple jobs may be scheduled
- on a single node provided each job's "max" resource requirements are
- met. If a job attempts to exceed its "max" resource allocation, an
+ on a single node provided each job&#x27;s &quot;max&quot; resource requirements are
+ met. If a job attempts to exceed its &quot;max&quot; resource allocation, an
  implementation may deny additional resources, which may result in job
  failure.
  
- If "min" is specified but "max" is not, then "max" == "min"
- If "max" is specified by "min" is not, then "min" == "max".
+ If &quot;min&quot; is specified but &quot;max&quot; is not, then &quot;max&quot; == &quot;min&quot;
+ If &quot;max&quot; is specified by &quot;min&quot; is not, then &quot;min&quot; == &quot;max&quot;.
  
- It is an error if max < min.
+ It is an error if max &lt; min.
  
  It is an error if the value of any of these fields is negative.
  
- If neither "min" nor "max" is specified for a resource, use the default values below.
+ If neither &quot;min&quot; nor &quot;max&quot; is specified for a resource, use the default values below.
   </BLOCKQUOTE>
  */
 public class ResourceRequirementImpl extends SaveableImpl implements ResourceRequirement {
@@ -60,7 +60,7 @@ public class ResourceRequirementImpl extends SaveableImpl implements ResourceReq
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ResourceRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'ResourceRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;ResourceRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   public ResourceRequirement_class getClass_() {

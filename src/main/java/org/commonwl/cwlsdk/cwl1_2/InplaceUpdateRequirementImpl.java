@@ -70,7 +70,7 @@ public class InplaceUpdateRequirementImpl extends SaveableImpl implements Inplac
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#InplaceUpdateRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'InplaceUpdateRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;InplaceUpdateRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   public InplaceUpdateRequirement_class getClass_() {

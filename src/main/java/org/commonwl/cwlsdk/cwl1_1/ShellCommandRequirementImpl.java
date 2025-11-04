@@ -47,7 +47,7 @@ public class ShellCommandRequirementImpl extends SaveableImpl implements ShellCo
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#ShellCommandRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'ShellCommandRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;ShellCommandRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   public ShellCommandRequirement_class getClass_() {

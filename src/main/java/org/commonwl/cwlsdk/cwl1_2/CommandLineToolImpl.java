@@ -186,7 +186,7 @@ public class CommandLineToolImpl extends SaveableImpl implements CommandLineTool
    * represents the type of operation, preferably defined within an ontology.
    * 
    * For example, in the domain of bioinformatics, one can use an IRI from
-   * the EDAM Ontology's [Operation concept nodes](http://edamontology.org/operation_0004),
+   * the EDAM Ontology&#x27;s [Operation concept nodes](http://edamontology.org/operation_0004),
    * like [Alignment](http://edamontology.org/operation_2928),
    * or [Clustering](http://edamontology.org/operation_3432); or a more
    * specific Operation concept like
@@ -246,7 +246,7 @@ public class CommandLineToolImpl extends SaveableImpl implements CommandLineTool
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineTool/stdin</I><BR>
    * <BLOCKQUOTE>
-   * A path to a file whose contents must be piped into the command's
+   * A path to a file whose contents must be piped into the command&#x27;s
    * standard input stream.
    *    * </BLOCKQUOTE>
    */
@@ -260,7 +260,7 @@ public class CommandLineToolImpl extends SaveableImpl implements CommandLineTool
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineTool/stderr</I><BR>
    * <BLOCKQUOTE>
-   * Capture the command's standard error stream to a file written to
+   * Capture the command&#x27;s standard error stream to a file written to
    * the designated output directory.
    * 
    * If `stderr` is a string, it specifies the file name to use.
@@ -281,11 +281,11 @@ public class CommandLineToolImpl extends SaveableImpl implements CommandLineTool
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineTool/stdout</I><BR>
    * <BLOCKQUOTE>
-   * Capture the command's standard output stream to a file written to
+   * Capture the command&#x27;s standard output stream to a file written to
    * the designated output directory.
    * 
    * If the `CommandLineTool` contains logically chained commands
-   * (e.g. `echo a && echo b`) `stdout` must include the output of
+   * (e.g. `echo a &amp;&amp; echo b`) `stdout` must include the output of
    * every command.
    * 
    * If `stdout` is a string, it specifies the file name to use.

@@ -48,7 +48,7 @@ import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
  input links are merged depending on the method specified in the
  `linkMerge` field.  If both `linkMerge` and `pickValue` are null
  or not specified, and there is more than one element in the
- `source` array, the default method is "merge_nested".
+ `source` array, the default method is &quot;merge_nested&quot;.
  
  If both `linkMerge` and `pickValue` are null or not specified, and
  there is only a single element in the `source`, then the input
@@ -58,13 +58,13 @@ import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
  * **merge_nested**
  
    The input must be an array consisting of exactly one entry for each
-   input link.  If "merge_nested" is specified with a single link, the value
+   input link.  If &quot;merge_nested&quot; is specified with a single link, the value
    from the link must be wrapped in a single-item list.
  
  * **merge_flattened**
  
    1. The source and sink parameters must be compatible types, or the source
-      type must be compatible with single element from the "items" type of
+      type must be compatible with single element from the &quot;items&quot; type of
       the destination array parameter.
    2. Source parameters which are arrays are concatenated.
       Source parameters which are single element types are appended as
@@ -91,9 +91,9 @@ import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
  
    For the first level of a list input, pick the first non-null element.  The result is a scalar.
    It is an error if there is no non-null element.  Examples:
-   * `[null, x, null, y] -> x`
-   * `[null, [null], null, y] -> [null]`
-   * `[null, null, null] -> Runtime Error`
+   * `[null, x, null, y] -&gt; x`
+   * `[null, [null], null, y] -&gt; [null]`
+   * `[null, null, null] -&gt; Runtime Error`
  
    *Intended use case*: If-else pattern where the
    value comes either from a conditional step or from a default or
@@ -105,10 +105,10 @@ import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
    For the first level of a list input, pick the single non-null element.  The result is a scalar.
    It is an error if there is more than one non-null element.  Examples:
  
-   * `[null, x, null] -> x`
-   * `[null, x, null, y] -> Runtime Error`
-   * `[null, [null], null] -> [null]`
-   * `[null, null, null] -> Runtime Error`
+   * `[null, x, null] -&gt; x`
+   * `[null, x, null, y] -&gt; Runtime Error`
+   * `[null, [null], null] -&gt; [null]`
+   * `[null, null, null] -&gt; Runtime Error`
  
    *Intended use case*: Switch type patterns where developer considers
    more than one active code path as a workflow error
@@ -119,10 +119,10 @@ import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
    For the first level of a list input, pick all non-null values.
    The result is a list, which may be empty.  Examples:
  
-   * `[null, x, null] -> [x]`
-   * `[x, null, y] -> [x, y]`
-   * `[null, [x], [null]] -> [[x], [null]]`
-   * `[null, null, null] -> []`
+   * `[null, x, null] -&gt; [x]`
+   * `[x, null, y] -&gt; [x, y]`
+   * `[null, [x], [null]] -&gt; [[x], [null]]`
+   * `[null, null, null] -&gt; []`
  
    *Intended use case*: It is valid to have more than one source, but
     sources are conditional, so null sources (from skipped steps)
@@ -154,7 +154,7 @@ public interface WorkflowStepInput extends Identified, Sink, LoadContents, Label
    * Getter for property <I>https://w3id.org/cwl/cwl#Sink/linkMerge</I><BR>
    * <BLOCKQUOTE>
    * The method to use to merge multiple inbound links into a single array.
-   * If not specified, the default method is "merge_nested".
+   * If not specified, the default method is &quot;merge_nested&quot;.
    *    * </BLOCKQUOTE>
    */
 
@@ -231,9 +231,9 @@ public interface WorkflowStepInput extends Identified, Sink, LoadContents, Label
    * The `self` value in the parameter reference or expression must be
    * 1. `null` if there is no `source` field
    * 2. the value of the parameter(s) specified in the `source` field when this
-   * workflow input parameter **is not** specified in this workflow step's `scatter` field.
+   * workflow input parameter **is not** specified in this workflow step&#x27;s `scatter` field.
    * 3. an element of the parameter specified in the `source` field when this workflow input
-   * parameter **is** specified in this workflow step's `scatter` field.
+   * parameter **is** specified in this workflow step&#x27;s `scatter` field.
    * 
    * The value of `inputs` in the parameter reference or expression must be
    * the input object to the workflow step after assigning the `source`

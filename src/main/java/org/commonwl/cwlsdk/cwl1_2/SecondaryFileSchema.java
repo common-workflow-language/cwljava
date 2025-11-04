@@ -71,7 +71,7 @@ public interface SecondaryFileSchema extends Saveable {
    * `path` where the secondary file will be staged to in the
    * CommandLineTool.
    * 
-   * The expression may return "null" in which case there is no
+   * The expression may return &quot;null&quot; in which case there is no
    * secondary file from that expression.
    * 
    * To work on non-filename-preserving storage systems, portable

@@ -38,7 +38,7 @@ public interface Sink extends Saveable {
    * Getter for property <I>https://w3id.org/cwl/cwl#Sink/linkMerge</I><BR>
    * <BLOCKQUOTE>
    * The method to use to merge multiple inbound links into a single array.
-   * If not specified, the default method is "merge_nested".
+   * If not specified, the default method is &quot;merge_nested&quot;.
    *    * </BLOCKQUOTE>
    */
 

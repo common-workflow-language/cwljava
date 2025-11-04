@@ -55,7 +55,7 @@ public class NetworkAccessImpl extends SaveableImpl implements NetworkAccess {
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#NetworkAccess/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'NetworkAccess'   * </BLOCKQUOTE>
+   * Always &#x27;NetworkAccess&#x27;   * </BLOCKQUOTE>
    */
 
   public NetworkAccess_class getClass_() {

@@ -192,7 +192,7 @@ public class ExpressionToolImpl extends SaveableImpl implements ExpressionTool {
    * represents the type of operation, preferably defined within an ontology.
    * 
    * For example, in the domain of bioinformatics, one can use an IRI from
-   * the EDAM Ontology's [Operation concept nodes](http://edamontology.org/operation_0004),
+   * the EDAM Ontology&#x27;s [Operation concept nodes](http://edamontology.org/operation_0004),
    * like [Alignment](http://edamontology.org/operation_2928),
    * or [Clustering](http://edamontology.org/operation_3432); or a more
    * specific Operation concept like

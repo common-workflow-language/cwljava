@@ -47,7 +47,7 @@ public class SchemaDefRequirementImpl extends SaveableImpl implements SchemaDefR
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#SchemaDefRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'SchemaDefRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;SchemaDefRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   public SchemaDefRequirement_class getClass_() {

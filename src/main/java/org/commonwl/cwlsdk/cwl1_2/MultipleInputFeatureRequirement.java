@@ -31,7 +31,7 @@ public interface MultipleInputFeatureRequirement extends ProcessRequirement, Sav
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#MultipleInputFeatureRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'MultipleInputFeatureRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;MultipleInputFeatureRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   MultipleInputFeatureRequirement_class getClass_();

@@ -42,7 +42,7 @@ public class StepInputExpressionRequirementImpl extends SaveableImpl implements 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#StepInputExpressionRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Always 'StepInputExpressionRequirement'   * </BLOCKQUOTE>
+   * Always &#x27;StepInputExpressionRequirement&#x27;   * </BLOCKQUOTE>
    */
 
   public StepInputExpressionRequirement_class getClass_() {
