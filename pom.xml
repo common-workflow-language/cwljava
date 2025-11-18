@@ -9,7 +9,7 @@
   <version>2.0.0</version>
   <url>https://www.commonwl.org/</url>
   <properties>
-    <commonslang.version>3.19.0</commonslang.version>
+    <commonslang.version>3.20.0</commonslang.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
