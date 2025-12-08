@@ -22,7 +22,7 @@ import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
  Define an input or output parameter to a process.
   </BLOCKQUOTE>
  */
-public interface Parameter extends FieldBase, Documented, Identified, Saveable {
+public interface Parameter extends FieldBase, Documented, IdentifierRequired, Saveable {
 
   java.util.Map<String, Object> getExtensionFields();
   LoadingOptions getLoadingOptions();

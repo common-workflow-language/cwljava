@@ -54,6 +54,7 @@ public class LoaderInstances {
   public static Loader<CWLVersion> CWLVersion = new EnumLoader(CWLVersion.class);
   public static Loader<org.commonwl.cwlsdk.cwl1_2.Labeled> Labeled = new RecordLoader<org.commonwl.cwlsdk.cwl1_2.Labeled>(org.commonwl.cwlsdk.cwl1_2.Labeled.class, null, null);
   public static Loader<org.commonwl.cwlsdk.cwl1_2.Identified> Identified = new RecordLoader<org.commonwl.cwlsdk.cwl1_2.Identified>(org.commonwl.cwlsdk.cwl1_2.Identified.class, null, null);
+  public static Loader<org.commonwl.cwlsdk.cwl1_2.IdentifierRequired> IdentifierRequired = new RecordLoader<org.commonwl.cwlsdk.cwl1_2.IdentifierRequired>(org.commonwl.cwlsdk.cwl1_2.IdentifierRequired.class, null, null);
   public static Loader<LoadListingEnum> LoadListingEnum = new EnumLoader(LoadListingEnum.class);
   public static Loader<org.commonwl.cwlsdk.cwl1_2.LoadContents> LoadContents = new RecordLoader<org.commonwl.cwlsdk.cwl1_2.LoadContents>(org.commonwl.cwlsdk.cwl1_2.LoadContents.class, null, null);
   public static Loader<org.commonwl.cwlsdk.cwl1_2.FieldBase> FieldBase = new RecordLoader<org.commonwl.cwlsdk.cwl1_2.FieldBase>(org.commonwl.cwlsdk.cwl1_2.FieldBase.class, null, null);

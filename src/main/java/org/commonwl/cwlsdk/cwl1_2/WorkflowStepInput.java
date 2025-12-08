@@ -129,7 +129,7 @@ import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
     should be filtered out.
   </BLOCKQUOTE>
  */
-public interface WorkflowStepInput extends Identified, Sink, LoadContents, Labeled, Saveable {
+public interface WorkflowStepInput extends IdentifierRequired, Sink, LoadContents, Labeled, Saveable {
 
   java.util.Map<String, Object> getExtensionFields();
   LoadingOptions getLoadingOptions();

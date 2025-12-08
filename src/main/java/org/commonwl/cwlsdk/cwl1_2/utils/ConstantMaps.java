@@ -47,6 +47,7 @@ public class ConstantMaps {
     vocab.put("File", "File");
     vocab.put("IOSchema", "https://w3id.org/cwl/cwl#IOSchema");
     vocab.put("Identified", "https://w3id.org/cwl/cwl#Identified");
+    vocab.put("IdentifierRequired", "https://w3id.org/cwl/cwl#IdentifierRequired");
     vocab.put("InitialWorkDirRequirement", "InitialWorkDirRequirement");
     vocab.put("InlineJavascriptRequirement", "InlineJavascriptRequirement");
     vocab.put("InplaceUpdateRequirement", "InplaceUpdateRequirement");
@@ -190,6 +191,7 @@ public class ConstantMaps {
     rvocab.put("File", "File");
     rvocab.put("https://w3id.org/cwl/cwl#IOSchema", "IOSchema");
     rvocab.put("https://w3id.org/cwl/cwl#Identified", "Identified");
+    rvocab.put("https://w3id.org/cwl/cwl#IdentifierRequired", "IdentifierRequired");
     rvocab.put("InitialWorkDirRequirement", "InitialWorkDirRequirement");
     rvocab.put("InlineJavascriptRequirement", "InlineJavascriptRequirement");
     rvocab.put("InplaceUpdateRequirement", "InplaceUpdateRequirement");
