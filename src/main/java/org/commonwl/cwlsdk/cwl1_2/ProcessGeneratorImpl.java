@@ -21,89 +21,9 @@ import org.commonwl.cwlsdk.cwl1_2.utils.SaveableImpl;
 import org.commonwl.cwlsdk.cwl1_2.utils.ValidationException;
 
 /**
-* Auto-generated class implementation for <I>https://w3id.org/cwl/cwl#WorkflowStep</I><BR> <BLOCKQUOTE>
- A workflow step is an executable element of a workflow.  It specifies the
- underlying process implementation (such as `CommandLineTool` or another
- `Workflow`) in the `run` field and connects the input and output parameters
- of the underlying process to workflow parameters.
- 
- # Scatter/gather
- 
- To use scatter/gather,
- [ScatterFeatureRequirement](#ScatterFeatureRequirement) must be specified
- in the workflow or workflow step requirements.
- 
- A &quot;scatter&quot; operation specifies that the associated workflow step or
- subworkflow should execute separately over a list of input elements.  Each
- job making up a scatter operation is independent and may be executed
- concurrently.
- 
- The `scatter` field specifies one or more input parameters which will be
- scattered.  An input parameter may be listed more than once.  The declared
- type of each input parameter implicitly becomes an array of items of the
- input parameter type.  If a parameter is listed more than once, it becomes
- a nested array.  As a result, upstream parameters which are connected to
- scattered parameters must be arrays.
- 
- All output parameter types are also implicitly wrapped in arrays.  Each job
- in the scatter results in an entry in the output array.
- 
- If any scattered parameter runtime value is an empty array, all outputs are
- set to empty arrays and no work is done for the step, according to
- applicable scattering rules.
- 
- If `scatter` declares more than one input parameter, `scatterMethod`
- describes how to decompose the input into a discrete set of jobs.
- 
-   * **dotproduct** specifies that each of the input arrays are aligned and one
-       element taken from each array to construct each job.  It is an error
-       if all input arrays are not the same length.
- 
-   * **nested_crossproduct** specifies the Cartesian product of the inputs,
-       producing a job for every combination of the scattered inputs.  The
-       output must be nested arrays for each level of scattering, in the
-       order that the input arrays are listed in the `scatter` field.
- 
-   * **flat_crossproduct** specifies the Cartesian product of the inputs,
-       producing a job for every combination of the scattered inputs.  The
-       output arrays must be flattened to a single level, but otherwise listed in the
-       order that the input arrays are listed in the `scatter` field.
- 
- # Conditional execution (Optional)
- 
- Conditional execution makes execution of a step conditional on an
- expression.  A step that is not executed is &quot;skipped&quot;.  A skipped
- step produces `null` for all output parameters.
- 
- The condition is evaluated after `scatter`, using the input object
- of each individual scatter job.  This means over a set of scatter
- jobs, some may be executed and some may be skipped.  When the
- results are gathered, skipped steps must be `null` in the output
- arrays.
- 
- The `when` field controls conditional execution.  This is an
- expression that must be evaluated with `inputs` bound to the step
- input object (or individual scatter job), and returns a boolean
- value.  It is an error if this expression returns a value other
- than `true` or `false`.
- 
- Conditionals in CWL are an optional feature and are not required
- to be implemented by all consumers of CWL documents.  An
- implementation that does not support conditionals must return a
- fatal error when attempting to execute a workflow that uses
- conditional constructs the implementation does not support.
- 
- # Subworkflows
- 
- To specify a nested workflow as part of a workflow step,
- [SubworkflowFeatureRequirement](#SubworkflowFeatureRequirement) must be
- specified in the workflow or workflow step requirements.
- 
- It is a fatal error if a workflow directly or indirectly invokes itself as
- a subworkflow (recursive workflows are not allowed).
-  </BLOCKQUOTE>
+* Auto-generated class implementation for <I>http://commonwl.org/cwltool#ProcessGenerator</I><BR>
  */
-public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
+public class ProcessGeneratorImpl extends SaveableImpl implements ProcessGenerator {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
@@ -114,16 +34,31 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
     return this.extensionFields_;
   }
 
-  private String id;
+  private java.util.Optional<String> id;
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowStep/id</I><BR>
+   * Getter for property <I>https://w3id.org/cwl/cwl#Process/id</I><BR>
    * <BLOCKQUOTE>
-   * The unique identifier for this WorkflowStep.   * </BLOCKQUOTE>
+   * The unique identifier for this object.
+   * 
+   * Only useful for `$graph` at `Process` level. Should not be exposed
+   * to users in graphical or terminal user interfaces.
+   *    * </BLOCKQUOTE>
    */
 
-  public String getId() {
+  public java.util.Optional<String> getId() {
     return this.id;
+  }
+
+  private String class_;
+
+  /**
+   * Getter for property <I>http://commonwl.org/cwltool#ProcessGenerator/class</I><BR>
+
+   */
+
+  public String getClass_() {
+    return this.class_;
   }
 
   private java.util.Optional<String> label;
@@ -150,35 +85,41 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
     return this.doc;
   }
 
-  private java.util.List<Object> in;
+  private java.util.List<Object> inputs;
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#in</I><BR>
+   * Getter for property <I>https://w3id.org/cwl/cwl#inputs</I><BR>
    * <BLOCKQUOTE>
-   * Defines the input parameters of the workflow step.  The process is ready to
+   * Defines the input parameters of the process.  The process is ready to
    * run when all required input parameters are associated with concrete
    * values.  Input parameters include a schema for each parameter which is
-   * used to validate the input object.  It may also be used build a user
+   * used to validate the input object.  It may also be used to build a user
    * interface for constructing the input object.
+   * 
+   * When accepting an input object, all input parameters must have a value.
+   * If an input parameter is missing from the input object, it must be
+   * assigned a value of `null` (or the value of `default` for that
+   * parameter, if provided) for the purposes of validation and evaluation
+   * of expressions.
    *    * </BLOCKQUOTE>
    */
 
-  public java.util.List<Object> getIn() {
-    return this.in;
+  public java.util.List<Object> getInputs() {
+    return this.inputs;
   }
 
-  private java.util.List<Object> out;
+  private java.util.List<Object> outputs;
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#out</I><BR>
+   * Getter for property <I>https://w3id.org/cwl/cwl#outputs</I><BR>
    * <BLOCKQUOTE>
    * Defines the parameters representing the output of the process.  May be
    * used to generate and/or validate the output object.
    *    * </BLOCKQUOTE>
    */
 
-  public java.util.List<Object> getOut() {
-    return this.out;
+  public java.util.List<Object> getOutputs() {
+    return this.outputs;
   }
 
   private java.util.Optional<java.util.List<Object>> requirements;
@@ -187,7 +128,7 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
    * Getter for property <I>https://w3id.org/cwl/cwl#requirements</I><BR>
    * <BLOCKQUOTE>
    * Declares requirements that apply to either the runtime environment or the
-   * workflow engine that must be met in order to execute this workflow step.  If
+   * workflow engine that must be met in order to execute this process.  If
    * an implementation cannot satisfy all requirements, or a requirement is
    * listed which is not recognized by the implementation, it is a fatal
    * error and the implementation must not attempt to run the process,
@@ -205,7 +146,7 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
    * Getter for property <I>https://w3id.org/cwl/cwl#hints</I><BR>
    * <BLOCKQUOTE>
    * Declares hints applying to either the runtime environment or the
-   * workflow engine that may be helpful in executing this workflow step.  It is
+   * workflow engine that may be helpful in executing this process.  It is
    * not an error if an implementation cannot satisfy all hints, however
    * the implementation may report a warning.
    *    * </BLOCKQUOTE>
@@ -215,13 +156,52 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
     return this.hints;
   }
 
+  private java.util.Optional<CWLVersion> cwlVersion;
+
+  /**
+   * Getter for property <I>https://w3id.org/cwl/cwl#cwlVersion</I><BR>
+   * <BLOCKQUOTE>
+   * CWL document version. Always required at the document root. Not
+   * required for a Process embedded inside another Process.
+   *    * </BLOCKQUOTE>
+   */
+
+  public java.util.Optional<CWLVersion> getCwlVersion() {
+    return this.cwlVersion;
+  }
+
+  private java.util.Optional<java.util.List<String>> intent;
+
+  /**
+   * Getter for property <I>https://w3id.org/cwl/cwl#Process/intent</I><BR>
+   * <BLOCKQUOTE>
+   * An identifier for the type of computational operation, of this Process.
+   * Especially useful for [`Operation`](Workflow.html#Operation), but can also be used for
+   * [`CommandLineTool`](CommandLineTool.html#CommandLineTool),
+   * [`Workflow`](Workflow.html#Workflow), or [ExpressionTool](Workflow.html#ExpressionTool).
+   * 
+   * If provided, then this must be an IRI of a concept node that
+   * represents the type of operation, preferably defined within an ontology.
+   * 
+   * For example, in the domain of bioinformatics, one can use an IRI from
+   * the EDAM Ontology&#x27;s [Operation concept nodes](http://edamontology.org/operation_0004),
+   * like [Alignment](http://edamontology.org/operation_2928),
+   * or [Clustering](http://edamontology.org/operation_3432); or a more
+   * specific Operation concept like
+   * [Split read mapping](http://edamontology.org/operation_3199).
+   *    * </BLOCKQUOTE>
+   */
+
+  public java.util.Optional<java.util.List<String>> getIntent() {
+    return this.intent;
+  }
+
   private Object run;
 
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#run</I><BR>
    * <BLOCKQUOTE>
-   * Specifies the process to run.  If `run` is a string, it must be an absolute IRI
-   * or a relative path from the primary document.
+   * Specifies the process to run.
    *    * </BLOCKQUOTE>
    */
 
@@ -229,47 +209,8 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
     return this.run;
   }
 
-  private java.util.Optional<String> when;
-
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowStep/when</I><BR>
-   * <BLOCKQUOTE>
-   * If defined, only run the step when the expression evaluates to
-   * `true`.  If `false` the step is skipped.  A skipped step
-   * produces a `null` on each output.
-   *    * </BLOCKQUOTE>
-   */
-
-  public java.util.Optional<String> getWhen() {
-    return this.when;
-  }
-
-  private Object scatter;
-
-  /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#scatter</I><BR>
-
-   */
-
-  public Object getScatter() {
-    return this.scatter;
-  }
-
-  private java.util.Optional<ScatterMethod> scatterMethod;
-
-  /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#scatterMethod</I><BR>
-   * <BLOCKQUOTE>
-   * Required if `scatter` is an array of more than one element.
-   *    * </BLOCKQUOTE>
-   */
-
-  public java.util.Optional<ScatterMethod> getScatterMethod() {
-    return this.scatterMethod;
-  }
-
-  /**
-   * Used by {@link org.commonwl.cwlsdk.cwl1_2.utils.RootLoader} to construct instances of WorkflowStepImpl.
+   * Used by {@link org.commonwl.cwlsdk.cwl1_2.utils.RootLoader} to construct instances of ProcessGeneratorImpl.
    *
    * @param __doc_            Document fragment to load this record object from (presumably a
                               {@link java.util.Map}).
@@ -279,7 +220,7 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
    * @throws ValidationException If the document fragment is not a {@link java.util.Map}
    *                             or validation of fields fails.
    */
-  public WorkflowStepImpl(
+  public ProcessGeneratorImpl(
       final Object __doc_,
       final String __baseUri_,
       LoadingOptions __loadingOptions,
@@ -290,7 +231,7 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
     String __baseUri = __baseUri_;
     String __docRoot = __docRoot_;
     if (!(__doc_ instanceof java.util.Map)) {
-      throw new ValidationException("WorkflowStepImpl called on non-map");
+      throw new ValidationException("ProcessGeneratorImpl called on non-map");
     }
     final java.util.Map<String, Object> __doc = (java.util.Map<String, Object>) __doc_;
     final java.util.List<ValidationException> __errors =
@@ -298,13 +239,13 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
-    String id;
+    java.util.Optional<String> id;
 
     if (__doc.containsKey("id")) {
       try {
         id =
             LoaderInstances
-                .uri_StringInstance_True_False_None_None
+                .uri_optional_StringInstance_True_False_None_None
                 .loadField(__doc.get("id"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         id = null; // won't be used but prevents compiler from complaining.
@@ -316,14 +257,30 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
       id = null;
     }
 
+    Boolean __original_is_null = id == null;
     if (id == null) {
       if (__docRoot != null) {
-        id = __docRoot;
+        id = java.util.Optional.of(__docRoot);
       } else {
-        throw new ValidationException("Missing id");
+        id = java.util.Optional.of("_:" + java.util.UUID.randomUUID().toString());
       }
     }
-    __baseUri = (String) id;
+    if (__original_is_null) {
+        __baseUri = __baseUri_;
+    } else {
+        __baseUri = (String) id.orElse(null);
+    }
+    String class_;
+    try {
+      class_ =
+          LoaderInstances
+              .uri_StringInstance_False_True_None_None
+              .loadField(__doc.get("class"), __baseUri, __loadingOptions);
+    } catch (ValidationException e) {
+      class_ = null; // won't be used but prevents compiler from complaining.
+      final String __message = "the `class` field is not valid because:";
+      __errors.add(new ValidationException(__message, e));
+    }
     java.util.Optional<String> label;
 
     if (__doc.containsKey("label")) {
@@ -358,26 +315,26 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
     } else {
       doc = null;
     }
-    java.util.List<Object> in;
+    java.util.List<Object> inputs;
     try {
-      in =
+      inputs =
           LoaderInstances
-              .idmap_in_array_of_WorkflowStepInput
-              .loadField(__doc.get("in"), __baseUri, __loadingOptions);
+              .idmap_inputs_array_of_union_of_CommandInputParameter_or_WorkflowInputParameter_or_OperationInputParameter
+              .loadField(__doc.get("inputs"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
-      in = null; // won't be used but prevents compiler from complaining.
-      final String __message = "the `in` field is not valid because:";
+      inputs = null; // won't be used but prevents compiler from complaining.
+      final String __message = "the `inputs` field is not valid because:";
       __errors.add(new ValidationException(__message, e));
     }
-    java.util.List<Object> out;
+    java.util.List<Object> outputs;
     try {
-      out =
+      outputs =
           LoaderInstances
-              .uri_array_of_union_of_StringInstance_or_WorkflowStepOutput_True_False_None_None
-              .loadField(__doc.get("out"), __baseUri, __loadingOptions);
+              .idmap_outputs_array_of_union_of_CommandOutputParameter_or_ExpressionToolOutputParameter_or_WorkflowOutputParameter_or_OperationOutputParameter
+              .loadField(__doc.get("outputs"), __baseUri, __loadingOptions);
     } catch (ValidationException e) {
-      out = null; // won't be used but prevents compiler from complaining.
-      final String __message = "the `out` field is not valid because:";
+      outputs = null; // won't be used but prevents compiler from complaining.
+      final String __message = "the `outputs` field is not valid because:";
       __errors.add(new ValidationException(__message, e));
     }
     java.util.Optional<java.util.List<Object>> requirements;
@@ -403,7 +360,7 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
       try {
         hints =
             LoaderInstances
-                .idmap_hints_optional_array_of_AnyInstance
+                .idmap_hints_optional_array_of_union_of_InlineJavascriptRequirement_or_SchemaDefRequirement_or_LoadListingRequirement_or_DockerRequirement_or_SoftwareRequirement_or_InitialWorkDirRequirement_or_EnvVarRequirement_or_ShellCommandRequirement_or_ResourceRequirement_or_WorkReuse_or_NetworkAccess_or_InplaceUpdateRequirement_or_ToolTimeLimit_or_SubworkflowFeatureRequirement_or_ScatterFeatureRequirement_or_MultipleInputFeatureRequirement_or_StepInputExpressionRequirement_or_Secrets_or_MPIRequirement_or_CUDARequirement_or_Loop_or_ShmSize_or_AnyInstance
                 .loadField(__doc.get("hints"), __baseUri, __loadingOptions);
       } catch (ValidationException e) {
         hints = null; // won't be used but prevents compiler from complaining.
@@ -413,6 +370,40 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
 
     } else {
       hints = null;
+    }
+    java.util.Optional<CWLVersion> cwlVersion;
+
+    if (__doc.containsKey("cwlVersion")) {
+      try {
+        cwlVersion =
+            LoaderInstances
+                .uri_optional_CWLVersion_False_True_None_None
+                .loadField(__doc.get("cwlVersion"), __baseUri, __loadingOptions);
+      } catch (ValidationException e) {
+        cwlVersion = null; // won't be used but prevents compiler from complaining.
+        final String __message = "the `cwlVersion` field is not valid because:";
+        __errors.add(new ValidationException(__message, e));
+      }
+
+    } else {
+      cwlVersion = null;
+    }
+    java.util.Optional<java.util.List<String>> intent;
+
+    if (__doc.containsKey("intent")) {
+      try {
+        intent =
+            LoaderInstances
+                .uri_optional_array_of_StringInstance_True_False_None_None
+                .loadField(__doc.get("intent"), __baseUri, __loadingOptions);
+      } catch (ValidationException e) {
+        intent = null; // won't be used but prevents compiler from complaining.
+        final String __message = "the `intent` field is not valid because:";
+        __errors.add(new ValidationException(__message, e));
+      }
+
+    } else {
+      intent = null;
     }
     Object run;
     try {
@@ -425,71 +416,20 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
       final String __message = "the `run` field is not valid because:";
       __errors.add(new ValidationException(__message, e));
     }
-    java.util.Optional<String> when;
-
-    if (__doc.containsKey("when")) {
-      try {
-        when =
-            LoaderInstances
-                .optional_ExpressionLoader
-                .loadField(__doc.get("when"), __baseUri, __loadingOptions);
-      } catch (ValidationException e) {
-        when = null; // won't be used but prevents compiler from complaining.
-        final String __message = "the `when` field is not valid because:";
-        __errors.add(new ValidationException(__message, e));
-      }
-
-    } else {
-      when = null;
-    }
-    Object scatter;
-
-    if (__doc.containsKey("scatter")) {
-      try {
-        scatter =
-            LoaderInstances
-                .uri_union_of_NullInstance_or_StringInstance_or_array_of_StringInstance_False_False_0_None
-                .loadField(__doc.get("scatter"), __baseUri, __loadingOptions);
-      } catch (ValidationException e) {
-        scatter = null; // won't be used but prevents compiler from complaining.
-        final String __message = "the `scatter` field is not valid because:";
-        __errors.add(new ValidationException(__message, e));
-      }
-
-    } else {
-      scatter = null;
-    }
-    java.util.Optional<ScatterMethod> scatterMethod;
-
-    if (__doc.containsKey("scatterMethod")) {
-      try {
-        scatterMethod =
-            LoaderInstances
-                .uri_optional_ScatterMethod_False_True_None_None
-                .loadField(__doc.get("scatterMethod"), __baseUri, __loadingOptions);
-      } catch (ValidationException e) {
-        scatterMethod = null; // won't be used but prevents compiler from complaining.
-        final String __message = "the `scatterMethod` field is not valid because:";
-        __errors.add(new ValidationException(__message, e));
-      }
-
-    } else {
-      scatterMethod = null;
-    }
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.id = (String) id;
+    this.id = (java.util.Optional<String>) id;
     this.label = (java.util.Optional<String>) label;
     this.doc = (Object) doc;
-    this.in = (java.util.List<Object>) in;
-    this.out = (java.util.List<Object>) out;
+    this.inputs = (java.util.List<Object>) inputs;
+    this.outputs = (java.util.List<Object>) outputs;
     this.requirements = (java.util.Optional<java.util.List<Object>>) requirements;
     this.hints = (java.util.Optional<java.util.List<Object>>) hints;
+    this.cwlVersion = (java.util.Optional<CWLVersion>) cwlVersion;
+    this.intent = (java.util.Optional<java.util.List<String>>) intent;
+    this.class_ = (String) class_;
     this.run = (Object) run;
-    this.when = (java.util.Optional<String>) when;
-    this.scatter = (Object) scatter;
-    this.scatterMethod = (java.util.Optional<ScatterMethod>) scatterMethod;
     for (String field:__doc.keySet()) {
       if (!attrs.contains(field)) {
         if (field.contains(":")) {
@@ -499,5 +439,5 @@ public class WorkflowStepImpl extends SaveableImpl implements WorkflowStep {
       }
     }
   }
-  private java.util.List<String> attrs = java.util.Arrays.asList("id", "label", "doc", "in", "out", "requirements", "hints", "run", "when", "scatter", "scatterMethod");
+  private java.util.List<String> attrs = java.util.Arrays.asList("id", "label", "doc", "inputs", "outputs", "requirements", "hints", "cwlVersion", "intent", "class", "run");
 }

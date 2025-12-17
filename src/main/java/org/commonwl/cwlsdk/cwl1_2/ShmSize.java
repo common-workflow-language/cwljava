@@ -18,18 +18,29 @@ import org.commonwl.cwlsdk.cwl1_2.utils.LoadingOptions;
 import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
 
 /**
-* Auto-generated interface for <I>https://w3id.org/cwl/cwl#CommandLineBindable</I><BR>
+* Auto-generated interface for <I>http://commonwl.org/cwltool#ShmSize</I><BR>This interface is implemented by {@link ShmSizeImpl}<BR>
  */
-public interface CommandLineBindable extends Saveable {
+public interface ShmSize extends ProcessRequirement, Saveable {
 
   java.util.Map<String, Object> getExtensionFields();
   LoadingOptions getLoadingOptions();
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineBindable/inputBinding</I><BR>
+   * Getter for property <I>http://commonwl.org/cwltool#ShmSize/class</I><BR>
    * <BLOCKQUOTE>
-   * Describes how to turn this object into command line arguments.   * </BLOCKQUOTE>
+   * cwltool:ShmSize   * </BLOCKQUOTE>
    */
 
-  java.util.Optional<CommandLineBinding> getInputBinding();
+  String getClass_();
+  /**
+   * Getter for property <I>http://commonwl.org/cwltool#ShmSize/shmSize</I><BR>
+   * <BLOCKQUOTE>
+   * Size of /dev/shm. The format is `&lt;number&gt;&lt;unit&gt;`. &lt;number&gt; must be greater
+   * than 0. Unit is optional and can be `b` (bytes), `k` (kilobytes), `m`
+   * (megabytes), or `g` (gigabytes). If you omit the unit, the default is
+   * bytes. If you omit the size entirely, the value is `64m`.&quot;
+   *    * </BLOCKQUOTE>
+   */
+
+  String getShmSize();
 }

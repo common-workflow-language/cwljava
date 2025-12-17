@@ -21,9 +21,9 @@ import org.commonwl.cwlsdk.cwl1_2.utils.SaveableImpl;
 import org.commonwl.cwlsdk.cwl1_2.utils.ValidationException;
 
 /**
-* Auto-generated class implementation for <I>https://w3id.org/cwl/cwl#CommandLineBindable</I><BR>
+* Auto-generated class implementation for <I>http://commonwl.org/cwltool#Secrets</I><BR>
  */
-public class CommandLineBindableImpl extends SaveableImpl implements CommandLineBindable {
+public class SecretsImpl extends SaveableImpl implements Secrets {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
@@ -34,20 +34,34 @@ public class CommandLineBindableImpl extends SaveableImpl implements CommandLine
     return this.extensionFields_;
   }
 
-  private java.util.Optional<CommandLineBinding> inputBinding;
+  private String class_;
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineBindable/inputBinding</I><BR>
+   * Getter for property <I>http://commonwl.org/cwltool#Secrets/class</I><BR>
    * <BLOCKQUOTE>
-   * Describes how to turn this object into command line arguments.   * </BLOCKQUOTE>
+   * Always &#x27;Secrets&#x27;   * </BLOCKQUOTE>
    */
 
-  public java.util.Optional<CommandLineBinding> getInputBinding() {
-    return this.inputBinding;
+  public String getClass_() {
+    return this.class_;
+  }
+
+  private java.util.List<String> secrets;
+
+  /**
+   * Getter for property <I>http://commonwl.org/cwltool#Secrets/secrets</I><BR>
+   * <BLOCKQUOTE>
+   * List one or more input parameters that are sensitive (such as passwords)
+   * which will be deliberately obscured from logging.
+   *    * </BLOCKQUOTE>
+   */
+
+  public java.util.List<String> getSecrets() {
+    return this.secrets;
   }
 
   /**
-   * Used by {@link org.commonwl.cwlsdk.cwl1_2.utils.RootLoader} to construct instances of CommandLineBindableImpl.
+   * Used by {@link org.commonwl.cwlsdk.cwl1_2.utils.RootLoader} to construct instances of SecretsImpl.
    *
    * @param __doc_            Document fragment to load this record object from (presumably a
                               {@link java.util.Map}).
@@ -57,7 +71,7 @@ public class CommandLineBindableImpl extends SaveableImpl implements CommandLine
    * @throws ValidationException If the document fragment is not a {@link java.util.Map}
    *                             or validation of fields fails.
    */
-  public CommandLineBindableImpl(
+  public SecretsImpl(
       final Object __doc_,
       final String __baseUri_,
       LoadingOptions __loadingOptions,
@@ -68,7 +82,7 @@ public class CommandLineBindableImpl extends SaveableImpl implements CommandLine
     String __baseUri = __baseUri_;
     String __docRoot = __docRoot_;
     if (!(__doc_ instanceof java.util.Map)) {
-      throw new ValidationException("CommandLineBindableImpl called on non-map");
+      throw new ValidationException("SecretsImpl called on non-map");
     }
     final java.util.Map<String, Object> __doc = (java.util.Map<String, Object>) __doc_;
     final java.util.List<ValidationException> __errors =
@@ -76,27 +90,33 @@ public class CommandLineBindableImpl extends SaveableImpl implements CommandLine
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
-    java.util.Optional<CommandLineBinding> inputBinding;
-
-    if (__doc.containsKey("inputBinding")) {
-      try {
-        inputBinding =
-            LoaderInstances
-                .optional_CommandLineBinding
-                .loadField(__doc.get("inputBinding"), __baseUri, __loadingOptions);
-      } catch (ValidationException e) {
-        inputBinding = null; // won't be used but prevents compiler from complaining.
-        final String __message = "the `inputBinding` field is not valid because:";
-        __errors.add(new ValidationException(__message, e));
-      }
-
-    } else {
-      inputBinding = null;
+    String class_;
+    try {
+      class_ =
+          LoaderInstances
+              .uri_StringInstance_False_True_None_None
+              .loadField(__doc.get("class"), __baseUri, __loadingOptions);
+    } catch (ValidationException e) {
+      class_ = null; // won't be used but prevents compiler from complaining.
+      final String __message = "the `class` field is not valid because:";
+      __errors.add(new ValidationException(__message, e));
+    }
+    java.util.List<String> secrets;
+    try {
+      secrets =
+          LoaderInstances
+              .uri_array_of_StringInstance_False_False_0_None
+              .loadField(__doc.get("secrets"), __baseUri, __loadingOptions);
+    } catch (ValidationException e) {
+      secrets = null; // won't be used but prevents compiler from complaining.
+      final String __message = "the `secrets` field is not valid because:";
+      __errors.add(new ValidationException(__message, e));
     }
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.inputBinding = (java.util.Optional<CommandLineBinding>) inputBinding;
+    this.class_ = (String) class_;
+    this.secrets = (java.util.List<String>) secrets;
     for (String field:__doc.keySet()) {
       if (!attrs.contains(field)) {
         if (field.contains(":")) {
@@ -106,5 +126,5 @@ public class CommandLineBindableImpl extends SaveableImpl implements CommandLine
       }
     }
   }
-  private java.util.List<String> attrs = java.util.Arrays.asList("inputBinding");
+  private java.util.List<String> attrs = java.util.Arrays.asList("class", "secrets");
 }
