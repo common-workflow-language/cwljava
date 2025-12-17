@@ -100,18 +100,18 @@ import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
  a subworkflow (recursive workflows are not allowed).
   </BLOCKQUOTE>
  */
-public interface WorkflowStep extends Identified, Labeled, Documented, Saveable {
+public interface WorkflowStep extends IdentifierRequired, Labeled, Documented, Saveable {
 
   java.util.Map<String, Object> getExtensionFields();
   LoadingOptions getLoadingOptions();
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
+   * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowStep/id</I><BR>
    * <BLOCKQUOTE>
-   * The unique identifier for this object.   * </BLOCKQUOTE>
+   * The unique identifier for this WorkflowStep.   * </BLOCKQUOTE>
    */
 
-  java.util.Optional<String> getId();
+  String getId();
   /**
    * Getter for property <I>https://w3id.org/cwl/cwl#Labeled/label</I><BR>
    * <BLOCKQUOTE>

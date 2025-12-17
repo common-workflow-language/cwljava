@@ -21,18 +21,9 @@ import org.commonwl.cwlsdk.cwl1_2.utils.SaveableImpl;
 import org.commonwl.cwlsdk.cwl1_2.utils.ValidationException;
 
 /**
-* Auto-generated class implementation for <I>https://w3id.org/cwl/cwl#WorkflowStepOutput</I><BR> <BLOCKQUOTE>
- Associate an output parameter of the underlying process with a workflow
- parameter.  The workflow parameter (given in the `id` field) be may be used
- as a `source` to connect with input parameters of other workflow steps, or
- with an output parameter of the process.
- 
- A unique identifier for this workflow output parameter.  This is
- the identifier to use in the `source` field of `WorkflowStepInput`
- to connect the output value to downstream parameters.
-  </BLOCKQUOTE>
+* Auto-generated class implementation for <I>http://commonwl.org/cwltool#ShmSize</I><BR>
  */
-public class WorkflowStepOutputImpl extends SaveableImpl implements WorkflowStepOutput {
+public class ShmSizeImpl extends SaveableImpl implements ShmSize {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
@@ -43,20 +34,36 @@ public class WorkflowStepOutputImpl extends SaveableImpl implements WorkflowStep
     return this.extensionFields_;
   }
 
-  private String id;
+  private String class_;
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowStepOutput/id</I><BR>
+   * Getter for property <I>http://commonwl.org/cwltool#ShmSize/class</I><BR>
    * <BLOCKQUOTE>
-   * The unique identifier of the workflow parameter to export.   * </BLOCKQUOTE>
+   * cwltool:ShmSize   * </BLOCKQUOTE>
    */
 
-  public String getId() {
-    return this.id;
+  public String getClass_() {
+    return this.class_;
+  }
+
+  private String shmSize;
+
+  /**
+   * Getter for property <I>http://commonwl.org/cwltool#ShmSize/shmSize</I><BR>
+   * <BLOCKQUOTE>
+   * Size of /dev/shm. The format is `&lt;number&gt;&lt;unit&gt;`. &lt;number&gt; must be greater
+   * than 0. Unit is optional and can be `b` (bytes), `k` (kilobytes), `m`
+   * (megabytes), or `g` (gigabytes). If you omit the unit, the default is
+   * bytes. If you omit the size entirely, the value is `64m`.&quot;
+   *    * </BLOCKQUOTE>
+   */
+
+  public String getShmSize() {
+    return this.shmSize;
   }
 
   /**
-   * Used by {@link org.commonwl.cwlsdk.cwl1_2.utils.RootLoader} to construct instances of WorkflowStepOutputImpl.
+   * Used by {@link org.commonwl.cwlsdk.cwl1_2.utils.RootLoader} to construct instances of ShmSizeImpl.
    *
    * @param __doc_            Document fragment to load this record object from (presumably a
                               {@link java.util.Map}).
@@ -66,7 +73,7 @@ public class WorkflowStepOutputImpl extends SaveableImpl implements WorkflowStep
    * @throws ValidationException If the document fragment is not a {@link java.util.Map}
    *                             or validation of fields fails.
    */
-  public WorkflowStepOutputImpl(
+  public ShmSizeImpl(
       final Object __doc_,
       final String __baseUri_,
       LoadingOptions __loadingOptions,
@@ -77,7 +84,7 @@ public class WorkflowStepOutputImpl extends SaveableImpl implements WorkflowStep
     String __baseUri = __baseUri_;
     String __docRoot = __docRoot_;
     if (!(__doc_ instanceof java.util.Map)) {
-      throw new ValidationException("WorkflowStepOutputImpl called on non-map");
+      throw new ValidationException("ShmSizeImpl called on non-map");
     }
     final java.util.Map<String, Object> __doc = (java.util.Map<String, Object>) __doc_;
     final java.util.List<ValidationException> __errors =
@@ -85,36 +92,33 @@ public class WorkflowStepOutputImpl extends SaveableImpl implements WorkflowStep
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
-    String id;
-
-    if (__doc.containsKey("id")) {
-      try {
-        id =
-            LoaderInstances
-                .uri_StringInstance_True_False_None_None
-                .loadField(__doc.get("id"), __baseUri, __loadingOptions);
-      } catch (ValidationException e) {
-        id = null; // won't be used but prevents compiler from complaining.
-        final String __message = "the `id` field is not valid because:";
-        __errors.add(new ValidationException(__message, e));
-      }
-
-    } else {
-      id = null;
+    String class_;
+    try {
+      class_ =
+          LoaderInstances
+              .uri_StringInstance_False_True_None_None
+              .loadField(__doc.get("class"), __baseUri, __loadingOptions);
+    } catch (ValidationException e) {
+      class_ = null; // won't be used but prevents compiler from complaining.
+      final String __message = "the `class` field is not valid because:";
+      __errors.add(new ValidationException(__message, e));
     }
-
-    if (id == null) {
-      if (__docRoot != null) {
-        id = __docRoot;
-      } else {
-        throw new ValidationException("Missing id");
-      }
+    String shmSize;
+    try {
+      shmSize =
+          LoaderInstances
+              .StringInstance
+              .loadField(__doc.get("shmSize"), __baseUri, __loadingOptions);
+    } catch (ValidationException e) {
+      shmSize = null; // won't be used but prevents compiler from complaining.
+      final String __message = "the `shmSize` field is not valid because:";
+      __errors.add(new ValidationException(__message, e));
     }
-    __baseUri = (String) id;
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.id = (String) id;
+    this.class_ = (String) class_;
+    this.shmSize = (String) shmSize;
     for (String field:__doc.keySet()) {
       if (!attrs.contains(field)) {
         if (field.contains(":")) {
@@ -124,5 +128,5 @@ public class WorkflowStepOutputImpl extends SaveableImpl implements WorkflowStep
       }
     }
   }
-  private java.util.List<String> attrs = java.util.Arrays.asList("id");
+  private java.util.List<String> attrs = java.util.Arrays.asList("class", "shmSize");
 }

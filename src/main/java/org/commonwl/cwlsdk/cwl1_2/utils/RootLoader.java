@@ -15,7 +15,7 @@ public class RootLoader {
     if (loadingOptions == null) {
       loadingOptions = new LoadingOptionsBuilder().setFileUri(baseUri).build();
     }
-    return LoaderInstances.union_of_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation_or_array_of_union_of_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation.documentLoad(doc, baseUri, loadingOptions);
+    return LoaderInstances.union_of_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation_or_ProcessGenerator_or_array_of_union_of_CommandLineTool_or_ExpressionTool_or_Workflow_or_Operation_or_ProcessGenerator.documentLoad(doc, baseUri, loadingOptions);
   }
 
   public static Object loadDocument(

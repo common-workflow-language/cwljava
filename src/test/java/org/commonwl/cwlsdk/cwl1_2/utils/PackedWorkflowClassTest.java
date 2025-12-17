@@ -35,7 +35,7 @@ public class PackedWorkflowClassTest {
     WorkflowStep step1 = (WorkflowStep) workflow.getSteps().get(0);
     List<Object> inputs = step1.getIn();
     WorkflowStepInput step1_input1 = (WorkflowStepInput) inputs.get(0);
-    Assert.assertEquals(workflow_id + "/step1/echo_in1", step1_input1.getId().get());
+    Assert.assertEquals(workflow_id + "/step1/echo_in1", step1_input1.getId());
     Assert.assertEquals(workflow_id + "/inp1", step1_input1.getSource());
   }
 }

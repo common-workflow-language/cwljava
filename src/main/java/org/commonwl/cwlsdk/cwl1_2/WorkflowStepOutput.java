@@ -29,16 +29,16 @@ import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
  to connect the output value to downstream parameters.
   </BLOCKQUOTE>
  */
-public interface WorkflowStepOutput extends Identified, Saveable {
+public interface WorkflowStepOutput extends IdentifierRequired, Saveable {
 
   java.util.Map<String, Object> getExtensionFields();
   LoadingOptions getLoadingOptions();
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#Identified/id</I><BR>
+   * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowStepOutput/id</I><BR>
    * <BLOCKQUOTE>
-   * The unique identifier for this object.   * </BLOCKQUOTE>
+   * The unique identifier of the workflow parameter to export.   * </BLOCKQUOTE>
    */
 
-  java.util.Optional<String> getId();
+  String getId();
 }

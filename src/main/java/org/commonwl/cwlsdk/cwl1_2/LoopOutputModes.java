@@ -14,22 +14,25 @@
 
 package org.commonwl.cwlsdk.cwl1_2;
 
-import org.commonwl.cwlsdk.cwl1_2.utils.LoadingOptions;
-import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
+import org.commonwl.cwlsdk.cwl1_2.utils.ValidationException;
 
-/**
-* Auto-generated interface for <I>https://w3id.org/cwl/cwl#CommandLineBindable</I><BR>
- */
-public interface CommandLineBindable extends Saveable {
+public enum LoopOutputModes {
+  LAST("last"),
+  ALL("all");
 
-  java.util.Map<String, Object> getExtensionFields();
-  LoadingOptions getLoadingOptions();
+  private static String[] symbols = new String[] {"last", "all"};
+  private String docVal;
 
-  /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineBindable/inputBinding</I><BR>
-   * <BLOCKQUOTE>
-   * Describes how to turn this object into command line arguments.   * </BLOCKQUOTE>
-   */
+  private LoopOutputModes(final String docVal) {
+    this.docVal = docVal;
+  }
 
-  java.util.Optional<CommandLineBinding> getInputBinding();
+  public static LoopOutputModes fromDocumentVal(final String docVal) {
+    for(final LoopOutputModes val : LoopOutputModes.values()) {
+      if(val.docVal.equals(docVal)) {
+        return val;
+      }
+    }
+    throw new ValidationException(String.format("Expected one of %s", LoopOutputModes.symbols, docVal));
+  }
 }

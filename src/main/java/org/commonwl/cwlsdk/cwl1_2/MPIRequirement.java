@@ -18,18 +18,30 @@ import org.commonwl.cwlsdk.cwl1_2.utils.LoadingOptions;
 import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
 
 /**
-* Auto-generated interface for <I>https://w3id.org/cwl/cwl#CommandLineBindable</I><BR>
+* Auto-generated interface for <I>http://commonwl.org/cwltool#MPIRequirement</I><BR>This interface is implemented by {@link MPIRequirementImpl}<BR> <BLOCKQUOTE>
+ Indicates that a process requires an MPI runtime.
+  </BLOCKQUOTE>
  */
-public interface CommandLineBindable extends Saveable {
+public interface MPIRequirement extends ProcessRequirement, Saveable {
 
   java.util.Map<String, Object> getExtensionFields();
   LoadingOptions getLoadingOptions();
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineBindable/inputBinding</I><BR>
+   * Getter for property <I>http://commonwl.org/cwltool#MPIRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * Describes how to turn this object into command line arguments.   * </BLOCKQUOTE>
+   * Always &#x27;MPIRequirement&#x27;   * </BLOCKQUOTE>
    */
 
-  java.util.Optional<CommandLineBinding> getInputBinding();
+  String getClass_();
+  /**
+   * Getter for property <I>http://commonwl.org/cwltool#MPIRequirement/processes</I><BR>
+   * <BLOCKQUOTE>
+   * The number of MPI processes to start. If you give a string,
+   * this will be evaluated as a CWL Expression and it must
+   * evaluate to an integer.
+   *    * </BLOCKQUOTE>
+   */
+
+  Object getProcesses();
 }

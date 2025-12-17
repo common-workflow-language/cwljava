@@ -21,18 +21,11 @@ import org.commonwl.cwlsdk.cwl1_2.utils.SaveableImpl;
 import org.commonwl.cwlsdk.cwl1_2.utils.ValidationException;
 
 /**
-* Auto-generated class implementation for <I>https://w3id.org/cwl/cwl#WorkflowStepOutput</I><BR> <BLOCKQUOTE>
- Associate an output parameter of the underlying process with a workflow
- parameter.  The workflow parameter (given in the `id` field) be may be used
- as a `source` to connect with input parameters of other workflow steps, or
- with an output parameter of the process.
- 
- A unique identifier for this workflow output parameter.  This is
- the identifier to use in the `source` field of `WorkflowStepInput`
- to connect the output value to downstream parameters.
+* Auto-generated class implementation for <I>http://commonwl.org/cwltool#MPIRequirement</I><BR> <BLOCKQUOTE>
+ Indicates that a process requires an MPI runtime.
   </BLOCKQUOTE>
  */
-public class WorkflowStepOutputImpl extends SaveableImpl implements WorkflowStepOutput {
+public class MPIRequirementImpl extends SaveableImpl implements MPIRequirement {
   private LoadingOptions loadingOptions_ = new LoadingOptionsBuilder().build();
   private java.util.Map<String, Object> extensionFields_ =
       new java.util.HashMap<String, Object>();
@@ -43,20 +36,35 @@ public class WorkflowStepOutputImpl extends SaveableImpl implements WorkflowStep
     return this.extensionFields_;
   }
 
-  private String id;
+  private String class_;
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#WorkflowStepOutput/id</I><BR>
+   * Getter for property <I>http://commonwl.org/cwltool#MPIRequirement/class</I><BR>
    * <BLOCKQUOTE>
-   * The unique identifier of the workflow parameter to export.   * </BLOCKQUOTE>
+   * Always &#x27;MPIRequirement&#x27;   * </BLOCKQUOTE>
    */
 
-  public String getId() {
-    return this.id;
+  public String getClass_() {
+    return this.class_;
+  }
+
+  private Object processes;
+
+  /**
+   * Getter for property <I>http://commonwl.org/cwltool#MPIRequirement/processes</I><BR>
+   * <BLOCKQUOTE>
+   * The number of MPI processes to start. If you give a string,
+   * this will be evaluated as a CWL Expression and it must
+   * evaluate to an integer.
+   *    * </BLOCKQUOTE>
+   */
+
+  public Object getProcesses() {
+    return this.processes;
   }
 
   /**
-   * Used by {@link org.commonwl.cwlsdk.cwl1_2.utils.RootLoader} to construct instances of WorkflowStepOutputImpl.
+   * Used by {@link org.commonwl.cwlsdk.cwl1_2.utils.RootLoader} to construct instances of MPIRequirementImpl.
    *
    * @param __doc_            Document fragment to load this record object from (presumably a
                               {@link java.util.Map}).
@@ -66,7 +74,7 @@ public class WorkflowStepOutputImpl extends SaveableImpl implements WorkflowStep
    * @throws ValidationException If the document fragment is not a {@link java.util.Map}
    *                             or validation of fields fails.
    */
-  public WorkflowStepOutputImpl(
+  public MPIRequirementImpl(
       final Object __doc_,
       final String __baseUri_,
       LoadingOptions __loadingOptions,
@@ -77,7 +85,7 @@ public class WorkflowStepOutputImpl extends SaveableImpl implements WorkflowStep
     String __baseUri = __baseUri_;
     String __docRoot = __docRoot_;
     if (!(__doc_ instanceof java.util.Map)) {
-      throw new ValidationException("WorkflowStepOutputImpl called on non-map");
+      throw new ValidationException("MPIRequirementImpl called on non-map");
     }
     final java.util.Map<String, Object> __doc = (java.util.Map<String, Object>) __doc_;
     final java.util.List<ValidationException> __errors =
@@ -85,36 +93,33 @@ public class WorkflowStepOutputImpl extends SaveableImpl implements WorkflowStep
     if (__loadingOptions != null) {
       this.loadingOptions_ = __loadingOptions;
     }
-    String id;
-
-    if (__doc.containsKey("id")) {
-      try {
-        id =
-            LoaderInstances
-                .uri_StringInstance_True_False_None_None
-                .loadField(__doc.get("id"), __baseUri, __loadingOptions);
-      } catch (ValidationException e) {
-        id = null; // won't be used but prevents compiler from complaining.
-        final String __message = "the `id` field is not valid because:";
-        __errors.add(new ValidationException(__message, e));
-      }
-
-    } else {
-      id = null;
+    String class_;
+    try {
+      class_ =
+          LoaderInstances
+              .uri_StringInstance_False_True_None_None
+              .loadField(__doc.get("class"), __baseUri, __loadingOptions);
+    } catch (ValidationException e) {
+      class_ = null; // won't be used but prevents compiler from complaining.
+      final String __message = "the `class` field is not valid because:";
+      __errors.add(new ValidationException(__message, e));
     }
-
-    if (id == null) {
-      if (__docRoot != null) {
-        id = __docRoot;
-      } else {
-        throw new ValidationException("Missing id");
-      }
+    Object processes;
+    try {
+      processes =
+          LoaderInstances
+              .union_of_IntegerInstance_or_ExpressionLoader
+              .loadField(__doc.get("processes"), __baseUri, __loadingOptions);
+    } catch (ValidationException e) {
+      processes = null; // won't be used but prevents compiler from complaining.
+      final String __message = "the `processes` field is not valid because:";
+      __errors.add(new ValidationException(__message, e));
     }
-    __baseUri = (String) id;
     if (!__errors.isEmpty()) {
       throw new ValidationException("Trying 'RecordField'", __errors);
     }
-    this.id = (String) id;
+    this.class_ = (String) class_;
+    this.processes = (Object) processes;
     for (String field:__doc.keySet()) {
       if (!attrs.contains(field)) {
         if (field.contains(":")) {
@@ -124,5 +129,5 @@ public class WorkflowStepOutputImpl extends SaveableImpl implements WorkflowStep
       }
     }
   }
-  private java.util.List<String> attrs = java.util.Arrays.asList("id");
+  private java.util.List<String> attrs = java.util.Arrays.asList("class", "processes");
 }

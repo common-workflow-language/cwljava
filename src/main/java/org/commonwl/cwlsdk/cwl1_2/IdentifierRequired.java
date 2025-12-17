@@ -18,18 +18,11 @@ import org.commonwl.cwlsdk.cwl1_2.utils.LoadingOptions;
 import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
 
 /**
-* Auto-generated interface for <I>https://w3id.org/cwl/cwl#CommandLineBindable</I><BR>
+* Auto-generated interface for <I>https://w3id.org/cwl/cwl#IdentifierRequired</I><BR>
  */
-public interface CommandLineBindable extends Saveable {
+public interface IdentifierRequired extends Identified, Saveable {
 
   java.util.Map<String, Object> getExtensionFields();
   LoadingOptions getLoadingOptions();
 
-  /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineBindable/inputBinding</I><BR>
-   * <BLOCKQUOTE>
-   * Describes how to turn this object into command line arguments.   * </BLOCKQUOTE>
-   */
-
-  java.util.Optional<CommandLineBinding> getInputBinding();
 }

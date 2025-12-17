@@ -18,18 +18,27 @@ import org.commonwl.cwlsdk.cwl1_2.utils.LoadingOptions;
 import org.commonwl.cwlsdk.cwl1_2.utils.Saveable;
 
 /**
-* Auto-generated interface for <I>https://w3id.org/cwl/cwl#CommandLineBindable</I><BR>
+* Auto-generated interface for <I>http://commonwl.org/cwltool#Secrets</I><BR>This interface is implemented by {@link SecretsImpl}<BR>
  */
-public interface CommandLineBindable extends Saveable {
+public interface Secrets extends ProcessRequirement, Saveable {
 
   java.util.Map<String, Object> getExtensionFields();
   LoadingOptions getLoadingOptions();
 
   /**
-   * Getter for property <I>https://w3id.org/cwl/cwl#CommandLineBindable/inputBinding</I><BR>
+   * Getter for property <I>http://commonwl.org/cwltool#Secrets/class</I><BR>
    * <BLOCKQUOTE>
-   * Describes how to turn this object into command line arguments.   * </BLOCKQUOTE>
+   * Always &#x27;Secrets&#x27;   * </BLOCKQUOTE>
    */
 
-  java.util.Optional<CommandLineBinding> getInputBinding();
+  String getClass_();
+  /**
+   * Getter for property <I>http://commonwl.org/cwltool#Secrets/secrets</I><BR>
+   * <BLOCKQUOTE>
+   * List one or more input parameters that are sensitive (such as passwords)
+   * which will be deliberately obscured from logging.
+   *    * </BLOCKQUOTE>
+   */
+
+  java.util.List<String> getSecrets();
 }
